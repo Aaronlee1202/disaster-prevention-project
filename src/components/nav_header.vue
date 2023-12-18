@@ -24,7 +24,6 @@
                       data-sticky-top="0"
                       src="@/assets/logo_ncdr.svg"
                       class="svg-img"
-                      onload="SVGInject(this)"
                   /></a>
                   <a href="index.html" title="防災特輯"
                     ><img
@@ -36,7 +35,6 @@
                       data-sticky-top="0"
                       src="@/assets/logo.svg"
                       class="svg-img"
-                      onload="SVGInject(this)"
                   /></a>
                 </h1>
               </div>
@@ -55,7 +53,6 @@
                           <img
                             src="@/assets/footer/menu_icon_01.svg"
                             class="svg-img"
-                            onload="SVGInject(this)"
                             alt=""
                           /><br />本月主題
                         </a>
@@ -66,7 +63,6 @@
                           <img
                             src="@/assets/footer/menu_icon_02.svg"
                             class="svg-img"
-                            onload="SVGInject(this)"
                             alt=""
                           /><br />本季小品
                         </a>
@@ -77,7 +73,6 @@
                           <img
                             src="@/assets/footer/menu_icon_03.svg"
                             class="svg-img"
-                            onload="SVGInject(this)"
                             alt=""
                           /><br />亮點服務
                         </a>
@@ -88,7 +83,6 @@
                           <img
                             src="@/assets/footer/menu_icon_04.svg"
                             class="svg-img"
-                            onload="SVGInject(this)"
                             alt=""
                           /><br />主任介紹
                         </a>
@@ -99,7 +93,6 @@
                           <img
                             src="@/assets/footer/menu_icon_05.svg"
                             class="svg-img"
-                            onload="SVGInject(this)"
                             alt=""
                           /><br />關於特輯
                         </a>
@@ -110,7 +103,6 @@
                           <img
                             src="@/assets/footer/menu_icon_06.svg"
                             class="svg-img"
-                            onload="SVGInject(this)"
                             alt=""
                           /><br />系列影片
                         </a>
@@ -126,7 +118,6 @@
                           <img
                             src="@/assets/footer/menu_icon_08.svg"
                             class="svg-img"
-                            onload="SVGInject(this)"
                             alt=""
                           /><br />年度回顧
                         </a>
@@ -138,7 +129,6 @@
                             src="@/assets/footer/menu_icon_07.svg"
                             class="svg-img"
                             alt=""
-                            onload="SVGInject(this)"
                           /><br />聯絡我們
                         </a>
                       </li>

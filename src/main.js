@@ -1,11 +1,18 @@
-import './style/index.css'
+// import './css/theme.css';
+// import './css/bootstrap.min.css';
+// import './css/theme-elements.css';
+// import './css/style.css';
+// import './css/all.min.css';
+// import './css/fontawesome.min.css';
 
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import './scss/style.css';
 
-const app = createApp(App)
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
 
-app.use(router)
+const app = createApp(App);
 
-app.mount('#app')
+app.use(router);
+
+app.mount('#app');
