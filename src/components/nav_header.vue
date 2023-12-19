@@ -51,7 +51,7 @@
                       <li>
                         <a href="#index_page_1" class="nav-link anchor" title="本月主題">
                           <img
-                            src="@/assets/footer/menu_icon_01.svg"
+                            src="@/assets/header/menu_icon_01.svg"
                             class="svg-img"
                             alt=""
                           /><br />本月主題
@@ -61,7 +61,7 @@
                       <li>
                         <a href="#index_page_2" class="nav-link anchor" title="本季小品">
                           <img
-                            src="@/assets/footer/menu_icon_02.svg"
+                            src="@/assets/header/menu_icon_02.svg"
                             class="svg-img"
                             alt=""
                           /><br />本季小品
@@ -71,7 +71,7 @@
                       <li>
                         <a href="#index_page_3" class="nav-link anchor" title="亮點服務">
                           <img
-                            src="@/assets/footer/menu_icon_03.svg"
+                            src="@/assets/header/menu_icon_03.svg"
                             class="svg-img"
                             alt=""
                           /><br />亮點服務
@@ -81,7 +81,7 @@
                       <li>
                         <a href="#index_page_4" class="nav-link anchor" title="主任介紹">
                           <img
-                            src="@/assets/footer/menu_icon_04.svg"
+                            src="@/assets/header/menu_icon_04.svg"
                             class="svg-img"
                             alt=""
                           /><br />主任介紹
@@ -91,7 +91,7 @@
                       <li>
                         <a href="#index_page_5" class="nav-link anchor" title="關於特輯">
                           <img
-                            src="@/assets/footer/menu_icon_05.svg"
+                            src="@/assets/header/menu_icon_05.svg"
                             class="svg-img"
                             alt=""
                           /><br />關於特輯
@@ -101,7 +101,7 @@
                       <li>
                         <a href="#index_page_6" class="nav-link anchor" title="系列影片">
                           <img
-                            src="@/assets/footer/menu_icon_06.svg"
+                            src="@/assets/header/menu_icon_06.svg"
                             class="svg-img"
                             alt=""
                           /><br />系列影片
@@ -116,7 +116,7 @@
                           title="年度回顧(另開新視窗)"
                         >
                           <img
-                            src="@/assets/footer/menu_icon_08.svg"
+                            src="@/assets/header/menu_icon_08.svg"
                             class="svg-img"
                             alt=""
                           /><br />年度回顧
@@ -126,7 +126,7 @@
                       <li>
                         <a href="#footer" class="nav-link anchor" title="聯絡我們">
                           <img
-                            src="@/assets/footer/menu_icon_07.svg"
+                            src="@/assets/header/menu_icon_07.svg"
                             class="svg-img"
                             alt=""
                           /><br />聯絡我們
