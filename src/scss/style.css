@@ -268,7 +268,7 @@ li {
 /*header*/
 .header-body {
   position: fixed !important;
-  background: #26a8a8 !important;
+  background: #776E68 !important;
   border: none !important;
   box-shadow: 0 0 37px rgba(33, 37, 41, 0.6588235294);
 }
@@ -1276,7 +1276,7 @@ li {
 
 /*footer*/
 #footer {
-  background: #26a8a8;
+  background: #776E68;
   color: #fff;
   text-align: center;
   border: none;

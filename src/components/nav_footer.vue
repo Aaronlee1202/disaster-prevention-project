@@ -23,7 +23,7 @@
         </div>
 
         <div class="copyright">
-          Copyright © 2023 行政法人國家災害防救科技中心<br />All rights reserved.
+          Copyright © 2024 行政法人國家災害防救科技中心<br />All rights reserved.
           <!-- <div class="footer_design">Designed by <a href="http://www.laypu.com/" target="_blank" title="LAYPU(另開新視窗)">LAYPU</a></div> -->
         </div>
       </div>

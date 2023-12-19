@@ -28,6 +28,7 @@ $d-3rd-color:#c6606f;
 $d-4th-color:#ffee81;
 $d-5th-color:#fff5d3;
 $d-6th-color:#0b6767;
+$d-7th-color:#776E68;
 
 $d-white:#fff;
 $d-black:#000;
@@ -339,7 +340,7 @@ li {
 /*header*/
 .header-body{
 	position: fixed !important;
-	background: $d-1st-color !important;
+	background: $d-7th-color !important;
 	border:none!important;
 	box-shadow: 0 0 37px #212529a8;
 	.header-logo{
@@ -1408,7 +1409,7 @@ li {
 
 /*footer*/
 #footer {
-	background: $d-1st-color;
+	background: $d-7th-color;
 	color:#fff;
 	text-align: center;
 	border:none;
