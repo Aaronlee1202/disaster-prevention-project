@@ -10,4 +10,4 @@ import nav_footer from './components/nav_footer.vue';
   <nav_footer />
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped></style>

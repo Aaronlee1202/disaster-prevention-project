@@ -1,7 +1,9 @@
-<script setup></script>
+<script setup>
+import newTalisman from '@/components/disaster_prevention/new_talisman.vue';
+</script>
 
 <template>
-  <div class=""></div>
+  <newTalisman />
 </template>
 
 <style lang="scss" scoped></style>

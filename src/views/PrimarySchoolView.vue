@@ -25,9 +25,10 @@ const toPage1 = () => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: url('../assets//primary_school/house-bg.svg');
+  background-image: url('@/assets/primary_school/house-bg.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  cursor: pointer;
 }
 </style>
