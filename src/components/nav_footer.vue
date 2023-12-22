@@ -20,6 +20,7 @@ import footer_title from './svg/footer_title.vue';
             歡迎有趣的合作提案或疑問，請來信 nini9800@ncdr.nat.gov.tw
           </div>
           <div class="contact">
+            <!-- css需修改 -->
             <footer_logo /><br />
             <span class="font_nowrap">電話&nbsp; 02-8195-8608 </span> &nbsp;/&nbsp;
             <span class="font_nowrap">傳真&nbsp; 02-8912-7766</span><br />
