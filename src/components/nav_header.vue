@@ -1,7 +1,20 @@
+<script setup>
+import { ref } from 'vue';
+import LogoIcon from './svg/logo_icon.vue';
+import LogoNcdr from './svg/logo_ncdr.vue';
+
+const toggle = ref(false);
+const menuToggle = () => {
+  if (toggle.value == false) toggle.value = true;
+  else toggle.value = false;
+};
+</script>
+
 <template>
   <header
     id="header"
     class="fadein_header"
+    :class="{ 'mobile-menu-opened': toggle }"
     data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile':false, 'stickyStartAt': 30, 'stickySetTop': '0', 'stickyChangeLogo':false}"
   >
     <div class="header-body">
@@ -15,27 +28,12 @@
                     href="https://www.ncdr.nat.gov.tw/"
                     title="行政法人國災害防救科技中心"
                     target="_blank"
-                    ><img
-                      alt="行政法人國災害防救科技中心"
-                      width="100"
-                      height="60"
-                      data-sticky-width="67"
-                      data-sticky-height="40"
-                      data-sticky-top="0"
-                      src="@/assets/logo_ncdr.svg"
-                      class="svg-img"
-                  /></a>
-                  <a href="index.html" title="防災特輯"
-                    ><img
-                      alt="防災特輯"
-                      width="237"
-                      height="60"
-                      data-sticky-width="158"
-                      data-sticky-height="40"
-                      data-sticky-top="0"
-                      src="@/assets/logo.svg"
-                      class="svg-img"
-                  /></a>
+                  >
+                    <LogoNcdr class="svg-img" />
+                  </a>
+                  <a href="index.html" title="防災特輯">
+                    <LogoIcon class="svg-img" />
+                  </a>
                 </h1>
               </div>
             </div>
@@ -146,8 +144,10 @@
                   for="menu-toggle"
                   data-bs-toggle="collapse"
                   data-bs-target=".header-nav-main nav"
-                />
-                <div class="menu-button"></div>
+                  @click="menuToggle"
+                >
+                  <div class="menu-button"></div>
+                </label>
               </div>
             </div>
           </div>

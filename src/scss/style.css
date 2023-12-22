@@ -1,19 +1,5 @@
 @charset "UTF-8";
-@font-face {
-  font-family: LiSong;
-  src: url("../webfonts/LiSong.eot"); /* IE9*/
-  src: url("../webfonts/LiSong.eot") format("embedded-opentype"), url("../webfonts/LiSong.woff") format("woff"), url("../webfonts/LiSong.ttf") format("truetype");
-}
-@font-face {
-  font-family: Anton-Regular;
-  src: url("../webfonts/Anton-Regular.eot"); /* IE9*/
-  src: url("../webfonts/Anton-Regular.eot") format("embedded-opentype"), url("../webfonts/Anton-Regular.woff") format("woff"), url("../webfonts/Anton-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: NotoSansTC;
-  src: url("../webfonts/NotoSansTC-Regular.eot"); /* IE9*/
-  src: url("../webfonts/NotoSansTC-Regular.eot") format("embedded-opentype"), url("../webfonts/NotoSansTC-Regular.woff") format("woff"), url("../webfonts/NotoSansTC-Regular.ttf") format("truetype");
-}
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap");
 .color_01 {
   color: #26a8a8 !important;
 }
@@ -59,6 +45,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 170%;
+  font-family: "Noto Sans TC", "Noto Sans", "微軟正黑體", "Times New Roman", sans-serif;
   color: #333;
   background: #fff;
   font-size: 1em;
@@ -209,7 +196,7 @@ li {
 }
 
 .line {
-  background-image: linear-gradient(to right, transparent, #DBDBDB, transparent);
+  background-image: linear-gradient(to right, transparent, #dbdbdb, transparent);
   height: 2px;
   float: left;
   width: 100%;
@@ -268,7 +255,7 @@ li {
 /*header*/
 .header-body {
   position: fixed !important;
-  background: #776E68 !important;
+  background: #26a8a8 !important;
   border: none !important;
   box-shadow: 0 0 37px rgba(33, 37, 41, 0.6588235294);
 }
@@ -309,24 +296,29 @@ li {
 }
 
 /*svg檔換色*/
-.header-logo a:hover .svg-img path, .header-logo a:focus .svg-img path {
+.header-logo a:hover .svg-img path,
+.header-logo a:focus .svg-img path {
   fill: #ffee81;
 }
 
-.header-nav li:hover a, .header-nav li:focus a {
+.header-nav li:hover a,
+.header-nav li:focus a {
   background: transparent !important;
   color: #ffee81 !important;
   transition: color 0.5s;
 }
-.header-nav li:hover .svg-img path, .header-nav li:focus .svg-img path {
+.header-nav li:hover .svg-img path,
+.header-nav li:focus .svg-img path {
   fill: #ffee81;
   transition: fill 0.5s;
 }
-.header-nav a:hover, .header-nav a:focus {
+.header-nav a:hover,
+.header-nav a:focus {
   color: #ffee81 !important;
   transition: color 0.5s;
 }
-.header-nav a:hover .svg-img path, .header-nav a:focus .svg-img path {
+.header-nav a:hover .svg-img path,
+.header-nav a:focus .svg-img path {
   fill: #ffee81;
   transition: fill 0.5s;
 }
@@ -369,10 +361,12 @@ li {
   display: none;
 }
 
-.menu-button, .menu-button::before, .menu-button::after {
+.menu-button,
+.menu-button::before,
+.menu-button::after {
   display: block;
   content: "";
-  background-image: url(../img/customer/mobile_menu_icon.png);
+  background-image: url(../assets/header/mobile_menu_icon.png);
   background-size: 100%;
   position: absolute;
   height: 7px;
@@ -1011,13 +1005,15 @@ li {
   animation-delay: 2s;
 }
 
-.msg_wrong, .msg_right {
+.msg_wrong,
+.msg_right {
   margin-top: 20px;
   padding: 20px;
   background: #fff5d3;
   border-radius: 10px;
 }
-.msg_wrong a, .msg_right a {
+.msg_wrong a,
+.msg_right a {
   text-decoration: underline !important;
   animation-name: color_gb;
   animation-duration: 2s;
@@ -1276,7 +1272,7 @@ li {
 
 /*footer*/
 #footer {
-  background: #776E68;
+  background: #26a8a8;
   color: #fff;
   text-align: center;
   border: none;
@@ -2322,7 +2318,10 @@ li {
     width: 44%;
     margin: 1.5%;
   }
-  .index_video_02 .pic_02, .index_video_02 .pic_05, .index_video_02 .pic_07, .index_video_02 .pic_08 {
+  .index_video_02 .pic_02,
+  .index_video_02 .pic_05,
+  .index_video_02 .pic_07,
+  .index_video_02 .pic_08 {
     display: none !important;
     animation-name: none !important;
   }
@@ -2560,7 +2559,8 @@ li {
     width: 90%;
     margin: 4%;
   }
-  .index_video_02 .pic_03, .index_video_02 .pic_09 {
+  .index_video_02 .pic_03,
+  .index_video_02 .pic_09 {
     display: none;
   }
   .index_video_02 .pic_01 {
@@ -2683,7 +2683,11 @@ li {
   }
 }
 /*-----------------------------------------for編輯器--------------------------------------------*/
-h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-transform: none;
 }
 
@@ -2765,23 +2769,28 @@ img {
   width: 80px !important;
 }
 
-.float_left, .float-left {
+.float_left,
+.float-left {
   float: left;
 }
 
-.float_right, .float-right {
+.float_right,
+.float-right {
   float: right;
 }
 
-.text_center, .text-center {
+.text_center,
+.text-center {
   text-align: center;
 }
 
-.text_right, .text-right {
+.text_right,
+.text-right {
   text-align: right !important;
 }
 
-.text_left, .text-left {
+.text_left,
+.text-left {
   text-align: left !important;
 }
 
@@ -2789,7 +2798,8 @@ img {
   color: #900 !important;
 }
 
-.white, a.white {
+.white,
+a.white {
   color: #fff !important;
 }
 
@@ -2834,11 +2844,11 @@ img {
 }
 
 .green_02 {
-  color: #00693E !important;
+  color: #00693e !important;
 }
 
 .orange_01 {
-  color: #C45519 !important;
+  color: #c45519 !important;
 }
 
 .orange_02 {
@@ -2854,7 +2864,7 @@ img {
 }
 
 .pink {
-  color: #B648B7 !important;
+  color: #b648b7 !important;
 }
 
 .purple {
@@ -2910,11 +2920,11 @@ img {
 }
 
 .bg_green_02 {
-  background: #00693E !important;
+  background: #00693e !important;
 }
 
 .bg_orange_01 {
-  background: #C45519 !important;
+  background: #c45519 !important;
 }
 
 .bg_orange_02 {
@@ -2930,7 +2940,7 @@ img {
 }
 
 .bg_pink {
-  background: #B648B7 !important;
+  background: #b648b7 !important;
 }
 
 .bg_purple {
@@ -3007,7 +3017,11 @@ img {
 }
 
 @media (max-width: 480px) {
-  .input-xlarge, .input-large, .input-medium, .input-small, .input-xsmall {
+  .input-xlarge,
+  .input-large,
+  .input-medium,
+  .input-small,
+  .input-xsmall {
     max-width: 100% !important;
   }
 }
@@ -3045,7 +3059,8 @@ img {
   padding: 8px 10px;
   vertical-align: middle;
 }
-.table tbody td ol, .table tbody td ul {
+.table tbody td ol,
+.table tbody td ul {
   padding-left: 25px;
 }
 .table tbody td a {
@@ -3071,7 +3086,8 @@ img {
 .table.table-bordered {
   border: 1px solid #ddd;
 }
-.table.table-bordered td, .table.table-bordered th {
+.table.table-bordered td,
+.table.table-bordered th {
   border: 1px solid #ddd;
 }
 .table.table-center th, .table.table-center td {
@@ -3127,7 +3143,8 @@ table[align=center] {
   overflow-y: hidden;
   border: none;
 }
-.table-scrollable > .table, .table-scrollable > table {
+.table-scrollable > .table,
+.table-scrollable > table {
   width: 100% !important;
   margin: 0 !important;
   min-width: 700px;
@@ -3196,7 +3213,8 @@ table[align=center] {
   width: 100%;
   font-size: 1.1em;
 }
-.edit_con ul, .edit_con ol {
+.edit_con ul,
+.edit_con ol {
   padding-left: 30px;
   /*float:left;*/
   width: 100%;
@@ -3242,7 +3260,8 @@ table[align=center] {
   list-style-type: disc; /*實心圓*/
 }
 
-.ul_none, .ol_none {
+.ul_none,
+.ol_none {
   list-style: none;
   padding-left: 0;
 }
@@ -3393,14 +3412,19 @@ table[align=center] {
 }
 
 /*併排*/
-[class^=list_0] .title, .list_img .title, .list_font .title {
+[class^=list_0] .title,
+.list_img .title,
+.list_font .title {
   font-size: 1.25em;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
 @media (max-width: 767px) {
-  [class^=list_0] .title, .list_img .title, .list_font .title, .list_icon_img .title {
+  [class^=list_0] .title,
+  .list_img .title,
+  .list_font .title,
+  .list_icon_img .title {
     font-size: 1.1em;
   }
 }
@@ -3833,7 +3857,8 @@ table[align=center] {
   .rwd-table td:before {
     display: none;
   }
-  .rwd-table th, .rwd-table td {
+  .rwd-table th,
+  .rwd-table td {
     display: table-cell;
     padding: 0.25em 0.5em;
   }
@@ -3868,7 +3893,8 @@ table[align=center] {
   .rwd-table.table-center td {
     text-align: left !important;
   }
-  .rwd-table .text-end, .rwd-table .text-center {
+  .rwd-table .text-end,
+  .rwd-table .text-center {
     text-align: left !important;
   }
 }/*# sourceMappingURL=style.css.map */
