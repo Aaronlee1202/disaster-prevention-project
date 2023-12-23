@@ -1,7 +1,5 @@
 <script setup>
-import footer_logo from './svg/footer_logo.vue';
-import footer_pic_01 from './svg/footer_pic_01.vue';
-import footer_title from './svg/footer_title.vue';
+
 </script>
 
 <template>
@@ -9,19 +7,19 @@ import footer_title from './svg/footer_title.vue';
     <div class="container">
       <div class="box">
         <div class="title_box">
-          <footer_title />
+          <img src="../assets/footer/footer_logo.svg" alt="" />
           <hr />
         </div>
 
         <div class="font">
           <div class="mail">
-            <footer_pic_01 />
+            <img src="../assets/footer/footer_pic_01.svg" alt="" />
             <div class="title">總編許願箱</div>
             歡迎有趣的合作提案或疑問，請來信 nini9800@ncdr.nat.gov.tw
           </div>
           <div class="contact">
             <!-- css需修改 -->
-            <footer_logo /><br />
+            <img src="../assets/footer/footer_title.svg" alt="" /><br />
             <span class="font_nowrap">電話&nbsp; 02-8195-8608 </span> &nbsp;/&nbsp;
             <span class="font_nowrap">傳真&nbsp; 02-8912-7766</span><br />
             23143 新北市新店區北新路三段200號9樓<br />

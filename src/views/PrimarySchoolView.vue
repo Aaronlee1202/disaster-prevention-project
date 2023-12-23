@@ -1,14 +1,14 @@
 <script setup>
 // 命名需修改
-const toPage1 = () => {
-  // const routeData = router.replace({ name: '/product-model' });
-  window.open('/disaster-prevention', '_blank');
-};
+// const toPage1 = () => {
+//   // const routeData = router.replace({ name: '/product-model' });
+//   window.open('/disaster-prevention', '_blank');
+// };
 </script>
 
 <template>
   <div class="primary-school">
-    <div class="house-bg" @click="toPage1"></div>
+    <div class="house-bg"></div>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
-import LogoIcon from './svg/logo_icon.vue';
-import LogoNcdr from './svg/logo_ncdr.vue';
+import Logo_Ncdr_Icon from './svg/logo_ncdr.vue';
+import Logo_Icon from './svg/logo_icon.vue';
 
 const toggle = ref(false);
 const menuToggle = () => {
@@ -29,10 +29,10 @@ const menuToggle = () => {
                     title="行政法人國災害防救科技中心"
                     target="_blank"
                   >
-                    <LogoNcdr class="svg-img" />
+                    <Logo_Ncdr_Icon class="svg-img" />
                   </a>
                   <a href="index.html" title="防災特輯">
-                    <LogoIcon class="svg-img" />
+                    <Logo_Icon class="svg-img" />
                   </a>
                 </h1>
               </div>
