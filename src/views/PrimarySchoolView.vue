@@ -285,9 +285,10 @@ const clickHouse = (houseName) => {
     people_flowOpenWindowsJson.value.setDirection(1);
     people_flowOpenWindowsJson.value.play();
     setTimeout(() => {
-      // const routeData = router.resolve('disaster-prevention');
-      // window.open(routeData.href, '_blank');
-      router.push('disaster-prevention');
+      if (import.meta.env.PROD == false) {
+        const routeData = router.resolve('disaster-prevention');
+        window.open(routeData.href, '_blank');
+      } else router.push('disaster-prevention');
     }, 1000);
   } else if (houseName == 'norm') {
     normOpenDoorJson.value.setDirection(1);
@@ -295,9 +296,10 @@ const clickHouse = (houseName) => {
     normOpenWindowsJson.value.setDirection(1);
     normOpenWindowsJson.value.play();
     setTimeout(() => {
-      // const routeData = router.resolve('disaster-prevention');
-      // window.open(routeData.href, '_blank');
-      router.push('disaster-prevention');
+      if (import.meta.env.PROD == false) {
+        const routeData = router.resolve('disaster-prevention');
+        window.open(routeData.href, '_blank');
+      } else router.push('disaster-prevention');
     }, 1000);
   } else if (houseName == 'twin') {
     twinOpenDoorJson.value.setDirection(1);
@@ -305,9 +307,10 @@ const clickHouse = (houseName) => {
     twinOpenWindowsJson.value.setDirection(1);
     twinOpenWindowsJson.value.play();
     setTimeout(() => {
-      // const routeData = router.resolve('disaster-prevention');
-      // window.open(routeData.href, '_blank');
-      router.push('disaster-prevention');
+      if (import.meta.env.PROD == false) {
+        const routeData = router.resolve('disaster-prevention');
+        window.open(routeData.href, '_blank');
+      } else router.push('disaster-prevention');
     }, 1000);
   } else if (houseName == 'strategy') {
     strategyOpenDoorJson.value.setDirection(1);
@@ -315,9 +318,10 @@ const clickHouse = (houseName) => {
     strategyOpenWindowsJson.value.setDirection(1);
     strategyOpenWindowsJson.value.play();
     setTimeout(() => {
-      // const routeData = router.resolve('disaster-prevention');
-      // window.open(routeData.href, '_blank');
-      router.push('disaster-prevention');
+      if (import.meta.env.PROD == false) {
+        const routeData = router.resolve('disaster-prevention');
+        window.open(routeData.href, '_blank');
+      } else router.push('disaster-prevention');
     }, 1000);
   } else if (houseName == 'potential') {
     potentialOpenDoorJson.value.setDirection(1);
@@ -325,9 +329,10 @@ const clickHouse = (houseName) => {
     potentialOpenWindowsJson.value.setDirection(1);
     potentialOpenWindowsJson.value.play();
     setTimeout(() => {
-      // const routeData = router.resolve('disaster-prevention');
-      // window.open(routeData.href, '_blank');
-      router.push('disaster-prevention');
+      if (import.meta.env.PROD == false) {
+        const routeData = router.resolve('disaster-prevention');
+        window.open(routeData.href, '_blank');
+      } else router.push('disaster-prevention');
     }, 1000);
   } else if (houseName == 'atmosphere') {
     atmosphereOpenDoorJson.value.setDirection(1);
@@ -335,9 +340,10 @@ const clickHouse = (houseName) => {
     atmosphereOpenWindowsJson.value.setDirection(1);
     atmosphereOpenWindowsJson.value.play();
     setTimeout(() => {
-      // const routeData = router.resolve('disaster-prevention');
-      // window.open(routeData.href, '_blank');
-      router.push('disaster-prevention');
+      if (import.meta.env.PROD == false) {
+        const routeData = router.resolve('disaster-prevention');
+        window.open(routeData.href, '_blank');
+      } else router.push('disaster-prevention');
     }, 1000);
   }
 };
