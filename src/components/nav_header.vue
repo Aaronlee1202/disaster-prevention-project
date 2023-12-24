@@ -8,6 +8,9 @@ const menuToggle = () => {
   if (toggle.value == false) toggle.value = true;
   else toggle.value = false;
 };
+const toHomePage = () => {
+  window.open('https://www.ncdr.nat.gov.tw/', '_blank');
+};
 </script>
 
 <template>
@@ -24,14 +27,10 @@ const menuToggle = () => {
             <div class="header-row">
               <div class="header-logo">
                 <h1>
-                  <a
-                    href="https://www.ncdr.nat.gov.tw/"
-                    title="行政法人國災害防救科技中心"
-                    target="_blank"
-                  >
+                  <a @click="toHomePage" title="行政法人國災害防救科技中心" target="_blank">
                     <Logo_Ncdr_Icon class="svg-img" />
                   </a>
-                  <a href="index.html" title="防災特輯">
+                  <a @click="toHomePage" title="防災特輯">
                     <Logo_Icon class="svg-img" />
                   </a>
                 </h1>
@@ -156,3 +155,11 @@ const menuToggle = () => {
     </div>
   </header>
 </template>
+
+<style lang="scss" scoped>
+.header-logo {
+  a {
+    cursor: pointer;
+  }
+}
+</style>

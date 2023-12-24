@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, onBeforeUnmount, ref, watch } from 'vue';
 import lottie from 'lottie-web';
+import { useRouter } from 'vue-router';
 import people_flow from '@/assets/lottie/people_flow.json';
 import people_flow_open_door from '@/assets/lottie/people_flow_open_door.json';
 import people_flow_open_windows from '@/assets/lottie/people_flow_open_windows.json';
@@ -23,7 +24,6 @@ import arrow_share from '@/components/svg/arrow_share.vue';
 import facebook_icon from '@/components/svg/facebook_icon.vue';
 import line_icon from '@/components/svg/line_icon.vue';
 import Home_Icon from '@/components/svg/home_icon.vue';
-import { useRouter } from 'vue-router';
 
 const screenWidth = ref(
   window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
@@ -103,6 +103,7 @@ onBeforeUnmount(() => {
   atmosphereOpenWindowsJson.value.destroy();
 });
 const peopleFlowAnimation = () => {
+  const peopleFlowClick = document.querySelector('.people-flow-click');
   const decoration = document.getElementById(`people-flow`);
   const decorationOpenDoor = document.getElementById(`people-flow-open-door`);
   const decorationOpenWindows = document.getElementById(`people-flow-open-windows`);
@@ -129,9 +130,16 @@ const peopleFlowAnimation = () => {
   });
 
   people_flowJson.value.play();
+  peopleFlowClick.addEventListener('mouseover', () => {
+    document.getElementById(`people-flow-house`).style.opacity = 1;
+  });
+  peopleFlowClick.addEventListener('mouseout', () => {
+    document.getElementById(`people-flow-house`).style.opacity = 0.5;
+  });
 };
 
 const normAnimation = () => {
+  const normHouseClick = document.querySelector('.norm-house-click');
   const decoration = document.getElementById(`norm`);
   const decorationOpenDoor = document.getElementById(`norm-open-door`);
   const decorationOpenWindows = document.getElementById(`norm-open-windows`);
@@ -158,9 +166,16 @@ const normAnimation = () => {
   });
 
   normJson.value.play();
+  normHouseClick.addEventListener('mouseover', () => {
+    document.getElementById(`norm-house`).style.opacity = 1;
+  });
+  normHouseClick.addEventListener('mouseout', () => {
+    document.getElementById(`norm-house`).style.opacity = 0.5;
+  });
 };
 
 const twinAnimation = () => {
+  const twinHouseClick = document.querySelector('.twin-house-click');
   const decoration = document.getElementById(`twin`);
   const decorationOpenDoor = document.getElementById(`twin-open-door`);
   const decorationOpenWindows = document.getElementById(`twin-open-windows`);
@@ -187,9 +202,16 @@ const twinAnimation = () => {
   });
 
   twinJson.value.play();
+  twinHouseClick.addEventListener('mouseover', () => {
+    document.getElementById(`twin-house`).style.opacity = 1;
+  });
+  twinHouseClick.addEventListener('mouseout', () => {
+    document.getElementById(`twin-house`).style.opacity = 0.5;
+  });
 };
 
 const strategyAnimation = () => {
+  const strategyHouseClick = document.querySelector('.strategy-house-click');
   const decoration = document.getElementById(`strategy`);
   const decorationOpenDoor = document.getElementById(`strategy-open-door`);
   const decorationOpenWindows = document.getElementById(`strategy-open-windows`);
@@ -216,9 +238,16 @@ const strategyAnimation = () => {
   });
 
   strategyJson.value.play();
+  strategyHouseClick.addEventListener('mouseover', () => {
+    document.getElementById(`strategy-house`).style.opacity = 1;
+  });
+  strategyHouseClick.addEventListener('mouseout', () => {
+    document.getElementById(`strategy-house`).style.opacity = 0.5;
+  });
 };
 
 const potentialAnimation = () => {
+  const potentialHouseClick = document.querySelector('.potential-house-click');
   const decoration = document.getElementById(`potential`);
   const decorationOpenDoor = document.getElementById(`potential-open-door`);
   const decorationOpenWindows = document.getElementById(`potential-open-windows`);
@@ -245,9 +274,16 @@ const potentialAnimation = () => {
   });
 
   potentialJson.value.play();
+  potentialHouseClick.addEventListener('mouseover', () => {
+    document.getElementById(`potential-house`).style.opacity = 1;
+  });
+  potentialHouseClick.addEventListener('mouseout', () => {
+    document.getElementById(`potential-house`).style.opacity = 0.5;
+  });
 };
 
 const atmosphereAnimation = () => {
+  const atmosphereHouseClick = document.querySelector('.atmosphere-house-click');
   const decoration = document.getElementById(`atmosphere`);
   const decorationOpenDoor = document.getElementById(`atmosphere-open-door`);
   const decorationOpenWindows = document.getElementById(`atmosphere-open-windows`);
@@ -274,14 +310,27 @@ const atmosphereAnimation = () => {
   });
 
   atmosphereJson.value.play();
+  atmosphereHouseClick.addEventListener('mouseover', () => {
+    document.getElementById(`atmosphere-house`).style.opacity = 1;
+  });
+  atmosphereHouseClick.addEventListener('mouseout', () => {
+    document.getElementById(`atmosphere-house`).style.opacity = 0.5;
+  });
 };
 
 const router = useRouter();
 // 命名需修改
 const clickHouse = (houseName) => {
-  if (houseName == 'people-flow') {
+  if (houseName == 'people-flow-open-door') {
     people_flowOpenDoorJson.value.setDirection(1);
     people_flowOpenDoorJson.value.play();
+    setTimeout(() => {
+      if (import.meta.env.PROD == false) {
+        const routeData = router.resolve('disaster-prevention');
+        window.open(routeData.href, '_blank');
+      } else router.push('disaster-prevention');
+    }, 1000);
+  } else if (houseName == 'people-flow-open-windows') {
     people_flowOpenWindowsJson.value.setDirection(1);
     people_flowOpenWindowsJson.value.play();
     setTimeout(() => {
@@ -290,9 +339,16 @@ const clickHouse = (houseName) => {
         window.open(routeData.href, '_blank');
       } else router.push('disaster-prevention');
     }, 1000);
-  } else if (houseName == 'norm') {
+  } else if (houseName == 'norm-house-open-door') {
     normOpenDoorJson.value.setDirection(1);
     normOpenDoorJson.value.play();
+    setTimeout(() => {
+      if (import.meta.env.PROD == false) {
+        const routeData = router.resolve('disaster-prevention');
+        window.open(routeData.href, '_blank');
+      } else router.push('disaster-prevention');
+    }, 1000);
+  } else if (houseName == 'norm-house-open-windows') {
     normOpenWindowsJson.value.setDirection(1);
     normOpenWindowsJson.value.play();
     setTimeout(() => {
@@ -301,9 +357,16 @@ const clickHouse = (houseName) => {
         window.open(routeData.href, '_blank');
       } else router.push('disaster-prevention');
     }, 1000);
-  } else if (houseName == 'twin') {
+  } else if (houseName == 'twin-house-open-door') {
     twinOpenDoorJson.value.setDirection(1);
     twinOpenDoorJson.value.play();
+    setTimeout(() => {
+      if (import.meta.env.PROD == false) {
+        const routeData = router.resolve('disaster-prevention');
+        window.open(routeData.href, '_blank');
+      } else router.push('disaster-prevention');
+    }, 1000);
+  } else if (houseName == 'twin-house-open-windows') {
     twinOpenWindowsJson.value.setDirection(1);
     twinOpenWindowsJson.value.play();
     setTimeout(() => {
@@ -312,9 +375,16 @@ const clickHouse = (houseName) => {
         window.open(routeData.href, '_blank');
       } else router.push('disaster-prevention');
     }, 1000);
-  } else if (houseName == 'strategy') {
+  } else if (houseName == 'strategy-house-open-door') {
     strategyOpenDoorJson.value.setDirection(1);
     strategyOpenDoorJson.value.play();
+    setTimeout(() => {
+      if (import.meta.env.PROD == false) {
+        const routeData = router.resolve('disaster-prevention');
+        window.open(routeData.href, '_blank');
+      } else router.push('disaster-prevention');
+    }, 1000);
+  } else if (houseName == 'strategy-house-open-windows') {
     strategyOpenWindowsJson.value.setDirection(1);
     strategyOpenWindowsJson.value.play();
     setTimeout(() => {
@@ -323,9 +393,16 @@ const clickHouse = (houseName) => {
         window.open(routeData.href, '_blank');
       } else router.push('disaster-prevention');
     }, 1000);
-  } else if (houseName == 'potential') {
+  } else if (houseName == 'potential-house-open-door') {
     potentialOpenDoorJson.value.setDirection(1);
     potentialOpenDoorJson.value.play();
+    setTimeout(() => {
+      if (import.meta.env.PROD == false) {
+        const routeData = router.resolve('disaster-prevention');
+        window.open(routeData.href, '_blank');
+      } else router.push('disaster-prevention');
+    }, 1000);
+  } else if (houseName == 'potential-house-open-windows') {
     potentialOpenWindowsJson.value.setDirection(1);
     potentialOpenWindowsJson.value.play();
     setTimeout(() => {
@@ -334,9 +411,16 @@ const clickHouse = (houseName) => {
         window.open(routeData.href, '_blank');
       } else router.push('disaster-prevention');
     }, 1000);
-  } else if (houseName == 'atmosphere') {
+  } else if (houseName == 'atmosphere-house-open-door') {
     atmosphereOpenDoorJson.value.setDirection(1);
     atmosphereOpenDoorJson.value.play();
+    setTimeout(() => {
+      if (import.meta.env.PROD == false) {
+        const routeData = router.resolve('disaster-prevention');
+        window.open(routeData.href, '_blank');
+      } else router.push('disaster-prevention');
+    }, 1000);
+  } else if (houseName == 'atmosphere-house-open-windows') {
     atmosphereOpenWindowsJson.value.setDirection(1);
     atmosphereOpenWindowsJson.value.play();
     setTimeout(() => {
@@ -347,6 +431,9 @@ const clickHouse = (houseName) => {
     }, 1000);
   }
 };
+// const goHomePage = () => {
+//   router.push('/');
+// };
 </script>
 
 <template>
@@ -360,7 +447,7 @@ const clickHouse = (houseName) => {
 
       <div class="house-box">
         <div class="house-bg"></div>
-        <div id="people-flow-house" @click="clickHouse('people-flow')">
+        <div id="people-flow-house">
           <div class="d-flex align-items-center justify-content-center">
             <div class="house-title d-flex align-items-center justify-content-center">人流樓</div>
           </div>
@@ -368,7 +455,11 @@ const clickHouse = (houseName) => {
           <div id="people-flow-open-door"></div>
           <div id="people-flow-open-windows"></div>
         </div>
-        <div id="norm-house" @click="clickHouse('norm')">
+        <div class="people-flow-click">
+          <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
+          <div class="windows-click" @click="clickHouse('people-flow-open-windows')"></div>
+        </div>
+        <div id="norm-house">
           <div class="d-flex align-items-center justify-content-center">
             <div class="house-title d-flex align-items-center justify-content-center">指標樓</div>
           </div>
@@ -376,7 +467,11 @@ const clickHouse = (houseName) => {
           <div id="norm-open-door"></div>
           <div id="norm-open-windows"></div>
         </div>
-        <div id="twin-house" @click="clickHouse('twin')">
+        <div class="norm-house-click">
+          <div class="door-click" @click="clickHouse('norm-house-open-door')"></div>
+          <div class="windows-click" @click="clickHouse('norm-house-open-windows')"></div>
+        </div>
+        <div id="twin-house">
           <div class="d-flex align-items-center justify-content-center">
             <div class="house-title d-flex align-items-center justify-content-center">孿生樓</div>
           </div>
@@ -384,7 +479,11 @@ const clickHouse = (houseName) => {
           <div id="twin-open-door"></div>
           <div id="twin-open-windows"></div>
         </div>
-        <div id="strategy-house" @click="clickHouse('strategy')">
+        <div class="twin-house-click">
+          <div class="door-click" @click="clickHouse('twin-house-open-door')"></div>
+          <div class="windows-click" @click="clickHouse('twin-house-open-windows')"></div>
+        </div>
+        <div id="strategy-house">
           <div class="d-flex align-items-center justify-content-center">
             <div class="house-title d-flex align-items-center justify-content-center">策略樓</div>
           </div>
@@ -392,7 +491,11 @@ const clickHouse = (houseName) => {
           <div id="strategy-open-door"></div>
           <div id="strategy-open-windows"></div>
         </div>
-        <div id="potential-house" @click="clickHouse('potential')">
+        <div class="strategy-house-click">
+          <div class="door-click" @click="clickHouse('strategy-house-open-door')"></div>
+          <div class="windows-click" @click="clickHouse('strategy-house-open-windows')"></div>
+        </div>
+        <div id="potential-house">
           <div class="d-flex align-items-center justify-content-center">
             <div class="house-title d-flex align-items-center justify-content-center">潛勢樓</div>
           </div>
@@ -400,13 +503,21 @@ const clickHouse = (houseName) => {
           <div id="potential-open-door"></div>
           <div id="potential-open-windows"></div>
         </div>
-        <div id="atmosphere-house" @click="clickHouse('atmosphere')">
+        <div class="potential-house-click">
+          <div class="door-click" @click="clickHouse('potential-house-open-door')"></div>
+          <div class="windows-click" @click="clickHouse('potential-house-open-windows')"></div>
+        </div>
+        <div id="atmosphere-house">
           <div class="d-flex align-items-center justify-content-center">
             <div class="house-title d-flex align-items-center justify-content-center">氣象樓</div>
           </div>
           <div id="atmosphere"></div>
           <div id="atmosphere-open-door"></div>
           <div id="atmosphere-open-windows"></div>
+        </div>
+        <div class="atmosphere-house-click">
+          <div class="door-click" @click="clickHouse('atmosphere-house-open-door')"></div>
+          <div class="windows-click" @click="clickHouse('atmosphere-house-open-windows')"></div>
         </div>
 
         <div class="row custom-row align-items-end">
@@ -443,7 +554,9 @@ const clickHouse = (houseName) => {
         </div>
       </div>
       <div class="row">
-        <div class="col-12 mb-2 d-flex align-items-center justify-content-center">
+        <div
+          class="people-flow-container col-12 mb-2 d-flex align-items-center justify-content-center"
+        >
           <div id="people-flow-house" @click="clickHouse('people-flow')">
             <div class="d-flex align-items-center justify-content-center">
               <div class="house-title d-flex align-items-center justify-content-center">人流樓</div>
@@ -452,9 +565,13 @@ const clickHouse = (houseName) => {
             <div id="people-flow-open-door"></div>
             <div id="people-flow-open-windows"></div>
           </div>
+          <div class="people-flow-click">
+            <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
+            <div class="windows-click" @click="clickHouse('people-flow-open-windows')"></div>
+          </div>
         </div>
-        <div class="col-12 mb-5 d-flex align-items-center justify-content-center">
-          <div id="norm-house" @click="clickHouse('norm')">
+        <div class="norm-container col-12 mb-5 d-flex align-items-center justify-content-center">
+          <div id="norm-house">
             <div class="d-flex align-items-center justify-content-center">
               <div class="house-title d-flex align-items-center justify-content-center">指標樓</div>
             </div>
@@ -462,9 +579,13 @@ const clickHouse = (houseName) => {
             <div id="norm-open-door"></div>
             <div id="norm-open-windows"></div>
           </div>
+          <div class="norm-house-click">
+            <div class="door-click" @click="clickHouse('norm-house-open-door')"></div>
+            <div class="windows-click" @click="clickHouse('norm-house-open-windows')"></div>
+          </div>
         </div>
-        <div class="col-12 mb-2 d-flex align-items-center justify-content-center">
-          <div id="twin-house" @click="clickHouse('twin')">
+        <div class="twin-container col-12 mb-2 d-flex align-items-center justify-content-center">
+          <div id="twin-house">
             <div class="d-flex align-items-center justify-content-center">
               <div class="house-title d-flex align-items-center justify-content-center">孿生樓</div>
             </div>
@@ -472,8 +593,14 @@ const clickHouse = (houseName) => {
             <div id="twin-open-door"></div>
             <div id="twin-open-windows"></div>
           </div>
+          <div class="twin-house-click">
+            <div class="door-click" @click="clickHouse('twin-house-open-door')"></div>
+            <div class="windows-click" @click="clickHouse('twin-house-open-windows')"></div>
+          </div>
         </div>
-        <div class="col-12 mb-2 d-flex align-items-center justify-content-center">
+        <div
+          class="strategy-container col-12 mb-2 d-flex align-items-center justify-content-center"
+        >
           <div id="strategy-house" @click="clickHouse('strategy')">
             <div class="d-flex align-items-center justify-content-center">
               <div class="house-title d-flex align-items-center justify-content-center">策略樓</div>
@@ -482,8 +609,14 @@ const clickHouse = (houseName) => {
             <div id="strategy-open-door"></div>
             <div id="strategy-open-windows"></div>
           </div>
+          <div class="strategy-house-click">
+            <div class="door-click" @click="clickHouse('strategy-house-open-door')"></div>
+            <div class="windows-click" @click="clickHouse('strategy-house-open-windows')"></div>
+          </div>
         </div>
-        <div class="col-12 mb-2 d-flex align-items-center justify-content-center">
+        <div
+          class="potential-container col-12 mb-2 d-flex align-items-center justify-content-center"
+        >
           <div id="potential-house" @click="clickHouse('potential')">
             <div class="d-flex align-items-center justify-content-center">
               <div class="house-title d-flex align-items-center justify-content-center">潛勢樓</div>
@@ -492,8 +625,14 @@ const clickHouse = (houseName) => {
             <div id="potential-open-door"></div>
             <div id="potential-open-windows"></div>
           </div>
+          <div class="potential-house-click">
+            <div class="door-click" @click="clickHouse('potential-house-open-door')"></div>
+            <div class="windows-click" @click="clickHouse('potential-house-open-windows')"></div>
+          </div>
         </div>
-        <div class="col-12 mb-5 d-flex align-items-center justify-content-center">
+        <div
+          class="atmosphere-container col-12 mb-5 d-flex align-items-center justify-content-center"
+        >
           <div id="atmosphere-house" @click="clickHouse('atmosphere')">
             <div class="d-flex align-items-center justify-content-center">
               <div class="house-title d-flex align-items-center justify-content-center">氣象樓</div>
@@ -501,6 +640,10 @@ const clickHouse = (houseName) => {
             <div id="atmosphere"></div>
             <div id="atmosphere-open-door"></div>
             <div id="atmosphere-open-windows"></div>
+          </div>
+          <div class="atmosphere-house-click">
+            <div class="door-click" @click="clickHouse('atmosphere-house-open-door')"></div>
+            <div class="windows-click" @click="clickHouse('atmosphere-house-open-windows')"></div>
           </div>
         </div>
       </div>
@@ -610,19 +753,45 @@ const clickHouse = (houseName) => {
     background-position: center;
     z-index: -999;
   }
+  .people-flow-click {
+    position: absolute;
+    width: 200px !important;
+    height: 180px !important;
+    top: 10% !important;
+    left: 57% !important;
+    transform: translate(-50%, -50%);
+    // border: #3f3a3a 1px solid;
+    z-index: 999;
+    .door-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 55%;
+      left: 15%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .windows-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 45%;
+      right: 0;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
   #people-flow-house {
     position: absolute;
     width: 320px !important;
     height: 316.005px !important;
-    top: 20% !important;
+    top: 18% !important;
     left: 57% !important;
     transform: translate(-50%, -50%);
-    cursor: pointer;
-    z-index: 998;
+    z-index: -9;
     opacity: 0.5;
-    &:hover {
-      opacity: 1;
-    }
     .house-title {
       position: absolute;
       width: 74px;
@@ -647,6 +816,36 @@ const clickHouse = (houseName) => {
       position: absolute;
     }
   }
+  .norm-house-click {
+    position: absolute;
+    width: 200px !important;
+    height: 180px !important;
+    top: 27% !important;
+    left: 76% !important;
+    transform: translate(-50%, -50%);
+    // border: #3f3a3a 1px solid;
+    z-index: 999;
+    .door-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 55%;
+      left: 6%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .windows-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 45%;
+      right: 15%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
   #norm-house {
     position: absolute;
     width: 320px !important;
@@ -655,11 +854,8 @@ const clickHouse = (houseName) => {
     left: 75% !important;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    z-index: 998;
+    z-index: -1;
     opacity: 0.5;
-    &:hover {
-      opacity: 1;
-    }
     .house-title {
       position: absolute;
       width: 74px;
@@ -684,6 +880,37 @@ const clickHouse = (houseName) => {
       position: absolute;
     }
   }
+  .twin-house-click {
+    position: absolute;
+    width: 200px !important;
+    height: 180px !important;
+    top: 25% !important;
+    left: 40% !important;
+    transform: translate(-50%, -50%);
+    // border: #3f3a3a 1px solid;
+    z-index: 999;
+    .door-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+
+      top: 45%;
+      right: 5%;
+      // background-color: #3f3a3a50;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .windows-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 45%;
+      left: 20%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
   #twin-house {
     position: absolute;
     width: 320px !important;
@@ -692,7 +919,7 @@ const clickHouse = (houseName) => {
     left: 40% !important;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    z-index: 998;
+    z-index: -1;
     opacity: 0.5;
     &:hover {
       opacity: 1;
@@ -721,6 +948,36 @@ const clickHouse = (houseName) => {
       position: absolute;
     }
   }
+  .strategy-house-click {
+    position: absolute;
+    width: 200px !important;
+    height: 180px !important;
+    top: 40% !important;
+    left: 58% !important;
+    transform: translate(-50%, -50%);
+    // border: #3f3a3a 1px solid;
+    z-index: 999;
+    .door-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 50%;
+      left: 20%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .windows-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 50%;
+      right: 0%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
   #strategy-house {
     position: absolute;
     width: 320px !important;
@@ -729,7 +986,7 @@ const clickHouse = (houseName) => {
     left: 58% !important;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    z-index: 998;
+    z-index: -1;
     opacity: 0.5;
     &:hover {
       opacity: 1;
@@ -758,6 +1015,36 @@ const clickHouse = (houseName) => {
       position: absolute;
     }
   }
+  .potential-house-click {
+    position: absolute;
+    width: 200px !important;
+    height: 180px !important;
+    top: 39% !important;
+    left: 22% !important;
+    transform: translate(-50%, -50%);
+    // border: #3f3a3a 1px solid;
+    z-index: 999;
+    .door-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 50% !important;
+      left: 10% !important;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .windows-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 25% !important;
+      right: 7% !important;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
   #potential-house {
     position: absolute;
     width: 320px !important;
@@ -766,7 +1053,7 @@ const clickHouse = (houseName) => {
     left: 22% !important;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    z-index: 998;
+    z-index: -1;
     opacity: 0.5;
     &:hover {
       opacity: 1;
@@ -795,6 +1082,36 @@ const clickHouse = (houseName) => {
       position: absolute;
     }
   }
+  .atmosphere-house-click {
+    position: absolute;
+    width: 220px !important;
+    height: 180px !important;
+    top: 57% !important;
+    left: 40% !important;
+    transform: translate(-50%, -50%);
+    // border: #3f3a3a 1px solid;
+    z-index: 999;
+    .door-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 40% !important;
+      left: 0% !important;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .windows-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 40% !important;
+      right: 0% !important;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
   #atmosphere-house {
     position: absolute;
     width: 320px !important;
@@ -803,7 +1120,7 @@ const clickHouse = (houseName) => {
     left: 40% !important;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    z-index: 998;
+    z-index: -1;
     opacity: 0.5;
     &:hover {
       opacity: 1;
@@ -911,12 +1228,41 @@ const clickHouse = (houseName) => {
     background-position: center;
     z-index: -999;
   }
+  .people-flow-click {
+    position: absolute;
+    width: 200px !important;
+    height: 180px !important;
+    top: 22%;
+    left: 57%;
+    transform: translate(-50%, -50%);
+    // border: #3f3a3a 1px solid;
+    z-index: 999;
+    .door-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 55%;
+      left: 19%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .windows-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 40%;
+      right: 5%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
   #people-flow-house {
     position: absolute;
     width: 250px;
-    // height: 296.005px;
-    top: 10%;
-    left: 57%;
+    top: 10% !important;
+    left: 57% !important;
     transform: translate(-50%, -50%);
     cursor: pointer;
     z-index: 998;
@@ -948,12 +1294,41 @@ const clickHouse = (houseName) => {
       position: absolute;
     }
   }
+  .norm-house-click {
+    position: absolute;
+    width: 200px !important;
+    height: 180px !important;
+    top: 38%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    // border: #3f3a3a 1px solid;
+    z-index: 999;
+    .door-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 55%;
+      left: 12%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .windows-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 45%;
+      right: 13%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
   #norm-house {
     position: absolute;
     width: 250px;
-    // height: 316.005px;
-    top: 24%;
-    left: 75%;
+    top: 24% !important;
+    left: 75% !important;
     transform: translate(-50%, -50%);
     cursor: pointer;
     z-index: 998;
@@ -985,12 +1360,43 @@ const clickHouse = (houseName) => {
       position: absolute;
     }
   }
+  .twin-house-click {
+    position: absolute;
+    width: 200px !important;
+    height: 180px !important;
+    top: 37%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    // border: #3f3a3a 1px solid;
+    z-index: 999;
+    .door-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+
+      top: 45%;
+      right: 5%;
+      // background-color: #3f3a3a50;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .windows-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 45%;
+      left: 20%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
   #twin-house {
     position: absolute;
     width: 250px;
     // height: 316.005px;
-    top: 23%;
-    left: 40%;
+    top: 23% !important;
+    left: 40% !important;
     transform: translate(-50%, -50%);
     cursor: pointer;
     z-index: 998;
@@ -1022,12 +1428,42 @@ const clickHouse = (houseName) => {
       position: absolute;
     }
   }
+  .strategy-house-click {
+    position: absolute;
+    width: 200px !important;
+    height: 180px !important;
+    top: 52%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    // border: #3f3a3a 1px solid;
+    z-index: 999;
+    .door-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 50%;
+      left: 20%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .windows-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 50%;
+      right: 0%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
   #strategy-house {
     position: absolute;
     width: 250px;
     // height: 316.005px;
-    top: 40%;
-    left: 58%;
+    top: 40% !important;
+    left: 58% !important;
     transform: translate(-50%, -50%);
     cursor: pointer;
     z-index: 998;
@@ -1059,12 +1495,42 @@ const clickHouse = (houseName) => {
       position: absolute;
     }
   }
+  .potential-house-click {
+    position: absolute;
+    width: 200px !important;
+    height: 180px !important;
+    top: 50%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+    // border: #3f3a3a 1px solid;
+    z-index: 999;
+    .door-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 53%;
+      left: 15%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .windows-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 30%;
+      right: 10%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
   #potential-house {
     position: absolute;
     width: 250px;
     // height: 316.005px;
-    top: 37%;
-    left: 22%;
+    top: 37% !important;
+    left: 22% !important;
     transform: translate(-50%, -50%);
     cursor: pointer;
     z-index: 998;
@@ -1096,12 +1562,42 @@ const clickHouse = (houseName) => {
       position: absolute;
     }
   }
+  .atmosphere-house-click {
+    position: absolute;
+    width: 220px !important;
+    height: 180px !important;
+    top: 69%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    // border: #3f3a3a 1px solid;
+    z-index: 999;
+    .door-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 40%;
+      left: 5%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .windows-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 30%;
+      right: 5%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
   #atmosphere-house {
     position: absolute;
     width: 250px;
     // height: 316.005px;
-    top: 55%;
-    left: 40%;
+    top: 55% !important;
+    left: 40% !important;
     transform: translate(-50%, -50%);
     cursor: pointer;
     z-index: 998;
@@ -1134,6 +1630,466 @@ const clickHouse = (houseName) => {
     }
   }
 }
+// @media screen and (max-width: 992px) {
+//   .container-fluid {
+//     padding: 0;
+//   }
+//   .primary-school {
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+//     padding-top: 35%;
+//     background-color: #fffcec;
+//   }
+//   .title-img {
+//     width: 70%;
+//     padding: 0;
+//     margin-bottom: 50px;
+//   }
+
+//   .custom-row {
+//     width: 100%;
+//     height: 300px;
+//     margin: 0;
+//     .share-card {
+//       width: 160px;
+//       height: 157px;
+//       background-color: #fffcec;
+//       color: #605d5a;
+//       border-radius: 8px;
+//       svg {
+//         fill: #605d5a;
+//       }
+//       .share-title {
+//         width: 100%;
+//         padding: 0.75rem 0;
+//         display: flex;
+//         justify-content: center;
+//         border-bottom: 1px solid #cccccc;
+//       }
+//       .share-btn-box {
+//         width: 100%;
+//         margin: 1rem 0;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         .share-btn {
+//           width: 80px;
+//           cursor: pointer;
+//         }
+//       }
+//       .home-btn {
+//         width: 160px;
+//         height: 60px;
+//         border-radius: 20px;
+//         border: 2px solid #605d5a;
+//         background: #fff;
+//         cursor: pointer;
+//         svg {
+//           margin-right: 5px;
+//         }
+//         &:hover {
+//           background: #605d5a;
+//           color: #fff;
+//           svg {
+//             fill: #fff;
+//           }
+//         }
+//       }
+//     }
+//   }
+//   .people-flow-container {
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+//   }
+//   .people-flow-click {
+//     position: absolute;
+//     width: 200px !important;
+//     height: 180px !important;
+//     top: 52% !important;
+//     left: 50% !important;
+//     transform: translate(-50%, -50%);
+//     // border: #3f3a3a 1px solid;
+//     z-index: 999;
+//     .door-click {
+//       position: absolute;
+//       width: 70px;
+//       height: 70px;
+//       top: 55%;
+//       left: 16%;
+//       // background-color: #3f3a3a60;
+//       cursor: pointer;
+//       z-index: 999;
+//     }
+//     .windows-click {
+//       position: absolute;
+//       width: 70px;
+//       height: 70px;
+//       top: 35%;
+//       right: 0%;
+//       // background-color: #3f3a3a60;
+//       cursor: pointer;
+//       z-index: 999;
+//     }
+//   }
+//   #people-flow-house {
+//     position: relative !important;
+//     width: 320px;
+//     height: 316.005px;
+//     cursor: pointer;
+//     z-index: 998;
+//     .house-title {
+//       position: absolute;
+//       width: 74px;
+//       height: 32px;
+//       top: 7%;
+//       left: 50%;
+//       transform: translate(-50%, -50%);
+//       color: #ff8787;
+//       border-radius: 4px;
+//       border: 1px solid #f99;
+//       background: #fff7f7;
+//       z-index: 999;
+//       opacity: 0.7;
+//     }
+//     #people-flow {
+//       position: absolute;
+//     }
+//     #people-flow-open-door {
+//       position: absolute;
+//     }
+//     #people-flow-open-windows {
+//       position: absolute;
+//     }
+//   }
+//   .norm-container {
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+//   }
+//   .norm-house-click {
+//     position: absolute;
+//     width: 200px !important;
+//     height: 180px !important;
+//     top: 60% !important;
+//     left: 50% !important;
+//     transform: translate(-50%, -50%);
+//     border: #3f3a3a 1px solid;
+//     z-index: 999;
+//     .door-click {
+//       position: absolute;
+//       width: 70px;
+//       height: 70px;
+//       top: 50%;
+//       left: 12%;
+//       background-color: #3f3a3a60;
+//       cursor: pointer;
+//       z-index: 999;
+//     }
+//     .windows-click {
+//       position: absolute;
+//       width: 70px;
+//       height: 70px;
+//       top: 45%;
+//       right: 13%;
+//       background-color: #3f3a3a60;
+//       cursor: pointer;
+//       z-index: 999;
+//     }
+//   }
+//   #norm-house {
+//     position: relative !important;
+//     width: 320px;
+//     height: 316.005px;
+//     cursor: pointer;
+//     z-index: 998;
+//     .house-title {
+//       position: absolute;
+//       width: 74px;
+//       height: 32px;
+//       top: 7%;
+//       left: 50%;
+//       transform: translate(-50%, -50%);
+//       color: #f4fefd;
+//       border-radius: 4px;
+//       border: 1px solid #68cec2;
+//       background: #26a8a8;
+//       z-index: 999;
+//       opacity: 0.7;
+//     }
+//     #norm {
+//       position: absolute;
+//     }
+//     #norm-open-door {
+//       position: absolute;
+//     }
+//     #norm-open-windows {
+//       position: absolute;
+//     }
+//   }
+//   .twin-container {
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+//   }
+//   .twin-house-click {
+//     position: absolute;
+//     width: 200px !important;
+//     height: 180px !important;
+//     top: 54% !important;
+//     left: 50% !important;
+//     transform: translate(-50%, -50%);
+//     border: #3f3a3a 1px solid;
+//     z-index: 999;
+//     .door-click {
+//       position: absolute;
+//       width: 70px;
+//       height: 70px;
+//       top: 50%;
+//       right: 0%;
+//       background-color: #3f3a3a60;
+//       cursor: pointer;
+//       z-index: 999;
+//     }
+//     .windows-click {
+//       position: absolute;
+//       width: 70px;
+//       height: 70px;
+//       top: 50%;
+//       left: 19%;
+//       background-color: #3f3a3a60;
+//       cursor: pointer;
+//       z-index: 999;
+//     }
+//   }
+//   #twin-house {
+//     position: relative !important;
+//     width: 320px;
+//     height: 316.005px;
+//     cursor: pointer;
+//     z-index: 998;
+//     .house-title {
+//       position: absolute;
+//       width: 74px;
+//       height: 32px;
+//       top: 7%;
+//       left: 50%;
+//       transform: translate(-50%, -50%);
+//       color: #d17b32;
+//       border-radius: 4px;
+//       border: 1px solid #da9963;
+//       background: #fffbf7;
+//       z-index: 999;
+//       opacity: 0.7;
+//     }
+//     #twin {
+//       position: absolute;
+//     }
+//     #twin-open-door {
+//       position: absolute;
+//     }
+//     #twin-open-windows {
+//       position: absolute;
+//     }
+//   }
+//   .strategy-container {
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+//   }
+//   .strategy-house-click {
+//     position: absolute;
+//     width: 200px !important;
+//     height: 180px !important;
+//     top: 50% !important;
+//     left: 50% !important;
+//     transform: translate(-50%, -50%);
+//     border: #3f3a3a 1px solid;
+//     z-index: 999;
+//     .door-click {
+//       position: absolute;
+//       width: 70px;
+//       height: 70px;
+//       top: 50%;
+//       left: 19%;
+//       background-color: #3f3a3a60;
+//       cursor: pointer;
+//       z-index: 999;
+//     }
+//     .windows-click {
+//       position: absolute;
+//       width: 70px;
+//       height: 70px;
+//       top: 50%;
+//       right: 0%;
+//       background-color: #3f3a3a60;
+//       cursor: pointer;
+//       z-index: 999;
+//     }
+//   }
+//   #strategy-house {
+//     position: relative !important;
+//     width: 320px;
+//     height: 316.005px;
+//     cursor: pointer;
+//     z-index: 998;
+//     .house-title {
+//       position: absolute;
+//       width: 74px;
+//       height: 32px;
+//       top: 7%;
+//       left: 50%;
+//       transform: translate(-50%, -50%);
+//       color: #0d889a;
+//       border-radius: 4px;
+//       border: 1px solid #2d9dad;
+//       background: #f6fdfe;
+//       z-index: 999;
+//       opacity: 0.7;
+//     }
+//     #strategy {
+//       position: absolute;
+//     }
+//     #strategy-open-door {
+//       position: absolute;
+//     }
+//     #strategy-open-windows {
+//       position: absolute;
+//     }
+//   }
+//   .potential-container {
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+//   }
+//   .potential-house-click {
+//     position: absolute;
+//     width: 200px !important;
+//     height: 180px !important;
+//     top: 55% !important;
+//     left: 50% !important;
+//     transform: translate(-50%, -50%);
+//     border: #3f3a3a 1px solid;
+//     z-index: 999;
+//     .door-click {
+//       position: absolute;
+//       width: 70px;
+//       height: 70px;
+//       top: 55%;
+//       left: 10%;
+//       background-color: #3f3a3a60;
+//       cursor: pointer;
+//       z-index: 999;
+//     }
+//     .windows-click {
+//       position: absolute;
+//       width: 70px;
+//       height: 70px;
+//       top: 30%;
+//       right: 5%;
+//       background-color: #3f3a3a60;
+//       cursor: pointer;
+//       z-index: 999;
+//     }
+//   }
+//   #potential-house {
+//     position: relative !important;
+//     width: 320px;
+//     height: 316.005px;
+//     cursor: pointer;
+//     z-index: 998;
+//     .house-title {
+//       position: absolute;
+//       width: 74px;
+//       height: 32px;
+//       top: 7%;
+//       left: 50%;
+//       transform: translate(-50%, -50%);
+//       color: #3f3a3a;
+//       border-radius: 4px;
+//       border: 1px solid #423d3d;
+//       background: #e8e8e8;
+//       z-index: 999;
+//       opacity: 0.7;
+//     }
+//     #potential {
+//       position: absolute;
+//     }
+//     #potential-open-door {
+//       position: absolute;
+//     }
+//     #potential-open-windows {
+//       position: absolute;
+//     }
+//   }
+//   .atmosphere-container {
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+//   }
+//   .atmosphere-house-click {
+//     position: absolute;
+//     width: 220px !important;
+//     height: 180px !important;
+//     top: 55% !important;
+//     left: 50% !important;
+//     transform: translate(-50%, -50%);
+//     border: #3f3a3a 1px solid;
+//     z-index: 999;
+//     .door-click {
+//       position: absolute;
+//       width: 70px;
+//       height: 70px;
+//       top: 40%;
+//       left: 0%;
+//       background-color: #3f3a3a60;
+//       cursor: pointer;
+//       z-index: 999;
+//     }
+//     .windows-click {
+//       position: absolute;
+//       width: 70px;
+//       height: 70px;
+//       top: 30%;
+//       right: 5%;
+//       background-color: #3f3a3a60;
+//       cursor: pointer;
+//       z-index: 999;
+//     }
+//   }
+//   #atmosphere-house {
+//     position: relative !important;
+//     width: 320px;
+//     height: 316.005px;
+//     cursor: pointer;
+//     z-index: 998;
+//     .house-title {
+//       position: absolute;
+//       width: 74px;
+//       height: 32px;
+//       top: 7%;
+//       left: 50%;
+//       transform: translate(-50%, -50%);
+//       color: #3f3a3a;
+//       border-radius: 4px;
+//       border: 1px solid #423d3d;
+//       background: #e8e8e8;
+//       z-index: 999;
+//       opacity: 0.7;
+//     }
+//     #atmosphere {
+//       position: absolute;
+//     }
+//     #atmosphere-open-door {
+//       position: absolute;
+//     }
+//     #atmosphere-open-windows {
+//       position: absolute;
+//     }
+//   }
+// }
+// 手機板
 @media screen and (max-width: 992px) {
   .container-fluid {
     padding: 0;
@@ -1203,257 +2159,41 @@ const clickHouse = (houseName) => {
     }
   }
 
-  #people-flow-house {
-    position: relative !important;
-    width: 320px;
-    height: 316.005px;
-    cursor: pointer;
-    z-index: 998;
-    .house-title {
-      position: absolute;
-      width: 74px;
-      height: 32px;
-      top: 7%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #ff8787;
-      border-radius: 4px;
-      border: 1px solid #f99;
-      background: #fff7f7;
-      z-index: 999;
-      opacity: 0.7;
-    }
-    #people-flow {
-      position: absolute;
-    }
-    #people-flow-open-door {
-      position: absolute;
-    }
-    #people-flow-open-windows {
-      position: absolute;
-    }
-  }
-  #norm-house {
-    position: relative !important;
-    width: 320px;
-    height: 316.005px;
-    cursor: pointer;
-    z-index: 998;
-    .house-title {
-      position: absolute;
-      width: 74px;
-      height: 32px;
-      top: 7%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #f4fefd;
-      border-radius: 4px;
-      border: 1px solid #68cec2;
-      background: #26a8a8;
-      z-index: 999;
-      opacity: 0.7;
-    }
-    #norm {
-      position: absolute;
-    }
-    #norm-open-door {
-      position: absolute;
-    }
-    #norm-open-windows {
-      position: absolute;
-    }
-  }
-  #twin-house {
-    position: relative !important;
-    width: 320px;
-    height: 316.005px;
-    cursor: pointer;
-    z-index: 998;
-    .house-title {
-      position: absolute;
-      width: 74px;
-      height: 32px;
-      top: 7%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #d17b32;
-      border-radius: 4px;
-      border: 1px solid #da9963;
-      background: #fffbf7;
-      z-index: 999;
-      opacity: 0.7;
-    }
-    #twin {
-      position: absolute;
-    }
-    #twin-open-door {
-      position: absolute;
-    }
-    #twin-open-windows {
-      position: absolute;
-    }
-  }
-  #strategy-house {
-    position: relative !important;
-    width: 320px;
-    height: 316.005px;
-    cursor: pointer;
-    z-index: 998;
-    .house-title {
-      position: absolute;
-      width: 74px;
-      height: 32px;
-      top: 7%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #0d889a;
-      border-radius: 4px;
-      border: 1px solid #2d9dad;
-      background: #f6fdfe;
-      z-index: 999;
-      opacity: 0.7;
-    }
-    #strategy {
-      position: absolute;
-    }
-    #strategy-open-door {
-      position: absolute;
-    }
-    #strategy-open-windows {
-      position: absolute;
-    }
-  }
-  #potential-house {
-    position: relative !important;
-    width: 320px;
-    height: 316.005px;
-    cursor: pointer;
-    z-index: 998;
-    .house-title {
-      position: absolute;
-      width: 74px;
-      height: 32px;
-      top: 7%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #3f3a3a;
-      border-radius: 4px;
-      border: 1px solid #423d3d;
-      background: #e8e8e8;
-      z-index: 999;
-      opacity: 0.7;
-    }
-    #potential {
-      position: absolute;
-    }
-    #potential-open-door {
-      position: absolute;
-    }
-    #potential-open-windows {
-      position: absolute;
-    }
-  }
-  #atmosphere-house {
-    position: relative !important;
-    width: 320px;
-    height: 316.005px;
-    cursor: pointer;
-    z-index: 998;
-    .house-title {
-      position: absolute;
-      width: 74px;
-      height: 32px;
-      top: 7%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #3f3a3a;
-      border-radius: 4px;
-      border: 1px solid #423d3d;
-      background: #e8e8e8;
-      z-index: 999;
-      opacity: 0.7;
-    }
-    #atmosphere {
-      position: absolute;
-    }
-    #atmosphere-open-door {
-      position: absolute;
-    }
-    #atmosphere-open-windows {
-      position: absolute;
-    }
-  }
-}
-// 手機板
-@media screen and (max-width: 768px) {
-  .container-fluid {
-    padding: 0;
-  }
-  .primary-school {
+  .people-flow-container {
     position: relative;
     width: 100%;
     height: 100%;
-    padding-top: 35%;
-    background-color: #fffcec;
   }
-  .title-img {
-    width: 70%;
-    padding: 0;
-    margin-bottom: 50px;
-  }
-
-  .custom-row {
-    width: 100%;
-    height: 300px;
-    margin: 0;
-    .share-card {
-      width: 160px;
-      height: 157px;
-      background-color: #fffcec;
-      color: #605d5a;
-      border-radius: 8px;
-      svg {
-        fill: #605d5a;
-      }
-      .share-title {
-        width: 100%;
-        padding: 0.75rem 0;
-        display: flex;
-        justify-content: center;
-        border-bottom: 1px solid #cccccc;
-      }
-      .share-btn-box {
-        width: 100%;
-        margin: 1rem 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .share-btn {
-          width: 80px;
-          cursor: pointer;
-        }
-      }
-      .home-btn {
-        width: 160px;
-        height: 60px;
-        border-radius: 20px;
-        border: 2px solid #605d5a;
-        background: #fff;
-        cursor: pointer;
-        svg {
-          margin-right: 5px;
-        }
-        &:hover {
-          background: #605d5a;
-          color: #fff;
-          svg {
-            fill: #fff;
-          }
-        }
-      }
+  .people-flow-click {
+    position: absolute;
+    width: 200px !important;
+    height: 180px !important;
+    top: 52% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    // border: #3f3a3a 1px solid;
+    z-index: 999;
+    .door-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 55%;
+      left: 16%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .windows-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 35%;
+      right: 0%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
     }
   }
-
   #people-flow-house {
     position: relative !important;
     width: 320px;
@@ -1482,6 +2222,41 @@ const clickHouse = (houseName) => {
     }
     #people-flow-open-windows {
       position: absolute;
+    }
+  }
+  .norm-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .norm-house-click {
+    position: absolute;
+    width: 200px !important;
+    height: 180px !important;
+    top: 60% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    // border: #3f3a3a 1px solid;
+    z-index: 999;
+    .door-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 50%;
+      left: 12%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .windows-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 45%;
+      right: 13%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
     }
   }
   #norm-house {
@@ -1514,6 +2289,41 @@ const clickHouse = (houseName) => {
       position: absolute;
     }
   }
+  .twin-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .twin-house-click {
+    position: absolute;
+    width: 200px !important;
+    height: 180px !important;
+    top: 54% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    // border: #3f3a3a 1px solid;
+    z-index: 999;
+    .door-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 50%;
+      right: 0%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .windows-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 50%;
+      left: 19%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
   #twin-house {
     position: relative !important;
     width: 320px;
@@ -1542,6 +2352,41 @@ const clickHouse = (houseName) => {
     }
     #twin-open-windows {
       position: absolute;
+    }
+  }
+  .strategy-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .strategy-house-click {
+    position: absolute;
+    width: 200px !important;
+    height: 180px !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    // border: #3f3a3a 1px solid;
+    z-index: 999;
+    .door-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 50%;
+      left: 19%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .windows-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 50%;
+      right: 0%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
     }
   }
   #strategy-house {
@@ -1574,6 +2419,41 @@ const clickHouse = (houseName) => {
       position: absolute;
     }
   }
+  .potential-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .potential-house-click {
+    position: absolute;
+    width: 200px !important;
+    height: 180px !important;
+    top: 55% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    // border: #3f3a3a 1px solid;
+    z-index: 999;
+    .door-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 55%;
+      left: 10%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .windows-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 30%;
+      right: 5%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
   #potential-house {
     position: relative !important;
     width: 320px;
@@ -1602,6 +2482,41 @@ const clickHouse = (houseName) => {
     }
     #potential-open-windows {
       position: absolute;
+    }
+  }
+  .atmosphere-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .atmosphere-house-click {
+    position: absolute;
+    width: 220px !important;
+    height: 180px !important;
+    top: 55% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    // border: #3f3a3a 1px solid;
+    z-index: 999;
+    .door-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 40%;
+      left: 0%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .windows-click {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      top: 30%;
+      right: 5%;
+      // background-color: #3f3a3a60;
+      cursor: pointer;
+      z-index: 999;
     }
   }
   #atmosphere-house {
