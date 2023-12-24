@@ -23,6 +23,7 @@ import arrow_share from '@/components/svg/arrow_share.vue';
 import facebook_icon from '@/components/svg/facebook_icon.vue';
 import line_icon from '@/components/svg/line_icon.vue';
 import Home_Icon from '@/components/svg/home_icon.vue';
+import { useRouter } from 'vue-router';
 
 const screenWidth = ref(
   window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
@@ -37,7 +38,6 @@ watch(
     } else {
       screenSwitch.value = false;
     }
-    console.log(screenSwitch.value);
   },
   { immediate: true }
 );
@@ -276,6 +276,7 @@ const atmosphereAnimation = () => {
   atmosphereJson.value.play();
 };
 
+const router = useRouter();
 // 命名需修改
 const clickHouse = (houseName) => {
   if (houseName == 'people-flow') {
@@ -284,7 +285,8 @@ const clickHouse = (houseName) => {
     people_flowOpenWindowsJson.value.setDirection(1);
     people_flowOpenWindowsJson.value.play();
     setTimeout(() => {
-      window.open('/disaster-prevention', '_blank');
+      const routeData = router.resolve('disaster-prevention');
+      window.open(routeData.href, '_blank');
     }, 1000);
   } else if (houseName == 'norm') {
     normOpenDoorJson.value.setDirection(1);
@@ -292,7 +294,8 @@ const clickHouse = (houseName) => {
     normOpenWindowsJson.value.setDirection(1);
     normOpenWindowsJson.value.play();
     setTimeout(() => {
-      window.open('/disaster-prevention', '_blank');
+      const routeData = router.resolve('disaster-prevention');
+      window.open(routeData.href, '_blank');
     }, 1000);
   } else if (houseName == 'twin') {
     twinOpenDoorJson.value.setDirection(1);
@@ -300,7 +303,8 @@ const clickHouse = (houseName) => {
     twinOpenWindowsJson.value.setDirection(1);
     twinOpenWindowsJson.value.play();
     setTimeout(() => {
-      window.open('/disaster-prevention', '_blank');
+      const routeData = router.resolve('disaster-prevention');
+      window.open(routeData.href, '_blank');
     }, 1000);
   } else if (houseName == 'strategy') {
     strategyOpenDoorJson.value.setDirection(1);
@@ -308,7 +312,8 @@ const clickHouse = (houseName) => {
     strategyOpenWindowsJson.value.setDirection(1);
     strategyOpenWindowsJson.value.play();
     setTimeout(() => {
-      window.open('/disaster-prevention', '_blank');
+      const routeData = router.resolve('disaster-prevention');
+      window.open(routeData.href, '_blank');
     }, 1000);
   } else if (houseName == 'potential') {
     potentialOpenDoorJson.value.setDirection(1);
@@ -316,7 +321,8 @@ const clickHouse = (houseName) => {
     potentialOpenWindowsJson.value.setDirection(1);
     potentialOpenWindowsJson.value.play();
     setTimeout(() => {
-      window.open('/disaster-prevention', '_blank');
+      const routeData = router.resolve('disaster-prevention');
+      window.open(routeData.href, '_blank');
     }, 1000);
   } else if (houseName == 'atmosphere') {
     atmosphereOpenDoorJson.value.setDirection(1);
@@ -324,7 +330,8 @@ const clickHouse = (houseName) => {
     atmosphereOpenWindowsJson.value.setDirection(1);
     atmosphereOpenWindowsJson.value.play();
     setTimeout(() => {
-      window.open('/disaster-prevention', '_blank');
+      const routeData = router.resolve('disaster-prevention');
+      window.open(routeData.href, '_blank');
     }, 1000);
   }
 };
