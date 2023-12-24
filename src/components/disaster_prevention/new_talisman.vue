@@ -13,7 +13,7 @@ onMounted(() => {
 watch(
   screenWidth,
   (newVal) => {
-    screenWidth.value = newVal;
+    // screenWidth.value = newVal;
     if (newVal < 768) {
       screenSwitch.value = true;
     } else {
@@ -146,25 +146,6 @@ h2 {
   .content-box {
     img {
       width: 70%;
-    }
-  }
-}
-@media (max-width: 768px) {
-  .custom-container {
-    padding-top: 25%;
-    padding-bottom: 10%;
-  }
-  .img-container {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    img {
-      width: 70%;
-    }
-  }
-  .content-box {
-    img {
-      width: 60%;
     }
   }
 }
