@@ -2092,7 +2092,7 @@ const clickHouse = (houseName) => {
 // 手機板
 @media screen and (max-width: 992px) {
   .container-fluid {
-    padding: 0;
+    // padding: 0;
   }
   .primary-school {
     position: relative;
