@@ -51,7 +51,7 @@ watch(
       <div class="row">
         <div class="col">
           <div class="img-container">
-            <img src="@/assets/disaster_prevention/new_talisman_mobile.png" alt="新的護身符" />
+            <img src="@/assets/disaster_prevention/new_talisman.png" alt="新的護身符" />
           </div>
         </div>
       </div>
@@ -103,7 +103,7 @@ h2 {
     display: flex;
     justify-content: center;
     img {
-      width: 80%;
+      width: 70%;
     }
   }
   .content-box {

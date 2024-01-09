@@ -440,7 +440,7 @@ const clickHouse = (houseName) => {
   <div class="container" v-if="screenSwitch == false">
     <div class="primary-school">
       <div class="row">
-        <div class="col">
+        <div class="col text-center">
           <img class="title-img" src="../assets/disaster_prevention/title_img.png" alt="" />
         </div>
       </div>
@@ -449,7 +449,7 @@ const clickHouse = (houseName) => {
         <div class="house-bg"></div>
         <div id="people-flow-house">
           <div class="d-flex align-items-center justify-content-center">
-            <div class="house-title d-flex align-items-center justify-content-center">人流樓</div>
+            <!-- <div class="house-title d-flex align-items-center justify-content-center">人流樓</div> -->
           </div>
           <div id="people-flow"></div>
           <div id="people-flow-open-door"></div>
@@ -461,7 +461,7 @@ const clickHouse = (houseName) => {
         </div>
         <div id="norm-house">
           <div class="d-flex align-items-center justify-content-center">
-            <div class="house-title d-flex align-items-center justify-content-center">指標樓</div>
+            <!-- <div class="house-title d-flex align-items-center justify-content-center">指標樓</div> -->
           </div>
           <div id="norm"></div>
           <div id="norm-open-door"></div>
@@ -473,7 +473,7 @@ const clickHouse = (houseName) => {
         </div>
         <div id="twin-house">
           <div class="d-flex align-items-center justify-content-center">
-            <div class="house-title d-flex align-items-center justify-content-center">孿生樓</div>
+            <!-- <div class="house-title d-flex align-items-center justify-content-center">孿生樓</div> -->
           </div>
           <div id="twin"></div>
           <div id="twin-open-door"></div>
@@ -485,7 +485,7 @@ const clickHouse = (houseName) => {
         </div>
         <div id="strategy-house">
           <div class="d-flex align-items-center justify-content-center">
-            <div class="house-title d-flex align-items-center justify-content-center">策略樓</div>
+            <!-- <div class="house-title d-flex align-items-center justify-content-center">策略樓</div> -->
           </div>
           <div id="strategy"></div>
           <div id="strategy-open-door"></div>
@@ -497,7 +497,7 @@ const clickHouse = (houseName) => {
         </div>
         <div id="potential-house">
           <div class="d-flex align-items-center justify-content-center">
-            <div class="house-title d-flex align-items-center justify-content-center">潛勢樓</div>
+            <!-- <div class="house-title d-flex align-items-center justify-content-center">潛勢樓</div> -->
           </div>
           <div id="potential"></div>
           <div id="potential-open-door"></div>
@@ -509,7 +509,7 @@ const clickHouse = (houseName) => {
         </div>
         <div id="atmosphere-house">
           <div class="d-flex align-items-center justify-content-center">
-            <div class="house-title d-flex align-items-center justify-content-center">氣象樓</div>
+            <!-- <div class="house-title d-flex align-items-center justify-content-center">氣象樓</div> -->
           </div>
           <div id="atmosphere"></div>
           <div id="atmosphere-open-door"></div>
@@ -559,7 +559,7 @@ const clickHouse = (houseName) => {
         >
           <div id="people-flow-house" @click="clickHouse('people-flow')">
             <div class="d-flex align-items-center justify-content-center">
-              <div class="house-title d-flex align-items-center justify-content-center">人流樓</div>
+              <!-- <div class="house-title d-flex align-items-center justify-content-center">人流樓</div> -->
             </div>
             <div id="people-flow"></div>
             <div id="people-flow-open-door"></div>
@@ -573,7 +573,7 @@ const clickHouse = (houseName) => {
         <div class="norm-container col-12 mb-5 d-flex align-items-center justify-content-center">
           <div id="norm-house">
             <div class="d-flex align-items-center justify-content-center">
-              <div class="house-title d-flex align-items-center justify-content-center">指標樓</div>
+              <!-- <div class="house-title d-flex align-items-center justify-content-center">指標樓</div> -->
             </div>
             <div id="norm"></div>
             <div id="norm-open-door"></div>
@@ -587,7 +587,7 @@ const clickHouse = (houseName) => {
         <div class="twin-container col-12 mb-2 d-flex align-items-center justify-content-center">
           <div id="twin-house">
             <div class="d-flex align-items-center justify-content-center">
-              <div class="house-title d-flex align-items-center justify-content-center">孿生樓</div>
+              <!-- <div class="house-title d-flex align-items-center justify-content-center">孿生樓</div> -->
             </div>
             <div id="twin"></div>
             <div id="twin-open-door"></div>
@@ -603,7 +603,7 @@ const clickHouse = (houseName) => {
         >
           <div id="strategy-house" @click="clickHouse('strategy')">
             <div class="d-flex align-items-center justify-content-center">
-              <div class="house-title d-flex align-items-center justify-content-center">策略樓</div>
+              <!-- <div class="house-title d-flex align-items-center justify-content-center">策略樓</div> -->
             </div>
             <div id="strategy"></div>
             <div id="strategy-open-door"></div>
@@ -619,7 +619,7 @@ const clickHouse = (houseName) => {
         >
           <div id="potential-house" @click="clickHouse('potential')">
             <div class="d-flex align-items-center justify-content-center">
-              <div class="house-title d-flex align-items-center justify-content-center">潛勢樓</div>
+              <!-- <div class="house-title d-flex align-items-center justify-content-center">潛勢樓</div> -->
             </div>
             <div id="potential"></div>
             <div id="potential-open-door"></div>
@@ -635,7 +635,7 @@ const clickHouse = (houseName) => {
         >
           <div id="atmosphere-house" @click="clickHouse('atmosphere')">
             <div class="d-flex align-items-center justify-content-center">
-              <div class="house-title d-flex align-items-center justify-content-center">氣象樓</div>
+              <!-- <div class="house-title d-flex align-items-center justify-content-center">氣象樓</div> -->
             </div>
             <div id="atmosphere"></div>
             <div id="atmosphere-open-door"></div>
@@ -732,8 +732,8 @@ const clickHouse = (houseName) => {
     }
   }
   .title-img {
-    width: 40%;
-    padding-left: 10%;
+    width: 25%;
+    // padding-left: 10%;
   }
   .house-box {
     position: relative;
@@ -768,7 +768,7 @@ const clickHouse = (houseName) => {
       height: 70px;
       top: 55%;
       left: 15%;
-      // background-color: #3f3a3a60;
+      background-color: #3f3a3a60;
       cursor: pointer;
       z-index: 999;
     }
@@ -778,7 +778,7 @@ const clickHouse = (houseName) => {
       height: 70px;
       top: 45%;
       right: 0;
-      // background-color: #3f3a3a60;
+      background-color: #3f3a3a60;
       cursor: pointer;
       z-index: 999;
     }
@@ -1207,8 +1207,8 @@ const clickHouse = (houseName) => {
     }
   }
   .title-img {
-    width: 40%;
-    padding-left: 10%;
+    width: 25%;
+    // padding-left: 10%;
   }
   .house-box {
     position: relative;
@@ -2103,8 +2103,8 @@ const clickHouse = (houseName) => {
   }
   .title-img {
     width: 70%;
-    padding: 0;
-    margin-bottom: 50px;
+    // padding: 0;
+    // margin-bottom: 50px;
   }
 
   .custom-row {
