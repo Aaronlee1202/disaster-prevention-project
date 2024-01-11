@@ -27,12 +27,11 @@ const toHomePage = () => {
             <div class="header-row">
               <div class="header-logo">
                 <h1>
-                  <a @click="toHomePage" title="行政法人國災害防救科技中心" target="_blank">
+                  <!-- <Logo_Ncdr_Icon class="svg-img" @click="toHomePage" target="_blank" /> -->
+                  <a @click="toHomePage" target="_blank" title="行政法人國災害防救科技中心">
                     <Logo_Ncdr_Icon class="svg-img" />
                   </a>
-                  <a @click="toHomePage" title="防災特輯">
-                    <Logo_Icon class="svg-img" />
-                  </a>
+                  <a href="/" title="防災特輯"><Logo_Icon class="svg-img" /></a>
                 </h1>
               </div>
             </div>
@@ -46,19 +45,29 @@ const toHomePage = () => {
                   <nav class="collapse">
                     <ul class="nav nav-pills" id="mainNav">
                       <li>
-                        <a href="#index_page_1" class="nav-link anchor" title="本月主題">
+                        <a href="#index_page_1" class="nav-link anchor" title="當期主題">
                           <img
                             src="@/assets/header/menu_icon_01.svg"
                             class="svg-img"
                             alt=""
-                          /><br />本月主題
+                          /><br />當期主題
                         </a>
                       </li>
 
                       <li>
-                        <a href="#index_page_2" class="nav-link anchor" title="本季小品">
+                        <a href="#index_page_2" class="nav-link anchor" title="知識櫥窗">
                           <img
                             src="@/assets/header/menu_icon_02.svg"
+                            class="svg-img"
+                            alt=""
+                          /><br />知識櫥窗
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#index_page_3" class="nav-link anchor" title="本季小品">
+                          <img
+                            src="@/assets/header/menu_icon_03.svg"
                             class="svg-img"
                             alt=""
                           /><br />本季小品
@@ -66,9 +75,9 @@ const toHomePage = () => {
                       </li>
 
                       <li>
-                        <a href="#index_page_3" class="nav-link anchor" title="亮點服務">
+                        <a href="#index_page_4" class="nav-link anchor" title="亮點服務">
                           <img
-                            src="@/assets/header/menu_icon_03.svg"
+                            src="@/assets/header/menu_icon_04.svg"
                             class="svg-img"
                             alt=""
                           /><br />亮點服務
@@ -76,9 +85,9 @@ const toHomePage = () => {
                       </li>
 
                       <li>
-                        <a href="#index_page_4" class="nav-link anchor" title="主任介紹">
+                        <a href="#index_page_5" class="nav-link anchor" title="主任介紹">
                           <img
-                            src="@/assets/header/menu_icon_04.svg"
+                            src="@/assets/header/menu_icon_05.svg"
                             class="svg-img"
                             alt=""
                           /><br />主任介紹
@@ -86,22 +95,12 @@ const toHomePage = () => {
                       </li>
 
                       <li>
-                        <a href="#index_page_5" class="nav-link anchor" title="關於特輯">
-                          <img
-                            src="@/assets/header/menu_icon_05.svg"
-                            class="svg-img"
-                            alt=""
-                          /><br />關於特輯
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#index_page_6" class="nav-link anchor" title="系列影片">
+                        <a href="#index_page_6" class="nav-link anchor" title="關於特輯">
                           <img
                             src="@/assets/header/menu_icon_06.svg"
                             class="svg-img"
                             alt=""
-                          /><br />系列影片
+                          /><br />關於特輯
                         </a>
                       </li>
 
@@ -110,20 +109,20 @@ const toHomePage = () => {
                           href="https://ncdr.nat.gov.tw/NCDR-Topic/2022/index.html"
                           target="_blank"
                           class="nav-link"
-                          title="年度回顧(另開新視窗)"
+                          title="系列影片(另開新視窗)"
                         >
                           <img
-                            src="@/assets/header/menu_icon_08.svg"
+                            src="@/assets/header/menu_icon_07.svg"
                             class="svg-img"
                             alt=""
-                          /><br />年度回顧
+                          /><br />系列影片
                         </a>
                       </li>
 
                       <li>
                         <a href="#footer" class="nav-link anchor" title="聯絡我們">
                           <img
-                            src="@/assets/header/menu_icon_07.svg"
+                            src="@/assets/header/menu_icon_08.svg"
                             class="svg-img"
                             alt=""
                           /><br />聯絡我們
@@ -158,8 +157,48 @@ const toHomePage = () => {
 
 <style lang="scss" scoped>
 .header-logo {
-  a {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.header-nav {
+  // .svg-img{
+  // 	width:50px;
+  // 	height:50px;
+  // }
+  li:hover,
+  li:focus {
+    a {
+      background: transparent !important;
+      color: #ffee81 !important;
+      transition: color 0.5s;
+    }
+    .svg-img path {
+      fill: #ffee81;
+      transition: fill 0.5s;
+    }
+  }
+  a:hover,
+  a:focus {
+    color: #ffee81 !important;
+    transition: color 0.5s;
+    .svg-img path {
+      fill: #ffee81;
+      transition: fill 0.5s;
+    }
+  }
+  li {
+    text-align: center;
+    a {
+      &:hover,
+      &:focus {
+        color: #ffee81 !important;
+        transition: color 0.5s;
+        .svg-img path {
+          fill: #ffee81;
+          transition: fill 0.5s;
+        }
+      }
+    }
   }
 }
 </style>

@@ -1,12 +1,12 @@
 <script setup>
 import { ref, watch, onMounted } from 'vue';
-import Triangle_Icon from '../svg/triangle_icon.vue';
-import Link_Icon from '../svg/link_icon.vue';
-import Arrow_Right from '../svg/arrow_right.vue';
-import Arrow_share from '../svg/arrow_share.vue';
-import Home_Icon from '../svg/home_icon.vue';
-import Month_Icon from '../svg/month_icon.vue';
-import Month_Btn_Icon from '../svg/month_btn_icon.vue';
+import Triangle_Icon from '@/components/svg/triangle_icon.vue';
+import Link_Icon from '@/components/svg/link_icon.vue';
+import Arrow_Right from '@/components/svg/arrow_right.vue';
+import Arrow_share from '@/components/svg/arrow_share.vue';
+import Home_Icon from '@/components/svg/home_icon.vue';
+import Month_Icon from '@/components/svg/month_icon.vue';
+import Month_Btn_Icon from '@/components/svg/month_btn_icon.vue';
 const items = [1, 2, 3, 4, 5, 6];
 const screenWidth = ref(
   window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
@@ -28,6 +28,7 @@ watch(
       screenSwitch.value = false;
     }
   },
+  // 立即執行
   { immediate: true }
 );
 </script>

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import PrimarySchoolView from '../views/PrimarySchoolView.vue';
-import DisasterPreventionView from '../views/DisasterPreventionView.vue';
+import DisasterPreventionView from '../views/DisasterPrevention/DisasterPreventionView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

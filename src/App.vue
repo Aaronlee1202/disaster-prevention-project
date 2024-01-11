@@ -1,13 +1,15 @@
 <script setup>
 import { RouterView } from 'vue-router';
-import nav_header from './components/nav_header.vue';
-import nav_footer from './components/nav_footer.vue';
+import Header from './components/NavHeader.vue';
+import Footer from './components/NavFooter.vue';
+import BackToTop from './components/BackToTop.vue';
 </script>
 
 <template>
-  <nav_header />
+  <Header />
   <RouterView />
-  <nav_footer />
+  <BackToTop />
+  <Footer />
 </template>
 
 <style lang="scss" scoped></style>

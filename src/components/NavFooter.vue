@@ -1,13 +1,9 @@
-<script setup>
-
-</script>
-
 <template>
   <footer id="footer" class="m-0">
     <div class="container">
       <div class="box">
         <div class="title_box">
-          <img src="../assets/footer/footer_logo.svg" alt="" />
+          <img src="../assets/footer/footer_title.svg" alt="" /><br />
           <hr />
         </div>
 
@@ -19,7 +15,7 @@
           </div>
           <div class="contact">
             <!-- css需修改 -->
-            <img src="../assets/footer/footer_title.svg" alt="" /><br />
+            <img src="../assets/footer/footer_logo.svg" alt="" />
             <span class="font_nowrap">電話&nbsp; 02-8195-8608 </span> &nbsp;/&nbsp;
             <span class="font_nowrap">傳真&nbsp; 02-8912-7766</span><br />
             23143 新北市新店區北新路三段200號9樓<br />

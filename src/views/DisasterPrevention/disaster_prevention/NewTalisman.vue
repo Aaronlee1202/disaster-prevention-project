@@ -1,27 +1,16 @@
 <script setup>
 import { ref, watch, onMounted } from 'vue';
-const screenWidth = ref(
-  window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-);
+import { useWindowSize } from '@vueuse/core';
+
+const { width } = useWindowSize();
 const screenSwitch = ref(false);
-onMounted(() => {
-  window.addEventListener('resize', () => {
-    screenWidth.value =
-      window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  });
-});
-watch(
-  screenWidth,
-  (newVal) => {
-    // screenWidth.value = newVal;
-    if (newVal < 768) {
-      screenSwitch.value = true;
-    } else {
-      screenSwitch.value = false;
-    }
-  },
-  { immediate: true }
-);
+onMounted(() => {});
+watch(width, (newVal) => {
+  if (newVal < 768) screenSwitch.value = true;
+  else screenSwitch.value = false;
+},
+  // 立即執行
+  { immediate: true });
 </script>
 
 <template>
