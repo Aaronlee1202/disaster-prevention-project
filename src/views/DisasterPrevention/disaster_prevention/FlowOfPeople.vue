@@ -280,8 +280,8 @@ watch(
           <div class="d-flex align-items-center justify-content-between">
             <h3>相關連結</h3>
             <div class="d-flex align-items-end pb-1">
-              <img src="../../assets/flow_of_people/mobile_cute_1.png" alt="" />
-              <img src="../../assets/flow_of_people/mobile_cute_2.png" alt="" />
+              <img src="@/assets/flow_of_people/mobile_cute_1.png" alt="" />
+              <img src="@/assets/flow_of_people/mobile_cute_2.png" alt="" />
             </div>
           </div>
           <div class="related-links d-flex align-items-center justify-content-start mb-4">
