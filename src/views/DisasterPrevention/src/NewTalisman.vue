@@ -228,7 +228,7 @@ h2 {
   }
   .img-container {
     position: relative;
-    height: 80vh;
+    height: 80svh;
     width: 100%;
     display: flex;
     justify-content: center;
