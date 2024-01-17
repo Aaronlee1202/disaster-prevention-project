@@ -1,32 +1,82 @@
 <script setup>
 import { ref, watch, onMounted } from 'vue';
 import { useWindowSize } from '@vueuse/core';
+import lottie from 'lottie-web';
+import newTalismanStart from '@/assets/disaster_prevention/new_talisman_start.json';
+import newTalisman from '@/assets/disaster_prevention/new_talisman.json';
 
 const { width } = useWindowSize();
+
+const newTalismanStartJson = ref(null);
+const newTalismanJson = ref(null);
+const fadeOut = ref(false);
+
 const screenSwitch = ref(false);
-onMounted(() => {});
-watch(width, (newVal) => {
-  if (newVal < 768) screenSwitch.value = true;
-  else screenSwitch.value = false;
-},
+
+onMounted(() => {
+  lottieAnimation();
+});
+
+watch(
+  width,
+  (newVal) => {
+    if (newVal < 768) screenSwitch.value = true;
+    else screenSwitch.value = false;
+  },
   // 立即執行
-  { immediate: true });
+  { immediate: true }
+);
+
+function lottieAnimation() {
+  newTalismanStartJson.value = lottie.loadAnimation({
+    container: document.getElementById('new-talisman-start'),
+    renderer: 'svg',
+    loop: false,
+    autoplay: true,
+    animationData: newTalismanStart
+  });
+
+  setTimeout(() => {
+    console.log('fadeOut');
+    fadeOut.value = true;
+    newTalismanJson.value.play();
+  }, 1500);
+
+  // setTimeout(() => {
+  //   newTalismanStartJson.value.destroy();
+  //   newTalismanStartJson.value = null;
+  // }, 2500);
+
+  newTalismanJson.value = lottie.loadAnimation({
+    container: document.getElementById('new-talisman-begin'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: false,
+    animationData: newTalisman
+  });
+}
 </script>
 
 <template>
   <div id="new-talisman">
     <div class="container custom-container" v-if="screenSwitch == false">
       <div class="row d-flex align-items-center">
-        <div class="col-6 d-flex justify-content-end">
+        <div class="col-6">
           <div class="img-container">
-            <img src="@/assets/disaster_prevention/new_talisman.png" alt="新的護身符" />
+            <!-- <img src="@/assets/disaster_prevention/new_talisman.png" alt="新的護身符" /> -->
+            <div class="start-box d-flex justify-content-end" :class="fadeOut ? 'fade-out' : ''">
+              <div id="new-talisman-start"></div>
+            </div>
+            <div class="begin-box d-flex justify-content-end">
+              <div id="new-talisman-begin"></div>
+            </div>
           </div>
         </div>
         <div class="col-6">
           <div class="content-box">
             <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
-            <h4 class="small-title">人流樓</h4>
-            <h2>人手一機的防災新法寶</h2>
+            <!-- <h4 class="small-title">人流樓</h4> -->
+            <h2 class="mt-5 mb-4">人手一機的防災新法寶</h2>
             <p>
               發行日期 | 2023.01.01 <br />
               作者 | 地人組 黃明偉 <br />
@@ -40,7 +90,13 @@ watch(width, (newVal) => {
       <div class="row">
         <div class="col">
           <div class="img-container">
-            <img src="@/assets/disaster_prevention/new_talisman.png" alt="新的護身符" />
+            <!-- <img src="@/assets/disaster_prevention/new_talisman.png" alt="新的護身符" /> -->
+            <div class="start-box d-flex justify-content-end" :class="fadeOut ? 'fade-out' : ''">
+              <div id="new-talisman-start"></div>
+            </div>
+            <div class="begin-box d-flex justify-content-end">
+              <div id="new-talisman-begin"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -82,17 +138,35 @@ watch(width, (newVal) => {
 h2 {
   margin: 1rem 0;
 }
+.img-container {
+  .start-box {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 1s ease;
+  }
+  .begin-box {
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+  }
+  .fade-out {
+    opacity: 0;
+  }
+}
 @media (min-width: 1200px) {
   .custom-container {
-    padding-top: 12%;
+    padding-top: 10%;
     padding-bottom: 5%;
   }
   .img-container {
-    height: 100%;
+    position: relative;
+    height: 80vh;
     display: flex;
     justify-content: center;
-    img {
-      width: 70%;
+    div {
+      width: 65%;
     }
   }
   .content-box {
@@ -107,10 +181,11 @@ h2 {
     padding-bottom: 10%;
   }
   .img-container {
-    // height: 100vh;
+    position: relative;
+    height: 80vh;
     display: flex;
     justify-content: center;
-    img {
+    div {
       width: 70%;
     }
   }
@@ -125,10 +200,11 @@ h2 {
     padding-top: 20%;
   }
   .img-container {
-    // height: 100vh;
+    position: relative;
+    height: 80vh;
     display: flex;
     justify-content: center;
-    img {
+    div {
       width: 75%;
     }
   }
@@ -151,11 +227,12 @@ h2 {
     padding: 0;
   }
   .img-container {
-    height: 100%;
+    position: relative;
+    height: 80vh;
     width: 100%;
     display: flex;
     justify-content: center;
-    img {
+    div {
       width: 100%;
     }
   }

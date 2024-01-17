@@ -542,6 +542,7 @@ const clickHouse = (houseName) => {
       </div>
     </div>
   </div>
+  <!-- mobil -->
   <div class="container-fluid" v-if="screenSwitch == true">
     <div class="primary-school">
       <div class="row">
