@@ -719,7 +719,7 @@ p {
     margin: 1rem 0;
     border-radius: 200px;
     border: 4px solid #fff;
-    background: var(--Primary-Dafault, #24b2ae);
+    background: #24b2ae;
     box-shadow: 0px 0px 0px 2px #24b2ae;
     cursor: pointer;
     &:hover {

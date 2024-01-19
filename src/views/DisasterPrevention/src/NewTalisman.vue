@@ -87,19 +87,19 @@ function lottieAnimation() {
       </div>
     </div>
     <div class="container-fluid custom-container" v-if="screenSwitch == true">
-      <div class="row">
-        <div class="col">
-          <div class="img-container">
-            <!-- <img src="@/assets/disaster_prevention/new_talisman.png" alt="新的護身符" /> -->
-            <div class="start-box d-flex justify-content-end" :class="fadeOut ? 'fade-out' : ''">
-              <div id="new-talisman-start"></div>
-            </div>
-            <div class="begin-box d-flex justify-content-end">
-              <div id="new-talisman-begin"></div>
-            </div>
-          </div>
+      <!-- <div class="row"> -->
+      <!-- <div class="col"> -->
+      <div class="img-container">
+        <!-- <img src="@/assets/disaster_prevention/new_talisman.png" alt="新的護身符" /> -->
+        <div class="start-box d-flex justify-content-center" :class="fadeOut ? 'fade-out' : ''">
+          <div id="new-talisman-start"></div>
+        </div>
+        <div class="begin-box d-flex justify-content-center">
+          <div id="new-talisman-begin"></div>
         </div>
       </div>
+      <!-- </div> -->
+      <!-- </div> -->
       <div class="row">
         <div class="col">
           <div class="content-box">
@@ -233,7 +233,22 @@ h2 {
     display: flex;
     justify-content: center;
     div {
-      width: 100%;
+      width: 70%;
+    }
+    .start-box {
+      // width: 100%;
+      position: absolute;
+      z-index: 10;
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+    .begin-box {
+      // width: 100%;
+      position: absolute;
+      z-index: 5;
+    }
+    .fade-out {
+      opacity: 0;
     }
   }
   .content-box {
