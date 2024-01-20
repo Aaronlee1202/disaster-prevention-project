@@ -1,20 +1,26 @@
 <script setup>
-import { ref, watch, onMounted } from 'vue';
+import { ref, watch, onMounted, defineComponent } from 'vue';
 import { useWindowSize } from '@vueuse/core';
-import lottie from 'lottie-web';
-import newTalismanStart from '@/assets/disaster_prevention/new_talisman_start.json';
-import newTalisman from '@/assets/disaster_prevention/new_talisman.json';
+import TalismanStart from './TalismanStart.vue';
+import TalismanNormal from './TalismanNormal.vue';
+
+defineComponent({
+  components: {
+    TalismanStart,
+    TalismanNormal
+  }
+});
 
 const { width } = useWindowSize();
 
-const newTalismanStartJson = ref(null);
-const newTalismanJson = ref(null);
 const fadeOut = ref(false);
 
 const screenSwitch = ref(false);
 
 onMounted(() => {
-  lottieAnimation();
+  setTimeout(() => {
+    fadeOut.value = true;
+  }, 1500);
 });
 
 watch(
@@ -26,35 +32,6 @@ watch(
   // 立即執行
   { immediate: true }
 );
-
-function lottieAnimation() {
-  newTalismanStartJson.value = lottie.loadAnimation({
-    container: document.getElementById('new-talisman-start'),
-    renderer: 'svg',
-    loop: false,
-    autoplay: true,
-    animationData: newTalismanStart
-  });
-
-  setTimeout(() => {
-    console.log('fadeOut');
-    fadeOut.value = true;
-    newTalismanJson.value.play();
-  }, 1500);
-
-  // setTimeout(() => {
-  //   newTalismanStartJson.value.destroy();
-  //   newTalismanStartJson.value = null;
-  // }, 2500);
-
-  newTalismanJson.value = lottie.loadAnimation({
-    container: document.getElementById('new-talisman-begin'),
-    renderer: 'svg',
-    loop: true,
-    autoplay: false,
-    animationData: newTalisman
-  });
-}
 </script>
 
 <template>
@@ -64,11 +41,13 @@ function lottieAnimation() {
         <div class="col-6">
           <div class="img-container">
             <!-- <img src="@/assets/disaster_prevention/new_talisman.png" alt="新的護身符" /> -->
-            <div class="start-box d-flex justify-content-end" :class="fadeOut ? 'fade-out' : ''">
-              <div id="new-talisman-start"></div>
+            <div class="start-box d-flex justify-content-end">
+              <!-- <div id="new-talisman-start"></div> -->
+              <TalismanStart :fade-out="fadeOut" />
             </div>
             <div class="begin-box d-flex justify-content-end">
-              <div id="new-talisman-begin"></div>
+              <!-- <div id="new-talisman-begin"></div> -->
+              <TalismanNormal :play-lottie="fadeOut" />
             </div>
           </div>
         </div>
@@ -91,11 +70,13 @@ function lottieAnimation() {
       <!-- <div class="col"> -->
       <div class="img-container">
         <!-- <img src="@/assets/disaster_prevention/new_talisman.png" alt="新的護身符" /> -->
-        <div class="start-box d-flex justify-content-center" :class="fadeOut ? 'fade-out' : ''">
-          <div id="new-talisman-start"></div>
+        <div class="start-box d-flex justify-content-center">
+          <!-- <div id="new-talisman-start"></div> -->
+          <TalismanStart :fade-out="fadeOut" />
         </div>
         <div class="begin-box d-flex justify-content-center">
-          <div id="new-talisman-begin"></div>
+          <!-- <div id="new-talisman-begin"></div> -->
+          <TalismanNormal :play-lottie="fadeOut" />
         </div>
       </div>
       <!-- </div> -->
@@ -153,6 +134,13 @@ h2 {
   }
   .fade-out {
     opacity: 0;
+  }
+}
+@media (max-height: 900px) and (min-width: 1200px) {
+  .img-container {
+    div {
+      width: 70% !important;
+    }
   }
 }
 @media (min-width: 1200px) {
@@ -233,7 +221,7 @@ h2 {
     display: flex;
     justify-content: center;
     div {
-      width: 70%;
+      width: 110% !important;
     }
     .start-box {
       // width: 100%;
