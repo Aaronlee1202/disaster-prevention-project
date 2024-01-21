@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { ref, onMounted, watch, onBeforeUnmount } from 'vue';
 import lottie from 'lottie-web';
 import newTalisman from '@/assets/disaster_prevention/new_talisman.json';
 
@@ -7,6 +7,9 @@ const newTalismanJson = ref(null);
 
 onMounted(() => {
   lottieAnimation();
+});
+onBeforeUnmount(() => {
+  newTalismanJson.value.destroy();
 });
 
 const props = defineProps({

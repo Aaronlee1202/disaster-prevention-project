@@ -1,30 +1,32 @@
 <script setup>
-import { onMounted, onBeforeUnmount, ref, watch } from 'vue';
+import { onMounted, ref, reactive, watch, defineComponent } from 'vue';
 import { useWindowSize } from '@vueuse/core';
-import lottie from 'lottie-web';
 import { useRouter } from 'vue-router';
-import people_flow from '@/assets/lottie/people_flow.json';
-import people_flow_open_door from '@/assets/lottie/people_flow_open_door.json';
-import people_flow_open_windows from '@/assets/lottie/people_flow_open_windows.json';
-import norm from '@/assets/lottie/norm.json';
-import norm_open_door from '@/assets/lottie/norm_open_door.json';
-import norm_open_windows from '@/assets/lottie/norm_open_windows.json';
-import twin from '@/assets/lottie/twin.json';
-import twin_open_door from '@/assets/lottie/twin_open_door.json';
-import twin_open_windows from '@/assets/lottie/twin_open_windows.json';
-import strategy from '@/assets/lottie/strategy.json';
-import strategy_open_door from '@/assets/lottie/strategy_open_door.json';
-import strategy_open_windows from '@/assets/lottie/strategy_open_windows.json';
-import potential from '@/assets/lottie/potential.json';
-import potential_open_door from '@/assets/lottie/potential_open_door.json';
-import potential_open_windows from '@/assets/lottie/potential_open_windows.json';
-import atmosphere from '@/assets/lottie/atmosphere.json';
-import atmosphere_open_door from '@/assets/lottie/atmosphere_open_door.json';
-import atmosphere_open_windows from '@/assets/lottie/atmosphere_open_windows.json';
+import PeopleFlow from './src/PeopleFlow.vue';
+import Norm from './src/norm.vue';
+import twin from './src/twin.vue';
+import strategy from './src/strategy.vue';
+import potential from './src/potential.vue';
+import atmosphere from './src/atmosphere.vue';
 import arrow_share from '@/components/svg/arrow_share.vue';
 import facebook_icon from '@/components/svg/facebook_icon.vue';
 import line_icon from '@/components/svg/line_icon.vue';
 import Home_Icon from '@/components/svg/home_icon.vue';
+
+defineComponent({
+  components: {
+    PeopleFlow,
+    Norm,
+    twin,
+    strategy,
+    potential,
+    atmosphere
+  }
+});
+
+onMounted(() => {
+  mouseEvent();
+});
 
 const { width } = useWindowSize();
 const screenSwitch = ref(false);
@@ -38,270 +40,84 @@ watch(
   { immediate: true }
 );
 
-const people_flowJson = ref(null);
-const people_flowOpenDoorJson = ref(null);
-const people_flowOpenWindowsJson = ref(null);
-
-const normJson = ref(null);
-const normOpenDoorJson = ref(null);
-const normOpenWindowsJson = ref(null);
-
-const twinJson = ref(null);
-const twinOpenDoorJson = ref(null);
-const twinOpenWindowsJson = ref(null);
-
-const strategyJson = ref(null);
-const strategyOpenDoorJson = ref(null);
-const strategyOpenWindowsJson = ref(null);
-
-const potentialJson = ref(null);
-const potentialOpenDoorJson = ref(null);
-const potentialOpenWindowsJson = ref(null);
-
-const atmosphereJson = ref(null);
-const atmosphereOpenDoorJson = ref(null);
-const atmosphereOpenWindowsJson = ref(null);
-onMounted(() => {
-  peopleFlowAnimation();
-  normAnimation();
-  twinAnimation();
-  strategyAnimation();
-  potentialAnimation();
-  atmosphereAnimation();
+const flowOpen = reactive({
+  openDoor: false,
+  openWindows: false
 });
-onBeforeUnmount(() => {
-  people_flowJson.value.destroy();
-  people_flowOpenDoorJson.value.destroy();
-  people_flowOpenWindowsJson.value.destroy();
 
-  normJson.value.destroy();
-  normOpenDoorJson.value.destroy();
-  normOpenWindowsJson.value.destroy();
-
-  twinJson.value.destroy();
-  twinOpenDoorJson.value.destroy();
-  twinOpenWindowsJson.value.destroy();
-
-  strategyJson.value.destroy();
-  strategyOpenDoorJson.value.destroy();
-  strategyOpenWindowsJson.value.destroy();
-
-  potentialJson.value.destroy();
-  potentialOpenDoorJson.value.destroy();
-  potentialOpenWindowsJson.value.destroy();
-
-  atmosphereJson.value.destroy();
-  atmosphereOpenDoorJson.value.destroy();
-  atmosphereOpenWindowsJson.value.destroy();
+const normOpen = reactive({
+  openDoor: false,
+  openWindows: false
 });
-// 初始化動畫開始
-const peopleFlowAnimation = () => {
+
+const twinOpen = reactive({
+  openDoor: false,
+  openWindows: false
+});
+
+const strategyOpen = reactive({
+  openDoor: false,
+  openWindows: false
+});
+
+const potentialOpen = reactive({
+  openDoor: false,
+  openWindows: false
+});
+
+const atmosphereOpen = reactive({
+  openDoor: false,
+  openWindows: false
+});
+
+const mouseEvent = () => {
   const peopleFlowClick = document.querySelector('.people-flow-click');
-  const decoration = document.getElementById(`people-flow`);
-  const decorationOpenDoor = document.getElementById(`people-flow-open-door`);
-  const decorationOpenWindows = document.getElementById(`people-flow-open-windows`);
-  people_flowJson.value = lottie.loadAnimation({
-    container: decoration,
-    animType: 'svg',
-    loop: true,
-    autoplay: false,
-    animationData: people_flow
-  });
-  people_flowOpenDoorJson.value = lottie.loadAnimation({
-    container: decorationOpenDoor,
-    animType: 'svg',
-    loop: false,
-    autoplay: false,
-    animationData: people_flow_open_door
-  });
-  people_flowOpenWindowsJson.value = lottie.loadAnimation({
-    container: decorationOpenWindows,
-    animType: 'svg',
-    loop: false,
-    autoplay: false,
-    animationData: people_flow_open_windows
-  });
-  people_flowJson.value.play();
+
   peopleFlowClick.addEventListener('mouseover', () => {
     document.getElementById(`people-flow-house`).style.opacity = 1;
   });
   peopleFlowClick.addEventListener('mouseout', () => {
     document.getElementById(`people-flow-house`).style.opacity = 0.7;
   });
-};
 
-const normAnimation = () => {
   const normHouseClick = document.querySelector('.norm-house-click');
-  const decoration = document.getElementById(`norm`);
-  const decorationOpenDoor = document.getElementById(`norm-open-door`);
-  const decorationOpenWindows = document.getElementById(`norm-open-windows`);
-  normJson.value = lottie.loadAnimation({
-    container: decoration,
-    animType: 'svg',
-    loop: true,
-    autoplay: false,
-    animationData: norm
-  });
-  normOpenDoorJson.value = lottie.loadAnimation({
-    container: decorationOpenDoor,
-    animType: 'svg',
-    loop: false,
-    autoplay: false,
-    animationData: norm_open_door
-  });
-  normOpenWindowsJson.value = lottie.loadAnimation({
-    container: decorationOpenWindows,
-    animType: 'svg',
-    loop: false,
-    autoplay: false,
-    animationData: norm_open_windows
-  });
 
-  normJson.value.play();
   normHouseClick.addEventListener('mouseover', () => {
     document.getElementById(`norm-house`).style.opacity = 1;
   });
   normHouseClick.addEventListener('mouseout', () => {
     document.getElementById(`norm-house`).style.opacity = 0.7;
   });
-};
 
-const twinAnimation = () => {
   const twinHouseClick = document.querySelector('.twin-house-click');
-  const decoration = document.getElementById(`twin`);
-  const decorationOpenDoor = document.getElementById(`twin-open-door`);
-  const decorationOpenWindows = document.getElementById(`twin-open-windows`);
-  twinJson.value = lottie.loadAnimation({
-    container: decoration,
-    animType: 'svg',
-    loop: true,
-    autoplay: false,
-    animationData: twin
-  });
-  twinOpenDoorJson.value = lottie.loadAnimation({
-    container: decorationOpenDoor,
-    animType: 'svg',
-    loop: false,
-    autoplay: false,
-    animationData: twin_open_door
-  });
-  twinOpenWindowsJson.value = lottie.loadAnimation({
-    container: decorationOpenWindows,
-    animType: 'svg',
-    loop: false,
-    autoplay: false,
-    animationData: twin_open_windows
-  });
 
-  twinJson.value.play();
   twinHouseClick.addEventListener('mouseover', () => {
     document.getElementById(`twin-house`).style.opacity = 1;
   });
   twinHouseClick.addEventListener('mouseout', () => {
     document.getElementById(`twin-house`).style.opacity = 0.7;
   });
-};
 
-const strategyAnimation = () => {
   const strategyHouseClick = document.querySelector('.strategy-house-click');
-  const decoration = document.getElementById(`strategy`);
-  const decorationOpenDoor = document.getElementById(`strategy-open-door`);
-  const decorationOpenWindows = document.getElementById(`strategy-open-windows`);
-  strategyJson.value = lottie.loadAnimation({
-    container: decoration,
-    animType: 'svg',
-    loop: true,
-    autoplay: false,
-    animationData: strategy
-  });
-  strategyOpenDoorJson.value = lottie.loadAnimation({
-    container: decorationOpenDoor,
-    animType: 'svg',
-    loop: false,
-    autoplay: false,
-    animationData: strategy_open_door
-  });
-  strategyOpenWindowsJson.value = lottie.loadAnimation({
-    container: decorationOpenWindows,
-    animType: 'svg',
-    loop: false,
-    autoplay: false,
-    animationData: strategy_open_windows
-  });
 
-  strategyJson.value.play();
   strategyHouseClick.addEventListener('mouseover', () => {
     document.getElementById(`strategy-house`).style.opacity = 1;
   });
   strategyHouseClick.addEventListener('mouseout', () => {
     document.getElementById(`strategy-house`).style.opacity = 0.7;
   });
-};
 
-const potentialAnimation = () => {
   const potentialHouseClick = document.querySelector('.potential-house-click');
-  const decoration = document.getElementById(`potential`);
-  const decorationOpenDoor = document.getElementById(`potential-open-door`);
-  const decorationOpenWindows = document.getElementById(`potential-open-windows`);
-  potentialJson.value = lottie.loadAnimation({
-    container: decoration,
-    animType: 'svg',
-    loop: true,
-    autoplay: false,
-    animationData: potential
-  });
-  potentialOpenDoorJson.value = lottie.loadAnimation({
-    container: decorationOpenDoor,
-    animType: 'svg',
-    loop: false,
-    autoplay: false,
-    animationData: potential_open_door
-  });
-  potentialOpenWindowsJson.value = lottie.loadAnimation({
-    container: decorationOpenWindows,
-    animType: 'svg',
-    loop: false,
-    autoplay: false,
-    animationData: potential_open_windows
-  });
 
-  potentialJson.value.play();
   potentialHouseClick.addEventListener('mouseover', () => {
     document.getElementById(`potential-house`).style.opacity = 1;
   });
   potentialHouseClick.addEventListener('mouseout', () => {
     document.getElementById(`potential-house`).style.opacity = 0.7;
   });
-};
 
-const atmosphereAnimation = () => {
   const atmosphereHouseClick = document.querySelector('.atmosphere-house-click');
-  const decoration = document.getElementById(`atmosphere`);
-  const decorationOpenDoor = document.getElementById(`atmosphere-open-door`);
-  const decorationOpenWindows = document.getElementById(`atmosphere-open-windows`);
-  atmosphereJson.value = lottie.loadAnimation({
-    container: decoration,
-    animType: 'svg',
-    loop: true,
-    autoplay: false,
-    animationData: atmosphere
-  });
-  atmosphereOpenDoorJson.value = lottie.loadAnimation({
-    container: decorationOpenDoor,
-    animType: 'svg',
-    loop: false,
-    autoplay: false,
-    animationData: atmosphere_open_door
-  });
-  atmosphereOpenWindowsJson.value = lottie.loadAnimation({
-    container: decorationOpenWindows,
-    animType: 'svg',
-    loop: false,
-    autoplay: false,
-    animationData: atmosphere_open_windows
-  });
 
-  atmosphereJson.value.play();
   atmosphereHouseClick.addEventListener('mouseover', () => {
     document.getElementById(`atmosphere-house`).style.opacity = 1;
   });
@@ -309,14 +125,12 @@ const atmosphereAnimation = () => {
     document.getElementById(`atmosphere-house`).style.opacity = 0.7;
   });
 };
-// 初始化動畫結束
 
 const router = useRouter();
 // 點擊門窗動畫
 const clickHouse = (houseName) => {
   if (houseName == 'people-flow-open-door') {
-    people_flowOpenDoorJson.value.setDirection(1);
-    people_flowOpenDoorJson.value.play();
+    flowOpen.openDoor = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('disaster-prevention');
@@ -324,8 +138,7 @@ const clickHouse = (houseName) => {
       } else router.push('disaster-prevention');
     }, 1000);
   } else if (houseName == 'people-flow-open-windows') {
-    people_flowOpenWindowsJson.value.setDirection(1);
-    people_flowOpenWindowsJson.value.play();
+    flowOpen.openWindows = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('disaster-prevention');
@@ -333,8 +146,7 @@ const clickHouse = (houseName) => {
       } else router.push('disaster-prevention');
     }, 1000);
   } else if (houseName == 'norm-house-open-door') {
-    normOpenDoorJson.value.setDirection(1);
-    normOpenDoorJson.value.play();
+    normOpen.openDoor = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('disaster-prevention');
@@ -342,8 +154,7 @@ const clickHouse = (houseName) => {
       } else router.push('disaster-prevention');
     }, 1000);
   } else if (houseName == 'norm-house-open-windows') {
-    normOpenWindowsJson.value.setDirection(1);
-    normOpenWindowsJson.value.play();
+    normOpen.openWindows = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('disaster-prevention');
@@ -351,8 +162,7 @@ const clickHouse = (houseName) => {
       } else router.push('disaster-prevention');
     }, 1000);
   } else if (houseName == 'twin-house-open-door') {
-    twinOpenDoorJson.value.setDirection(1);
-    twinOpenDoorJson.value.play();
+    twinOpen.openDoor = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('disaster-prevention');
@@ -360,8 +170,7 @@ const clickHouse = (houseName) => {
       } else router.push('disaster-prevention');
     }, 1000);
   } else if (houseName == 'twin-house-open-windows') {
-    twinOpenWindowsJson.value.setDirection(1);
-    twinOpenWindowsJson.value.play();
+    twinOpen.openWindows = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('disaster-prevention');
@@ -369,8 +178,7 @@ const clickHouse = (houseName) => {
       } else router.push('disaster-prevention');
     }, 1000);
   } else if (houseName == 'strategy-house-open-door') {
-    strategyOpenDoorJson.value.setDirection(1);
-    strategyOpenDoorJson.value.play();
+    strategyOpen.openDoor = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('disaster-prevention');
@@ -378,8 +186,7 @@ const clickHouse = (houseName) => {
       } else router.push('disaster-prevention');
     }, 1000);
   } else if (houseName == 'strategy-house-open-windows') {
-    strategyOpenWindowsJson.value.setDirection(1);
-    strategyOpenWindowsJson.value.play();
+    strategyOpen.openWindows = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('disaster-prevention');
@@ -387,8 +194,7 @@ const clickHouse = (houseName) => {
       } else router.push('disaster-prevention');
     }, 1000);
   } else if (houseName == 'potential-house-open-door') {
-    potentialOpenDoorJson.value.setDirection(1);
-    potentialOpenDoorJson.value.play();
+    potentialOpen.openDoor = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('disaster-prevention');
@@ -396,8 +202,7 @@ const clickHouse = (houseName) => {
       } else router.push('disaster-prevention');
     }, 1000);
   } else if (houseName == 'potential-house-open-windows') {
-    potentialOpenWindowsJson.value.setDirection(1);
-    potentialOpenWindowsJson.value.play();
+    potentialOpen.openWindows = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('disaster-prevention');
@@ -405,8 +210,7 @@ const clickHouse = (houseName) => {
       } else router.push('disaster-prevention');
     }, 1000);
   } else if (houseName == 'atmosphere-house-open-door') {
-    atmosphereOpenDoorJson.value.setDirection(1);
-    atmosphereOpenDoorJson.value.play();
+    atmosphereOpen.openDoor = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('disaster-prevention');
@@ -414,8 +218,7 @@ const clickHouse = (houseName) => {
       } else router.push('disaster-prevention');
     }, 1000);
   } else if (houseName == 'atmosphere-house-open-windows') {
-    atmosphereOpenWindowsJson.value.setDirection(1);
-    atmosphereOpenWindowsJson.value.play();
+    atmosphereOpen.openWindows = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('disaster-prevention');
@@ -430,86 +233,56 @@ const clickHouse = (houseName) => {
   <div class="container-fluid p-0" v-if="screenSwitch == false">
     <div class="primary-school">
       <div class="title-container">
-        <img class="title-img" src="../assets/disaster_prevention/title_img.png" alt="" />
+        <img class="title-img" src="@/assets/disaster_prevention/title_img.png" alt="" />
       </div>
 
       <div class="doll-1-container">
-        <img src="../assets/primary_school/doll_1.png" alt="doll_1" />
+        <img src="@/assets/primary_school/doll_1.png" alt="doll_1" />
       </div>
       <div class="doll-2-container">
-        <img src="../assets/primary_school/doll_2.png" alt="doll_1" />
+        <img src="@/assets/primary_school/doll_2.png" alt="doll_1" />
       </div>
 
       <div class="house-bg"></div>
       <!-- <div class="house-container"> -->
       <div class="house-box">
         <div id="people-flow-house">
-          <div class="d-flex align-items-center justify-content-center">
-            <!-- <div class="house-title d-flex align-items-center justify-content-center">人流樓</div> -->
-          </div>
-          <div id="people-flow"></div>
-          <div id="people-flow-open-door"></div>
-          <div id="people-flow-open-windows"></div>
+          <PeopleFlow :flow-open="flowOpen" />
         </div>
         <div class="people-flow-click">
           <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
           <div class="windows-click" @click="clickHouse('people-flow-open-windows')"></div>
         </div>
         <div id="norm-house">
-          <div class="d-flex align-items-center justify-content-center">
-            <!-- <div class="house-title d-flex align-items-center justify-content-center">指標樓</div> -->
-          </div>
-          <div id="norm"></div>
-          <div id="norm-open-door"></div>
-          <div id="norm-open-windows"></div>
+          <Norm :norm-open="normOpen" />
         </div>
         <div class="norm-house-click">
           <div class="door-click" @click="clickHouse('norm-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('norm-house-open-windows')"></div>
         </div>
         <div id="twin-house">
-          <div class="d-flex align-items-center justify-content-center">
-            <!-- <div class="house-title d-flex align-items-center justify-content-center">孿生樓</div> -->
-          </div>
-          <div id="twin"></div>
-          <div id="twin-open-door"></div>
-          <div id="twin-open-windows"></div>
+          <twin :twin-open="twinOpen" />
         </div>
         <div class="twin-house-click">
           <div class="door-click" @click="clickHouse('twin-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('twin-house-open-windows')"></div>
         </div>
         <div id="strategy-house">
-          <div class="d-flex align-items-center justify-content-center">
-            <!-- <div class="house-title d-flex align-items-center justify-content-center">策略樓</div> -->
-          </div>
-          <div id="strategy"></div>
-          <div id="strategy-open-door"></div>
-          <div id="strategy-open-windows"></div>
+          <strategy :strategy-open="strategyOpen" />
         </div>
         <div class="strategy-house-click">
           <div class="door-click" @click="clickHouse('strategy-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('strategy-house-open-windows')"></div>
         </div>
         <div id="potential-house">
-          <div class="d-flex align-items-center justify-content-center">
-            <!-- <div class="house-title d-flex align-items-center justify-content-center">潛勢樓</div> -->
-          </div>
-          <div id="potential"></div>
-          <div id="potential-open-door"></div>
-          <div id="potential-open-windows"></div>
+          <potential :potential-open="potentialOpen" />
         </div>
         <div class="potential-house-click">
           <div class="door-click" @click="clickHouse('potential-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('potential-house-open-windows')"></div>
         </div>
         <div id="atmosphere-house">
-          <div class="d-flex align-items-center justify-content-center">
-            <!-- <div class="house-title d-flex align-items-center justify-content-center">氣象樓</div> -->
-          </div>
-          <div id="atmosphere"></div>
-          <div id="atmosphere-open-door"></div>
-          <div id="atmosphere-open-windows"></div>
+          <atmosphere :atmosphere-open="atmosphereOpen" />
         </div>
         <div class="atmosphere-house-click">
           <div class="door-click" @click="clickHouse('atmosphere-house-open-door')"></div>
@@ -547,12 +320,12 @@ const clickHouse = (houseName) => {
     <div class="primary-school">
       <div class="row">
         <div class="col d-flex align-items-center justify-content-center">
-          <img class="title-img" src="../assets/disaster_prevention/title_img.png" />
+          <img class="title-img" src="@/assets/disaster_prevention/title_img.png" />
         </div>
       </div>
       <div class="row">
         <div class="col d-flex align-items-center justify-content-center">
-          <img class="doll-img" src="../assets/primary_school/doll_m.svg" />
+          <img class="doll-img" src="@/assets/primary_school/doll_m.svg" />
         </div>
       </div>
       <div class="row">
@@ -560,9 +333,7 @@ const clickHouse = (houseName) => {
           class="people-flow-container col-12 mb-2 d-flex align-items-center justify-content-center"
         >
           <div id="people-flow-house">
-            <div id="people-flow"></div>
-            <div id="people-flow-open-door"></div>
-            <div id="people-flow-open-windows"></div>
+            <PeopleFlow :flow-open="flowOpen" />
           </div>
           <div class="people-flow-click">
             <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
@@ -571,12 +342,7 @@ const clickHouse = (houseName) => {
         </div>
         <div class="norm-container col-12 mb-5 d-flex align-items-center justify-content-center">
           <div id="norm-house">
-            <div class="d-flex align-items-center justify-content-center">
-              <!-- <div class="house-title d-flex align-items-center justify-content-center">指標樓</div> -->
-            </div>
-            <div id="norm"></div>
-            <div id="norm-open-door"></div>
-            <div id="norm-open-windows"></div>
+            <Norm :norm-open="normOpen" />
           </div>
           <div class="norm-house-click">
             <div class="door-click" @click="clickHouse('norm-house-open-door')"></div>
@@ -585,12 +351,7 @@ const clickHouse = (houseName) => {
         </div>
         <div class="twin-container col-12 mb-2 d-flex align-items-center justify-content-center">
           <div id="twin-house">
-            <div class="d-flex align-items-center justify-content-center">
-              <!-- <div class="house-title d-flex align-items-center justify-content-center">孿生樓</div> -->
-            </div>
-            <div id="twin"></div>
-            <div id="twin-open-door"></div>
-            <div id="twin-open-windows"></div>
+            <twin :twin-open="twinOpen" />
           </div>
           <div class="twin-house-click">
             <div class="door-click" @click="clickHouse('twin-house-open-door')"></div>
@@ -601,12 +362,7 @@ const clickHouse = (houseName) => {
           class="strategy-container col-12 mb-2 d-flex align-items-center justify-content-center"
         >
           <div id="strategy-house">
-            <div class="d-flex align-items-center justify-content-center">
-              <!-- <div class="house-title d-flex align-items-center justify-content-center">策略樓</div> -->
-            </div>
-            <div id="strategy"></div>
-            <div id="strategy-open-door"></div>
-            <div id="strategy-open-windows"></div>
+            <strategy :strategy-open="strategyOpen" />
           </div>
           <div class="strategy-house-click">
             <div class="door-click" @click="clickHouse('strategy-house-open-door')"></div>
@@ -617,12 +373,7 @@ const clickHouse = (houseName) => {
           class="potential-container col-12 mb-2 d-flex align-items-center justify-content-center"
         >
           <div id="potential-house">
-            <div class="d-flex align-items-center justify-content-center">
-              <!-- <div class="house-title d-flex align-items-center justify-content-center">潛勢樓</div> -->
-            </div>
-            <div id="potential"></div>
-            <div id="potential-open-door"></div>
-            <div id="potential-open-windows"></div>
+            <potential :potential-open="potentialOpen" />
           </div>
           <div class="potential-house-click">
             <div class="door-click" @click="clickHouse('potential-house-open-door')"></div>
@@ -633,12 +384,7 @@ const clickHouse = (houseName) => {
           class="atmosphere-container col-12 mb-5 d-flex align-items-center justify-content-center"
         >
           <div id="atmosphere-house">
-            <div class="d-flex align-items-center justify-content-center">
-              <!-- <div class="house-title d-flex align-items-center justify-content-center">氣象樓</div> -->
-            </div>
-            <div id="atmosphere"></div>
-            <div id="atmosphere-open-door"></div>
-            <div id="atmosphere-open-windows"></div>
+            <atmosphere :atmosphere-open="atmosphereOpen" />
           </div>
           <div class="atmosphere-house-click">
             <div class="door-click" @click="clickHouse('atmosphere-house-open-door')"></div>

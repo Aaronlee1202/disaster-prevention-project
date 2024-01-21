@@ -66,34 +66,19 @@ watch(
       </div>
     </div>
     <div class="container-fluid custom-container" v-if="screenSwitch == true">
-      <!-- <div class="row"> -->
-      <!-- <div class="col"> -->
       <div class="img-container">
-        <!-- <img src="@/assets/disaster_prevention/new_talisman.png" alt="新的護身符" /> -->
-        <div class="start-box d-flex justify-content-center">
-          <!-- <div id="new-talisman-start"></div> -->
-          <TalismanStart :fade-out="fadeOut" />
-        </div>
-        <div class="begin-box d-flex justify-content-center">
-          <!-- <div id="new-talisman-begin"></div> -->
-          <TalismanNormal :play-lottie="fadeOut" />
-        </div>
+        <TalismanStart :fade-out="fadeOut" />
+        <TalismanNormal :play-lottie="fadeOut" />
       </div>
-      <!-- </div> -->
-      <!-- </div> -->
-      <div class="row">
-        <div class="col">
-          <div class="content-box">
-            <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
-            <h4 class="small-title">人流樓</h4>
-            <h2>人手一機的防災新法寶</h2>
-            <p>
-              發行日期 | 2023.01.01 <br />
-              作者 | 地人組 黃明偉 <br />
-              審稿人 | 柯孝勳
-            </p>
-          </div>
-        </div>
+      <div class="content-box">
+        <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
+        <h4 class="small-title">人流樓</h4>
+        <h2>人手一機的防災新法寶</h2>
+        <p>
+          發行日期 | 2023.01.01 <br />
+          作者 | 地人組 黃明偉 <br />
+          審稿人 | 柯孝勳
+        </p>
       </div>
       <div class="dashed-line"></div>
     </div>
@@ -217,22 +202,28 @@ h2 {
   .img-container {
     position: relative;
     height: 80svh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    div {
-      width: 110% !important;
-    }
-    .start-box {
-      // width: 100%;
+    width: 100% !important;
+    #new-talisman-start {
+      // 使用CSS的transform綁定來讓子div與父div保持一一樣大小
       position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      transform: scale(1);
+      width: 100% !important;
       z-index: 10;
       opacity: 1;
       transition: opacity 1s ease;
     }
-    .begin-box {
-      // width: 100%;
+    #new-talisman-begin {
       position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      transform: scale(1);
+      width: 100% !important;
       z-index: 5;
     }
     .fade-out {
@@ -240,6 +231,7 @@ h2 {
     }
   }
   .content-box {
+    position: relative;
     padding-top: 10%;
     padding-left: 10%;
     img {

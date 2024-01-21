@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import PrimarySchoolView from '../views/PrimarySchoolView.vue';
+import PrimarySchoolView from '../views/PrimarySchool/PrimarySchoolView.vue';
 import DisasterPreventionView from '../views/DisasterPrevention/DisasterPreventionView.vue';
 
 const router = createRouter({
