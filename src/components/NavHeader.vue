@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+// import { useRouter } from 'vue-router';
 import Logo_Ncdr_Icon from './svg/logo_ncdr.vue';
 import Logo_Icon from './svg/logo_icon.vue';
 
-const router = useRouter();
+// const router = useRouter();
 
 const toggle = ref(false);
 const menuToggle = () => {
@@ -15,8 +15,11 @@ const toNcdrPage = () => {
   window.open('https://www.ncdr.nat.gov.tw/', '_blank');
 };
 const toHomePage = () => {
-  // window.open('https://aaronlee1202.github.io/disaster-prevention-project/');
-  router.push({ path: '/' });
+  window.open(
+    'https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html',
+    '_blank'
+  );
+  // router.push({ path: '/' });
 };
 </script>
 
