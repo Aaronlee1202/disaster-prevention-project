@@ -1,15 +1,22 @@
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import Logo_Ncdr_Icon from './svg/logo_ncdr.vue';
 import Logo_Icon from './svg/logo_icon.vue';
+
+const router = useRouter();
 
 const toggle = ref(false);
 const menuToggle = () => {
   if (toggle.value == false) toggle.value = true;
   else toggle.value = false;
 };
-const toHomePage = () => {
+const toNcdrPage = () => {
   window.open('https://www.ncdr.nat.gov.tw/', '_blank');
+};
+const toHomePage = () => {
+  // window.open('https://aaronlee1202.github.io/disaster-prevention-project/');
+  router.push({ path: '/' });
 };
 </script>
 
@@ -28,10 +35,10 @@ const toHomePage = () => {
               <div class="header-logo">
                 <h1>
                   <!-- <Logo_Ncdr_Icon class="svg-img" @click="toHomePage" target="_blank" /> -->
-                  <a @click="toHomePage" target="_blank" title="行政法人國災害防救科技中心">
+                  <a @click="toNcdrPage" target="_blank" title="行政法人國災害防救科技中心">
                     <Logo_Ncdr_Icon class="svg-img" />
                   </a>
-                  <a href="/" title="防災特輯"><Logo_Icon class="svg-img" /></a>
+                  <a @click="toHomePage" title="防災特輯"><Logo_Icon class="svg-img" /></a>
                 </h1>
               </div>
             </div>
