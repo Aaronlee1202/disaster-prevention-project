@@ -233,7 +233,7 @@ const clickHouse = (houseName) => {
   <div class="container-fluid p-0" v-if="screenSwitch == false">
     <div class="primary-school">
       <div class="title-container">
-        <img class="title-img" src="@/assets/disaster_prevention/title_img.png" alt="" />
+        <img class="title-img" src="@/assets/disaster_prevention/title_img.svg" alt="" />
       </div>
 
       <div class="doll-1-container">
@@ -320,7 +320,7 @@ const clickHouse = (houseName) => {
     <div class="primary-school">
       <div class="row">
         <div class="col d-flex align-items-center justify-content-center">
-          <img class="title-img" src="@/assets/disaster_prevention/title_img.png" />
+          <img class="title-img" src="@/assets/disaster_prevention/title_img.svg" />
         </div>
       </div>
       <div class="row">
@@ -523,7 +523,7 @@ const clickHouse = (houseName) => {
     position: absolute;
     width: 200px !important;
     height: 180px !important;
-    top: 19% !important;
+    top: 24% !important;
     left: 57% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
@@ -533,13 +533,12 @@ const clickHouse = (houseName) => {
     position: absolute;
     width: 320px !important;
     height: 316.005px !important;
-    top: 14% !important;
   }
   .norm-house-click {
     position: absolute;
     width: 200px !important;
     height: 180px !important;
-    top: 35% !important;
+    top: 40% !important;
     left: 76% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
@@ -554,7 +553,7 @@ const clickHouse = (houseName) => {
     position: absolute;
     width: 200px !important;
     height: 180px !important;
-    top: 30% !important;
+    top: 35% !important;
     left: 40% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
@@ -569,7 +568,7 @@ const clickHouse = (houseName) => {
     position: absolute;
     width: 200px !important;
     height: 180px !important;
-    top: 48% !important;
+    top: 53% !important;
     left: 58% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
@@ -584,7 +583,7 @@ const clickHouse = (houseName) => {
     position: absolute;
     width: 200px !important;
     height: 180px !important;
-    top: 41% !important;
+    top: 46% !important;
     left: 22% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
@@ -599,7 +598,7 @@ const clickHouse = (houseName) => {
     position: absolute;
     width: 220px !important;
     height: 180px !important;
-    top: 60% !important;
+    top: 65% !important;
     left: 40% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
@@ -661,7 +660,7 @@ const clickHouse = (houseName) => {
   .title-container {
     position: absolute;
     width: 100%;
-    top: 17% !important;
+    top: 20% !important;
     left: 50% !important;
     transform: translate(-50%, -50%);
     display: flex;
@@ -720,8 +719,8 @@ const clickHouse = (houseName) => {
   #people-flow-house {
     position: absolute;
     width: 250px;
-    top: 19% !important;
-    left: 57% !important;
+    top: 24%;
+    left: 57%;
     transform: translate(-50%, -50%);
     z-index: 998;
     opacity: 0.7;
@@ -737,8 +736,8 @@ const clickHouse = (houseName) => {
   }
   .norm-house-click {
     position: absolute;
-    width: 200px !important;
-    height: 180px !important;
+    width: 200px;
+    height: 180px;
     top: 46%;
     left: 76%;
     transform: translate(-50%, -50%);
@@ -768,8 +767,8 @@ const clickHouse = (houseName) => {
   #norm-house {
     position: absolute;
     width: 250px;
-    top: 32% !important;
-    left: 75% !important;
+    top: 37%;
+    left: 75%;
     transform: translate(-50%, -50%);
     z-index: 998;
     opacity: 0.7;
@@ -818,8 +817,8 @@ const clickHouse = (houseName) => {
     position: absolute;
     width: 250px;
     // height: 316.005px;
-    top: 28% !important;
-    left: 40% !important;
+    top: 33%;
+    left: 40%;
     transform: translate(-50%, -50%);
     z-index: 998;
     opacity: 0.7;
@@ -867,8 +866,8 @@ const clickHouse = (houseName) => {
     position: absolute;
     width: 250px;
     // height: 316.005px;
-    top: 48% !important;
-    left: 58% !important;
+    top: 53%;
+    left: 58%;
     transform: translate(-50%, -50%);
     z-index: 998;
     opacity: 0.7;
@@ -916,8 +915,8 @@ const clickHouse = (houseName) => {
     position: absolute;
     width: 250px;
     // height: 316.005px;
-    top: 39% !important;
-    left: 22% !important;
+    top: 44%;
+    left: 22%;
     transform: translate(-50%, -50%);
     z-index: 998;
     opacity: 0.7;
@@ -965,8 +964,8 @@ const clickHouse = (houseName) => {
     position: absolute;
     width: 250px;
     // height: 316.005px;
-    top: 58% !important;
-    left: 40% !important;
+    top: 63%;
+    left: 40%;
     transform: translate(-50%, -50%);
     z-index: 998;
     opacity: 0.7;
