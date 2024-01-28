@@ -1,18 +1,43 @@
 <script setup>
-import { ref, watch } from 'vue';
+import { onMounted, ref, watch } from 'vue';
+import lottie from 'lottie-web';
 import { useWindowSize } from '@vueuse/core';
 import Triangle_Icon from '@/components/svg/triangle_icon.vue';
 import Link_Icon from '@/components/svg/link_icon.vue';
 import Arrow_Right from '@/components/svg/arrow_right.vue';
 import Arrow_share from '@/components/svg/arrow_share_white.vue';
-// import Home_Icon from '@/components/svg/home_icon_1.vue';
 import Month_Icon from '@/components/svg/month_icon.vue';
-import Month_Btn_Icon from '@/components/svg/month_btn_icon.vue';
+import QAjson from '@/assets/lottie/QA.json';
+import month_1 from '@/assets/flow_of_people/month/1.svg';
+import month_2 from '@/assets/flow_of_people/month/2.svg';
+import month_3 from '@/assets/flow_of_people/month/3.svg';
+import month_4 from '@/assets/flow_of_people/month/4.svg';
+import month_5 from '@/assets/flow_of_people/month/5.svg';
+import month_6 from '@/assets/flow_of_people/month/6.svg';
+import month_7 from '@/assets/flow_of_people/month/7.svg';
+import month_8 from '@/assets/flow_of_people/month/8.svg';
+import month_9 from '@/assets/flow_of_people/month/9.svg';
+import month_10 from '@/assets/flow_of_people/month/10.svg';
+import month_11 from '@/assets/flow_of_people/month/11.svg';
+import month_12 from '@/assets/flow_of_people/month/12.svg';
 
 const { width } = useWindowSize();
-const items = [1, 2, 3, 4, 5, 6];
+const items = [month_1, month_2, month_3, month_4, month_5, month_6];
+const items2 = [month_7, month_8, month_9, month_10, month_11, month_12];
+const newQAJson = ref(null);
 const screenSwitch = ref(false);
-
+onMounted(() => {
+  lottieAnimation();
+});
+const lottieAnimation = () => {
+  newQAJson.value = lottie.loadAnimation({
+    container: document.getElementById('qa-doll'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    animationData: QAjson
+  });
+};
 watch(
   width,
   (newVal) => {
@@ -112,8 +137,9 @@ watch(
             </div>
           </div>
         </div>
-        <div class="col-6">
+        <div class="link-container col-6">
           <h3>相關連結</h3>
+          <div id="qa-doll"></div>
           <div class="related-links d-flex align-items-center justify-content-start mb-4 mt-5">
             <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
             <div class="link-text d-flex align-items-center justify-content-between">
@@ -182,16 +208,16 @@ watch(
         <div class="row">
           <div class="col-12 d-flex align-items-center justify-content-center">
             <div v-for="(item, index) in items" :key="index">
-              <div class="month-icon d-flex align-items-center justify-content-center">
-                <Month_Btn_Icon />
-              </div>
+              <a type="button" class="month-icon d-flex align-items-center justify-content-center">
+                <img :src="item" />
+              </a>
             </div>
           </div>
           <div class="col-12 d-flex align-items-center justify-content-center">
-            <div v-for="(item, index) in items" :key="index">
-              <div class="month-icon d-flex align-items-center justify-content-center">
-                <Month_Btn_Icon />
-              </div>
+            <div v-for="(item, index) in items2" :key="index">
+              <a type="button" class="month-icon d-flex align-items-center justify-content-center">
+                <img :src="item" />
+              </a>
             </div>
           </div>
         </div>
@@ -285,12 +311,11 @@ watch(
           </div>
         </div>
         <div class="col-12">
-          <div class="d-flex align-items-center justify-content-between">
+          <div class="link-container d-flex align-items-center justify-content-between">
             <h3>相關連結</h3>
-            <div class="d-flex align-items-end pb-1">
-              <img src="@/assets/flow_of_people/mobile_cute_1.png" alt="" />
-              <img src="@/assets/flow_of_people/mobile_cute_2.png" alt="" />
-            </div>
+            <!-- <div class="d-flex align-items-end"> -->
+            <div id="qa-doll"></div>
+            <!-- </div> -->
           </div>
           <div class="related-links d-flex align-items-center justify-content-start mb-4">
             <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
@@ -360,14 +385,14 @@ watch(
           <div class="col p-0">
             <div class="d-flex justify-content-center" v-for="(item, index) in items" :key="index">
               <div class="month-icon d-flex align-items-center justify-content-center">
-                <Month_Btn_Icon />
+                <img :src="item" />
               </div>
             </div>
           </div>
           <div class="col p-0">
-            <div class="d-flex justify-content-center" v-for="(item, index) in items" :key="index">
+            <div class="d-flex justify-content-center" v-for="(item, index) in items2" :key="index">
               <div class="month-icon d-flex align-items-center justify-content-center">
-                <Month_Btn_Icon />
+                <img :src="item" />
               </div>
             </div>
           </div>
@@ -425,6 +450,16 @@ p {
   letter-spacing: 0.56px;
   color: #333;
 }
+.link-container {
+  position: relative;
+  #qa-doll {
+    position: absolute;
+    width: 55%;
+    top: -35px;
+    right: 0%;
+    z-index: -1;
+  }
+}
 .related-links {
   width: 100%;
   padding: 20px;
@@ -440,6 +475,9 @@ p {
   }
   &:hover {
     background-color: #ffee81;
+  }
+  &:active {
+    background-color: #f5da00;
   }
 }
 .btn {
@@ -457,7 +495,7 @@ p {
   &:hover {
     background-color: #47d8d4;
   }
-  &:focus {
+  &:active {
     background-color: #1f9a9a;
   }
 }
@@ -465,6 +503,9 @@ p {
   background-color: #fff;
   color: #26a8a8;
   border: 2px solid #26a8a8;
+  svg g path {
+    transition: all 0.3s;
+  }
   &:hover {
     border: 2px solid #47d8d4;
     color: #47d8d4;
@@ -472,7 +513,7 @@ p {
       fill: #47d8d4;
     }
   }
-  &:focus {
+  &:active {
     border: 2px solid #1f9a9a;
     color: #1f9a9a;
     svg g path {
@@ -505,16 +546,20 @@ p {
 .month-icon {
   width: 100px;
   height: 100px;
-  padding: 10.775px 21.926px 18.335px 23.119px;
+  // padding: 10.775px 21.926px 18.335px 23.119px;
   margin: 0px 2rem 2rem 0px;
   border-radius: 200px;
   border: 4px solid #fff;
-  background: #24b2ae;
-  box-shadow: 0px 0px 0px 2px #24b2ae;
+  background: #47d8d4;
+  box-shadow: 0px 0px 0px 2px #47d8d4;
   cursor: pointer;
   &:hover {
-    background: #47d8d4;
-    box-shadow: 0px 0px 0px 2px #47d8d4;
+    background: #24b2ae;
+    box-shadow: 0px 0px 0px 2px #24b2ae;
+  }
+  &:active {
+    background-color: #1f9a9a;
+    box-shadow: 0px 0px 0px 2px #24b2ae;
   }
 }
 
@@ -567,6 +612,16 @@ p {
     font-weight: 400;
     letter-spacing: 0.56px;
     color: #333;
+  }
+  .link-container {
+    position: relative;
+    #qa-doll {
+      position: absolute;
+      width: 55%;
+      top: -20px;
+      right: 0%;
+      z-index: -1;
+    }
   }
   .related-links {
     width: 100%;
@@ -631,7 +686,7 @@ p {
   .month-icon {
     width: 100px;
     height: 100px;
-    padding: 10.775px 21.926px 18.335px 23.119px;
+    // padding: 10.775px 21.926px 18.335px 23.119px;
     margin: 0px 2rem 2rem 0px;
     border-radius: 200px;
     border: 4px solid #fff;
@@ -715,16 +770,16 @@ p {
   .month-icon {
     width: 100px;
     height: 100px;
-    padding: 10.775px 21.926px 18.335px 23.119px;
+    // padding: 10.775px 21.926px 18.335px 23.119px;
     margin: 1rem 0;
     border-radius: 200px;
     border: 4px solid #fff;
-    background: #24b2ae;
-    box-shadow: 0px 0px 0px 2px #24b2ae;
+    background: #47d8d4;
+    box-shadow: 0px 0px 0px 2px #47d8d4;
     cursor: pointer;
     &:hover {
-      background: #47d8d4;
-      box-shadow: 0px 0px 0px 2px #47d8d4;
+      background: #24b2ae;
+      box-shadow: 0px 0px 0px 2px #24b2ae;
     }
   }
 }

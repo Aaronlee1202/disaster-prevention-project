@@ -12,6 +12,8 @@ import arrow_share from '@/components/svg/arrow_share.vue';
 import facebook_icon from '@/components/svg/facebook_icon.vue';
 import line_icon from '@/components/svg/line_icon.vue';
 import Home_Icon from '@/components/svg/home_icon.vue';
+import finger_default from '@/assets/primary_school/default.png';
+import finger_pressed from '@/assets/primary_school/pressed.png';
 
 defineComponent({
   components: {
@@ -27,6 +29,15 @@ defineComponent({
 onMounted(() => {
   mouseEvent();
 });
+
+// 按下手指
+const clicked = ref(false);
+const clickFinger = () => {
+  clicked.value = true;
+  setTimeout(() => {
+    clicked.value = false;
+  }, 1000);
+};
 
 const { width } = useWindowSize();
 const screenSwitch = ref(false);
@@ -128,7 +139,11 @@ const mouseEvent = () => {
 
 const router = useRouter();
 // 點擊門窗動畫
-const clickHouse = (houseName) => {
+const clickHouse = (houseName, fingerClick) => {
+  console.log(fingerClick);
+  if (fingerClick == 'finger-click') {
+    clickFinger();
+  }
   if (houseName == 'people-flow-open-door') {
     flowOpen.openDoor = true;
     setTimeout(() => {
@@ -264,7 +279,8 @@ const clickHouse = (houseName) => {
           <twin :twin-open="twinOpen" />
         </div>
         <div class="twin-house-click">
-          <div class="door-click" @click="clickHouse('twin-house-open-door')"></div>
+          <img class="finger" :src="clicked ? finger_pressed : finger_default" />
+          <div class="door-click" @click="clickHouse('twin-house-open-door', 'finger-click')"></div>
           <div class="windows-click" @click="clickHouse('twin-house-open-windows')"></div>
         </div>
         <div id="strategy-house">
@@ -336,8 +352,9 @@ const clickHouse = (houseName) => {
             <PeopleFlow :flow-open="flowOpen" />
           </div>
           <div class="people-flow-click">
+            <img class="finger" :src="clicked ? finger_pressed : finger_default" />
             <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
-            <div class="windows-click" @click="clickHouse('people-flow-open-windows')"></div>
+            <div class="windows-click" @click="clickHouse('people-flow-open-windows', 'finger-click')"></div>
           </div>
         </div>
         <div class="norm-container col-12 mb-5 d-flex align-items-center justify-content-center">
@@ -420,40 +437,39 @@ const clickHouse = (houseName) => {
 </template>
 
 <style lang="scss" scoped>
-.house-bg {
-  position: absolute;
-  background-image: url('@/assets/primary_school/house_bg.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  z-index: -999;
-}
 .doll-1-container {
   position: absolute;
-  width: 10%;
-  height: 10%;
-  top: 28%;
-  left: 28%;
+  width: 8%;
+  top: 38%;
+  left: 32%;
   transform: translate(-50%, -50%);
 }
 .doll-2-container {
   position: absolute;
-  width: 10%;
-  height: 10%;
-  top: 60%;
-  left: 75%;
+  width: 8%;
+  top: 79%;
+  left: 74%;
   transform: translate(-50%, -50%);
 }
-@media screen and (min-width: 1200px) {
+
+.primary-school {
+  position: relative;
+  // padding-top: 100px;
+}
+.house-box {
+  position: relative;
+  max-width: 1920px;
+  height: 980px;
+  margin: auto;
+}
+@media screen and (min-width: 1600px) {
   .primary-school {
-    position: relative;
-    height: 100%;
     padding-top: 10% !important;
   }
   .share-container {
     position: absolute;
     width: 35% !important;
-    right: 10% !important;
+    right: 5% !important;
     color: #a06c57;
     .row {
       height: 100%;
@@ -498,127 +514,168 @@ const clickHouse = (houseName) => {
     }
   }
   .title-img {
-    width: 15%;
-    // padding-left: 10%;
+    width: 20% !important;
+    padding-top: 3%;
   }
 
   .house-container {
     position: relative;
     width: 100%;
   }
-  .house-box {
-    position: relative;
-    max-width: 1920px;
-    height: 980px;
-    margin: auto;
-  }
-  .house-bg {
-    position: absolute;
-    width: 100% !important;
-    height: 100% !important;
-    top: 55%;
-    left: 50%;
-  }
   .people-flow-click {
-    position: absolute;
-    width: 200px !important;
-    height: 180px !important;
-    top: 24% !important;
-    left: 57% !important;
-    transform: translate(-50%, -50%);
+    top: 32% !important;
+    left: 61% !important;
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    .door-click {
+      width: 80px !important;
+      height: 80px !important;
+      top: 50% !important;
+      left: 0% !important;
+      // background-color: #3f3a3a60;
+    }
+    .windows-click {
+      width: 80px !important;
+      height: 80px !important;
+      top: 30% !important;
+      right: 0% !important;
+      // background-color: #3f3a3a60;
+    }
   }
   #people-flow-house {
-    position: absolute;
-    width: 320px !important;
-    height: 316.005px !important;
+    width: 400px !important;
+    top: 10% !important;
+    left: 60% !important;
   }
   .norm-house-click {
-    position: absolute;
-    width: 200px !important;
-    height: 180px !important;
-    top: 40% !important;
-    left: 76% !important;
-    transform: translate(-50%, -50%);
+    top: 48% !important;
+    left: 75% !important;
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    .door-click {
+      width: 80px !important;
+      height: 80px !important;
+      top: 50% !important;
+      left: 7%;
+      // background-color: #3f3a3a60;
+    }
+    .windows-click {
+      width: 80px !important;
+      height: 80px !important;
+      top: 45%;
+      right: 0% !important;
+      // background-color: #3f3a3a60;
+    }
   }
   #norm-house {
-    position: absolute;
-    width: 320px !important;
-    height: 316.005px !important;
+    width: 400px !important;
+    top: 23% !important;
+    left: 75% !important;
   }
   .twin-house-click {
-    position: absolute;
-    width: 200px !important;
-    height: 180px !important;
-    top: 35% !important;
-    left: 40% !important;
-    transform: translate(-50%, -50%);
+    top: 46% !important;
+    left: 46% !important;
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    .door-click {
+      width: 80px !important;
+      height: 80px !important;
+      top: 55% !important;
+      right: 5% !important;
+      // background-color: #3f3a3a50;
+    }
+    .windows-click {
+      width: 80px !important;
+      height: 80px !important;
+      top: 50% !important;
+      left: 10% !important;
+      // background-color: #3f3a3a60;
+    }
   }
   #twin-house {
-    position: absolute;
-    width: 320px !important;
-    height: 316.005px !important;
+    width: 400px !important;
+    top: 25% !important;
+    left: 45% !important;
   }
   .strategy-house-click {
-    position: absolute;
-    width: 200px !important;
-    height: 180px !important;
-    top: 53% !important;
-    left: 58% !important;
-    transform: translate(-50%, -50%);
+    top: 66% !important;
+    left: 61% !important;
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    .door-click {
+      width: 80px !important;
+      height: 80px !important;
+      top: 50%;
+      left: 0% !important;
+      // background-color: #3f3a3a60;
+    }
+    .windows-click {
+      width: 80px !important;
+      height: 80px !important;
+      top: 50%;
+      right: 0%;
+      // background-color: #3f3a3a60;
+    }
   }
   #strategy-house {
-    position: absolute;
-    width: 320px !important;
-    height: 316.005px !important;
+    width: 400px !important;
+    top: 46% !important;
+    left: 60% !important;
   }
   .potential-house-click {
-    position: absolute;
-    width: 200px !important;
-    height: 180px !important;
-    top: 46% !important;
-    left: 22% !important;
-    transform: translate(-50%, -50%);
+    top: 63% !important;
+    left: 31% !important;
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    .door-click {
+      width: 80px !important;
+      height: 80px !important;
+      top: 55% !important;
+      left: 0% !important;
+      // background-color: #3f3a3a60;
+    }
+    .windows-click {
+      width: 80px !important;
+      height: 80px !important;
+      top: 25% !important;
+      right: 0% !important;
+      // background-color: #3f3a3a60;
+    }
   }
   #potential-house {
-    position: absolute;
-    width: 320px !important;
-    height: 316.005px !important;
+    width: 400px !important;
+    top: 40% !important;
+    left: 31% !important;
   }
   .atmosphere-house-click {
-    position: absolute;
-    width: 220px !important;
-    height: 180px !important;
-    top: 65% !important;
-    left: 40% !important;
-    transform: translate(-50%, -50%);
+    width: 270px !important;
+    top: 82% !important;
+    left: 47% !important;
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    .door-click {
+      width: 80px !important;
+      height: 80px !important;
+      top: 40%;
+      left: 0%;
+      // background-color: #3f3a3a60;
+    }
+    .windows-click {
+      width: 80px !important;
+      height: 80px !important;
+      top: 30%;
+      right: 5%;
+      // background-color: #3f3a3a60;
+    }
   }
   #atmosphere-house {
-    position: absolute;
-    width: 320px !important;
-    height: 316.005px !important;
+    width: 400px !important;
+    top: 61% !important;
+    left: 46% !important;
   }
 }
 @media screen and (min-width: 992px) {
   .primary-school {
-    position: relative;
-    height: 100%;
+    padding-top: 5% !important;
   }
   .share-container {
     position: absolute;
-    width: 50%;
-    bottom: 3%;
+    width: 40%;
+    bottom: 2%;
     right: 0%;
     color: #a06c57;
     .icon {
@@ -667,21 +724,20 @@ const clickHouse = (houseName) => {
     justify-content: center;
   }
   .title-img {
-    width: 15%;
-    // padding-top: 10%;
+    width: 20%;
+    padding-top: 5%;
     // margin-top: 10%;
   }
-  .house-box {
-    position: relative;
-    max-width: 1920px;
-    height: 980px;
-    margin: auto;
-  }
   .house-bg {
-    position: absolute;
     width: 100%;
     height: 100%;
-    top: 55%;
+    position: absolute;
+    background-image: url('@/assets/primary_school/house_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -999;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -689,8 +745,8 @@ const clickHouse = (houseName) => {
     position: absolute;
     width: 200px !important;
     height: 180px !important;
-    top: 31%;
-    left: 57%;
+    top: 40%;
+    left: 61%;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 999;
@@ -698,8 +754,8 @@ const clickHouse = (houseName) => {
       position: absolute;
       width: 70px;
       height: 70px;
-      top: 57%;
-      left: 17%;
+      top: 54%;
+      left: 8%;
       // background-color: #3f3a3a60;
       cursor: pointer;
       z-index: 999;
@@ -708,19 +764,18 @@ const clickHouse = (houseName) => {
       position: absolute;
       width: 70px;
       height: 70px;
-      top: 40%;
+      top: 33%;
       right: 2%;
       // background-color: #3f3a3a60;
       cursor: pointer;
       z-index: 999;
     }
   }
-
   #people-flow-house {
     position: absolute;
-    width: 250px;
-    top: 24%;
-    left: 57%;
+    width: 350px;
+    top: 21%;
+    left: 60%;
     transform: translate(-50%, -50%);
     z-index: 998;
     opacity: 0.7;
@@ -738,7 +793,7 @@ const clickHouse = (houseName) => {
     position: absolute;
     width: 200px;
     height: 180px;
-    top: 46%;
+    top: 58%;
     left: 76%;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
@@ -748,7 +803,7 @@ const clickHouse = (houseName) => {
       width: 70px;
       height: 70px;
       top: 55%;
-      left: 7%;
+      left: 5%;
       // background-color: #3f3a3a60;
       cursor: pointer;
       z-index: 999;
@@ -766,7 +821,7 @@ const clickHouse = (houseName) => {
   }
   #norm-house {
     position: absolute;
-    width: 250px;
+    width: 350px;
     top: 37%;
     left: 75%;
     transform: translate(-50%, -50%);
@@ -786,18 +841,23 @@ const clickHouse = (houseName) => {
     position: absolute;
     width: 200px;
     height: 180px;
-    top: 41%;
-    left: 40%;
+    top: 56%;
+    left: 43%;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 999;
+    .finger {
+      position: absolute;
+      width: 25%;
+      top: 60%;
+      left: 70%;
+    }
     .door-click {
       position: absolute;
       width: 70px;
       height: 70px;
-
-      top: 45%;
-      right: 5%;
+      top: 42%;
+      right: 8%;
       // background-color: #3f3a3a50;
       cursor: pointer;
       z-index: 999;
@@ -806,8 +866,8 @@ const clickHouse = (houseName) => {
       position: absolute;
       width: 70px;
       height: 70px;
-      top: 45%;
-      left: 20%;
+      top: 40%;
+      left: 17%;
       // background-color: #3f3a3a60;
       cursor: pointer;
       z-index: 999;
@@ -815,10 +875,9 @@ const clickHouse = (houseName) => {
   }
   #twin-house {
     position: absolute;
-    width: 250px;
-    // height: 316.005px;
-    top: 33%;
-    left: 40%;
+    width: 350px;
+    top: 35%;
+    left: 42%;
     transform: translate(-50%, -50%);
     z-index: 998;
     opacity: 0.7;
@@ -836,8 +895,8 @@ const clickHouse = (houseName) => {
     position: absolute;
     width: 200px !important;
     height: 180px !important;
-    top: 60%;
-    left: 58%;
+    top: 77%;
+    left: 59%;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 999;
@@ -845,8 +904,8 @@ const clickHouse = (houseName) => {
       position: absolute;
       width: 70px;
       height: 70px;
-      top: 50%;
-      left: 20%;
+      top: 43%;
+      left: 10%;
       // background-color: #3f3a3a60;
       cursor: pointer;
       z-index: 999;
@@ -855,7 +914,7 @@ const clickHouse = (houseName) => {
       position: absolute;
       width: 70px;
       height: 70px;
-      top: 50%;
+      top: 45%;
       right: 0%;
       // background-color: #3f3a3a60;
       cursor: pointer;
@@ -864,9 +923,8 @@ const clickHouse = (houseName) => {
   }
   #strategy-house {
     position: absolute;
-    width: 250px;
-    // height: 316.005px;
-    top: 53%;
+    width: 350px;
+    top: 58%;
     left: 58%;
     transform: translate(-50%, -50%);
     z-index: 998;
@@ -885,7 +943,7 @@ const clickHouse = (houseName) => {
     position: absolute;
     width: 200px !important;
     height: 180px !important;
-    top: 52%;
+    top: 69%;
     left: 22%;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
@@ -894,7 +952,7 @@ const clickHouse = (houseName) => {
       position: absolute;
       width: 70px;
       height: 70px;
-      top: 53%;
+      top: 55%;
       left: 15%;
       // background-color: #3f3a3a60;
       cursor: pointer;
@@ -904,8 +962,8 @@ const clickHouse = (houseName) => {
       position: absolute;
       width: 70px;
       height: 70px;
-      top: 33%;
-      right: 10%;
+      top: 30%;
+      right: 0%;
       // background-color: #3f3a3a60;
       cursor: pointer;
       z-index: 999;
@@ -913,10 +971,9 @@ const clickHouse = (houseName) => {
   }
   #potential-house {
     position: absolute;
-    width: 250px;
-    // height: 316.005px;
-    top: 44%;
-    left: 22%;
+    width: 350px;
+    top: 49%;
+    left: 23%;
     transform: translate(-50%, -50%);
     z-index: 998;
     opacity: 0.7;
@@ -932,10 +989,10 @@ const clickHouse = (houseName) => {
   }
   .atmosphere-house-click {
     position: absolute;
-    width: 220px !important;
+    width: 220px;
     height: 180px !important;
-    top: 72%;
-    left: 40%;
+    top: 89%;
+    left: 40.5%;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 999;
@@ -943,7 +1000,7 @@ const clickHouse = (houseName) => {
       position: absolute;
       width: 70px;
       height: 70px;
-      top: 40%;
+      top: 35%;
       left: 0%;
       // background-color: #3f3a3a60;
       cursor: pointer;
@@ -953,8 +1010,8 @@ const clickHouse = (houseName) => {
       position: absolute;
       width: 70px;
       height: 70px;
-      top: 30%;
-      right: 5%;
+      top: 25%;
+      right: 0%;
       // background-color: #3f3a3a60;
       cursor: pointer;
       z-index: 999;
@@ -962,10 +1019,9 @@ const clickHouse = (houseName) => {
   }
   #atmosphere-house {
     position: absolute;
-    width: 250px;
-    // height: 316.005px;
-    top: 63%;
-    left: 40%;
+    width: 350px;
+    top: 68%;
+    left: 41%;
     transform: translate(-50%, -50%);
     z-index: 998;
     opacity: 0.7;
@@ -983,15 +1039,8 @@ const clickHouse = (houseName) => {
 
 // 手機板
 @media screen and (max-width: 992px) {
-  .container-fluid {
-    // padding: 0;
-  }
-
   .primary-school {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding-top: 20%;
+    padding-top: 23%;
     background-color: #fffcec;
   }
   .title-img {
@@ -1012,12 +1061,18 @@ const clickHouse = (houseName) => {
   .people-flow-click {
     position: absolute;
     width: 200px !important;
-    height: 180px !important;
+    // height: 180px !important;
     top: 52% !important;
     left: 50% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 999;
+    .finger {
+      position: absolute;
+      width: 25%;
+      top: 60%;
+      left: 80%;
+    }
     .door-click {
       position: absolute;
       width: 70px;
