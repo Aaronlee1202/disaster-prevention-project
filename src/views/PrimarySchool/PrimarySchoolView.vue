@@ -29,13 +29,13 @@ defineComponent({
 onMounted(() => {
   mouseEvent();
 });
-
+const fingerImg = [finger_default, finger_pressed];
 // 按下手指
-const clicked = ref(false);
+const clicked = ref(fingerImg[0]);
 const clickFinger = () => {
-  clicked.value = true;
+  clicked.value = fingerImg[1];
   setTimeout(() => {
-    clicked.value = false;
+    clicked.value = fingerImg[0];
   }, 1000);
 };
 
@@ -279,7 +279,7 @@ const clickHouse = (houseName, fingerClick) => {
           <twin :twin-open="twinOpen" />
         </div>
         <div class="twin-house-click">
-          <img class="finger" :src="clicked ? finger_pressed : finger_default" />
+          <img class="finger" :src="clicked" />
           <div class="door-click" @click="clickHouse('twin-house-open-door', 'finger-click')"></div>
           <div class="windows-click" @click="clickHouse('twin-house-open-windows')"></div>
         </div>
@@ -352,7 +352,7 @@ const clickHouse = (houseName, fingerClick) => {
             <PeopleFlow :flow-open="flowOpen" />
           </div>
           <div class="people-flow-click">
-            <img class="finger" :src="clicked ? finger_pressed : finger_default" />
+            <img class="finger" :src="clicked" />
             <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
             <div
               class="windows-click"
