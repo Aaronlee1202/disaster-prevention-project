@@ -354,7 +354,10 @@ const clickHouse = (houseName, fingerClick) => {
           <div class="people-flow-click">
             <img class="finger" :src="clicked ? finger_pressed : finger_default" />
             <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
-            <div class="windows-click" @click="clickHouse('people-flow-open-windows', 'finger-click')"></div>
+            <div
+              class="windows-click"
+              @click="clickHouse('people-flow-open-windows', 'finger-click')"
+            ></div>
           </div>
         </div>
         <div class="norm-container col-12 mb-5 d-flex align-items-center justify-content-center">
