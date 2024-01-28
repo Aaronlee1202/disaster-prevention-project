@@ -12,8 +12,8 @@ import arrow_share from '@/components/svg/arrow_share.vue';
 import facebook_icon from '@/components/svg/facebook_icon.vue';
 import line_icon from '@/components/svg/line_icon.vue';
 import Home_Icon from '@/components/svg/home_icon.vue';
-import finger_default from '../../assets/primary_school/default.png';
-import finger_pressed from '../../assets/primary_school/pressed.png';
+import finger_default from '@/assets/primary_school/default.png';
+import finger_pressed from '@/assets/primary_school/pressed.png';
 
 defineComponent({
   components: {
@@ -354,10 +354,7 @@ const clickHouse = (houseName, fingerClick) => {
           <div class="people-flow-click">
             <img class="finger" :src="clicked ? finger_pressed : finger_default" />
             <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
-            <div
-              class="windows-click"
-              @click="clickHouse('people-flow-open-windows', 'finger-click')"
-            ></div>
+            <div class="windows-click" @click="clickHouse('people-flow-open-windows', 'finger-click')"></div>
           </div>
         </div>
         <div class="norm-container col-12 mb-5 d-flex align-items-center justify-content-center">
