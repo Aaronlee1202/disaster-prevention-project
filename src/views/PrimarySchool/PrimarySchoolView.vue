@@ -1045,6 +1045,9 @@ const clickHouse = (houseName, fingerClick) => {
   .primary-school {
     padding-top: 23%;
     background-color: #fffcec;
+    background-image: url('@/assets/primary_school/house_bg_mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .title-img {
     width: 50%;

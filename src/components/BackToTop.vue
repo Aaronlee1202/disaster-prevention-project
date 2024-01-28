@@ -1,10 +1,30 @@
 <script setup>
 import { watch, ref, onMounted, onUnmounted } from 'vue';
-import { useWindowScroll } from '@vueuse/core';
+import { useWindowScroll, useWindowSize } from '@vueuse/core';
 import BackToTop from './svg/back_to/back_to_top.vue';
 import ToHome from './svg//back_to/to_home.vue';
 import LineIcon from './svg/back_to/line_icon.vue';
 import facebook_icon from './svg/back_to/facebook_icon.vue';
+// import { useRouter } from 'vue-router';
+
+// const router = useRouter();
+// watch(router.currentRoute, (newVal) => {
+//   console.log(newVal);
+// });
+const elementIsShow = ref(false);
+const { width } = useWindowSize();
+watch(
+  width,
+  () => {
+    console.log(width.value);
+    if (width.value < 992) {
+      elementIsShow.value = true;
+    } else {
+      elementIsShow.value = false;
+    }
+  },
+  { immediate: true }
+);
 
 const { y } = useWindowScroll({ behavior: 'smooth' });
 const isShow = ref(false);
@@ -17,7 +37,6 @@ watch(y, () => {
     isShow.value = true;
     if (isElementVisible.value == true) {
       ifFooterHeight.value = y.value - contentHeight + footer + 250;
-      console.log(ifFooterHeight.value);
     }
   } else {
     isShow.value = false;
@@ -50,15 +69,15 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="btn-container">
+  <div class="btn-container" v-show="elementIsShow">
     <div
       class="fixed-box d-flex flex-column"
       :style="{ bottom: isElementVisible == true ? ifFooterHeight + 'px' : height + '%' }"
     >
-      <facebook_icon class="btn m-2" v-show="isShow" />
-      <LineIcon class="btn m-2" v-show="isShow" />
-      <BackToTop class="btn m-2" @click="scrollToTop" v-show="isShow" />
-      <ToHome class="btn m-2" v-if="isShow" />
+      <facebook_icon class="m-2" v-show="isShow" />
+      <LineIcon class="m-2" v-show="isShow" />
+      <BackToTop class="m-2" @click="scrollToTop" v-show="isShow" />
+      <ToHome class="m-2" v-if="isShow" />
     </div>
   </div>
 </template>
@@ -72,8 +91,6 @@ onUnmounted(() => {
   svg {
     cursor: pointer;
   }
-}
-.btn {
 }
 .fixed-box {
   position: fixed;
