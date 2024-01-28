@@ -12,8 +12,8 @@ import arrow_share from '@/components/svg/arrow_share.vue';
 import facebook_icon from '@/components/svg/facebook_icon.vue';
 import line_icon from '@/components/svg/line_icon.vue';
 import Home_Icon from '@/components/svg/home_icon.vue';
-import finger_default from '@/assets/primary_school/default.png';
-import finger_pressed from '@/assets/primary_school/pressed.png';
+// import finger_default from '@/assets/primary_school/default.png';
+// import finger_pressed from '@/assets/primary_school/pressed.png';
 
 defineComponent({
   components: {
@@ -29,14 +29,14 @@ defineComponent({
 onMounted(() => {
   mouseEvent();
 });
-const fingerImg = [finger_default, finger_pressed];
+// const fingerImg = [finger_default, finger_pressed];
 // 按下手指
-const clicked = ref(fingerImg[0]);
+// const clicked = ref(fingerImg[0]);
 const clickFinger = () => {
-  clicked.value = fingerImg[1];
-  setTimeout(() => {
-    clicked.value = fingerImg[0];
-  }, 1000);
+  // clicked.value = fingerImg[1];
+  // setTimeout(() => {
+  //   clicked.value = fingerImg[0];
+  // }, 1000);
 };
 
 const { width } = useWindowSize();
