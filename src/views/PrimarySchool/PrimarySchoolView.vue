@@ -466,9 +466,9 @@ const clickHouse = (houseName, fingerClick) => {
   margin: auto;
 }
 @media screen and (min-width: 1600px) {
-  .primary-school {
-    padding-top: 10% !important;
-  }
+  // .primary-school {
+  //   padding-top: 5% !important;
+  // }
   .share-container {
     position: absolute;
     width: 35% !important;
@@ -517,8 +517,8 @@ const clickHouse = (houseName, fingerClick) => {
     }
   }
   .title-img {
-    width: 20% !important;
-    padding-top: 3%;
+    width: 18% !important;
+    padding-top: 2.5% !important;
   }
 
   .house-container {
@@ -673,7 +673,7 @@ const clickHouse = (houseName, fingerClick) => {
 }
 @media screen and (min-width: 992px) {
   .primary-school {
-    padding-top: 5% !important;
+    padding-top: 10% !important;
   }
   .share-container {
     position: absolute;
@@ -740,7 +740,7 @@ const clickHouse = (houseName, fingerClick) => {
     background-size: cover;
     background-position: center;
     z-index: -999;
-    top: 60%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -852,8 +852,45 @@ const clickHouse = (houseName, fingerClick) => {
     .finger {
       position: absolute;
       width: 25%;
-      top: 60%;
+      top: 65%;
       left: 70%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3s 0s infinite;
+    }
+    @keyframes move {
+      0%,
+      65% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+      }
+      70% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+      }
+      75% {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px);
+      }
+      80% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+      }
+      85% {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px);
+      }
+      90% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+      }
+      95% {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px);
+      }
+      100% {
+        -webkit-transform: translateY(0deg);
+        transform: translateY(0px);
+      }
     }
     .door-click {
       position: absolute;
@@ -1042,12 +1079,23 @@ const clickHouse = (houseName, fingerClick) => {
 
 // 手機板
 @media screen and (max-width: 992px) {
+  .container-fluid {
+    position: relative;
+    padding: 0;
+    // overflow-y: hidden;
+  }
   .primary-school {
+    position: relative;
+    width: 100%;
     padding-top: 23%;
     background-color: #fffcec;
     background-image: url('@/assets/primary_school/house_bg_mobile.png');
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-y: hidden;
+    .row {
+      --bs-gutter-x: 0;
+    }
   }
   .title-img {
     width: 50%;
@@ -1067,7 +1115,6 @@ const clickHouse = (houseName, fingerClick) => {
   .people-flow-click {
     position: absolute;
     width: 200px !important;
-    // height: 180px !important;
     top: 52% !important;
     left: 50% !important;
     transform: translate(-50%, -50%);
@@ -1078,6 +1125,43 @@ const clickHouse = (houseName, fingerClick) => {
       width: 25%;
       top: 60%;
       left: 80%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3s 0s infinite;
+    }
+    @keyframes move {
+      0%,
+      65% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+      }
+      70% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+      }
+      75% {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px);
+      }
+      80% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+      }
+      85% {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px);
+      }
+      90% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+      }
+      95% {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px);
+      }
+      100% {
+        -webkit-transform: translateY(0deg);
+        transform: translateY(0px);
+      }
     }
     .door-click {
       position: absolute;
