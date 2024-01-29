@@ -1,5 +1,22 @@
+<script setup>
+import { ref, watch } from 'vue';
+import { useRouter } from 'vue-router';
+const router = useRouter();
+
+const indexPage = ref(true);
+watch(router.currentRoute, (newVal) => {
+  console.log(newVal.name);
+  if (newVal.name !== 'PrimarySchoolView') {
+    indexPage.value = false;
+  } else {
+    indexPage.value = true;
+  }
+  console.log(indexPage.value);
+});
+</script>
+
 <template>
-  <footer id="footer" class="m-0">
+  <footer id="footer" class="m-0" :class="[indexPage ? 'header-body-brown' : 'header-body-green']">
     <div class="container">
       <div class="box">
         <div class="title_box">

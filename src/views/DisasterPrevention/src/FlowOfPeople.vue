@@ -22,8 +22,21 @@ import month_11 from '@/assets/flow_of_people/month/11.svg';
 import month_12 from '@/assets/flow_of_people/month/12.svg';
 
 const { width } = useWindowSize();
-const items = [month_1, month_2, month_3, month_4, month_5, month_6];
-const items2 = [month_7, month_8, month_9, month_10, month_11, month_12];
+const items = [
+  month_1,
+  month_2,
+  month_3,
+  month_4,
+  month_5,
+  month_6,
+  month_7,
+  month_8,
+  month_9,
+  month_10,
+  month_11,
+  month_12
+];
+// const items2 = [month_7, month_8, month_9, month_10, month_11, month_12];
 const newQAJson = ref(null);
 const screenSwitch = ref(false);
 onMounted(() => {
@@ -50,7 +63,7 @@ watch(
 </script>
 
 <template>
-  <div id="flow-of-people">
+  <div id="flow-of-people element-height">
     <div class="container" v-if="!screenSwitch">
       <!-- chapter 1 -->
       <div class="row">
@@ -205,17 +218,18 @@ watch(
         <div class="d-flex justify-content-center">
           <div class="month-dashed-line"></div>
         </div>
-        <div class="row">
-          <div class="col-12 d-flex align-items-center justify-content-center">
-            <div v-for="(item, index) in items" :key="index">
-              <a type="button" class="month-icon d-flex align-items-center justify-content-center">
-                <img :src="item" />
-              </a>
-            </div>
-          </div>
-          <div class="col-12 d-flex align-items-center justify-content-center">
-            <div v-for="(item, index) in items2" :key="index">
-              <a type="button" class="month-icon d-flex align-items-center justify-content-center">
+        <div class="month-container">
+          <div class="row">
+            <div
+              class="col-2 mb-4 d-flex align-items-center justify-content-center"
+              v-for="(item, index) in items"
+              :key="index"
+            >
+              <a
+                type="button"
+                class="month-icon d-flex align-items-center justify-content-center"
+                :class="[index >= 1 ? 'disable' : '']"
+              >
                 <img :src="item" />
               </a>
             </div>
@@ -381,19 +395,17 @@ watch(
         <div class="d-flex justify-content-center">
           <div class="month-dashed-line"></div>
         </div>
-        <div class="row px-5">
-          <div class="col p-0">
-            <div class="d-flex justify-content-center" v-for="(item, index) in items" :key="index">
-              <div class="month-icon d-flex align-items-center justify-content-center">
-                <img :src="item" />
-              </div>
-            </div>
-          </div>
-          <div class="col p-0">
-            <div class="d-flex justify-content-center" v-for="(item, index) in items2" :key="index">
-              <div class="month-icon d-flex align-items-center justify-content-center">
-                <img :src="item" />
-              </div>
+        <div class="row">
+          <div
+            class="col-3 p-0 d-flex align-items-center justify-content-center"
+            v-for="(item, index) in items"
+            :key="index"
+          >
+            <div
+              class="month-icon d-flex align-items-center justify-content-center"
+              :class="[index >= 1 ? 'disable' : '']"
+            >
+              <img :src="item" />
             </div>
           </div>
         </div>
@@ -491,7 +503,7 @@ p {
 }
 .share-btn {
   background-color: #26a8a8;
-  color: #fff;
+  color: #fff !important;
   &:hover {
     background-color: #47d8d4;
   }
@@ -524,17 +536,15 @@ p {
 .other-month-row {
   position: relative;
   width: 100%;
-  padding: 100.5px 0px 109.5px 0px;
-  // margin-top: 100.5px;
-  // background-color: #fffbeb;
-  .background-color {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    background-color: #fffbeb;
-    z-index: -1;
-  }
+  padding: 0px 0px 109.5px 0px;
+  margin-top: 100.5px;
+}
+.background-color {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fffbeb;
+  z-index: -1;
 }
 .other-month-title {
   margin-left: 0.775rem;
@@ -543,27 +553,31 @@ p {
   letter-spacing: 1.28px;
   color: #26a8a8;
 }
+.month-container {
+  max-width: 1400px;
+  width: 100%;
+}
 .month-icon {
   width: 100px;
   height: 100px;
   // padding: 10.775px 21.926px 18.335px 23.119px;
-  margin: 0px 2rem 2rem 0px;
+  // margin: 0px 2rem 2rem 0px;
   border-radius: 200px;
   border: 4px solid #fff;
-  background: #47d8d4;
-  box-shadow: 0px 0px 0px 2px #47d8d4;
+  background: #24b2ae;
+  box-shadow: 0px 0px 0px 2px #24b2ae;
   cursor: pointer;
   &:hover {
-    background: #24b2ae;
-    box-shadow: 0px 0px 0px 2px #24b2ae;
+    background: #47d8d4;
+    box-shadow: 0px 0px 0px 2px #47d8d4;
   }
   &:active {
     background-color: #1f9a9a;
-    box-shadow: 0px 0px 0px 2px #24b2ae;
+    box-shadow: 0px 0px 0px 2px #1f9a9a;
   }
 }
-
-@media (min-width: 1440px) {
+.disable {
+  opacity: 0.6 !important;
 }
 @media (max-width: 1200px) {
   #flow-of-people {
@@ -645,19 +659,39 @@ p {
     width: 220px;
     height: 80px;
     font-size: 1.25em;
-    border: 2px solid #26a8a8;
-    color: #26a8a8;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    svg {
-      fill: #26a8a8;
+  }
+  .share-btn {
+    background-color: #26a8a8;
+    color: #fff !important;
+    &:hover {
+      background-color: #47d8d4;
+    }
+    &:active {
+      background-color: #1f9a9a;
+    }
+  }
+  .home-btn {
+    background-color: #fff;
+    color: #26a8a8;
+    border: 2px solid #26a8a8;
+    svg g path {
+      transition: all 0.3s;
     }
     &:hover {
-      background-color: #26a8a8;
-      color: #fff;
-      svg {
-        fill: #fff;
+      border: 2px solid #47d8d4;
+      color: #47d8d4;
+      svg g path {
+        fill: #47d8d4;
+      }
+    }
+    &:active {
+      border: 2px solid #1f9a9a;
+      color: #1f9a9a;
+      svg g path {
+        fill: #1f9a9a;
       }
     }
   }
@@ -690,12 +724,16 @@ p {
     margin: 0px 2rem 2rem 0px;
     border-radius: 200px;
     border: 4px solid #fff;
-    background: var(--Primary-Dafault, #24b2ae);
+    background: #24b2ae;
     box-shadow: 0px 0px 0px 2px #24b2ae;
     cursor: pointer;
     &:hover {
       background: #47d8d4;
       box-shadow: 0px 0px 0px 2px #47d8d4;
+    }
+    &:active {
+      background-color: #1f9a9a;
+      box-shadow: 0px 0px 0px 2px #1f9a9a;
     }
   }
 }
@@ -768,10 +806,10 @@ p {
     color: #26a8a8;
   }
   .month-icon {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     // padding: 10.775px 21.926px 18.335px 23.119px;
-    margin: 1rem 0;
+    // margin: 1rem 0;
     border-radius: 200px;
     border: 4px solid #fff;
     background: #47d8d4;

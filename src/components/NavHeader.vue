@@ -1,10 +1,20 @@
 <script setup>
-import { ref } from 'vue';
-// import { useRouter } from 'vue-router';
+import { ref, watch } from 'vue';
+import { useRouter } from 'vue-router';
 import Logo_Ncdr_Icon from './svg/logo_ncdr.vue';
 import Logo_Icon from './svg/logo_icon.vue';
 
-// const router = useRouter();
+const router = useRouter();
+
+const indexPage = ref(true);
+watch(router.currentRoute, (newVal) => {
+  console.log(newVal.name);
+  if (newVal.name !== 'PrimarySchoolView') {
+    indexPage.value = false;
+  } else {
+    indexPage.value = true;
+  }
+});
 
 const toggle = ref(false);
 const menuToggle = () => {
@@ -30,7 +40,7 @@ const toHomePage = () => {
     :class="{ 'mobile-menu-opened': toggle }"
     data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile':false, 'stickyStartAt': 30, 'stickySetTop': '0', 'stickyChangeLogo':false}"
   >
-    <div class="header-body">
+    <div class="header-body" :class="[indexPage ? 'header-body-brown' : 'header-body-green']">
       <div class="header-container container">
         <div class="header-row">
           <div class="header-column">
@@ -55,7 +65,12 @@ const toHomePage = () => {
                   <nav class="collapse">
                     <ul class="nav nav-pills" id="mainNav">
                       <li>
-                        <a href="#index_page_1" class="nav-link anchor" title="當期主題">
+                        <a
+                          href="https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html#index_page_1"
+                          target="_blank"
+                          class="nav-link anchor"
+                          title="當期主題"
+                        >
                           <img
                             src="@/assets/header/menu_icon_01.svg"
                             class="svg-img"
@@ -65,7 +80,12 @@ const toHomePage = () => {
                       </li>
 
                       <li>
-                        <a href="#index_page_2" class="nav-link anchor" title="知識櫥窗">
+                        <a
+                          href="https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html#index_page_4"
+                          target="_blank"
+                          class="nav-link anchor"
+                          title="知識櫥窗"
+                        >
                           <img
                             src="@/assets/header/menu_icon_02.svg"
                             class="svg-img"
@@ -75,7 +95,12 @@ const toHomePage = () => {
                       </li>
 
                       <li>
-                        <a href="#index_page_3" class="nav-link anchor" title="本季小品">
+                        <a
+                          href="https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html#index_page_5"
+                          target="_blank"
+                          class="nav-link anchor"
+                          title="本季小品"
+                        >
                           <img
                             src="@/assets/header/menu_icon_03.svg"
                             class="svg-img"
@@ -85,7 +110,12 @@ const toHomePage = () => {
                       </li>
 
                       <li>
-                        <a href="#index_page_4" class="nav-link anchor" title="亮點服務">
+                        <a
+                          href="https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html#index_page_6"
+                          target="_blank"
+                          class="nav-link anchor"
+                          title="亮點服務"
+                        >
                           <img
                             src="@/assets/header/menu_icon_04.svg"
                             class="svg-img"
@@ -95,7 +125,12 @@ const toHomePage = () => {
                       </li>
 
                       <li>
-                        <a href="#index_page_5" class="nav-link anchor" title="主任介紹">
+                        <a
+                          href="https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html#index_page_7_title"
+                          target="_blank"
+                          class="nav-link anchor"
+                          title="主任介紹"
+                        >
                           <img
                             src="@/assets/header/menu_icon_05.svg"
                             class="svg-img"
@@ -105,7 +140,12 @@ const toHomePage = () => {
                       </li>
 
                       <li>
-                        <a href="#index_page_6" class="nav-link anchor" title="關於特輯">
+                        <a
+                          href="https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html#index_page_8"
+                          target="_blank"
+                          class="nav-link anchor"
+                          title="關於特輯"
+                        >
                           <img
                             src="@/assets/header/menu_icon_06.svg"
                             class="svg-img"
@@ -116,11 +156,17 @@ const toHomePage = () => {
 
                       <li>
                         <a
-                          href="https://ncdr.nat.gov.tw/NCDR-Topic/2022/index.html"
+                          href="https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html#index_page_9"
                           target="_blank"
                           class="nav-link"
                           title="系列影片(另開新視窗)"
                         >
+                          <!-- <a
+                          href="https://ncdr.nat.gov.tw/NCDR-Topic/2022/index.html"
+                          target="_blank"
+                          class="nav-link"
+                          title="系列影片(另開新視窗)"
+                        > -->
                           <img
                             src="@/assets/header/menu_icon_07.svg"
                             class="svg-img"

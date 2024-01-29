@@ -39,6 +39,14 @@ const clickFinger = () => {
   }, 1000);
 };
 
+const toHomePage = () => {
+  window.open(
+    'https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html',
+    '_blank'
+  );
+  // router.push({ path: '/' });
+};
+
 const { width } = useWindowSize();
 const screenSwitch = ref(false);
 watch(
@@ -246,7 +254,7 @@ const clickHouse = (houseName, fingerClick) => {
 
 <template>
   <div class="container-fluid p-0" v-if="screenSwitch == false">
-    <div class="primary-school">
+    <div class="primary-school element-height">
       <div class="title-container">
         <img class="title-img" src="@/assets/disaster_prevention/title_img.svg" alt="" />
       </div>
@@ -265,8 +273,12 @@ const clickHouse = (houseName, fingerClick) => {
           <PeopleFlow :flow-open="flowOpen" />
         </div>
         <div class="people-flow-click">
+          <img class="finger" :src="clicked" />
           <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
-          <div class="windows-click" @click="clickHouse('people-flow-open-windows')"></div>
+          <div
+            class="windows-click"
+            @click="clickHouse('people-flow-open-windows', 'finger-click')"
+          ></div>
         </div>
         <div id="norm-house">
           <Norm :norm-open="normOpen" />
@@ -279,8 +291,7 @@ const clickHouse = (houseName, fingerClick) => {
           <twin :twin-open="twinOpen" />
         </div>
         <div class="twin-house-click">
-          <img class="finger" :src="clicked" />
-          <div class="door-click" @click="clickHouse('twin-house-open-door', 'finger-click')"></div>
+          <div class="door-click" @click="clickHouse('twin-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('twin-house-open-windows')"></div>
         </div>
         <div id="strategy-house">
@@ -324,7 +335,7 @@ const clickHouse = (houseName, fingerClick) => {
               </div>
             </div>
             <div class="col pb-4">
-              <div class="home-btn"><Home_Icon />回首頁</div>
+              <div class="home-btn" @click="toHomePage"><Home_Icon />回首頁</div>
             </div>
           </div>
         </div>
@@ -753,6 +764,49 @@ const clickHouse = (houseName, fingerClick) => {
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 999;
+    .finger {
+      position: absolute;
+      width: 25%;
+      top: 50%;
+      left: 80%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3s 0s infinite;
+    }
+    @keyframes move {
+      0%,
+      65% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+      }
+      70% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+      }
+      75% {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px);
+      }
+      80% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+      }
+      85% {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px);
+      }
+      90% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+      }
+      95% {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px);
+      }
+      100% {
+        -webkit-transform: translateY(0deg);
+        transform: translateY(0px);
+      }
+    }
     .door-click {
       position: absolute;
       width: 70px;
@@ -849,49 +903,6 @@ const clickHouse = (houseName, fingerClick) => {
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 999;
-    .finger {
-      position: absolute;
-      width: 25%;
-      top: 65%;
-      left: 70%;
-      animation: move 3s 0s infinite;
-      -webkit-animation: move 3s 0s infinite;
-    }
-    @keyframes move {
-      0%,
-      65% {
-        -webkit-transform: translateY(0px);
-        transform: translateY(0px);
-      }
-      70% {
-        -webkit-transform: translateY(6px);
-        transform: translateY(6px);
-      }
-      75% {
-        -webkit-transform: translateY(-6px);
-        transform: translateY(-6px);
-      }
-      80% {
-        -webkit-transform: translateY(6px);
-        transform: translateY(6px);
-      }
-      85% {
-        -webkit-transform: translateY(-6px);
-        transform: translateY(-6px);
-      }
-      90% {
-        -webkit-transform: translateY(6px);
-        transform: translateY(6px);
-      }
-      95% {
-        -webkit-transform: translateY(-6px);
-        transform: translateY(-6px);
-      }
-      100% {
-        -webkit-transform: translateY(0deg);
-        transform: translateY(0px);
-      }
-    }
     .door-click {
       position: absolute;
       width: 70px;

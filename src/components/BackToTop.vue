@@ -1,6 +1,6 @@
 <script setup>
 import { watch, ref, onMounted, onUnmounted } from 'vue';
-import { useWindowScroll, useWindowSize } from '@vueuse/core';
+import { useWindowScroll } from '@vueuse/core';
 import BackToTop from './svg/back_to/back_to_top.vue';
 import ToHome from './svg//back_to/to_home.vue';
 import LineIcon from './svg/back_to/line_icon.vue';
@@ -11,20 +11,28 @@ import facebook_icon from './svg/back_to/facebook_icon.vue';
 // watch(router.currentRoute, (newVal) => {
 //   console.log(newVal);
 // });
-const elementIsShow = ref(false);
-const { width } = useWindowSize();
-watch(
-  width,
-  () => {
-    console.log(width.value);
-    if (width.value < 992) {
-      elementIsShow.value = true;
-    } else {
-      elementIsShow.value = false;
-    }
-  },
-  { immediate: true }
-);
+// const elementIsShow = ref(false);
+// const { width } = useWindowSize();
+// watch(
+//   width,
+//   () => {
+//     console.log(width.value);
+//     if (width.value < 992) {
+//       elementIsShow.value = true;
+//     } else {
+//       elementIsShow.value = false;
+//     }
+//   },
+//   { immediate: true }
+// );
+
+const toHomePage = () => {
+  window.open(
+    'https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html',
+    '_blank'
+  );
+  // router.push({ path: '/' });
+};
 
 const { y } = useWindowScroll({ behavior: 'smooth' });
 const isShow = ref(false);
@@ -32,11 +40,13 @@ const height = ref(3);
 const ifFooterHeight = ref(0);
 watch(y, () => {
   if (y.value > 500) {
-    const contentHeight = document.getElementsByClassName('primary-school')[0].clientHeight;
+    // const contentHeight = document.getElementsByClassName('element-height')[0].clientHeight;
+    // const contentHeight = document.getElementById('app').clientHeight;
     const footer = document.getElementById('footer').clientHeight;
     isShow.value = true;
     if (isElementVisible.value == true) {
-      ifFooterHeight.value = y.value - contentHeight + footer + 250;
+      ifFooterHeight.value = y.value - footer - 700;
+      console.log(ifFooterHeight.value);
     }
   } else {
     isShow.value = false;
@@ -69,7 +79,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="btn-container" v-show="elementIsShow">
+  <div class="btn-container">
     <div
       class="fixed-box d-flex flex-column"
       :style="{ bottom: isElementVisible == true ? ifFooterHeight + 'px' : height + '%' }"
@@ -77,7 +87,7 @@ onUnmounted(() => {
       <facebook_icon class="m-2" v-show="isShow" />
       <LineIcon class="m-2" v-show="isShow" />
       <BackToTop class="m-2" @click="scrollToTop" v-show="isShow" />
-      <ToHome class="m-2" v-if="isShow" />
+      <ToHome @click="toHomePage" class="m-2" v-if="isShow" />
     </div>
   </div>
 </template>
@@ -96,5 +106,6 @@ onUnmounted(() => {
   position: fixed;
   // bottom: 3%;
   right: 3%;
+  z-index: 999;
 }
 </style>

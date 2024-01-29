@@ -352,7 +352,7 @@ li {
 /*header*/
 .header-body {
   position: fixed !important;
-  background: $d-7th-color !important;
+  // background: $d-7th-color !important;
   border: none !important;
   box-shadow: 0 0 37px #212529a8;
   .header-logo {
@@ -377,6 +377,12 @@ li {
       }
     }
   }
+}
+.header-body-brown {
+  background: $d-7th-color !important;
+}
+.header-body-green {
+  background: $d-1st-color !important;
 }
 .sticky-header-active {
   .header-logo {

@@ -39,7 +39,7 @@ watch(
     <div class="container custom-container" v-if="screenSwitch == false">
       <div class="row d-flex align-items-center">
         <div class="col-6">
-          <div class="img-container">
+          <div class="img-container d-flex align-items-center">
             <!-- <img src="@/assets/disaster_prevention/new_talisman.png" alt="新的護身符" /> -->
             <div class="start-box d-flex justify-content-end">
               <!-- <div id="new-talisman-start"></div> -->
