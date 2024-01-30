@@ -759,7 +759,7 @@ const clickHouse = (houseName, fingerClick) => {
     position: absolute;
     width: 200px !important;
     height: 180px !important;
-    top: 40%;
+    top: 39%;
     left: 61%;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
@@ -830,7 +830,7 @@ const clickHouse = (houseName, fingerClick) => {
   }
   #people-flow-house {
     position: absolute;
-    width: 350px;
+    width: 330px;
     top: 21%;
     left: 60%;
     transform: translate(-50%, -50%);
@@ -850,7 +850,7 @@ const clickHouse = (houseName, fingerClick) => {
     position: absolute;
     width: 200px;
     height: 180px;
-    top: 58%;
+    top: 57%;
     left: 76%;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
@@ -878,7 +878,7 @@ const clickHouse = (houseName, fingerClick) => {
   }
   #norm-house {
     position: absolute;
-    width: 350px;
+    width: 330px;
     top: 37%;
     left: 75%;
     transform: translate(-50%, -50%);
@@ -898,7 +898,7 @@ const clickHouse = (houseName, fingerClick) => {
     position: absolute;
     width: 200px;
     height: 180px;
-    top: 56%;
+    top: 54%;
     left: 43%;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
@@ -926,7 +926,7 @@ const clickHouse = (houseName, fingerClick) => {
   }
   #twin-house {
     position: absolute;
-    width: 350px;
+    width: 330px;
     top: 35%;
     left: 42%;
     transform: translate(-50%, -50%);
@@ -946,7 +946,7 @@ const clickHouse = (houseName, fingerClick) => {
     position: absolute;
     width: 200px !important;
     height: 180px !important;
-    top: 77%;
+    top: 76%;
     left: 59%;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
@@ -974,7 +974,7 @@ const clickHouse = (houseName, fingerClick) => {
   }
   #strategy-house {
     position: absolute;
-    width: 350px;
+    width: 330px;
     top: 58%;
     left: 58%;
     transform: translate(-50%, -50%);
@@ -994,7 +994,7 @@ const clickHouse = (houseName, fingerClick) => {
     position: absolute;
     width: 200px !important;
     height: 180px !important;
-    top: 69%;
+    top: 68%;
     left: 22%;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
@@ -1022,7 +1022,7 @@ const clickHouse = (houseName, fingerClick) => {
   }
   #potential-house {
     position: absolute;
-    width: 350px;
+    width: 330px;
     top: 49%;
     left: 23%;
     transform: translate(-50%, -50%);
@@ -1042,8 +1042,8 @@ const clickHouse = (houseName, fingerClick) => {
     position: absolute;
     width: 220px;
     height: 180px !important;
-    top: 89%;
-    left: 40.5%;
+    top: 90%;
+    left: 39.5%;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 999;
@@ -1070,9 +1070,9 @@ const clickHouse = (houseName, fingerClick) => {
   }
   #atmosphere-house {
     position: absolute;
-    width: 350px;
-    top: 68%;
-    left: 41%;
+    width: 330px;
+    top: 70%;
+    left: 40%;
     transform: translate(-50%, -50%);
     z-index: 998;
     opacity: 0.7;
@@ -1114,7 +1114,7 @@ const clickHouse = (houseName, fingerClick) => {
     // margin-bottom: 50px;
   }
   .doll-img {
-    width: 40%;
+    width: 25%;
     margin-top: 5%;
   }
 
