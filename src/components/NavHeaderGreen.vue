@@ -40,7 +40,7 @@ const toHomePage = () => {
     :class="{ 'mobile-menu-opened': toggle }"
     data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile':false, 'stickyStartAt': 30, 'stickySetTop': '0', 'stickyChangeLogo':false}"
   >
-    <div class="header-body" :class="[indexPage ? 'header-body-brown' : 'header-body-green']">
+    <div class="header-body">
       <div
         class="header-container container"
         :class="[indexPage ? 'header-body-brown' : 'header-body-green']"
