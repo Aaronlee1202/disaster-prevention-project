@@ -56,6 +56,7 @@ watch(
   (newVal) => {
     if (newVal < 768) screenSwitch.value = true;
     else screenSwitch.value = false;
+    console.log('mobile: ', screenSwitch.value);
   },
   // 立即執行
   { immediate: true }
@@ -64,7 +65,7 @@ watch(
 
 <template>
   <div id="flow-of-people element-height">
-    <div class="container" v-if="!screenSwitch">
+    <div class="container mt-5" v-if="!screenSwitch">
       <!-- chapter 1 -->
       <div class="row">
         <div class="col-3">
@@ -219,15 +220,15 @@ watch(
           <div class="month-dashed-line"></div>
         </div>
         <div class="month-container">
-          <div class="row">
+          <div class="row row-cols-6">
             <div
-              class="col-2 mb-4 d-flex align-items-center justify-content-center"
+              class="col mb-4 d-flex align-items-center justify-content-center"
               v-for="(item, index) in items"
               :key="index"
             >
               <a
                 type="button"
-                class="month-icon d-flex align-items-center justify-content-center"
+                class="month-icon m-0 d-flex align-items-center justify-content-center"
                 :class="[index >= 1 ? 'disable' : '']"
               >
                 <img :src="item" />
@@ -395,17 +396,19 @@ watch(
         <div class="d-flex justify-content-center">
           <div class="month-dashed-line"></div>
         </div>
-        <div class="row">
-          <div
-            class="col-3 p-0 d-flex align-items-center justify-content-center"
-            v-for="(item, index) in items"
-            :key="index"
-          >
+        <div class="month-container">
+          <div class="row row-cols-4">
             <div
-              class="month-icon d-flex align-items-center justify-content-center"
-              :class="[index >= 1 ? 'disable' : '']"
+              class="col p-0 mb-2 d-flex align-items-center justify-content-center"
+              v-for="(item, index) in items"
+              :key="index"
             >
-              <img :src="item" />
+              <div
+                class="month-icon m-0 d-flex align-items-center justify-content-center"
+                :class="[index >= 1 ? 'disable' : '']"
+              >
+                <img :src="item" />
+              </div>
             </div>
           </div>
         </div>
@@ -443,7 +446,7 @@ p {
 }
 .month-dashed-line {
   width: 70%;
-  border-bottom: 5px dashed #b8806f;
+  border-bottom: 5px dashed #ffe300;
   margin: 3rem 0;
 }
 .link-chapter {
@@ -556,10 +559,11 @@ p {
 .month-container {
   max-width: 1400px;
   width: 100%;
+  padding: 0 10.5rem;
 }
 .month-icon {
-  width: 100px;
-  height: 100px;
+  width: 80px !important;
+  height: 80px !important;
   // padding: 10.775px 21.926px 18.335px 23.119px;
   // margin: 0px 2rem 2rem 0px;
   border-radius: 200px;
@@ -607,8 +611,8 @@ p {
     margin: 6rem 0;
   }
   .month-dashed-line {
-    width: 70%;
-    border-bottom: 5px dashed #b8806f;
+    width: 80%;
+    border-bottom: 5px dashed #ffe300;
     margin: 3rem 0;
   }
   .link-chapter {
@@ -717,6 +721,10 @@ p {
     letter-spacing: 1.28px;
     color: #26a8a8;
   }
+  .month-container {
+    width: 100%;
+    padding: 0 5rem;
+  }
   .month-icon {
     width: 100px;
     height: 100px;
@@ -780,8 +788,8 @@ p {
     margin: 3rem 0;
   }
   .month-dashed-line {
-    width: 70%;
-    border-bottom: 5px dashed #b8806f;
+    width: 80%;
+    border-bottom: 5px dashed #ffe300;
     margin: 1.5rem 0;
   }
 
@@ -805,9 +813,13 @@ p {
     letter-spacing: 1.28px;
     color: #26a8a8;
   }
+  .month-container {
+    width: 100%;
+    padding: 0 2rem;
+  }
   .month-icon {
-    width: 80px;
-    height: 80px;
+    width: 60px !important;
+    height: 60px !important;
     // padding: 10.775px 21.926px 18.335px 23.119px;
     // margin: 1rem 0;
     border-radius: 200px;
