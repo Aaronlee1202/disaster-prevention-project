@@ -40,8 +40,11 @@ const toHomePage = () => {
     :class="{ 'mobile-menu-opened': toggle }"
     data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile':false, 'stickyStartAt': 30, 'stickySetTop': '0', 'stickyChangeLogo':false}"
   >
-    <div class="header-body" :class="[indexPage ? 'header-body-brown' : 'header-body-green']">
-      <div class="header-container container">
+    <div class="header-body">
+      <div
+        class="header-container container"
+        :class="[indexPage ? 'header-body-brown' : 'header-body-green']"
+      >
         <div class="header-row">
           <div class="header-column">
             <div class="header-row">
@@ -62,7 +65,10 @@ const toHomePage = () => {
                 <div
                   class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 justify-content-end"
                 >
-                  <nav class="collapse">
+                  <nav
+                    class="collapse"
+                    :class="[indexPage ? 'header-body-brown' : 'header-body-green']"
+                  >
                     <ul class="nav nav-pills" id="mainNav">
                       <li>
                         <a
