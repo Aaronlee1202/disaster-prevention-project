@@ -3,6 +3,22 @@ import { ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import Logo_Ncdr_Icon from './svg/logo_ncdr.vue';
 import Logo_Icon from './svg/logo_icon.vue';
+import icon_01 from '@/assets/header/menu_icon_01.svg';
+import icon_02 from '@/assets/header/menu_icon_02.svg';
+import icon_03 from '@/assets/header/menu_icon_03.svg';
+import icon_04 from '@/assets/header/menu_icon_04.svg';
+import icon_05 from '@/assets/header/menu_icon_05.svg';
+import icon_06 from '@/assets/header/menu_icon_06.svg';
+import icon_07 from '@/assets/header/menu_icon_07.svg';
+import icon_08 from '@/assets/header/menu_icon_08.svg';
+import icon_01_origin from '@/assets/header/menu_icon_01_origin.svg';
+import icon_02_origin from '@/assets/header/menu_icon_02_origin.svg';
+import icon_03_origin from '@/assets/header/menu_icon_03_origin.svg';
+import icon_04_origin from '@/assets/header/menu_icon_04_origin.svg';
+import icon_05_origin from '@/assets/header/menu_icon_05_origin.svg';
+import icon_06_origin from '@/assets/header/menu_icon_06_origin.svg';
+import icon_07_origin from '@/assets/header/menu_icon_07_origin.svg';
+import icon_08_origin from '@/assets/header/menu_icon_08_origin.svg';
 
 const router = useRouter();
 
@@ -48,13 +64,15 @@ const toHomePage = () => {
         <div class="header-row">
           <div class="header-column">
             <div class="header-row">
-              <div class="header-logo">
+              <div class="header-logo" :class="[indexPage ? 'header-logo' : 'header-logo-origin']">
                 <h1>
                   <!-- <Logo_Ncdr_Icon class="svg-img" @click="toHomePage" target="_blank" /> -->
                   <a @click="toNcdrPage" target="_blank" title="行政法人國災害防救科技中心">
-                    <Logo_Ncdr_Icon class="svg-img" />
+                    <Logo_Ncdr_Icon class="svg-img" :index-page="indexPage" />
                   </a>
-                  <a @click="toHomePage" title="防災特輯"><Logo_Icon class="svg-img" /></a>
+                  <a @click="toHomePage" title="防災特輯"
+                    ><Logo_Icon class="svg-img" :index-page="indexPage"
+                  /></a>
                 </h1>
               </div>
             </div>
@@ -78,9 +96,8 @@ const toHomePage = () => {
                           title="當期主題"
                         >
                           <img
-                            src="@/assets/header/menu_icon_01.svg"
+                            :src="indexPage ? icon_01 : icon_01_origin"
                             class="svg-img"
-                            alt=""
                           /><br />當期主題
                         </a>
                       </li>
@@ -93,9 +110,8 @@ const toHomePage = () => {
                           title="知識櫥窗"
                         >
                           <img
-                            src="@/assets/header/menu_icon_02.svg"
+                            :src="indexPage ? icon_02 : icon_02_origin"
                             class="svg-img"
-                            alt=""
                           /><br />知識櫥窗
                         </a>
                       </li>
@@ -108,7 +124,7 @@ const toHomePage = () => {
                           title="本季小品"
                         >
                           <img
-                            src="@/assets/header/menu_icon_03.svg"
+                            :src="indexPage ? icon_03 : icon_03_origin"
                             class="svg-img"
                             alt=""
                           /><br />本季小品
@@ -123,7 +139,7 @@ const toHomePage = () => {
                           title="亮點服務"
                         >
                           <img
-                            src="@/assets/header/menu_icon_04.svg"
+                            :src="indexPage ? icon_04 : icon_04_origin"
                             class="svg-img"
                             alt=""
                           /><br />亮點服務
@@ -138,7 +154,7 @@ const toHomePage = () => {
                           title="主任介紹"
                         >
                           <img
-                            src="@/assets/header/menu_icon_05.svg"
+                            :src="indexPage ? icon_05 : icon_05_origin"
                             class="svg-img"
                             alt=""
                           /><br />主任介紹
@@ -153,7 +169,7 @@ const toHomePage = () => {
                           title="關於特輯"
                         >
                           <img
-                            src="@/assets/header/menu_icon_06.svg"
+                            :src="indexPage ? icon_06 : icon_06_origin"
                             class="svg-img"
                             alt=""
                           /><br />關於特輯
@@ -174,7 +190,7 @@ const toHomePage = () => {
                           title="系列影片(另開新視窗)"
                         > -->
                           <img
-                            src="@/assets/header/menu_icon_07.svg"
+                            :src="indexPage ? icon_07 : icon_07_origin"
                             class="svg-img"
                             alt=""
                           /><br />系列影片
@@ -184,7 +200,7 @@ const toHomePage = () => {
                       <li>
                         <a href="#footer" class="nav-link anchor" title="聯絡我們">
                           <img
-                            src="@/assets/header/menu_icon_08.svg"
+                            :src="indexPage ? icon_08 : icon_08_origin"
                             class="svg-img"
                             alt=""
                           /><br />聯絡我們
@@ -200,13 +216,13 @@ const toHomePage = () => {
 
                 <input id="menu-toggle" type="checkbox" />
                 <label
-                  class="menu-button-container"
+                  :class="[indexPage ? 'menu-button-container' : 'menu-button-container-origin']"
                   for="menu-toggle"
                   data-bs-toggle="collapse"
                   data-bs-target=".header-nav-main nav"
                   @click="menuToggle"
                 >
-                  <div class="menu-button"></div>
+                  <div :class="[indexPage ? 'menu-button' : 'menu-button-origin']"></div>
                 </label>
               </div>
             </div>
