@@ -36,18 +36,17 @@ const toHomePage = () => {
 
 const { y } = useWindowScroll({ behavior: 'smooth' });
 const isShow = ref(false);
-const height = ref(3);
-const ifFooterHeight = ref(0);
+const ifFooterHeight = ref('bottom: 3%');
+// const footer = document.getElementById('footer').clientHeight;
 watch(y, () => {
   if (y.value > 500) {
-    // const contentHeight = document.getElementsByClassName('element-height')[0].clientHeight;
-    // const contentHeight = document.getElementById('app').clientHeight;
-    const footer = document.getElementById('footer').clientHeight;
     isShow.value = true;
-    if (isElementVisible.value == true) {
-      ifFooterHeight.value = y.value - footer - 700;
-      console.log(ifFooterHeight.value);
-    }
+    // if (isElementVisible.value == true) {
+    //   const height = footer;
+    //   ifFooterHeight.value = 'bottom:' + height + 'px';
+    //   // ifFooterHeight.value = ifFooterHeight.value + Math.floor((y.value - footer) / 600);
+    //   console.log('footer出現', y.value, ifFooterHeight.value);
+    // }
   } else {
     isShow.value = false;
   }
@@ -82,7 +81,7 @@ onUnmounted(() => {
   <div class="btn-container">
     <div
       class="fixed-box d-flex flex-column"
-      :style="{ bottom: isElementVisible == true ? ifFooterHeight + 'px' : height + '%' }"
+      :style="[isElementVisible ? ifFooterHeight : `bottom: 3%`]"
     >
       <facebook_icon class="m-2" v-show="isShow" />
       <LineIcon class="m-2" v-show="isShow" />
