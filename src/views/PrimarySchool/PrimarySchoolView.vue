@@ -474,11 +474,29 @@ const clickHouse = (houseName, fingerClick) => {
   position: relative;
   max-width: 1920px;
   height: 980px;
-  margin: auto;
+  margin-bottom: 100px;
+}
+@media screen and (min-width: 2560px) {
+  .house-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url('@/assets/primary_school/background/2560x1440.png') !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -999;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 @media screen and (min-width: 1600px) {
   // .primary-school {
   //   padding-top: 5% !important;
+  // }
+  // .container-fluid {
+  //   margin-bottom: 4% !important;
   // }
   .share-container {
     position: absolute;
@@ -689,7 +707,7 @@ const clickHouse = (houseName, fingerClick) => {
   .share-container {
     position: absolute;
     width: 40%;
-    bottom: 2%;
+    bottom: 0%;
     right: 0%;
     color: #a06c57;
     .icon {
@@ -746,12 +764,12 @@ const clickHouse = (houseName, fingerClick) => {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-image: url('@/assets/primary_school/house_bg.png');
+    background-image: url('@/assets/primary_school/background/1920x1440.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     z-index: -999;
-    top: 55%;
+    top: 59%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -767,7 +785,7 @@ const clickHouse = (houseName, fingerClick) => {
     .finger {
       position: absolute;
       width: 25%;
-      top: 50%;
+      top: 60%;
       left: 80%;
       animation: move 3s 0s infinite;
       -webkit-animation: move 3s 0s infinite;
@@ -1087,7 +1105,39 @@ const clickHouse = (houseName, fingerClick) => {
     }
   }
 }
-
+@media screen and (max-width: 1024px) {
+  .primary-school {
+    position: relative;
+    width: 100%;
+    background-color: #fffcec;
+    background-image: url('@/assets/primary_school/background/1024x1366.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: hidden;
+    .row {
+      --bs-gutter-x: 0;
+    }
+  }
+}
+// @media screen and (max-width: 820px) {
+//   .container-fluid {
+//     position: relative;
+//     padding: 0;
+//     // overflow-y: hidden;
+//   }
+//   .primary-school {
+//     position: relative;
+//     width: 100%;
+//     background-color: #fffcec;
+//     background-image: url('@/assets/primary_school/background/768x1024.svg') !important;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     overflow-y: hidden;
+//     .row {
+//       --bs-gutter-x: 0;
+//     }
+//   }
+// }
 // 手機板
 @media screen and (max-width: 992px) {
   .container-fluid {
@@ -1100,7 +1150,7 @@ const clickHouse = (houseName, fingerClick) => {
     width: 100%;
     padding-top: 23%;
     background-color: #fffcec;
-    background-image: url('@/assets/primary_school/house_bg_mobile.png');
+    background-image: url('@/assets/primary_school/background/375.svg');
     background-repeat: no-repeat;
     background-size: cover;
     overflow-y: hidden;
