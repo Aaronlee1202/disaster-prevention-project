@@ -427,6 +427,9 @@ watch(
 h2 {
   margin: 1rem 0;
 }
+h3 {
+  letter-spacing: 4% !important;
+}
 p {
   color: #333;
 }

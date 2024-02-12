@@ -72,7 +72,7 @@ watch(
       </div>
       <div class="content-box">
         <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
-        <h4 class="small-title">人流樓</h4>
+        <!-- <h4 class="small-title">人流樓</h4> -->
         <h2>人手一機的防災新法寶</h2>
         <p>
           發行日期 | 2023.01.01 <br />

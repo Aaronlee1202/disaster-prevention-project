@@ -58,7 +58,7 @@ body {
 
 p {
   margin-bottom: 2em !important;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1rem;
 }
 
 a {
@@ -87,16 +87,18 @@ h2 {
   font-weight: bold;
   line-height: 150%;
   margin-bottom: 20px;
-  color: #26a8a8;
+  color: #a06c57;
+  letter-spacing: 0.2rem;
 }
 
 h3 {
-  color: #26a8a8;
+  color: #a06c57;
   font-size: 1.8em;
   font-weight: bold;
   margin-bottom: 15px;
   line-height: 150%;
   text-transform: none;
+  letter-spacing: 0.1rem !important;
 }
 
 h4 {
@@ -259,7 +261,6 @@ li {
 /*header*/
 .header-body {
   position: fixed !important;
-  background: #a06c57 !important;
   border: none !important;
   box-shadow: 0 0 37px rgba(33, 37, 41, 0.6588235294);
 }
@@ -275,13 +276,38 @@ li {
   margin: 10px 0;
   float: left;
 }
+.header-body .header-logo-origin {
+  width: auto !important;
+}
+.header-body .header-logo-origin a:first-child {
+  border-right: solid #fff 2px;
+  padding: 0 20px;
+}
+.header-body .header-logo-origin a {
+  padding: 0 0 0 20px;
+  margin: 10px 0;
+  float: left;
+}
 .header-body .header-nav li {
   text-align: center;
 }
 .header-body .header-nav li a {
-  color: #ffebca !important;
   display: block !important;
   padding: 0 12px !important;
+}
+
+.header-body-brown {
+  background: #a06c57 !important;
+}
+.header-body-brown .header-nav li a {
+  color: #ffebca !important;
+}
+
+.header-body-green {
+  background: #26a8a8 !important;
+}
+.header-body-green .header-nav li a {
+  color: #fff !important;
 }
 
 .sticky-header-active .header-logo {
@@ -396,6 +422,63 @@ li {
   background: rgba(255, 255, 255, 0);
 }
 .mobile-menu-opened .menu-button-container .menu-button:after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+.menu-button-container-origin {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.menu-button-container-origin:before {
+  content: "";
+  position: absolute;
+  background: #fff;
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+}
+.menu-button-container-origin[aria-expanded=true]:before {
+  background: #ffee81;
+}
+
+.menu-button-origin,
+.menu-button-origin::before,
+.menu-button-origin::after {
+  display: block;
+  background-color: #fff;
+  content: "";
+  background-image: url(../assets/header/hamburger_origin.svg);
+  background-size: 100%;
+  position: absolute;
+  height: 6px;
+  width: 24px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.menu-button-origin:before {
+  content: "";
+  margin-top: -8px;
+}
+.menu-button-origin:after {
+  content: "";
+  margin-top: 8px;
+}
+
+.mobile-menu-opened .menu-button-container-origin .menu-button-origin::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+.mobile-menu-opened .menu-button-container-origin .menu-button-origin {
+  background: rgba(255, 255, 255, 0);
+}
+.mobile-menu-opened .menu-button-container-origin .menu-button-origin:after {
   margin-top: 0px;
   transform: rotate(-405deg);
 }
@@ -1305,7 +1388,6 @@ li {
   float: left;
   width: 50%;
   padding: 0 5%;
-  border-right: solid #ffebca 3px;
 }
 #footer .font .mail img {
   max-width: 150px;
@@ -1315,6 +1397,12 @@ li {
   font-size: 1.3em;
   font-weight: bold;
   padding: 30px 0 10px 0;
+}
+#footer .font .mail-border {
+  border-right: solid #ffebca 3px;
+}
+#footer .font .mail-border-origin {
+  border-right: solid #fff 3px;
 }
 #footer .font .contact {
   float: left;
@@ -1812,7 +1900,6 @@ li {
     padding: 0 5px !important;
     font-size: 0.8em !important;
     font-weight: 400 !important;
-    color: #ffebca !important;
   }
   /*main*/
   .main {
@@ -2137,6 +2224,9 @@ li {
   .menu-button-container {
     display: flex;
   }
+  .menu-button-container-origin {
+    display: flex;
+  }
   #menu-toggle ~ .menu li {
     height: 0;
     margin: 0;
@@ -2426,6 +2516,12 @@ li {
   #footer .font .mail {
     border-right: solid #ffebca 2px;
   }
+  #footer .font .mail-border {
+    border-right: solid #ffebca 2px;
+  }
+  #footer .font .mail-border-origin {
+    border-right: solid #fff 2px;
+  }
   /*main_con*/
   .main_con {
     padding: 20px 0px 60px;
@@ -2667,6 +2763,12 @@ li {
     padding: 8% 0 10% 0;
     border-right: none;
     border-bottom: solid #ffebca 2px;
+  }
+  #footer .font .mail-border {
+    border-bottom: solid #ffebca 2px;
+  }
+  #footer .font .mail-border-origin {
+    border-bottom: solid #fff 2px;
   }
   #footer .font .contact {
     width: 100%;

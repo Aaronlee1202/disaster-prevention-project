@@ -11,20 +11,11 @@ import icon_05 from '@/assets/header/menu_icon_05.svg';
 import icon_06 from '@/assets/header/menu_icon_06.svg';
 import icon_07 from '@/assets/header/menu_icon_07.svg';
 import icon_08 from '@/assets/header/menu_icon_08.svg';
-import icon_01_origin from '@/assets/header/menu_icon_01_origin.svg';
-import icon_02_origin from '@/assets/header/menu_icon_02_origin.svg';
-import icon_03_origin from '@/assets/header/menu_icon_03_origin.svg';
-import icon_04_origin from '@/assets/header/menu_icon_04_origin.svg';
-import icon_05_origin from '@/assets/header/menu_icon_05_origin.svg';
-import icon_06_origin from '@/assets/header/menu_icon_06_origin.svg';
-import icon_07_origin from '@/assets/header/menu_icon_07_origin.svg';
-import icon_08_origin from '@/assets/header/menu_icon_08_origin.svg';
 
 const router = useRouter();
 
 const indexPage = ref(true);
 watch(router.currentRoute, (newVal) => {
-  console.log(newVal.name);
   if (newVal.name !== 'PrimarySchoolView') {
     indexPage.value = false;
   } else {
@@ -56,15 +47,12 @@ const toHomePage = () => {
     :class="{ 'mobile-menu-opened': toggle }"
     data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile':false, 'stickyStartAt': 30, 'stickySetTop': '0', 'stickyChangeLogo':false}"
   >
-    <div class="header-body" :class="[indexPage ? 'header-body-brown' : 'header-body-green']">
-      <div
-        class="header-container container"
-        :class="[indexPage ? 'header-body-brown' : 'header-body-green']"
-      >
+    <div class="header-body header-body-brown">
+      <div class="header-container container header-body-brown">
         <div class="header-row">
           <div class="header-column">
             <div class="header-row">
-              <div class="header-logo" :class="[indexPage ? 'header-logo' : 'header-logo-origin']">
+              <div class="header-logo">
                 <h1>
                   <!-- <Logo_Ncdr_Icon class="svg-img" @click="toHomePage" target="_blank" /> -->
                   <a @click="toNcdrPage" target="_blank" title="行政法人國災害防救科技中心">
@@ -83,10 +71,7 @@ const toHomePage = () => {
                 <div
                   class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 justify-content-end"
                 >
-                  <nav
-                    class="collapse"
-                    :class="[indexPage ? 'header-body-brown' : 'header-body-green']"
-                  >
+                  <nav class="collapse header-body-brown">
                     <ul class="nav nav-pills" id="mainNav">
                       <li>
                         <a
@@ -95,10 +80,7 @@ const toHomePage = () => {
                           class="nav-link anchor"
                           title="當期主題"
                         >
-                          <img
-                            :src="indexPage ? icon_01 : icon_01_origin"
-                            class="svg-img"
-                          /><br />當期主題
+                          <img :src="icon_01" class="svg-img" /><br />當期主題
                         </a>
                       </li>
 
@@ -109,10 +91,7 @@ const toHomePage = () => {
                           class="nav-link anchor"
                           title="知識櫥窗"
                         >
-                          <img
-                            :src="indexPage ? icon_02 : icon_02_origin"
-                            class="svg-img"
-                          /><br />知識櫥窗
+                          <img :src="icon_02" class="svg-img" /><br />知識櫥窗
                         </a>
                       </li>
 
@@ -123,11 +102,7 @@ const toHomePage = () => {
                           class="nav-link anchor"
                           title="本季小品"
                         >
-                          <img
-                            :src="indexPage ? icon_03 : icon_03_origin"
-                            class="svg-img"
-                            alt=""
-                          /><br />本季小品
+                          <img :src="icon_03" class="svg-img" alt="" /><br />本季小品
                         </a>
                       </li>
 
@@ -138,11 +113,7 @@ const toHomePage = () => {
                           class="nav-link anchor"
                           title="亮點服務"
                         >
-                          <img
-                            :src="indexPage ? icon_04 : icon_04_origin"
-                            class="svg-img"
-                            alt=""
-                          /><br />亮點服務
+                          <img :src="icon_04" class="svg-img" alt="" /><br />亮點服務
                         </a>
                       </li>
 
@@ -153,11 +124,7 @@ const toHomePage = () => {
                           class="nav-link anchor"
                           title="主任介紹"
                         >
-                          <img
-                            :src="indexPage ? icon_05 : icon_05_origin"
-                            class="svg-img"
-                            alt=""
-                          /><br />主任介紹
+                          <img :src="icon_05" class="svg-img" alt="" /><br />主任介紹
                         </a>
                       </li>
 
@@ -168,11 +135,7 @@ const toHomePage = () => {
                           class="nav-link anchor"
                           title="關於特輯"
                         >
-                          <img
-                            :src="indexPage ? icon_06 : icon_06_origin"
-                            class="svg-img"
-                            alt=""
-                          /><br />關於特輯
+                          <img :src="icon_06" class="svg-img" alt="" /><br />關於特輯
                         </a>
                       </li>
 
@@ -189,21 +152,13 @@ const toHomePage = () => {
                           class="nav-link"
                           title="系列影片(另開新視窗)"
                         > -->
-                          <img
-                            :src="indexPage ? icon_07 : icon_07_origin"
-                            class="svg-img"
-                            alt=""
-                          /><br />系列影片
+                          <img :src="icon_07" class="svg-img" alt="" /><br />系列影片
                         </a>
                       </li>
 
                       <li>
                         <a href="#footer" class="nav-link anchor" title="聯絡我們">
-                          <img
-                            :src="indexPage ? icon_08 : icon_08_origin"
-                            class="svg-img"
-                            alt=""
-                          /><br />聯絡我們
+                          <img :src="icon_08" class="svg-img" alt="" /><br />聯絡我們
                         </a>
                       </li>
                     </ul>
@@ -216,13 +171,13 @@ const toHomePage = () => {
 
                 <input id="menu-toggle" type="checkbox" />
                 <label
-                  :class="[indexPage ? 'menu-button-container' : 'menu-button-container-origin']"
+                  class="menu-button-container"
                   for="menu-toggle"
                   data-bs-toggle="collapse"
                   data-bs-target=".header-nav-main nav"
                   @click="menuToggle"
                 >
-                  <div :class="[indexPage ? 'menu-button' : 'menu-button-origin']"></div>
+                  <div class="menu-button"></div>
                 </label>
               </div>
             </div>

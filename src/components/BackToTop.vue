@@ -36,7 +36,7 @@ const toHomePage = () => {
 
 const { y } = useWindowScroll({ behavior: 'smooth' });
 const isShow = ref(false);
-const ifFooterHeight = ref('bottom: 3%');
+// const ifFooterHeight = ref('bottom: 3%');
 // const footer = document.getElementById('footer').clientHeight;
 watch(y, () => {
   if (y.value > 500) {
@@ -81,7 +81,6 @@ onUnmounted(() => {
   <div class="btn-container">
     <div
       class="fixed-box d-flex flex-column"
-      :style="[isElementVisible ? ifFooterHeight : `bottom: 3%`]"
     >
       <facebook_icon class="m-2" v-show="isShow" />
       <LineIcon class="m-2" v-show="isShow" />
@@ -103,7 +102,7 @@ onUnmounted(() => {
 }
 .fixed-box {
   position: fixed;
-  // bottom: 3%;
+  bottom: 3%;
   right: 3%;
   z-index: 999;
 }
