@@ -164,9 +164,9 @@ const clickHouse = (houseName, fingerClick) => {
     flowOpen.openWindows = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('january');
+        const routeData = router.resolve('february');
         window.open(routeData.href, '_blank');
-      } else router.push('january');
+      } else router.push('february');
     }, 1000);
   } else if (houseName == 'norm-house-open-door') {
     normOpen.openDoor = true;
