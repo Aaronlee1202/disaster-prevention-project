@@ -156,97 +156,97 @@ const clickHouse = (houseName, fingerClick) => {
     flowOpen.openDoor = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('disaster-prevention');
+        const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('disaster-prevention');
+      } else router.push('january');
     }, 1000);
   } else if (houseName == 'people-flow-open-windows') {
     flowOpen.openWindows = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('disaster-prevention');
+        const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('disaster-prevention');
+      } else router.push('january');
     }, 1000);
   } else if (houseName == 'norm-house-open-door') {
     normOpen.openDoor = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('disaster-prevention');
+        const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('disaster-prevention');
+      } else router.push('january');
     }, 1000);
   } else if (houseName == 'norm-house-open-windows') {
     normOpen.openWindows = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('disaster-prevention');
+        const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('disaster-prevention');
+      } else router.push('january');
     }, 1000);
   } else if (houseName == 'twin-house-open-door') {
     twinOpen.openDoor = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('disaster-prevention');
+        const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('disaster-prevention');
+      } else router.push('january');
     }, 1000);
   } else if (houseName == 'twin-house-open-windows') {
     twinOpen.openWindows = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('disaster-prevention');
+        const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('disaster-prevention');
+      } else router.push('january');
     }, 1000);
   } else if (houseName == 'strategy-house-open-door') {
     strategyOpen.openDoor = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('disaster-prevention');
+        const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('disaster-prevention');
+      } else router.push('january');
     }, 1000);
   } else if (houseName == 'strategy-house-open-windows') {
     strategyOpen.openWindows = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('disaster-prevention');
+        const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('disaster-prevention');
+      } else router.push('january');
     }, 1000);
   } else if (houseName == 'potential-house-open-door') {
     potentialOpen.openDoor = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('disaster-prevention');
+        const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('disaster-prevention');
+      } else router.push('january');
     }, 1000);
   } else if (houseName == 'potential-house-open-windows') {
     potentialOpen.openWindows = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('disaster-prevention');
+        const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('disaster-prevention');
+      } else router.push('january');
     }, 1000);
   } else if (houseName == 'atmosphere-house-open-door') {
     atmosphereOpen.openDoor = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('disaster-prevention');
+        const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('disaster-prevention');
+      } else router.push('january');
     }, 1000);
   } else if (houseName == 'atmosphere-house-open-windows') {
     atmosphereOpen.openWindows = true;
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('disaster-prevention');
+        const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('disaster-prevention');
+      } else router.push('january');
     }, 1000);
   }
 };

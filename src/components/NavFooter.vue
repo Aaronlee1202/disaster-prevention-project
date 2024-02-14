@@ -15,7 +15,6 @@ watch(router.currentRoute, (newVal) => {
   } else {
     indexPage.value = true;
   }
-  console.log(indexPage.value);
 });
 </script>
 

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import PrimarySchoolView from '../views/PrimarySchool/PrimarySchoolView.vue';
-import DisasterPreventionView from '../views/DisasterPrevention/DisasterPreventionView.vue';
+import DisasterPreventionView from '../views/January/DisasterPreventionView.vue';
+import FebruaryView from '@/views/February/FebruaryView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,9 +12,14 @@ const router = createRouter({
       component: PrimarySchoolView
     },
     {
-      path: '/disaster-prevention',
+      path: '/january',
       name: 'DisasterPrevention',
       component: DisasterPreventionView
+    },
+    {
+      path: '/february',
+      name: 'FebruaryView',
+      component: FebruaryView
     }
   ]
 });
