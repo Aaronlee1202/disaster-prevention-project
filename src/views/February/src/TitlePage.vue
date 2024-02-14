@@ -1,26 +1,31 @@
 <script setup>
 import { ref, onMounted, defineComponent } from 'vue';
 import ContentPage from './Content.vue';
-import TalismanStart from './TalismanStart.vue';
-import TalismanNormal from './TalismanNormal.vue';
+import LottieStart from './LottieStart.vue';
+import LottieStart2 from './LottieStart2.vue';
+import LottieLoop from './LottieLoop.vue';
 
 defineComponent({
   components: {
-    TalismanStart,
-    TalismanNormal,
+    LottieStart,
+    LottieStart2,
+    LottieLoop,
     ContentPage
   }
 });
 
 const fadeOut = ref(false);
 
+const lottieLoop = ref(false);
 
 onMounted(() => {
   setTimeout(() => {
     fadeOut.value = true;
-  }, 1500);
+  }, 2700);
+  setTimeout(() => {
+    lottieLoop.value = true;
+  }, 5000);
 });
-
 </script>
 
 <template>
@@ -30,10 +35,13 @@ onMounted(() => {
         <div class="col-4">
           <div class="img-container">
             <div class="start-box d-flex justify-content-center">
-              <TalismanStart :fade-out="fadeOut" />
+              <LottieStart />
             </div>
             <div class="begin-box d-flex justify-content-center">
-              <TalismanNormal :play-lottie="fadeOut" />
+              <LottieStart2 :play-lottie="fadeOut" />
+            </div>
+            <div class="loop-box d-flex justify-content-center" v-if="lottieLoop">
+              <LottieLoop :play-lottie="lottieLoop" />
             </div>
           </div>
         </div>
@@ -89,7 +97,12 @@ h2 {
   .begin-box {
     width: 100%;
     position: absolute;
-    z-index: 5;
+    z-index: 15;
+  }
+  .loop-box {
+    width: 100%;
+    position: absolute;
+    z-index: 20;
   }
   .fade-out {
     opacity: 0;

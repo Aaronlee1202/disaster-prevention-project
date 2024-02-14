@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import lottie from 'lottie-web';
-import newTalismanStart from '@/assets/disaster_prevention/new_talisman_start.json';
+import newTalismanStart from '@/assets/lottie/February/Start.json';
 
 const newTalismanStartJson = ref(null);
 
@@ -12,15 +12,11 @@ onBeforeUnmount(() => {
   newTalismanStartJson.value.destroy();
 });
 
-defineProps({
-  fadeOut: Boolean
-});
-
 function lottieAnimation() {
   newTalismanStartJson.value = lottie.loadAnimation({
     container: document.getElementById('new-talisman-start'),
     renderer: 'svg',
-    loop: false,
+    loop: true,
     autoplay: true,
     animationData: newTalismanStart
   });
@@ -28,7 +24,7 @@ function lottieAnimation() {
 </script>
 
 <template>
-  <div id="new-talisman-start" v-if="!fadeOut"></div>
+  <div id="new-talisman-start"></div>
 </template>
 
 <style lang="scss" scoped>

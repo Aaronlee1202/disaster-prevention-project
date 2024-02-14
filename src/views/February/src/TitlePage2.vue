@@ -1,13 +1,15 @@
 <script setup>
 import { ref, watch, onMounted, defineComponent } from 'vue';
 import { useWindowSize } from '@vueuse/core';
-import TalismanStart from './TalismanStart.vue';
-import TalismanNormal from './TalismanNormal.vue';
+import LottieStart from './LottieStart.vue';
+import LottieStart2 from './LottieStart2.vue';
+import LottieLoop from './LottieLoop.vue';
 
 defineComponent({
   components: {
-    TalismanStart,
-    TalismanNormal
+    LottieStart,
+    LottieStart2,
+    LottieLoop
   }
 });
 
@@ -15,12 +17,17 @@ const { width } = useWindowSize();
 
 const fadeOut = ref(false);
 
+const lottieLoop = ref(false);
+
 const screenSwitch = ref(false);
 
 onMounted(() => {
   setTimeout(() => {
     fadeOut.value = true;
-  }, 1500);
+  }, 2700);
+  setTimeout(() => {
+    lottieLoop.value = true;
+  }, 5000);
 });
 
 watch(
@@ -40,14 +47,14 @@ watch(
       <div class="row d-flex align-items-center">
         <div class="col-6">
           <div class="img-container d-flex align-items-center">
-            <!-- <img src="@/assets/disaster_prevention/new_talisman.png" alt="新的護身符" /> -->
             <div class="start-box d-flex justify-content-end">
-              <!-- <div id="new-talisman-start"></div> -->
-              <TalismanStart :fade-out="fadeOut" />
+              <LottieStart />
             </div>
             <div class="begin-box d-flex justify-content-end">
-              <!-- <div id="new-talisman-begin"></div> -->
-              <TalismanNormal :play-lottie="fadeOut" />
+              <LottieStart2 :play-lottie="fadeOut" />
+            </div>
+            <div class="loop-box d-flex justify-content-center" v-if="lottieLoop">
+              <LottieLoop :play-lottie="lottieLoop" />
             </div>
           </div>
         </div>
@@ -67,8 +74,9 @@ watch(
     </div>
     <div class="container-fluid custom-container" v-if="screenSwitch == true">
       <div class="img-container">
-        <TalismanStart :fade-out="fadeOut" />
-        <TalismanNormal :play-lottie="fadeOut" />
+        <LottieStart />
+        <LottieStart2 :play-lottie="fadeOut" />
+        <LottieLoop :play-lottie="lottieLoop" />
       </div>
       <div class="content-box">
         <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
@@ -116,6 +124,11 @@ h2 {
     width: 100%;
     position: absolute;
     z-index: 5;
+  }
+  .loop-box {
+    width: 100%;
+    position: absolute;
+    z-index: 20;
   }
   .fade-out {
     opacity: 0;
@@ -225,6 +238,16 @@ h2 {
       transform: scale(1);
       width: 100% !important;
       z-index: 5;
+    }
+    #new-talisman-loop {
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      transform: scale(1);
+      width: 100% !important;
+      z-index: 10;
     }
     .fade-out {
       opacity: 0;
