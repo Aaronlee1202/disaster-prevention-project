@@ -89,61 +89,61 @@ const atmosphereOpen = reactive({
   openWindows: false
 });
 
-const mouseEvent = () => {
-  // const peopleFlowClick = document.querySelector('.people-flow-click');
+// const mouseEvent = () => {
+//   // const peopleFlowClick = document.querySelector('.people-flow-click');
 
-  // peopleFlowClick.addEventListener('mouseover', () => {
-  //   document.getElementById(`people-flow-house`).style.opacity = 1;
-  // });
-  // peopleFlowClick.addEventListener('mouseout', () => {
-  //   document.getElementById(`people-flow-house`).style.opacity = 0.7;
-  // });
+//   // peopleFlowClick.addEventListener('mouseover', () => {
+//   //   document.getElementById(`people-flow-house`).style.opacity = 1;
+//   // });
+//   // peopleFlowClick.addEventListener('mouseout', () => {
+//   //   document.getElementById(`people-flow-house`).style.opacity = 0.7;
+//   // });
 
-  const normHouseClick = document.querySelector('.norm-house-click');
+//   const normHouseClick = document.querySelector('.norm-house-click');
 
-  normHouseClick.addEventListener('mouseover', () => {
-    document.getElementById(`norm-house`).style.opacity = 1;
-  });
-  normHouseClick.addEventListener('mouseout', () => {
-    document.getElementById(`norm-house`).style.opacity = 0.7;
-  });
+//   normHouseClick.addEventListener('mouseover', () => {
+//     document.getElementById(`norm-house`).style.opacity = 1;
+//   });
+//   normHouseClick.addEventListener('mouseout', () => {
+//     document.getElementById(`norm-house`).style.opacity = 0.7;
+//   });
 
-  const twinHouseClick = document.querySelector('.twin-house-click');
+//   const twinHouseClick = document.querySelector('.twin-house-click');
 
-  twinHouseClick.addEventListener('mouseover', () => {
-    document.getElementById(`twin-house`).style.opacity = 1;
-  });
-  twinHouseClick.addEventListener('mouseout', () => {
-    document.getElementById(`twin-house`).style.opacity = 0.7;
-  });
+//   twinHouseClick.addEventListener('mouseover', () => {
+//     document.getElementById(`twin-house`).style.opacity = 1;
+//   });
+//   twinHouseClick.addEventListener('mouseout', () => {
+//     document.getElementById(`twin-house`).style.opacity = 0.7;
+//   });
 
-  const strategyHouseClick = document.querySelector('.strategy-house-click');
+//   const strategyHouseClick = document.querySelector('.strategy-house-click');
 
-  strategyHouseClick.addEventListener('mouseover', () => {
-    document.getElementById(`strategy-house`).style.opacity = 1;
-  });
-  strategyHouseClick.addEventListener('mouseout', () => {
-    document.getElementById(`strategy-house`).style.opacity = 0.7;
-  });
+//   strategyHouseClick.addEventListener('mouseover', () => {
+//     document.getElementById(`strategy-house`).style.opacity = 1;
+//   });
+//   strategyHouseClick.addEventListener('mouseout', () => {
+//     document.getElementById(`strategy-house`).style.opacity = 0.7;
+//   });
 
-  const potentialHouseClick = document.querySelector('.potential-house-click');
+//   const potentialHouseClick = document.querySelector('.potential-house-click');
 
-  potentialHouseClick.addEventListener('mouseover', () => {
-    document.getElementById(`potential-house`).style.opacity = 1;
-  });
-  potentialHouseClick.addEventListener('mouseout', () => {
-    document.getElementById(`potential-house`).style.opacity = 0.7;
-  });
+//   potentialHouseClick.addEventListener('mouseover', () => {
+//     document.getElementById(`potential-house`).style.opacity = 1;
+//   });
+//   potentialHouseClick.addEventListener('mouseout', () => {
+//     document.getElementById(`potential-house`).style.opacity = 0.7;
+//   });
 
-  const atmosphereHouseClick = document.querySelector('.atmosphere-house-click');
+//   const atmosphereHouseClick = document.querySelector('.atmosphere-house-click');
 
-  atmosphereHouseClick.addEventListener('mouseover', () => {
-    document.getElementById(`atmosphere-house`).style.opacity = 1;
-  });
-  atmosphereHouseClick.addEventListener('mouseout', () => {
-    document.getElementById(`atmosphere-house`).style.opacity = 0.7;
-  });
-};
+//   atmosphereHouseClick.addEventListener('mouseover', () => {
+//     document.getElementById(`atmosphere-house`).style.opacity = 1;
+//   });
+//   atmosphereHouseClick.addEventListener('mouseout', () => {
+//     document.getElementById(`atmosphere-house`).style.opacity = 0.7;
+//   });
+// };
 
 const router = useRouter();
 // 點擊門窗動畫
