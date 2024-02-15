@@ -1,8 +1,8 @@
 <script setup>
 import { watch, ref } from 'vue';
-import New_Talisman from './src/TitlePage.vue';
-import New_Talisman2 from './src/TitlePage2.vue';
-import Flow_Of_People from './src/Content2.vue';
+import Title_Page from './src/TitlePage.vue';
+import Title_Page_2 from './src/TitlePage2.vue';
+import Content_2 from './src/Content2.vue';
 import { useWindowSize } from '@vueuse/core';
 
 const { width } = useWindowSize();
@@ -20,9 +20,9 @@ watch(
 </script>
 
 <template>
-  <New_Talisman v-if="!screenSwitch" />
-  <New_Talisman2 v-if="screenSwitch" />
-  <Flow_Of_People v-if="screenSwitch" />
+  <Title_Page v-if="!screenSwitch" />
+  <Title_Page_2 v-if="screenSwitch" />
+  <Content_2 v-if="screenSwitch" />
 </template>
 
 <style lang="scss" scoped></style>

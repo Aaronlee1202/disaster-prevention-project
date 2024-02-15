@@ -1,9 +1,9 @@
 <script setup>
 import { ref, onMounted, defineComponent } from 'vue';
 import ContentPage from './Content.vue';
-import Lottie_Start from './LottieStart.vue';
-import Lottie_Start2 from './LottieStart2.vue';
-import Lottie_Loop from './LottieLoop.vue';
+import Lottie_Start from './lottie/LottieStart.vue';
+import Lottie_Start2 from './lottie/LottieStart2.vue';
+import Lottie_Loop from './lottie/LottieLoop.vue';
 
 defineComponent({
   components: {

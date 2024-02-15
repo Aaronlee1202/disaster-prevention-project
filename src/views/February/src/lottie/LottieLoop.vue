@@ -19,8 +19,9 @@ const props = defineProps({
 watch(
   () => props.playLottie,
   (newVal) => {
+    console.log('playLottie 3', newVal);
     if (newVal) {
-      newTalismanJson.value.Play();
+      newTalismanJson.value.goToAndPlay(1, true);
     }
   },
   {

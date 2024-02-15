@@ -1,9 +1,9 @@
 <script setup>
 import { ref, watch, onMounted, defineComponent } from 'vue';
 import { useWindowSize } from '@vueuse/core';
-import Lottie_Start from './LottieStart.vue';
-import Lottie_Start2 from './LottieStart2.vue';
-import Lottie_Loop from './LottieLoop.vue';
+import Lottie_Start from './lottie/LottieStart.vue';
+import Lottie_Start2 from './lottie/LottieStart2.vue';
+import Lottie_Loop from './lottie/LottieLoop.vue';
 
 defineComponent({
   components: {
@@ -24,10 +24,10 @@ const screenSwitch = ref(false);
 onMounted(() => {
   setTimeout(() => {
     fadeOut.value = true;
-  }, 2700);
+  }, 2000);
   setTimeout(() => {
     lottieLoop.value = true;
-  }, 5000);
+  }, 4100);
 });
 
 watch(
@@ -76,7 +76,7 @@ watch(
       <div class="img-container">
         <Lottie_Start />
         <Lottie_Start2 :play-lottie="fadeOut" />
-        <Lottie_Loop :play-lottie="lottieLoop" />
+        <Lottie_Loop :play-lottie="lottieLoop" v-if="lottieLoop == true" />
       </div>
       <div class="content-box">
         <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
@@ -225,7 +225,7 @@ h2 {
       bottom: 0;
       transform: scale(1);
       width: 100% !important;
-      z-index: 10;
+      z-index: 5;
       opacity: 1;
       transition: opacity 1s ease;
     }
@@ -237,7 +237,7 @@ h2 {
       bottom: 0;
       transform: scale(1);
       width: 100% !important;
-      z-index: 5;
+      z-index: 10;
     }
     #new-talisman-loop {
       position: absolute;
@@ -247,7 +247,7 @@ h2 {
       bottom: 0;
       transform: scale(1);
       width: 100% !important;
-      z-index: 10;
+      z-index: 15;
     }
     .fade-out {
       opacity: 0;

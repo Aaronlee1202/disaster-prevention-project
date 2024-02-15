@@ -65,22 +65,24 @@ watch(
         </div>
       </div>
     </div>
-    <div class="container-fluid custom-container" v-if="screenSwitch == true">
+    <div class="container-fluid custom-container p-0" v-if="screenSwitch == true">
       <div class="img-container">
         <TalismanStart :fade-out="fadeOut" />
         <TalismanNormal :play-lottie="fadeOut" />
       </div>
-      <div class="content-box">
-        <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
-        <!-- <h4 class="small-title">人流樓</h4> -->
-        <h2>人手一機的防災新法寶</h2>
-        <p>
-          發行日期 | 2023.01.01 <br />
-          作者 | 地人組 黃明偉 <br />
-          審稿人 | 柯孝勳
-        </p>
+      <div class="row content-box mx-3 mt-5 mb-5">
+        <div class="col">
+          <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
+          <!-- <h4 class="small-title">人流樓</h4> -->
+          <h2>人手一機的防災新法寶</h2>
+          <p>
+            發行日期 | 2023.01.01 <br />
+            作者 | 地人組 黃明偉 <br />
+            審稿人 | 柯孝勳
+          </p>
+        </div>
+        <div class="dashed-line"></div>
       </div>
-      <div class="dashed-line"></div>
     </div>
   </div>
 </template>
@@ -93,6 +95,7 @@ watch(
 .custom-container {
   // height: 100%;
   border-bottom: 5px dashed #b8806f;
+  overflow: hidden;
 }
 .small-title {
   margin: 1rem 0;
@@ -231,11 +234,8 @@ h2 {
     }
   }
   .content-box {
-    position: relative;
-    padding-top: 10%;
-    padding-left: 10%;
     img {
-      width: 60%;
+      width: 100%;
     }
   }
 }
