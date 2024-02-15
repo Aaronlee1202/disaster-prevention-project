@@ -344,6 +344,7 @@ const clickHouse = (houseName, fingerClick) => {
   </div>
   <!-- mobil -->
   <div class="container-fluid" v-if="screenSwitch == true">
+    <div class="house-bg"></div>
     <div class="primary-school">
       <div class="row">
         <div class="col d-flex align-items-center justify-content-center">
@@ -423,29 +424,6 @@ const clickHouse = (houseName, fingerClick) => {
           </div>
         </div>
       </div>
-      <!-- <div class="share-container">
-        <div class="row align-items-center">
-          <div class="col-3 pb-4 text-end">
-            <arrow_share />
-            分享到...
-          </div>
-          <div class="col-2">
-            <div class="icon">
-              <facebook_icon />
-              <div>facebook</div>
-            </div>
-          </div>
-          <div class="col-2">
-            <div class="icon">
-              <line_icon />
-              <div>line</div>
-            </div>
-          </div>
-          <div class="col pb-4">
-            <div class="home-btn"><Home_Icon />回首頁</div>
-          </div>
-        </div>
-      </div> -->
     </div>
   </div>
 </template>
@@ -476,317 +454,6 @@ const clickHouse = (houseName, fingerClick) => {
   height: 1080px;
   margin-bottom: 100px;
 }
-// .people-flow-click {
-//   position: absolute;
-//   transform: translate(-50%, -50%);
-//   // border: #3f3a3a 1px solid;
-//   z-index: 999;
-//   .finger {
-//     position: absolute;
-//     animation: move 3s 0s infinite;
-//     -webkit-animation: move 3s 0s infinite;
-//   }
-//   @keyframes move {
-//     0%,
-//     65% {
-//       -webkit-transform: translateY(0px);
-//       transform: translateY(0px);
-//     }
-//     70% {
-//       -webkit-transform: translateY(6px);
-//       transform: translateY(6px);
-//     }
-//     75% {
-//       -webkit-transform: translateY(-6px);
-//       transform: translateY(-6px);
-//     }
-//     80% {
-//       -webkit-transform: translateY(6px);
-//       transform: translateY(6px);
-//     }
-//     85% {
-//       -webkit-transform: translateY(-6px);
-//       transform: translateY(-6px);
-//     }
-//     90% {
-//       -webkit-transform: translateY(6px);
-//       transform: translateY(6px);
-//     }
-//     95% {
-//       -webkit-transform: translateY(-6px);
-//       transform: translateY(-6px);
-//     }
-//     100% {
-//       -webkit-transform: translateY(0deg);
-//       transform: translateY(0px);
-//     }
-//   }
-//   .door-click {
-//     position: absolute;
-//     // background-color: #3f3a3a60;
-//     cursor: pointer;
-//     z-index: 999;
-//   }
-//   .windows-click {
-//     position: absolute;
-//     // background-color: #3f3a3a60;
-//     cursor: pointer;
-//     z-index: 999;
-//   }
-// }
-// #people-flow-house {
-//   position: absolute;
-//   width: 400px;
-//   top: 14%;
-//   left: 61%;
-//   transform: translate(-50%, -50%);
-//   z-index: 998;
-//   // opacity: 0.7;
-//   #people-flow {
-//     position: absolute;
-//   }
-//   #people-flow-open-door {
-//     position: absolute;
-//   }
-//   #people-flow-open-windows {
-//     position: absolute;
-//   }
-// }
-// .norm-house-click {
-//   position: absolute;
-//   width: 200px;
-//   height: 180px;
-//   top: 52%;
-//   left: 80%;
-//   transform: translate(-50%, -50%);
-//   // border: #3f3a3a 1px solid;
-//   z-index: 999;
-//   .door-click {
-//     position: absolute;
-//     width: 70px;
-//     height: 70px;
-//     top: 55%;
-//     left: 5%;
-//     // background-color: #3f3a3a60;
-//     cursor: pointer;
-//     z-index: 999;
-//   }
-//   .windows-click {
-//     position: absolute;
-//     width: 70px;
-//     height: 70px;
-//     top: 45%;
-//     right: 17%;
-//     // background-color: #3f3a3a60;
-//     cursor: pointer;
-//     z-index: 999;
-//   }
-// }
-// #norm-house {
-//   position: absolute;
-//   width: 400px;
-//   top: 30%;
-//   left: 79%;
-//   transform: translate(-50%, -50%);
-//   z-index: 998;
-//   opacity: 0.7;
-//   #norm {
-//     position: absolute;
-//   }
-//   #norm-open-door {
-//     position: absolute;
-//   }
-//   #norm-open-windows {
-//     position: absolute;
-//   }
-// }
-// .twin-house-click {
-//   position: absolute;
-//   width: 200px;
-//   height: 180px;
-//   top: 50%;
-//   left: 43%;
-//   transform: translate(-50%, -50%);
-//   // border: #3f3a3a 1px solid;
-//   z-index: 999;
-//   .door-click {
-//     position: absolute;
-//     width: 70px;
-//     height: 70px;
-//     top: 42%;
-//     right: 8%;
-//     // background-color: #3f3a3a50;
-//     cursor: pointer;
-//     z-index: 999;
-//   }
-//   .windows-click {
-//     position: absolute;
-//     width: 70px;
-//     height: 70px;
-//     top: 40%;
-//     left: 17%;
-//     // background-color: #3f3a3a60;
-//     cursor: pointer;
-//     z-index: 999;
-//   }
-// }
-// #twin-house {
-//   position: absolute;
-//   width: 400px;
-//   top: 28%;
-//   left: 42%;
-//   transform: translate(-50%, -50%);
-//   z-index: 998;
-//   opacity: 0.7;
-//   #twin {
-//     position: absolute;
-//   }
-//   #twin-open-door {
-//     position: absolute;
-//   }
-//   #twin-open-windows {
-//     position: absolute;
-//   }
-// }
-// .strategy-house-click {
-//   position: absolute;
-//   width: 200px;
-//   height: 180px;
-//   top: 70%;
-//   left: 60%;
-//   transform: translate(-50%, -50%);
-//   // border: #3f3a3a 1px solid;
-//   z-index: 999;
-//   .door-click {
-//     position: absolute;
-//     width: 70px;
-//     height: 70px;
-//     top: 43%;
-//     left: 10%;
-//     // background-color: #3f3a3a60;
-//     cursor: pointer;
-//     z-index: 999;
-//   }
-//   .windows-click {
-//     position: absolute;
-//     width: 70px;
-//     height: 70px;
-//     top: 45%;
-//     right: 0%;
-//     // background-color: #3f3a3a60;
-//     cursor: pointer;
-//     z-index: 999;
-//   }
-// }
-// #strategy-house {
-//   position: absolute;
-//   width: 400px;
-//   top: 50%;
-//   left: 59%;
-//   transform: translate(-50%, -50%);
-//   z-index: 998;
-//   opacity: 0.7;
-//   #strategy {
-//     position: absolute;
-//   }
-//   #strategy-open-door {
-//     position: absolute;
-//   }
-//   #strategy-open-windows {
-//     position: absolute;
-//   }
-// }
-// .potential-house-click {
-//   position: absolute;
-//   width: 200px !important;
-//   height: 180px !important;
-//   top: 64%;
-//   left: 21%;
-//   transform: translate(-50%, -50%);
-//   // border: #3f3a3a 1px solid;
-//   z-index: 999;
-//   .door-click {
-//     position: absolute;
-//     width: 70px;
-//     height: 70px;
-//     top: 55%;
-//     left: 15%;
-//     // background-color: #3f3a3a60;
-//     cursor: pointer;
-//     z-index: 999;
-//   }
-//   .windows-click {
-//     position: absolute;
-//     width: 70px;
-//     height: 70px;
-//     top: 30%;
-//     right: 0%;
-//     // background-color: #3f3a3a60;
-//     cursor: pointer;
-//     z-index: 999;
-//   }
-// }
-// #potential-house {
-//   position: absolute;
-//   width: 400px;
-//   top: 43%;
-//   left: 22%;
-//   transform: translate(-50%, -50%);
-//   z-index: 998;
-//   opacity: 0.7;
-//   #potential {
-//     position: absolute;
-//   }
-//   #potential-open-door {
-//     position: absolute;
-//   }
-//   #potential-open-windows {
-//     position: absolute;
-//   }
-// }
-// .atmosphere-house-click {
-//   position: absolute;
-//   width: 250px;
-//   height: 180px !important;
-//   top: 86%;
-//   left: 40%;
-//   transform: translate(-50%, -50%);
-//   // border: #3f3a3a 1px solid;
-//   z-index: 999;
-//   .door-click {
-//     position: absolute;
-//     width: 70px;
-//     height: 70px;
-//     top: 35%;
-//     left: 0%;
-//     // background-color: #3f3a3a60;
-//     cursor: pointer;
-//     z-index: 999;
-//   }
-//   .windows-click {
-//     position: absolute;
-//     width: 70px;
-//     height: 70px;
-//     // background-color: #3f3a3a60;
-//     cursor: pointer;
-//     z-index: 999;
-//   }
-// }
-// #atmosphere-house {
-//   position: absolute;
-//   transform: translate(-50%, -50%);
-//   z-index: 998;
-//   opacity: 0.7;
-//   #atmosphere {
-//     position: absolute;
-//   }
-//   #atmosphere-open-door {
-//     position: absolute;
-//   }
-//   #atmosphere-open-windows {
-//     position: absolute;
-//   }
-// }
 @media screen and (min-width: 2560px) {
   .house-bg {
     width: 100%;
@@ -1653,20 +1320,6 @@ const clickHouse = (houseName, fingerClick) => {
     }
   }
 }
-@media screen and (max-width: 1024px) {
-  .primary-school {
-    position: relative;
-    width: 100%;
-    background-color: #fffcec;
-    background-image: url('@/assets/primary_school/background/1024x1366.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow-y: hidden;
-    .row {
-      --bs-gutter-x: 0;
-    }
-  }
-}
 // 平板
 @media screen and (max-width: 992px) {
   .container-fluid {
@@ -1674,14 +1327,27 @@ const clickHouse = (houseName, fingerClick) => {
     padding: 0;
     // overflow-y: hidden;
   }
+  .house-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url('@/assets/primary_school/background/375.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -999;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   .primary-school {
     position: relative;
     width: 100%;
     padding-top: 23%;
-    background-color: #fffcec;
-    background-image: url('@/assets/primary_school/background/375.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background-color: #fffcec;
+    // background-image: url('@/assets/primary_school/background/375.svg');
+    // background-repeat: no-repeat;
+    // background-size: cover;
     overflow-y: hidden;
     .row {
       --bs-gutter-x: 0;

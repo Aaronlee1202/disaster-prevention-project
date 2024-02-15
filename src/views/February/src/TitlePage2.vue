@@ -1,15 +1,15 @@
 <script setup>
 import { ref, watch, onMounted, defineComponent } from 'vue';
 import { useWindowSize } from '@vueuse/core';
-import LottieStart from './LottieStart.vue';
-import LottieStart2 from './LottieStart2.vue';
-import LottieLoop from './LottieLoop.vue';
+import Lottie_Start from './LottieStart.vue';
+import Lottie_Start2 from './LottieStart2.vue';
+import Lottie_Loop from './LottieLoop.vue';
 
 defineComponent({
   components: {
-    LottieStart,
-    LottieStart2,
-    LottieLoop
+    Lottie_Start,
+    Lottie_Start2,
+    Lottie_Loop
   }
 });
 
@@ -48,13 +48,13 @@ watch(
         <div class="col-6">
           <div class="img-container d-flex align-items-center">
             <div class="start-box d-flex justify-content-end">
-              <LottieStart />
+              <Lottie_Start />
             </div>
             <div class="begin-box d-flex justify-content-end">
-              <LottieStart2 :play-lottie="fadeOut" />
+              <Lottie_Start2 :play-lottie="fadeOut" />
             </div>
             <div class="loop-box d-flex justify-content-center" v-if="lottieLoop">
-              <LottieLoop :play-lottie="lottieLoop" />
+              <Lottie_Loop :play-lottie="lottieLoop" />
             </div>
           </div>
         </div>
@@ -74,9 +74,9 @@ watch(
     </div>
     <div class="container-fluid custom-container" v-if="screenSwitch == true">
       <div class="img-container">
-        <LottieStart />
-        <LottieStart2 :play-lottie="fadeOut" />
-        <LottieLoop :play-lottie="lottieLoop" />
+        <Lottie_Start />
+        <Lottie_Start2 :play-lottie="fadeOut" />
+        <Lottie_Loop :play-lottie="lottieLoop" />
       </div>
       <div class="content-box">
         <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />

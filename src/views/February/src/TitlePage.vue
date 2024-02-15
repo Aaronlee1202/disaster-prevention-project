@@ -1,15 +1,15 @@
 <script setup>
 import { ref, onMounted, defineComponent } from 'vue';
 import ContentPage from './Content.vue';
-import LottieStart from './LottieStart.vue';
-import LottieStart2 from './LottieStart2.vue';
-import LottieLoop from './LottieLoop.vue';
+import Lottie_Start from './LottieStart.vue';
+import Lottie_Start2 from './LottieStart2.vue';
+import Lottie_Loop from './LottieLoop.vue';
 
 defineComponent({
   components: {
-    LottieStart,
-    LottieStart2,
-    LottieLoop,
+    Lottie_Start,
+    Lottie_Start2,
+    Lottie_Loop,
     ContentPage
   }
 });
@@ -35,13 +35,13 @@ onMounted(() => {
         <div class="col-4">
           <div class="img-container">
             <div class="start-box d-flex justify-content-center">
-              <LottieStart />
+              <Lottie_Start />
             </div>
             <div class="begin-box d-flex justify-content-center">
-              <LottieStart2 :play-lottie="fadeOut" />
+              <Lottie_Start2 :play-lottie="fadeOut" />
             </div>
             <div class="loop-box d-flex justify-content-center" v-if="lottieLoop">
-              <LottieLoop :play-lottie="lottieLoop" />
+              <Lottie_Loop :play-lottie="lottieLoop" />
             </div>
           </div>
         </div>
