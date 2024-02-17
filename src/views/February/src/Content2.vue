@@ -31,7 +31,7 @@ watch(
   (newVal) => {
     if (newVal < 768) screenSwitch.value = true;
     else screenSwitch.value = false;
-    console.log('mobile: ', screenSwitch.value);
+    // console.log('mobile: ', screenSwitch.value);
   },
   // 立即執行
   { immediate: true }

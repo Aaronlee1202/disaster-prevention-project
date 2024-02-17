@@ -21,10 +21,10 @@ const lottieLoop = ref(false);
 onMounted(() => {
   setTimeout(() => {
     fadeOut.value = true;
-  }, 2000);
+  }, 1500);
   setTimeout(() => {
     lottieLoop.value = true;
-  }, 4100);
+  }, 3600);
 });
 </script>
 
