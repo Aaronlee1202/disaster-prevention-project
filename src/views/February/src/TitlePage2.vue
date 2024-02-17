@@ -22,12 +22,13 @@ const lottieLoop = ref(false);
 const screenSwitch = ref(false);
 
 onMounted(() => {
+  // console.log('title page 2');
   setTimeout(() => {
     fadeOut.value = true;
-  }, 2000);
+  }, 1500);
   setTimeout(() => {
     lottieLoop.value = true;
-  }, 4100);
+  }, 3600);
 });
 
 watch(
@@ -35,6 +36,7 @@ watch(
   (newVal) => {
     if (newVal <= 768) screenSwitch.value = true;
     else screenSwitch.value = false;
+    console.log(screenSwitch.value);
   },
   // 立即執行
   { immediate: true }
@@ -53,8 +55,8 @@ watch(
             <div class="begin-box d-flex justify-content-end">
               <Lottie_Start2 :play-lottie="fadeOut" />
             </div>
-            <div class="loop-box d-flex justify-content-center" v-if="lottieLoop">
-              <Lottie_Loop :play-lottie="lottieLoop" />
+            <div class="loop-box d-flex justify-content-end">
+              <Lottie_Loop :play-lottie="lottieLoop" v-if="lottieLoop" />
             </div>
           </div>
         </div>
@@ -94,10 +96,6 @@ watch(
 </template>
 
 <style lang="scss" scoped>
-#new-talisman {
-  position: relative;
-  width: 100%;
-}
 .custom-container {
   // height: 100%;
   border-bottom: 5px dashed #b8806f;
@@ -116,19 +114,19 @@ h2 {
   .start-box {
     width: 100%;
     position: absolute;
-    z-index: 10;
+    z-index: 5;
     opacity: 1;
     transition: opacity 1s ease;
   }
   .begin-box {
     width: 100%;
     position: absolute;
-    z-index: 5;
+    z-index: 10;
   }
   .loop-box {
     width: 100%;
     position: absolute;
-    z-index: 20;
+    z-index: 15;
   }
   .fade-out {
     opacity: 0;

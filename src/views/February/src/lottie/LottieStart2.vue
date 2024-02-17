@@ -19,7 +19,6 @@ const props = defineProps({
 watch(
   () => props.playLottie,
   (newVal) => {
-    console.log('playLottie 2', newVal);
     if (newVal) {
       newTalismanJson.value.goToAndPlay(1, true);
       destroyLottie();

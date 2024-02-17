@@ -19,6 +19,7 @@ const fadeOut = ref(false);
 const lottieLoop = ref(false);
 
 onMounted(() => {
+  // console.log('title page');
   setTimeout(() => {
     fadeOut.value = true;
   }, 1500);

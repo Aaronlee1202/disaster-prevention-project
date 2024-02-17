@@ -657,6 +657,7 @@ const clickHouse = (houseName, fingerClick) => {
   }
   .share-container {
     position: absolute;
+    width: 30% !important;
     bottom: -5%;
     right: 7%;
     color: #a06c57;
@@ -860,9 +861,9 @@ const clickHouse = (houseName, fingerClick) => {
   }
   .share-container {
     position: absolute;
-    width: 30%;
+    width: 40%;
     bottom: -7%;
-    right: 12%;
+    right: 0%;
     color: #a06c57;
     .icon {
       display: flex;
@@ -1284,6 +1285,7 @@ const clickHouse = (houseName, fingerClick) => {
     position: relative;
     width: 100%;
     padding-top: 23%;
+    padding-bottom: 10%;
     // background-color: #fffcec;
     // background-image: url('@/assets/primary_school/background/375.svg');
     // background-repeat: no-repeat;

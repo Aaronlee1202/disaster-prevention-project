@@ -1,21 +1,8 @@
 <script setup>
-import { ref, watch } from 'vue';
-import { useRouter } from 'vue-router';
 import Logo from '@/assets/footer/footer_logo.svg';
 import FooterTitle from '@/assets/footer/footer_title.svg';
 import FooterPic01 from '@/assets/footer/footer_pic_01.svg';
 
-const router = useRouter();
-
-const indexPage = ref(true);
-watch(router.currentRoute, (newVal) => {
-  console.log(newVal.name);
-  if (newVal.name !== 'PrimarySchoolView') {
-    indexPage.value = false;
-  } else {
-    indexPage.value = true;
-  }
-});
 </script>
 
 <template>
