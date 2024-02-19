@@ -73,10 +73,10 @@ onMounted(() => {
   position: relative;
   width: 100%;
 }
-.custom-container {
-  // height: 100%;
-  // border-bottom: 5px dashed #b8806f;
-}
+// .custom-container {
+// height: 100%;
+// border-bottom: 5px dashed #b8806f;
+// }
 .small-title {
   margin: 1rem 0;
   color: #b8806f;

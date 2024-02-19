@@ -10,6 +10,7 @@ import potential from './src/potential.vue';
 import atmosphere from './src/atmosphere.vue';
 import finger_default from '@/assets/primary_school/Default.png';
 import finger_pressed from '@/assets/primary_school/Pressed.png';
+// import finger_right from '@/assets/primary_school/finger_right.png';
 import arrow_share from '@/components/svg/arrow_share.vue';
 import facebook_icon from '@/components/svg/facebook_icon.vue';
 import line_icon from '@/components/svg/line_icon.vue';
@@ -29,6 +30,7 @@ defineComponent({
 onMounted(() => {
   // mouseEvent();
 });
+
 const fingerImg = [finger_default, finger_pressed];
 // 按下手指
 const clicked = ref(fingerImg[0]);
@@ -218,6 +220,7 @@ const clickHouse = (houseName, fingerClick) => {
         </div>
         <div class="people-flow-click">
           <img class="finger" :src="clicked" />
+          <img class="finger-right" src="@/assets/primary_school/finger_right_default.png" />
           <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
           <div
             class="windows-click"
@@ -309,6 +312,7 @@ const clickHouse = (houseName, fingerClick) => {
           </div>
           <div class="people-flow-click">
             <img class="finger" :src="clicked" />
+            <img class="finger-right" src="@/assets/primary_school/finger_right_default.png" />
             <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
             <div
               class="windows-click"
@@ -487,11 +491,6 @@ const clickHouse = (houseName, fingerClick) => {
     left: 68% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    .finger {
-      width: 25%;
-      top: 56%;
-      left: 78%;
-    }
     .door-click {
       position: absolute;
       width: 100px !important;
@@ -945,6 +944,14 @@ const clickHouse = (houseName, fingerClick) => {
       animation: move 3s 0s infinite;
       -webkit-animation: move 3s 0s infinite;
     }
+    .finger-right {
+      position: absolute;
+      width: 25%;
+      top: 65%;
+      right: 75%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3s 0s infinite;
+    }
     @keyframes move {
       0%,
       65% {
@@ -1327,6 +1334,14 @@ const clickHouse = (houseName, fingerClick) => {
       animation: move 3s 0s infinite;
       -webkit-animation: move 3s 0s infinite;
     }
+    .finger-right {
+      position: absolute;
+      width: 25%;
+      top: 70%;
+      right: 65%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3s 0s infinite;
+    }
     @keyframes move {
       0%,
       65% {
@@ -1678,8 +1693,16 @@ const clickHouse = (houseName, fingerClick) => {
     .finger {
       position: absolute;
       width: 25%;
-      top: 60%;
-      left: 80%;
+      top: 55%;
+      left: 85%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3s 0s infinite;
+    }
+    .finger-right {
+      position: absolute;
+      width: 25%;
+      top: 65%;
+      right: 65%;
       animation: move 3s 0s infinite;
       -webkit-animation: move 3s 0s infinite;
     }
