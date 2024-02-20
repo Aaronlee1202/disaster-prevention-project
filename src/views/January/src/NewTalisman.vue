@@ -28,6 +28,7 @@ watch(
   (newVal) => {
     if (newVal < 768) screenSwitch.value = true;
     else screenSwitch.value = false;
+    console.log('screenSwitch', screenSwitch.value);
   },
   // 立即執行
   { immediate: true }
@@ -158,11 +159,11 @@ h2 {
   }
   .img-container {
     position: relative;
-    height: 80vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     div {
-      width: 70%;
+      width: 100%;
     }
   }
   .content-box {
@@ -177,11 +178,11 @@ h2 {
   }
   .img-container {
     position: relative;
-    height: 80vh;
+    height: 60vh;
     display: flex;
     justify-content: center;
     div {
-      width: 75%;
+      width: 100%;
     }
   }
   .content-box {
@@ -190,8 +191,8 @@ h2 {
     }
   }
 }
-// 手機板
-@media (max-width: 768px) {
+// 手機+平板
+@media (max-width: 767px) {
   .custom-container {
     padding-top: 15%;
     border-bottom: 0px;

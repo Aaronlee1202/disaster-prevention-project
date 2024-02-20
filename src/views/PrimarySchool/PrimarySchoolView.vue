@@ -265,7 +265,7 @@ const clickHouse = (houseName, fingerClick) => {
 
         <div class="share-container">
           <div class="row align-items-center">
-            <div class="col-3 pb-4 text-end">
+            <div class="col-3 pb-4 px-2 text-end">
               <arrow_share />
               分享到...
             </div>
@@ -275,13 +275,13 @@ const clickHouse = (houseName, fingerClick) => {
                 <div>facebook</div>
               </div>
             </div>
-            <div class="col-2">
+            <div class="col-1">
               <div class="icon">
                 <line_icon />
                 <div>line</div>
               </div>
             </div>
-            <div class="col pb-4">
+            <div class="col px-4 pb-4">
               <div class="home-btn" @click="toHomePage"><Home_Icon />回首頁</div>
             </div>
           </div>
@@ -656,9 +656,10 @@ const clickHouse = (houseName, fingerClick) => {
   }
   .share-container {
     position: absolute;
-    width: 30% !important;
-    bottom: -5%;
-    right: 7%;
+    max-width: 600px !important;
+    width: 100%;
+    bottom: -8% !important;
+    right: 10% !important;
     color: #a06c57;
     .icon {
       display: flex;
