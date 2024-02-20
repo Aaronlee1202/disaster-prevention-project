@@ -185,16 +185,16 @@ h2 {
   }
   .img-container {
     position: relative;
-    height: 80vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     div {
-      width: 75%;
+      width: 100%;
     }
   }
   .content-box {
     img {
-      width: 70%;
+      width: 80%;
     }
   }
 }

@@ -125,13 +125,6 @@ h2 {
     opacity: 0;
   }
 }
-@media (max-height: 900px) and (min-width: 1200px) {
-  .img-container {
-    div {
-      width: 70% !important;
-    }
-  }
-}
 @media (min-width: 1200px) {
   .custom-container {
     padding-top: 10%;

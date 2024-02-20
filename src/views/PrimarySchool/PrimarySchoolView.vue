@@ -951,7 +951,7 @@ const clickHouse = (houseName, fingerClick) => {
       top: 65%;
       right: 75%;
       animation: move 3s 0s infinite;
-      -webkit-animation: move 3s 0s infinite;
+      -webkit-animation: move 3.5s 0s infinite;
     }
     @keyframes move {
       0%,
@@ -1341,7 +1341,7 @@ const clickHouse = (houseName, fingerClick) => {
       top: 70%;
       right: 65%;
       animation: move 3s 0s infinite;
-      -webkit-animation: move 3s 0s infinite;
+      -webkit-animation: move 3.5s 0s infinite;
     }
     @keyframes move {
       0%,
@@ -1705,7 +1705,7 @@ const clickHouse = (houseName, fingerClick) => {
       top: 65%;
       right: 65%;
       animation: move 3s 0s infinite;
-      -webkit-animation: move 3s 0s infinite;
+      -webkit-animation: move 3.5s 0s infinite;
     }
     @keyframes move {
       0%,
