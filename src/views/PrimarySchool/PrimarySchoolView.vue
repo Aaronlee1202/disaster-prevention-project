@@ -377,21 +377,6 @@ const clickHouse = (houseName, fingerClick) => {
 </template>
 
 <style lang="scss" scoped>
-.doll-1-container {
-  position: absolute;
-  width: 8%;
-  top: 38%;
-  left: 32%;
-  transform: translate(-50%, -50%);
-}
-.doll-2-container {
-  position: absolute;
-  width: 8%;
-  top: 79%;
-  left: 70%;
-  transform: translate(-50%, -50%);
-}
-
 .primary-school {
   position: relative;
   // padding-top: 100px;
@@ -418,6 +403,20 @@ const clickHouse = (houseName, fingerClick) => {
   }
   .primary-school {
     padding-top: 10% !important;
+  }
+  .doll-1-container {
+    position: absolute;
+    width: 8% !important;
+    top: 38% !important;
+    left: 32% !important;
+    transform: translate(-50%, -50%);
+  }
+  .doll-2-container {
+    position: absolute;
+    width: 8% !important;
+    top: 85% !important;
+    left: 75% !important;
+    transform: translate(-50%, -50%);
   }
   .share-container {
     position: absolute;
@@ -697,6 +696,20 @@ const clickHouse = (houseName, fingerClick) => {
       }
     }
   }
+  .doll-1-container {
+    position: absolute;
+    width: 8% !important;
+    top: 38% !important;
+    left: 32% !important;
+    transform: translate(-50%, -50%);
+  }
+  .doll-2-container {
+    position: absolute;
+    width: 8% !important;
+    top: 79% !important;
+    left: 70% !important;
+    transform: translate(-50%, -50%);
+  }
   .title-container {
     position: absolute;
     width: 100%;
@@ -902,14 +915,18 @@ const clickHouse = (houseName, fingerClick) => {
     }
   }
   .doll-1-container {
-    width: 13% !important;
+    position: absolute;
+    width: 13%;
     top: 38%;
-    left: 22% !important;
+    left: 22%;
+    transform: translate(-50%, -50%);
   }
   .doll-2-container {
-    width: 13% !important;
+    position: absolute;
+    width: 13%;
     top: 79%;
-    left: 80% !important;
+    left: 80%;
+    transform: translate(-50%, -50%);
   }
   .title-container {
     position: absolute;

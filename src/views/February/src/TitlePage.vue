@@ -51,10 +51,9 @@ onMounted(() => {
             <div class="title-box">
               <div>
                 <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
-                <!-- <h4 class="small-title">人流樓</h4> -->
-                <h2 class="mt-5 mb-4">人手一機的防災新法寶</h2>
+                <h2 class="mt-5 mb-4">智慧人流分布資訊之應用</h2>
                 <p>
-                  發行日期 | 2023.01.01 <br />
+                  發行日期 | 2024.02.01 <br />
                   作者 | 地人組 黃明偉 <br />
                   審稿人 | 柯孝勳
                 </p>

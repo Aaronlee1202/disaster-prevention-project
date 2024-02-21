@@ -62,14 +62,16 @@ const lottieAnimation = () => {
           </div>
         </div>
         <div class="col">
-          <h3>什麼是人流?什麼是人潮輪廓?</h3>
+          <h3>運用人手一機的大數據</h3>
           <p>
-            「人流」是指人群在不同時間與地點的動態分布數量；「人潮輪廓」是指透過人流的分析，可以掌握特定時間的人潮分布。以商業區人流分布為例，白天與夜間會因工作時段而有不同的分布狀況。
+            利用手機數量的大數據，透過AI技術的分析，可以迅速的研判人流現況，標註人流熱點，協助對於突發(災害)事件的整備工作。
           </p>
-          <img src="@/assets/flow_of_people/crowd_silhouette.png" alt="人潮輪廓" />
+          <div class="img-box">
+            <img src="@/assets/february/01.jpg" alt="人潮輪廓" />
+          </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>人流分布的統計</a>
+            <a>利用AI技術自動標記人流集中熱區</a>
           </div>
         </div>
       </div>
@@ -81,14 +83,14 @@ const lottieAnimation = () => {
           </div>
         </div>
         <div class="col">
-          <h3>如何由無個人隱私手機大數據解密人流分布?</h3>
-          <p>
-            各電信公司透過基地台與智慧型手機的相連，可以瞭解用戶所在位置，去除了個資及固定網格進行統計後，可以分析商圈活動、交通人潮，以及觀光據點遊客的分布狀況。
-          </p>
-          <img src="@/assets/flow_of_people/distribution_of_people_flow.png" alt="人流分布" />
+          <h3>AI智慧人流分析=機器學習+自動研判</h3>
+          <p>智慧人流分析的技術，可以預測正常狀況下人流的時空分布，找出人流集中熱區。</p>
+          <div class="img-box">
+            <img src="@/assets/february/02.jpg" alt="人潮輪廓" />
+          </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>手機大數據可以分析人群動態作息模式</a>
+            <a>偵測或判定未來人流集中熱區</a>
           </div>
         </div>
       </div>
@@ -100,33 +102,16 @@ const lottieAnimation = () => {
           </div>
         </div>
         <div class="col">
-          <h3>人流分布技術在防災上之應用</h3>
+          <h3>AI智慧人流分析的應用</h3>
           <p>
-            緊急事件或災害發生後，利用手機大數據透過AI技術進行分析，可以找出人潮聚集處與事件(災害)熱點之交集，提供應變作業參考，相關資訊平時亦可作為減災、防災的規劃工作用。
+            本技術可應用於偵測與分析大量人潮聚集區域的管理，如地震、風災、水災等災害事件，或者集會、遊行、運動、音樂會等活動，研判人流集中熱點區，協助人流管理及處置。
           </p>
-          <img src="@/assets/flow_of_people/technology_application.png" alt="技術應用" />
+          <div class="img-box">
+            <img src="@/assets/february/03.jpg" alt="人潮輪廓" />
+          </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>人流分布的統計</a>
-          </div>
-        </div>
-      </div>
-      <!-- chapter 4 -->
-      <div class="row d-flex justify-content-end">
-        <div class="col-1 p-0">
-          <div class="d-flex flex-row-reverse">
-            <div class="chapter d-flex align-items-center justify-content-center">04</div>
-          </div>
-        </div>
-        <div class="col">
-          <h3>全面性人流分析技術</h3>
-          <p>
-            與通訊業者合作，目前每10分鐘更新全國人流分布。人流分析主要是使用手機與基地台的連結資料，不用撥打或通話，就可精準的掌握人流狀態。
-          </p>
-          <img src="@/assets/flow_of_people/analytical_skills.png" alt="技術應用" />
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
-            <Triangle_Icon />
-            <a>以手機基地台的涵蓋範圍為基礎計算人流分布</a>
+            <a>AI智慧研判人流聚集熱點</a>
           </div>
         </div>
       </div>
@@ -145,14 +130,14 @@ const lottieAnimation = () => {
           <div class="related-links d-flex align-items-center justify-content-start mb-4 mt-5">
             <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
             <div class="link-text d-flex align-items-center justify-content-between">
-              <div>內政部住宅統計資訊主題查詢</div>
+              <div>內政部住宅統計資訊主題查詢 （未提供）</div>
               <Arrow_Right />
             </div>
           </div>
           <div class="related-links d-flex align-items-center justify-content-start">
             <div class="link-chapter d-flex align-items-center justify-content-center">02</div>
             <div class="link-text d-flex align-items-center justify-content-between">
-              <div>內政部營建署-都市危險及老舊建築物重建專區</div>
+              <div>內政部營建署-都市危險及老舊建築物重建專區 （未提供）</div>
               <div>
                 <Arrow_Right />
               </div>
@@ -214,7 +199,7 @@ const lottieAnimation = () => {
                 <a
                   type="button"
                   class="month-icon m-0 d-flex align-items-center justify-content-center"
-                  :class="[index >= 1 ? 'disable' : '']"
+                  :class="[index >= 2 ? 'disable' : '']"
                 >
                   <img :src="item" />
                 </a>
@@ -242,6 +227,15 @@ h3 {
 }
 p {
   color: #333;
+}
+.img-box {
+  max-width: 790px;
+  width: 100%;
+  img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+  }
 }
 .chapter {
   width: 55px;
@@ -273,6 +267,8 @@ p {
   font-weight: 700;
 }
 .caption {
+  max-width: 790px;
+  width: 100%;
   font-size: 0.875em;
   font-weight: 400;
   letter-spacing: 0.56px;

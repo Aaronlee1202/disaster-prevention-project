@@ -58,7 +58,7 @@ defineProps({
             <a
               type="button"
               class="month-icon m-0 d-flex align-items-center justify-content-center"
-              :class="[index >= 1 ? 'disable' : '']"
+              :class="[index >= 2 ? 'disable' : '']"
             >
               <img :src="item" />
             </a>
@@ -90,7 +90,7 @@ defineProps({
           >
             <div
               class="month-icon m-0 d-flex align-items-center justify-content-center"
-              :class="[index >= 1 ? 'disable' : '']"
+              :class="[index >= 2 ? 'disable' : '']"
             >
               <img :src="item" />
             </div>
