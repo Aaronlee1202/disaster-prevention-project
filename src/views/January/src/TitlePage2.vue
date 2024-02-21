@@ -1,13 +1,13 @@
 <script setup>
 import { ref, watch, onMounted, defineComponent } from 'vue';
 import { useWindowSize } from '@vueuse/core';
-import TalismanStart from './TalismanStart.vue';
-import TalismanNormal from './TalismanNormal.vue';
+import Lottie_Start from './lottie/LottieStart.vue';
+import Lottie_Loop from './lottie/LottieLoop.vue';
 
 defineComponent({
   components: {
-    TalismanStart,
-    TalismanNormal
+    Lottie_Start,
+    Lottie_Loop
   }
 });
 
@@ -26,9 +26,9 @@ onMounted(() => {
 watch(
   width,
   (newVal) => {
-    if (newVal < 768) screenSwitch.value = true;
+    if (newVal <= 768) screenSwitch.value = true;
     else screenSwitch.value = false;
-    console.log('screenSwitch', screenSwitch.value);
+    console.log(screenSwitch.value);
   },
   // 立即執行
   { immediate: true }
@@ -41,21 +41,17 @@ watch(
       <div class="row d-flex align-items-center">
         <div class="col-6">
           <div class="img-container d-flex align-items-center">
-            <!-- <img src="@/assets/disaster_prevention/new_talisman.png" alt="新的護身符" /> -->
             <div class="start-box d-flex justify-content-end">
-              <!-- <div id="new-talisman-start"></div> -->
-              <TalismanStart :fade-out="fadeOut" />
+              <Lottie_Start :fade-out="fadeOut" />
             </div>
-            <div class="begin-box d-flex justify-content-end">
-              <!-- <div id="new-talisman-begin"></div> -->
-              <TalismanNormal :play-lottie="fadeOut" />
+            <div class="loop-box d-flex justify-content-end">
+              <Lottie_Loop :play-lottie="fadeOut" />
             </div>
           </div>
         </div>
         <div class="col-6">
           <div class="content-box">
             <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
-            <!-- <h4 class="small-title">人流樓</h4> -->
             <h2 class="mt-5 mb-4">人手一機的防災新法寶</h2>
             <p>
               發行日期 | 2023.01.01 <br />
@@ -66,37 +62,30 @@ watch(
         </div>
       </div>
     </div>
-    <div class="container-fluid custom-container p-0" v-if="screenSwitch == true">
+    <div class="container-fluid custom-container" v-if="screenSwitch == true">
       <div class="img-container">
-        <TalismanStart :fade-out="fadeOut" />
-        <TalismanNormal :play-lottie="fadeOut" />
+        <Lottie_Start :fade-out="fadeOut" />
+        <Lottie_Loop :play-lottie="fadeOut" />
       </div>
-      <div class="row content-box mx-3 mt-5 mb-5">
-        <div class="col">
-          <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
-          <!-- <h4 class="small-title">人流樓</h4> -->
-          <h2>人手一機的防災新法寶</h2>
-          <p>
-            發行日期 | 2023.01.01 <br />
-            作者 | 地人組 黃明偉 <br />
-            審稿人 | 柯孝勳
-          </p>
-        </div>
-        <div class="dashed-line"></div>
+      <div class="content-box">
+        <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
+        <!-- <h4 class="small-title">人流樓</h4> -->
+        <h2>人手一機的防災新法寶</h2>
+        <p>
+          發行日期 | 2023.01.01 <br />
+          作者 | 地人組 黃明偉 <br />
+          審稿人 | 柯孝勳
+        </p>
       </div>
+      <div class="dashed-line"></div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-#new-talisman {
-  position: relative;
-  width: 100%;
-}
 .custom-container {
   // height: 100%;
   border-bottom: 5px dashed #b8806f;
-  overflow: hidden;
 }
 .small-title {
   margin: 1rem 0;
@@ -116,13 +105,20 @@ h2 {
     opacity: 1;
     transition: opacity 1s ease;
   }
-  .begin-box {
+  .loop-box {
     width: 100%;
     position: absolute;
     z-index: 5;
   }
   .fade-out {
     opacity: 0;
+  }
+}
+@media (max-height: 900px) and (min-width: 1200px) {
+  .img-container {
+    div {
+      width: 70% !important;
+    }
   }
 }
 @media (min-width: 1200px) {
@@ -152,11 +148,11 @@ h2 {
   }
   .img-container {
     position: relative;
-    height: 70vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     div {
-      width: 100%;
+      width: 70%;
     }
   }
   .content-box {
@@ -171,7 +167,7 @@ h2 {
   }
   .img-container {
     position: relative;
-    height: 60vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     div {
@@ -180,12 +176,12 @@ h2 {
   }
   .content-box {
     img {
-      width: 70%;
+      width: 80%;
     }
   }
 }
-// 手機+平板
-@media (max-width: 767px) {
+// 手機板
+@media (max-width: 768px) {
   .custom-container {
     padding-top: 15%;
     border-bottom: 0px;
@@ -213,7 +209,7 @@ h2 {
       opacity: 1;
       transition: opacity 1s ease;
     }
-    #new-talisman-begin {
+    #new-talisman-loop {
       position: absolute;
       right: 0;
       left: 0;
@@ -228,8 +224,11 @@ h2 {
     }
   }
   .content-box {
+    position: relative;
+    padding-top: 10%;
+    padding-left: 10%;
     img {
-      width: 100%;
+      width: 60%;
     }
   }
 }

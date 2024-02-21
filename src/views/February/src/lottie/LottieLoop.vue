@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, watch, onBeforeUnmount } from 'vue';
 import lottie from 'lottie-web';
-import newTalisman from '@/assets/lottie/February/loop.json';
+import newTalisman from '@/assets/lottie/february/loop.json';
 
 const newTalismanJson = ref(null);
 
