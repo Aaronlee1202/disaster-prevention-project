@@ -2,6 +2,7 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import lottie from 'lottie-web';
+import { useRouter } from 'vue-router';
 import Triangle_Icon from '@/components/svg/triangle_icon.vue';
 import Link_Icon from '@/components/svg/link_icon.vue';
 import Arrow_Right from '@/components/svg/arrow_right.vue';
@@ -22,20 +23,61 @@ import month_11 from '@/assets/flow_of_people/month/11.svg';
 import month_12 from '@/assets/flow_of_people/month/12.svg';
 
 const items = [
-  month_1,
-  month_2,
-  month_3,
-  month_4,
-  month_5,
-  month_6,
-  month_7,
-  month_8,
-  month_9,
-  month_10,
-  month_11,
-  month_12
+  { img: month_1, link: 'january' },
+  {
+    img: month_2,
+    link: 'february'
+  },
+  {
+    img: month_3,
+    link: 'march'
+  },
+  {
+    img: month_4,
+    link: 'april'
+  },
+  {
+    img: month_5,
+    link: 'may'
+  },
+  {
+    img: month_6,
+    link: 'june'
+  },
+  {
+    img: month_7,
+    link: 'july'
+  },
+  {
+    img: month_8,
+    link: 'august'
+  },
+  {
+    img: month_9,
+    link: 'september'
+  },
+  {
+    img: month_10,
+    link: 'october'
+  },
+  {
+    img: month_11,
+    link: 'november'
+  },
+  {
+    img: month_12,
+    link: 'december'
+  }
 ];
-// const items2 = [month_7, month_8, month_9, month_10, month_11, month_12];
+const router = useRouter();
+const openLink = (link) => {
+  if (link == 'january' || link == 'february') {
+    router.push(link);
+  } else {
+    alert('尚未開放');
+  }
+};
+
 const newQAJson = ref(null);
 onMounted(() => {
   lottieAnimation();
@@ -215,8 +257,9 @@ const lottieAnimation = () => {
                   type="button"
                   class="month-icon m-0 d-flex align-items-center justify-content-center"
                   :class="[index >= 2 ? 'disable' : '']"
+                  @click="openLink(item.link)"
                 >
-                  <img :src="item" />
+                  <img :src="item.img" />
                 </a>
               </div>
             </div>

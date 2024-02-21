@@ -7,7 +7,7 @@ import Triangle_Icon from '@/components/svg/triangle_icon.vue';
 import Link_Icon from '@/components/svg/link_icon.vue';
 import Arrow_Right from '@/components/svg/arrow_right.vue';
 import Arrow_share from '@/components/svg/arrow_share_white.vue';
-import Other_Month from './OtherMonth.vue';
+import Other_Month from '@/components/OtherMonth.vue';
 import QAjson from '@/assets/lottie/QA.json';
 
 const { width } = useWindowSize();
