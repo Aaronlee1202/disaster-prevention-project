@@ -78,6 +78,10 @@ const openLink = (link) => {
   }
 };
 
+const toHomePage = () => {
+  router.push('/');
+};
+
 const newQAJson = ref(null);
 onMounted(() => {
   lottieAnimation();
@@ -210,7 +214,7 @@ const lottieAnimation = () => {
             <Arrow_share />
             <div>分享</div>
           </button>
-          <button class="btn home-btn" style="margin-left: 5px" type="button">
+          <button class="btn home-btn" style="margin-left: 5px" type="button" @click="toHomePage">
             <svg
               width="24"
               height="24"

@@ -2,6 +2,7 @@
 <script setup>
 import { onMounted, ref, watch } from 'vue';
 import lottie from 'lottie-web';
+import { useRouter } from 'vue-router';
 import { useWindowSize } from '@vueuse/core';
 import Triangle_Icon from '@/components/svg/triangle_icon.vue';
 import Link_Icon from '@/components/svg/link_icon.vue';
@@ -10,6 +11,7 @@ import Arrow_share from '@/components/svg/arrow_share_white.vue';
 import Other_Month from '@/components/OtherMonth.vue';
 import QAjson from '@/assets/lottie/QA.json';
 
+const router = useRouter();
 const { width } = useWindowSize();
 // const items2 = [month_7, month_8, month_9, month_10, month_11, month_12];
 const newQAJson = ref(null);
@@ -26,6 +28,11 @@ const lottieAnimation = () => {
     animationData: QAjson
   });
 };
+
+const toHomePage = () => {
+  router.push('/');
+};
+
 watch(
   width,
   (newVal) => {
@@ -145,7 +152,7 @@ watch(
             </button>
           </div>
           <div class="col mx-4">
-            <button class="btn home-btn" type="button">
+            <button class="btn home-btn" type="button" @click="toHomePage">
               <!-- <Home_Icon  class="home-icon"/> -->
               <!-- <img class="home-icon" src="@/assets/flow_of_people/home-icon.svg" alt="" /> -->
               <svg
@@ -283,7 +290,7 @@ watch(
             </div>
           </div>
           <div class="col-12 d-flex align-items-center justify-content-center">
-            <div class="btn home-btn">
+            <div class="btn home-btn" @click="toHomePage">
               <svg
                 width="24"
                 height="24"
