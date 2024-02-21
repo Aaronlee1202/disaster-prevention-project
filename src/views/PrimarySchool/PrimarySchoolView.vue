@@ -901,6 +901,16 @@ const clickHouse = (houseName, fingerClick) => {
       }
     }
   }
+  .doll-1-container {
+    width: 13% !important;
+    top: 38%;
+    left: 22% !important;
+  }
+  .doll-2-container {
+    width: 13% !important;
+    top: 79%;
+    left: 80% !important;
+  }
   .title-container {
     position: absolute;
     width: 100%;
