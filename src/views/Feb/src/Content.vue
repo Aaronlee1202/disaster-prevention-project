@@ -112,7 +112,7 @@ const lottieAnimation = () => {
             利用手機數量的大數據，透過AI技術的分析，可以迅速的研判人流現況，標註人流熱點，協助對於突發(災害)事件的整備工作。
           </p>
           <div class="img-box">
-            <img src="@/assets/february/01.jpg" alt="人潮輪廓" />
+            <img src="@/assets/february/01.png" alt="人潮輪廓" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
@@ -131,7 +131,7 @@ const lottieAnimation = () => {
           <h3>AI智慧人流分析=機器學習+自動研判</h3>
           <p>智慧人流分析的技術，可以預測正常狀況下人流的時空分布，找出人流集中熱區。</p>
           <div class="img-box">
-            <img src="@/assets/february/02.jpg" alt="人潮輪廓" />
+            <img src="@/assets/february/02.png" alt="人潮輪廓" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
@@ -152,7 +152,7 @@ const lottieAnimation = () => {
             本技術可應用於偵測與分析大量人潮聚集區域的管理，如地震、風災、水災等災害事件，或者集會、遊行、運動、音樂會等活動，研判人流集中熱點區，協助人流管理及處置。
           </p>
           <div class="img-box">
-            <img src="@/assets/february/03.jpg" alt="人潮輪廓" />
+            <img src="@/assets/february/03.png" alt="人潮輪廓" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
