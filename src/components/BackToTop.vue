@@ -7,8 +7,11 @@ import LineIcon from './svg/back_to/line_icon.vue';
 import facebook_icon from './svg/back_to/facebook_icon.vue';
 
 const lineShare = () => {
-  console.log(window.location.href);
   window.open(`https://social-plugins.line.me/lineit/share?url=${window.location.href}`, '_blank');
+};
+
+const facebookShare = () => {
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`, '_blank');
 };
 
 const toHomePage = () => {
@@ -35,7 +38,7 @@ const scrollToTop = () => {
 <template>
   <div class="btn-container" v-show="isShow">
     <div class="fixed-box d-flex flex-column">
-      <facebook_icon class="m-2" />
+      <facebook_icon class="m-2" @click="facebookShare" />
       <LineIcon class="m-2" @click="lineShare" />
       <BackToTop class="m-2" @click="scrollToTop" />
       <ToHome @click="toHomePage" class="m-2" />
