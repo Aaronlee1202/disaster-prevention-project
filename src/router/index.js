@@ -4,7 +4,7 @@ import DisasterPreventionView from '../views/Jan/DisasterPreventionView.vue';
 import FebruaryView from '@/views/Feb/FebruaryView.vue';
 
 const router = createRouter({
-  history: createWebHistory('NCDR-Topic/2024'),
+  history: createWebHistory(process.env.NODE_ENV),
   routes: [
     {
       path: '/',
