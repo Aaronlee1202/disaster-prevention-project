@@ -94,7 +94,6 @@ const atmosphereOpen = reactive({
 const router = useRouter();
 // 點擊門窗動畫
 const clickHouse = (houseName, fingerClick) => {
-  console.log(fingerClick);
   if (fingerClick == 'finger-click') {
     clickFinger();
   }
