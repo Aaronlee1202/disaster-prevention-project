@@ -110,6 +110,9 @@ h2 {
   overflow: scroll;
   overflow-x: hidden;
 }
+.content-page::-webkit-scrollbar {
+  display: none;
+}
 @media (max-height: 790px) {
   .img-container {
     div {

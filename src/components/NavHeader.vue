@@ -97,23 +97,23 @@ const toHomePage = () => {
 
                       <li>
                         <a
-                          href="https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html#index_page_5"
-                          target="_blank"
-                          class="nav-link anchor"
-                          title="本季小品"
-                        >
-                          <img :src="icon_03" class="svg-img" alt="" /><br />本季小品
-                        </a>
-                      </li>
-
-                      <li>
-                        <a
                           href="https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html#index_page_6"
                           target="_blank"
                           class="nav-link anchor"
                           title="亮點服務"
                         >
                           <img :src="icon_04" class="svg-img" alt="" /><br />亮點服務
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html#index_page_5"
+                          target="_blank"
+                          class="nav-link anchor"
+                          title="本季小品"
+                        >
+                          <img :src="icon_03" class="svg-img" alt="" /><br />本季小品
                         </a>
                       </li>
 
