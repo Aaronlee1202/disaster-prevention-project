@@ -4,7 +4,7 @@ import DisasterPreventionView from '../views/Jan/DisasterPreventionView.vue';
 import FebruaryView from '@/views/Feb/FebruaryView.vue';
 
 const router = createRouter({
-  history: createWebHistory(process.env.NODE_ENV),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
