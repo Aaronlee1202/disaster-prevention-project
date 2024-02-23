@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref, reactive, watch, defineComponent } from 'vue';
+import { ref, reactive, watch, defineComponent } from 'vue';
 import { useWindowSize } from '@vueuse/core';
 import { useRouter } from 'vue-router';
 import PeopleFlow from './src/PeopleFlow.vue';
@@ -27,10 +27,6 @@ defineComponent({
   }
 });
 
-onMounted(() => {
-  // mouseEvent();
-});
-
 const fingerImg = [finger_default, finger_pressed];
 // 按下手指
 const clicked = ref(fingerImg[0]);
@@ -39,6 +35,14 @@ const clickFinger = () => {
   setTimeout(() => {
     clicked.value = fingerImg[0];
   }, 1000);
+};
+
+const lineShare = () => {
+  window.open(`https://social-plugins.line.me/lineit/share?url=${window.location.href}`, '_blank');
+};
+
+const facebookShare = () => {
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`, '_blank');
 };
 
 const toHomePage = () => {
@@ -269,13 +273,13 @@ const clickHouse = (houseName, fingerClick) => {
               分享到...
             </div>
             <div class="col-2">
-              <div class="icon">
+              <div class="icon" @click="facebookShare">
                 <facebook_icon />
                 <div>facebook</div>
               </div>
             </div>
             <div class="col-1">
-              <div class="icon">
+              <div class="icon" @click="lineShare">
                 <line_icon />
                 <div>line</div>
               </div>
@@ -405,14 +409,14 @@ const clickHouse = (houseName, fingerClick) => {
   }
   .doll-1-container {
     position: absolute;
-    width: 8% !important;
+    width: 6% !important;
     top: 38% !important;
     left: 32% !important;
     transform: translate(-50%, -50%);
   }
   .doll-2-container {
     position: absolute;
-    width: 8% !important;
+    width: 6% !important;
     top: 85% !important;
     left: 75% !important;
     transform: translate(-50%, -50%);
@@ -420,7 +424,7 @@ const clickHouse = (houseName, fingerClick) => {
   .share-container {
     position: absolute;
     width: 20% !important;
-    bottom: -5%;
+    bottom: 0% !important;
     right: 10% !important;
     color: #a06c57;
     .icon {
@@ -656,7 +660,7 @@ const clickHouse = (houseName, fingerClick) => {
     position: absolute;
     max-width: 600px !important;
     width: 100%;
-    bottom: -8% !important;
+    bottom: 0% !important;
     right: 10% !important;
     color: #a06c57;
     .icon {
@@ -697,14 +701,14 @@ const clickHouse = (houseName, fingerClick) => {
   }
   .doll-1-container {
     position: absolute;
-    width: 8% !important;
+    width: 7% !important;
     top: 38% !important;
     left: 32% !important;
     transform: translate(-50%, -50%);
   }
   .doll-2-container {
     position: absolute;
-    width: 8% !important;
+    width: 7% !important;
     top: 79% !important;
     left: 70% !important;
     transform: translate(-50%, -50%);
@@ -874,8 +878,8 @@ const clickHouse = (houseName, fingerClick) => {
   .share-container {
     position: absolute;
     width: 40%;
-    bottom: -7%;
-    right: 0%;
+    bottom: -5%;
+    right: 5%;
     color: #a06c57;
     .icon {
       display: flex;
@@ -915,14 +919,14 @@ const clickHouse = (houseName, fingerClick) => {
   }
   .doll-1-container {
     position: absolute;
-    width: 13%;
+    width: 9%;
     top: 38%;
-    left: 22%;
+    left: 25%;
     transform: translate(-50%, -50%);
   }
   .doll-2-container {
     position: absolute;
-    width: 13%;
+    width: 9%;
     top: 79%;
     left: 80%;
     transform: translate(-50%, -50%);
