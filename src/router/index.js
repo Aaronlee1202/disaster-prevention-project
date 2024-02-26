@@ -3,8 +3,22 @@ import PrimarySchoolView from '../views/PrimarySchool/PrimarySchoolView.vue';
 import DisasterPreventionView from '../views/Jan/DisasterPreventionView.vue';
 import FebruaryView from '@/views/Feb/FebruaryView.vue';
 
+var u = navigator.userAgent;
+// ua = navigator.userAgent.toLowerCase();
+let isLineApp = u.indexOf('Line') > -1 ? true : false; //Line 內建瀏覽器
+let isFbApp = u.indexOf('FBAV') > -1 ? true : false; // FB App 內建瀏覽器
+
+const base_url = import.meta.env.BASE_URL;
+let url;
+
+if (isLineApp || isFbApp) {
+  url = base_url + '?openExternalBrowser=1';
+} else {
+  url = base_url;
+}
+
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(url),
   routes: [
     {
       path: '/',
