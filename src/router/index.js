@@ -10,19 +10,19 @@ let isFbApp = u.indexOf('FBAV') > -1 ? true : false; // FB App 內建瀏覽器
 console.log('isLineApp', isLineApp, 'isFbApp', isFbApp);
 
 const base_url = import.meta.env.BASE_URL;
-let url;
 
-if (isLineApp || isFbApp) {
-  url = `${base_url}?openExternalBrowser=1`;
-} else {
-  url = base_url;
-}
+// let url;
+// if (isLineApp || isFbApp) {
+//   url = `?openExternalBrowser=1`;
+// } else {
+//   url = ``;
+// }
 
 const router = createRouter({
-  history: createWebHistory(url),
+  history: createWebHistory(base_url),
   routes: [
     {
-      path: '/',
+      path: `/`,
       name: 'PrimarySchoolView',
       component: PrimarySchoolView
     },
@@ -37,6 +37,16 @@ const router = createRouter({
       component: FebruaryView
     }
   ]
+});
+
+router.beforeEach((to, from, next) => {
+  if (isLineApp || isFbApp) {
+    next({ path: '/?openExternalBrowser=1' });
+    return false;
+  } else {
+    next();
+    return false;
+  }
 });
 
 export default router;
