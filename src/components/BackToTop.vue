@@ -16,7 +16,7 @@ const facebookShare = () => {
 
 const toHomePage = () => {
   window.open(
-    'https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html',
+    'https://www.ncdr.nat.gov.tw/NCDR-Topic/2024/index.html',
     '_blank'
   );
 };

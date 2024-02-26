@@ -33,7 +33,7 @@ const toNcdrPage = () => {
 };
 const toHomePage = () => {
   window.open(
-    'https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html',
+    'https://www.ncdr.nat.gov.tw/NCDR-Topic/2024/index.html',
     '_blank'
   );
   // router.push({ path: '/' });
@@ -75,7 +75,7 @@ const toHomePage = () => {
                     <ul class="nav nav-pills" id="mainNav">
                       <li>
                         <a
-                          href="https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html#index_page_1"
+                          href="https://www.ncdr.nat.gov.tw/NCDR-Topic/2024/index.html#index_page_1"
                           target="_blank"
                           class="nav-link anchor"
                           title="當期主題"
@@ -86,7 +86,7 @@ const toHomePage = () => {
 
                       <li>
                         <a
-                          href="https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html#index_page_4"
+                          href="https://www.ncdr.nat.gov.tw/NCDR-Topic/2024/index.html#index_page_4"
                           target="_blank"
                           class="nav-link anchor"
                           title="知識櫥窗"
@@ -97,7 +97,7 @@ const toHomePage = () => {
 
                        <li>
                         <a
-                          href="https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html#index_page_6"
+                          href="https://www.ncdr.nat.gov.tw/NCDR-Topic/2024/index.html#index_page_6"
                           target="_blank"
                           class="nav-link anchor"
                           title="亮點服務"
@@ -108,7 +108,7 @@ const toHomePage = () => {
 
                       <li>
                         <a
-                          href="https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html#index_page_5"
+                          href="https://www.ncdr.nat.gov.tw/NCDR-Topic/2024/index.html#index_page_5"
                           target="_blank"
                           class="nav-link anchor"
                           title="本季小品"
@@ -119,7 +119,7 @@ const toHomePage = () => {
 
                       <li>
                         <a
-                          href="https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html#index_page_7_title"
+                          href="https://www.ncdr.nat.gov.tw/NCDR-Topic/2024/index.html#index_page_7"
                           target="_blank"
                           class="nav-link anchor"
                           title="主任介紹"
@@ -130,7 +130,7 @@ const toHomePage = () => {
 
                       <li>
                         <a
-                          href="https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html#index_page_8"
+                          href="https://www.ncdr.nat.gov.tw/NCDR-Topic/2024/index.html#index_page_8"
                           target="_blank"
                           class="nav-link anchor"
                           title="關於特輯"
@@ -141,7 +141,7 @@ const toHomePage = () => {
 
                       <li>
                         <a
-                          href="https://disaster-prevention-aaronlee1-e94bc9c1e618a9cf0d60fba219ab7f711.gitlab.io/index.html#index_page_9"
+                          href="https://www.ncdr.nat.gov.tw/NCDR-Topic/2024/index.html#index_page_9"
                           target="_blank"
                           class="nav-link"
                           title="系列影片(另開新視窗)"
