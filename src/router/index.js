@@ -21,7 +21,7 @@ const router = createRouter({
   history: createWebHistory(base_url),
   routes: [
     {
-      path: `/`,
+      path: '/',
       name: 'PrimarySchoolView',
       component: PrimarySchoolView
     },
