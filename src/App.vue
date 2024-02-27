@@ -10,15 +10,15 @@ let isLineApp = ref(false); //Line 內建瀏覽器
 let isFbApp = ref(false); // FB App 內建瀏覽器
 
 onMounted(() => {
-  var userAgent = navigator.userAgent.toUpperCase();
-  isLineApp.value = userAgent.indexOf('Line') > -1 ? true : false; //Line 內建瀏覽器
-  isFbApp.value = userAgent.indexOf('FBAV') > -1 ? true : false; // FB App 內建瀏覽器
   setTimeout(() => {
     isApp();
   }, 2000);
 });
 
 function isApp() {
+  const userAgent = navigator.userAgent.toUpperCase();
+  isLineApp.value = userAgent.indexOf('Line') > -1 ? true : false; //Line 內建瀏覽器
+  isFbApp.value = userAgent.indexOf('FBAV') > -1 ? true : false; // FB App 內建瀏覽器
   if (isLineApp || isFbApp) {
     const route = router;
     const location = route.currentRoute.value.path;
