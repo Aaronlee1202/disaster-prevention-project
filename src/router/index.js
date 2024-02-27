@@ -3,10 +3,9 @@ import PrimarySchoolView from '../views/PrimarySchool/PrimarySchoolView.vue';
 import DisasterPreventionView from '../views/Jan/DisasterPreventionView.vue';
 import FebruaryView from '@/views/Feb/FebruaryView.vue';
 
-var u = navigator.userAgent;
-// ua = navigator.userAgent.toLowerCase();
-let isLineApp = u.indexOf('Line') > -1 ? true : false; //Line 內建瀏覽器
-let isFbApp = u.indexOf('FBAV') > -1 ? true : false; // FB App 內建瀏覽器
+var userAgent = navigator.userAgent.toUpperCase();
+let isLineApp = userAgent.indexOf('Line') > -1 ? true : false; //Line 內建瀏覽器
+let isFbApp = userAgent.indexOf('FBAV') > -1 ? true : false; // FB App 內建瀏覽器
 console.log('isLineApp', isLineApp, 'isFbApp', isFbApp);
 
 const base_url = import.meta.env.BASE_URL;
@@ -39,14 +38,15 @@ const router = createRouter({
   ]
 });
 
-router.beforeEach((to, from, next) => {
-  if (isLineApp || isFbApp) {
-    next({ path: '/?openExternalBrowser=1' });
-    return false;
-  } else {
-    next();
-    return false;
-  }
-});
+// router.beforeEach((to, from, next) => {
+//   if (isLineApp || isFbApp) {
+//     next({ path: '/?openExternalBrowser=1' });
+//     return false;
+//   } else {
+//     console.log('to', to, 'from', from);
+//     next();
+//     return false;
+//   }
+// });
 
 export default router;
