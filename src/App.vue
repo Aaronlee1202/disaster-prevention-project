@@ -25,11 +25,15 @@ function isApp() {
   if (isLineApp.value || isFbApp.value) {
     // const route = router;
     // const location = route.currentRoute.value.path;
-    const location = window.location.href;
-    locationData.value = location;
-    window.open(`${location}?openExternalBrowser=1`);
+    const locationHref = window.location.href;
+    locationData.value = locationHref;
+    window.location.replace(`${locationHref}?openExternalBrowser=1`);
     // router.push({ path: location, query: { openExternalBrowser: 1 } });
   }
+}
+
+function open() {
+  window.location.replace(`${window.location.href}?openExternalBrowser=1`);
 }
 </script>
 
@@ -40,6 +44,7 @@ function isApp() {
     isLineApp: {{ isLineApp }}<br />
     isFbApp: {{ isFbApp }}
   </div>
+  <button @click="open">openWindows</button>
   <Header />
   <RouterView />
   <BackToTop />
