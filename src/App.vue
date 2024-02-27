@@ -23,12 +23,16 @@ function isApp() {
     const route = router;
     const location = route.currentRoute.value.path;
     // window.open(`${location}?openExternalBrowser=1`);
-    router.push({ path: location, query: { openExternalBrowser: 1 } })
+    router.push({ path: location, query: { openExternalBrowser: 1 } });
   }
 }
 </script>
 
 <template>
+  <div>
+    isLineApp: {{ isLineApp }}<br />
+    isFbApp: {{ isFbApp }}
+  </div>
   <Header />
   <RouterView />
   <BackToTop />
