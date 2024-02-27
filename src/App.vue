@@ -6,8 +6,9 @@ import Footer from './components/NavFooter.vue';
 import BackToTop from './components/BackToTop.vue';
 
 const router = useRouter();
-let isLineApp = ref(false); //Line 內建瀏覽器
-let isFbApp = ref(false); // FB App 內建瀏覽器
+const isLineApp = ref(false); //Line 內建瀏覽器
+const isFbApp = ref(false); // FB App 內建瀏覽器
+const userAgentData = ref('');
 
 onMounted(() => {
   setTimeout(() => {
@@ -16,10 +17,11 @@ onMounted(() => {
 });
 
 function isApp() {
-  const userAgent = navigator.userAgent.toUpperCase();
+  const userAgent = navigator.userAgent;
+  userAgentData.value = userAgent;
   isLineApp.value = userAgent.indexOf('Line') > -1 ? true : false; //Line 內建瀏覽器
   isFbApp.value = userAgent.indexOf('FBAV') > -1 ? true : false; // FB App 內建瀏覽器
-  if (isLineApp || isFbApp) {
+  if (isLineApp.value || isFbApp.value) {
     const route = router;
     const location = route.currentRoute.value.path;
     // window.open(`${location}?openExternalBrowser=1`);
@@ -30,6 +32,7 @@ function isApp() {
 
 <template>
   <div>
+    userAgentData: {{ userAgentData }} <br />
     isLineApp: {{ isLineApp }}<br />
     isFbApp: {{ isFbApp }}
   </div>
