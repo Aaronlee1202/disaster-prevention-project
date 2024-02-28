@@ -1,6 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref } from 'vue';
 import Logo_Ncdr_Icon from './svg/logo_ncdr.vue';
 import Logo_Icon from './svg/logo_icon.vue';
 import icon_01 from '@/assets/header/menu_icon_01.svg';
@@ -12,16 +11,16 @@ import icon_06 from '@/assets/header/menu_icon_06.svg';
 import icon_07 from '@/assets/header/menu_icon_07.svg';
 import icon_08 from '@/assets/header/menu_icon_08.svg';
 
-const router = useRouter();
+// const router = useRouter();
 
 const indexPage = ref(true);
-watch(router.currentRoute, (newVal) => {
-  if (newVal.name !== 'PrimarySchoolView') {
-    indexPage.value = false;
-  } else {
-    indexPage.value = true;
-  }
-});
+// watch(router.currentRoute, (newVal) => {
+//   if (newVal.name !== 'PrimarySchoolView') {
+//     indexPage.value = false;
+//   } else {
+//     indexPage.value = true;
+//   }
+// });
 
 const toggle = ref(false);
 const menuToggle = () => {

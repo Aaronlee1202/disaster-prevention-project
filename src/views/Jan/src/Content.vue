@@ -3,10 +3,11 @@
 import { onMounted, ref } from 'vue';
 import lottie from 'lottie-web';
 import { useRouter } from 'vue-router';
+import ShareComponent from '@/components/ShareComponent.vue';
 import Triangle_Icon from '@/components/svg/triangle_icon.vue';
 import Link_Icon from '@/components/svg/link_icon.vue';
 import Arrow_Right from '@/components/svg/arrow_right.vue';
-import Arrow_share from '@/components/svg/arrow_share_white.vue';
+// import Arrow_share from '@/components/svg/arrow_share_white.vue';
 import Month_Icon from '@/components/svg/month_icon.vue';
 import QAjson from '@/assets/lottie/QA.json';
 import month_1 from '@/assets/flow_of_people/month/1.svg';
@@ -76,10 +77,6 @@ const openLink = (link) => {
   } else {
     alert('尚未開放');
   }
-};
-
-const toHomePage = () => {
-  router.push('/');
 };
 
 const newQAJson = ref(null);
@@ -205,36 +202,10 @@ const lottieAnimation = () => {
             </div>
           </div>
         </div>
-        <div class="dashed-line"></div>
+        <!-- <div class="dashed-line"></div> -->
       </div>
       <!-- 分享 回大廳 -->
-      <div class="row d-flex justify-content-end">
-        <div class="col d-flex justify-content-center">
-          <button class="btn share-btn" style="margin-right: 5px" type="button">
-            <Arrow_share />
-            <div>分享</div>
-          </button>
-          <button class="btn home-btn" style="margin-left: 5px" type="button" @click="toHomePage">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="House-f">
-                <path
-                  id="Vector"
-                  d="M20.5127 9.72184L13.0127 2.90621C12.7362 2.65324 12.375 2.51294 12.0002 2.51294C11.6254 2.51294 11.2642 2.65324 10.9877 2.90621L3.4877 9.72184C3.33414 9.86232 3.2115 10.0332 3.12757 10.2237C3.04364 10.4141 3.00027 10.62 3.0002 10.8281V19.4625C2.9941 19.8406 3.12761 20.2078 3.3752 20.4937C3.51572 20.6535 3.68882 20.7814 3.88287 20.8687C4.07692 20.956 4.28741 21.0008 4.5002 21H9.0002C9.19911 21 9.38988 20.9209 9.53053 20.7803C9.67118 20.6396 9.7502 20.4489 9.7502 20.25V15.75C9.7502 15.551 9.82922 15.3603 9.96987 15.2196C10.1105 15.079 10.3013 15 10.5002 15H13.5002C13.6991 15 13.8899 15.079 14.0305 15.2196C14.1712 15.3603 14.2502 15.551 14.2502 15.75V20.25C14.2502 20.4489 14.3292 20.6396 14.4699 20.7803C14.6105 20.9209 14.8013 21 15.0002 21H19.5002C19.749 21.0022 19.9942 20.9408 20.2127 20.8218C20.4504 20.6924 20.649 20.5013 20.7875 20.2688C20.9261 20.0362 20.9995 19.7707 21.0002 19.5V10.8281C21.0001 10.62 20.9568 10.4141 20.8728 10.2237C20.7889 10.0332 20.6663 9.86232 20.5127 9.72184Z"
-                  fill="#26A8A8"
-                />
-              </g>
-            </svg>
-
-            <div>回大廳</div>
-          </button>
-        </div>
-      </div>
+   <ShareComponent/>
       <!-- 其他月份 -->
       <div class="other-month-row">
         <!-- <div class="background-color"></div> -->
