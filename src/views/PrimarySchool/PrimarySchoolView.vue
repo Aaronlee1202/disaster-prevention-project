@@ -118,110 +118,53 @@ const atmosphereOpen = reactive({
 });
 
 const router = useRouter();
-// 點擊門窗動畫
+// 點擊房子
 const clickHouse = (houseName) => {
-  if (houseName == 'people-flow-open-door') {
-    openAnimation.openDoor = true;
-    flowOpen.openDoor = true;
-    clickRightFinger();
-    setTimeout(() => {
-      if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('january');
-        window.open(routeData.href, '_blank');
-      } else router.push('january');
-      openAnimation.openDoor = false;
-    }, 1000);
-  } else if (houseName == 'people-flow-open-windows') {
-    openAnimation.openWindows = true;
-    flowOpen.openWindows = true;
-    clickFinger();
-    setTimeout(() => {
-      if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('february');
-        window.open(routeData.href, '_blank');
-      } else router.push('february');
-      openAnimation.openWindows = false;
-    }, 1000);
-  } else if (houseName == 'norm-house-open-door') {
-    normOpen.openDoor = true;
-    setTimeout(() => {
-      if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('january');
-        window.open(routeData.href, '_blank');
-      } else alert('未開放');
-    }, 1000);
-  } else if (houseName == 'norm-house-open-windows') {
-    normOpen.openWindows = true;
-    setTimeout(() => {
-      if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('january');
-        window.open(routeData.href, '_blank');
-      } else alert('未開放');
-    }, 1000);
-  } else if (houseName == 'twin-house-open-door') {
-    twinOpen.openDoor = true;
-    setTimeout(() => {
-      if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('january');
-        window.open(routeData.href, '_blank');
-      } else alert('未開放');
-    }, 1000);
-  } else if (houseName == 'twin-house-open-windows') {
-    twinOpen.openWindows = true;
-    setTimeout(() => {
-      if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('january');
-        window.open(routeData.href, '_blank');
-      } else alert('未開放');
-    }, 1000);
-  } else if (houseName == 'strategy-house-open-door') {
-    strategyOpen.openDoor = true;
-    setTimeout(() => {
-      if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('january');
-        window.open(routeData.href, '_blank');
-      } else alert('未開放');
-    }, 1000);
-  } else if (houseName == 'strategy-house-open-windows') {
-    strategyOpen.openWindows = true;
-    setTimeout(() => {
-      if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('january');
-        window.open(routeData.href, '_blank');
-      } else alert('未開放');
-    }, 1000);
-  } else if (houseName == 'potential-house-open-door') {
-    potentialOpen.openDoor = true;
-    setTimeout(() => {
-      if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('january');
-        window.open(routeData.href, '_blank');
-      } else alert('未開放');
-    }, 1000);
-  } else if (houseName == 'potential-house-open-windows') {
-    potentialOpen.openWindows = true;
-    setTimeout(() => {
-      if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('january');
-        window.open(routeData.href, '_blank');
-      } else alert('未開放');
-    }, 1000);
-  } else if (houseName == 'atmosphere-house-open-door') {
-    atmosphereOpen.openDoor = true;
-    setTimeout(() => {
-      if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('january');
-        window.open(routeData.href, '_blank');
-      } else alert('未開放');
-    }, 1000);
-  } else if (houseName == 'atmosphere-house-open-windows') {
-    atmosphereOpen.openWindows = true;
-    setTimeout(() => {
-      if (import.meta.env.PROD == false) {
-        const routeData = router.resolve('january');
-        window.open(routeData.href, '_blank');
-      } else alert('未開放');
-    }, 1000);
+  switch (houseName) {
+    case 'people-flow-open-door':
+      openAnimation.openDoor = true;
+      flowOpen.openDoor = true;
+      clickRightFinger();
+      setTimeout(() => {
+        router.push('january');
+        openAnimation.openDoor = false;
+      }, 1000);
+      break;
+    case 'people-flow-open-windows':
+      openAnimation.openWindows = true;
+      flowOpen.openWindows = true;
+      clickFinger();
+      setTimeout(() => {
+        router.push('february');
+        openAnimation.openWindows = false;
+      }, 1000);
+      break;
+    case 'norm-house-open-door':
+      normOpen.openDoor = true;
+      setTimeout(() => {
+        alert('未開放');
+      }, 1000);
+      break;
+    case 'norm-house-open-windows':
+      normOpen.openWindows = true;
+      setTimeout(() => {
+        alert('未開放');
+      }, 1000);
+      break;
+    case 'twin-house-open-door':
+      twinOpen.openDoor = true;
+      setTimeout(() => {
+        alert('未開放');
+      }, 1000);
+      break;
+    case 'twin-house-open-windows':
+      twinOpen.openWindows = true;
+      setTimeout(() => {
+        alert('未開放');
+      }, 1000);
+      break;
+    case 'strategy-house-open-door':
+      strategyOpen.openDoor = true;
   }
 };
 </script>
@@ -414,13 +357,13 @@ const clickHouse = (houseName) => {
   margin-bottom: 100px;
 }
 .fullscreen-animation {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100svh;
 }
 .loadingBg {
   width: 100%;
-  height: 400svh;
+  height: 100svh;
   background-color: #a06c57;
   opacity: 0.3;
   z-index: 998;
@@ -1081,7 +1024,7 @@ const clickHouse = (houseName) => {
     top: 14%;
     left: 61%;
     transform: translate(-50%, -50%);
-    z-index: 995;
+    z-index: 994;
     // opacity: 0.7;
     #people-flow {
       position: absolute;
@@ -1127,7 +1070,7 @@ const clickHouse = (houseName) => {
     top: 30%;
     left: 79%;
     transform: translate(-50%, -50%);
-    z-index: 995;
+    z-index: 994;
     opacity: 0.7;
     #norm {
       position: absolute;
@@ -1173,7 +1116,7 @@ const clickHouse = (houseName) => {
     top: 28%;
     left: 42%;
     transform: translate(-50%, -50%);
-    z-index: 995;
+    z-index: 994;
     opacity: 0.7;
     #twin {
       position: absolute;
@@ -1219,7 +1162,7 @@ const clickHouse = (houseName) => {
     top: 50%;
     left: 59%;
     transform: translate(-50%, -50%);
-    z-index: 995;
+    z-index: 994;
     opacity: 0.7;
     #strategy {
       position: absolute;
@@ -1265,7 +1208,7 @@ const clickHouse = (houseName) => {
     top: 43%;
     left: 22%;
     transform: translate(-50%, -50%);
-    z-index: 995;
+    z-index: 994;
     opacity: 0.7;
     #potential {
       position: absolute;
@@ -1311,7 +1254,7 @@ const clickHouse = (houseName) => {
     top: 64%;
     left: 41%;
     transform: translate(-50%, -50%);
-    z-index: 995;
+    z-index: 994;
     opacity: 0.7;
     #atmosphere {
       position: absolute;
@@ -1455,7 +1398,7 @@ const clickHouse = (houseName) => {
     position: relative !important;
     width: 550px;
     height: 550px;
-    z-index: 995;
+    z-index: 994;
     #people-flow {
       position: absolute;
     }
@@ -1501,7 +1444,7 @@ const clickHouse = (houseName) => {
     position: relative !important;
     width: 550px;
     height: 550px;
-    z-index: 995;
+    z-index: 994;
     #norm {
       position: absolute;
     }
@@ -1547,7 +1490,7 @@ const clickHouse = (houseName) => {
     position: relative !important;
     width: 600px;
     height: 600px;
-    z-index: 995;
+    z-index: 994;
     #twin {
       position: absolute;
     }
@@ -1593,7 +1536,7 @@ const clickHouse = (houseName) => {
     position: relative !important;
     width: 550px;
     height: 550px;
-    z-index: 995;
+    z-index: 994;
     #strategy {
       position: absolute;
     }
@@ -1640,7 +1583,7 @@ const clickHouse = (houseName) => {
     width: 550px;
     height: 550px;
     cursor: pointer;
-    z-index: 995;
+    z-index: 994;
     #potential {
       position: absolute;
     }
@@ -1686,7 +1629,7 @@ const clickHouse = (houseName) => {
     position: relative !important;
     width: 550px;
     height: 550px;
-    z-index: 995;
+    z-index: 994;
     #atmosphere {
       position: absolute;
     }
@@ -1807,7 +1750,7 @@ const clickHouse = (houseName) => {
     position: relative !important;
     width: 350px;
     height: 316.005px;
-    z-index: 995;
+    z-index: 994;
     #people-flow {
       position: absolute;
     }
@@ -1853,7 +1796,7 @@ const clickHouse = (houseName) => {
     position: relative !important;
     width: 320px;
     height: 316.005px;
-    z-index: 995;
+    z-index: 994;
     #norm {
       position: absolute;
     }
@@ -1899,7 +1842,7 @@ const clickHouse = (houseName) => {
     position: relative !important;
     width: 320px;
     height: 316.005px;
-    z-index: 995;
+    z-index: 994;
     #twin {
       position: absolute;
     }
@@ -1945,7 +1888,7 @@ const clickHouse = (houseName) => {
     position: relative !important;
     width: 320px;
     height: 316.005px;
-    z-index: 995;
+    z-index: 994;
     #strategy {
       position: absolute;
     }
@@ -1991,7 +1934,7 @@ const clickHouse = (houseName) => {
     position: relative !important;
     width: 320px;
     height: 316.005px;
-    z-index: 995;
+    z-index: 994;
     #potential {
       position: absolute;
     }
@@ -2037,7 +1980,7 @@ const clickHouse = (houseName) => {
     position: relative !important;
     width: 320px;
     height: 316.005px;
-    z-index: 995;
+    z-index: 994;
     #atmosphere {
       position: absolute;
     }
