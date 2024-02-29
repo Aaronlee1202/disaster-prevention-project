@@ -2,6 +2,7 @@
 import { ref, reactive, watch, defineComponent } from 'vue';
 import { useWindowSize } from '@vueuse/core';
 import { useRouter } from 'vue-router';
+import SmallAnimation from './src/SmallAnimation.vue';
 import PeopleFlow from './src/PeopleFlow.vue';
 import Norm from './src/norm.vue';
 import twin from './src/twin.vue';
@@ -10,7 +11,8 @@ import potential from './src/potential.vue';
 import atmosphere from './src/atmosphere.vue';
 import finger_default from '@/assets/primary_school/Default.png';
 import finger_pressed from '@/assets/primary_school/Pressed.png';
-// import finger_right from '@/assets/primary_school/finger_right.png';
+import finger_right_default from '@/assets/primary_school/finger_right_default.png';
+import finger_right from '@/assets/primary_school/right_pressed.png';
 import arrow_share from '@/components/svg/arrow_share.vue';
 import facebook_icon from '@/components/svg/facebook_icon.vue';
 import line_icon from '@/components/svg/line_icon.vue';
@@ -23,17 +25,31 @@ defineComponent({
     twin,
     strategy,
     potential,
-    atmosphere
+    atmosphere,
+    SmallAnimation
   }
 });
 
 const fingerImg = [finger_default, finger_pressed];
+const fingerRightImg = [finger_right_default, finger_right];
+const openAnimationBg = ref(false);
 // 按下手指
 const clicked = ref(fingerImg[0]);
+const rightClicked = ref(fingerRightImg[0]);
 const clickFinger = () => {
   clicked.value = fingerImg[1];
+  openAnimationBg.value = true;
   setTimeout(() => {
     clicked.value = fingerImg[0];
+    openAnimationBg.value = false;
+  }, 1000);
+};
+const clickRightFinger = () => {
+  rightClicked.value = fingerRightImg[1];
+  openAnimationBg.value = true;
+  setTimeout(() => {
+    rightClicked.value = fingerRightImg[0];
+    openAnimationBg.value = false;
   }, 1000);
 };
 
@@ -65,6 +81,11 @@ watch(
   // 立即執行
   { immediate: true }
 );
+
+const openAnimation = reactive({
+  openDoor: false,
+  openWindows: false
+});
 
 const flowOpen = reactive({
   openDoor: false,
@@ -98,25 +119,28 @@ const atmosphereOpen = reactive({
 
 const router = useRouter();
 // 點擊門窗動畫
-const clickHouse = (houseName, fingerClick) => {
-  if (fingerClick == 'finger-click') {
-    clickFinger();
-  }
+const clickHouse = (houseName) => {
   if (houseName == 'people-flow-open-door') {
+    openAnimation.openDoor = true;
     flowOpen.openDoor = true;
+    clickRightFinger();
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
       } else router.push('january');
+      openAnimation.openDoor = false;
     }, 1000);
   } else if (houseName == 'people-flow-open-windows') {
+    openAnimation.openWindows = true;
     flowOpen.openWindows = true;
+    clickFinger();
     setTimeout(() => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('february');
         window.open(routeData.href, '_blank');
       } else router.push('february');
+      openAnimation.openWindows = false;
     }, 1000);
   } else if (houseName == 'norm-house-open-door') {
     normOpen.openDoor = true;
@@ -124,7 +148,7 @@ const clickHouse = (houseName, fingerClick) => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('january');
+      } else alert('未開放');
     }, 1000);
   } else if (houseName == 'norm-house-open-windows') {
     normOpen.openWindows = true;
@@ -132,7 +156,7 @@ const clickHouse = (houseName, fingerClick) => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('january');
+      } else alert('未開放');
     }, 1000);
   } else if (houseName == 'twin-house-open-door') {
     twinOpen.openDoor = true;
@@ -140,7 +164,7 @@ const clickHouse = (houseName, fingerClick) => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('january');
+      } else alert('未開放');
     }, 1000);
   } else if (houseName == 'twin-house-open-windows') {
     twinOpen.openWindows = true;
@@ -148,7 +172,7 @@ const clickHouse = (houseName, fingerClick) => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('january');
+      } else alert('未開放');
     }, 1000);
   } else if (houseName == 'strategy-house-open-door') {
     strategyOpen.openDoor = true;
@@ -156,7 +180,7 @@ const clickHouse = (houseName, fingerClick) => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('january');
+      } else alert('未開放');
     }, 1000);
   } else if (houseName == 'strategy-house-open-windows') {
     strategyOpen.openWindows = true;
@@ -164,7 +188,7 @@ const clickHouse = (houseName, fingerClick) => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('january');
+      } else alert('未開放');
     }, 1000);
   } else if (houseName == 'potential-house-open-door') {
     potentialOpen.openDoor = true;
@@ -172,7 +196,7 @@ const clickHouse = (houseName, fingerClick) => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('january');
+      } else alert('未開放');
     }, 1000);
   } else if (houseName == 'potential-house-open-windows') {
     potentialOpen.openWindows = true;
@@ -180,7 +204,7 @@ const clickHouse = (houseName, fingerClick) => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('january');
+      } else alert('未開放');
     }, 1000);
   } else if (houseName == 'atmosphere-house-open-door') {
     atmosphereOpen.openDoor = true;
@@ -188,7 +212,7 @@ const clickHouse = (houseName, fingerClick) => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('january');
+      } else alert('未開放');
     }, 1000);
   } else if (houseName == 'atmosphere-house-open-windows') {
     atmosphereOpen.openWindows = true;
@@ -196,13 +220,17 @@ const clickHouse = (houseName, fingerClick) => {
       if (import.meta.env.PROD == false) {
         const routeData = router.resolve('january');
         window.open(routeData.href, '_blank');
-      } else router.push('january');
+      } else alert('未開放');
     }, 1000);
   }
 };
 </script>
 
 <template>
+  <div class="fullscreen-animation" :class="[openAnimationBg ? 'z-index' : '']">
+    <div :class="[openAnimationBg ? 'loadingBg' : '']"></div>
+    <SmallAnimation :open="openAnimation" />
+  </div>
   <div class="container-fluid p-0" v-if="screenSwitch == false">
     <div class="primary-school element-height">
       <div class="title-container">
@@ -224,12 +252,9 @@ const clickHouse = (houseName, fingerClick) => {
         </div>
         <div class="people-flow-click">
           <img class="finger" :src="clicked" />
-          <img class="finger-right" src="@/assets/primary_school/finger_right_default.png" />
+          <img class="finger-right" :src="rightClicked" />
           <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
-          <div
-            class="windows-click"
-            @click="clickHouse('people-flow-open-windows', 'finger-click')"
-          ></div>
+          <div class="windows-click" @click="clickHouse('people-flow-open-windows')"></div>
         </div>
         <div id="norm-house">
           <Norm :norm-open="normOpen" />
@@ -318,10 +343,7 @@ const clickHouse = (houseName, fingerClick) => {
             <img class="finger" :src="clicked" />
             <img class="finger-right" src="@/assets/primary_school/finger_right_default.png" />
             <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
-            <div
-              class="windows-click"
-              @click="clickHouse('people-flow-open-windows', 'finger-click')"
-            ></div>
+            <div class="windows-click" @click="clickHouse('people-flow-open-windows')"></div>
           </div>
         </div>
         <div class="norm-container col-12 mb-5 d-flex align-items-center justify-content-center">
@@ -391,6 +413,21 @@ const clickHouse = (houseName, fingerClick) => {
   height: 1080px;
   margin-bottom: 100px;
 }
+.fullscreen-animation {
+  position: absolute;
+  width: 100%;
+  height: 100svh;
+}
+.loadingBg {
+  width: 100%;
+  height: 400svh;
+  background-color: #a06c57;
+  opacity: 0.3;
+  z-index: 998;
+}
+.z-index {
+  z-index: 999;
+}
 @media screen and (min-width: 2560px) {
   .house-bg {
     width: 100%;
@@ -406,7 +443,7 @@ const clickHouse = (houseName, fingerClick) => {
     transform: translate(-50%, -50%);
   }
   .primary-school {
-    padding-top: 10% !important;
+    padding-top: 7.5% !important;
   }
   .doll-1-container {
     position: absolute;
@@ -874,7 +911,7 @@ const clickHouse = (houseName, fingerClick) => {
 }
 @media screen and (min-width: 992px) {
   .primary-school {
-    padding-top: 10% !important;
+    padding-top: 10%;
   }
   .share-container {
     position: absolute;
@@ -967,7 +1004,7 @@ const clickHouse = (houseName, fingerClick) => {
     left: 62%;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    z-index: 995;
     .finger {
       position: absolute;
       width: 25%;
@@ -1027,7 +1064,6 @@ const clickHouse = (houseName, fingerClick) => {
       left: 8%;
       // background-color: #3f3a3a60;
       cursor: pointer;
-      z-index: 999;
     }
     .windows-click {
       position: absolute;
@@ -1037,7 +1073,6 @@ const clickHouse = (houseName, fingerClick) => {
       right: 2%;
       // background-color: #3f3a3a60;
       cursor: pointer;
-      z-index: 999;
     }
   }
   #people-flow-house {
@@ -1046,7 +1081,7 @@ const clickHouse = (houseName, fingerClick) => {
     top: 14%;
     left: 61%;
     transform: translate(-50%, -50%);
-    z-index: 998;
+    z-index: 995;
     // opacity: 0.7;
     #people-flow {
       position: absolute;
@@ -1066,7 +1101,7 @@ const clickHouse = (houseName, fingerClick) => {
     left: 80%;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    z-index: 995;
     .door-click {
       position: absolute;
       width: 70px;
@@ -1075,7 +1110,6 @@ const clickHouse = (houseName, fingerClick) => {
       left: 5%;
       // background-color: #3f3a3a60;
       cursor: pointer;
-      z-index: 999;
     }
     .windows-click {
       position: absolute;
@@ -1085,7 +1119,6 @@ const clickHouse = (houseName, fingerClick) => {
       right: 17%;
       // background-color: #3f3a3a60;
       cursor: pointer;
-      z-index: 999;
     }
   }
   #norm-house {
@@ -1094,7 +1127,7 @@ const clickHouse = (houseName, fingerClick) => {
     top: 30%;
     left: 79%;
     transform: translate(-50%, -50%);
-    z-index: 998;
+    z-index: 995;
     opacity: 0.7;
     #norm {
       position: absolute;
@@ -1114,7 +1147,7 @@ const clickHouse = (houseName, fingerClick) => {
     left: 43%;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    z-index: 995;
     .door-click {
       position: absolute;
       width: 70px;
@@ -1123,7 +1156,6 @@ const clickHouse = (houseName, fingerClick) => {
       right: 8%;
       // background-color: #3f3a3a50;
       cursor: pointer;
-      z-index: 999;
     }
     .windows-click {
       position: absolute;
@@ -1133,7 +1165,6 @@ const clickHouse = (houseName, fingerClick) => {
       left: 17%;
       // background-color: #3f3a3a60;
       cursor: pointer;
-      z-index: 999;
     }
   }
   #twin-house {
@@ -1142,7 +1173,7 @@ const clickHouse = (houseName, fingerClick) => {
     top: 28%;
     left: 42%;
     transform: translate(-50%, -50%);
-    z-index: 998;
+    z-index: 995;
     opacity: 0.7;
     #twin {
       position: absolute;
@@ -1162,7 +1193,7 @@ const clickHouse = (houseName, fingerClick) => {
     left: 60%;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    z-index: 995;
     .door-click {
       position: absolute;
       width: 70px;
@@ -1171,7 +1202,6 @@ const clickHouse = (houseName, fingerClick) => {
       left: 10%;
       // background-color: #3f3a3a60;
       cursor: pointer;
-      z-index: 999;
     }
     .windows-click {
       position: absolute;
@@ -1181,7 +1211,6 @@ const clickHouse = (houseName, fingerClick) => {
       right: 0%;
       // background-color: #3f3a3a60;
       cursor: pointer;
-      z-index: 999;
     }
   }
   #strategy-house {
@@ -1190,7 +1219,7 @@ const clickHouse = (houseName, fingerClick) => {
     top: 50%;
     left: 59%;
     transform: translate(-50%, -50%);
-    z-index: 998;
+    z-index: 995;
     opacity: 0.7;
     #strategy {
       position: absolute;
@@ -1210,7 +1239,7 @@ const clickHouse = (houseName, fingerClick) => {
     left: 21%;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    z-index: 995;
     .door-click {
       position: absolute;
       width: 70px;
@@ -1219,7 +1248,6 @@ const clickHouse = (houseName, fingerClick) => {
       left: 15%;
       // background-color: #3f3a3a60;
       cursor: pointer;
-      z-index: 999;
     }
     .windows-click {
       position: absolute;
@@ -1229,7 +1257,6 @@ const clickHouse = (houseName, fingerClick) => {
       right: 0%;
       // background-color: #3f3a3a60;
       cursor: pointer;
-      z-index: 999;
     }
   }
   #potential-house {
@@ -1238,7 +1265,7 @@ const clickHouse = (houseName, fingerClick) => {
     top: 43%;
     left: 22%;
     transform: translate(-50%, -50%);
-    z-index: 998;
+    z-index: 995;
     opacity: 0.7;
     #potential {
       position: absolute;
@@ -1258,7 +1285,7 @@ const clickHouse = (houseName, fingerClick) => {
     left: 40%;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    z-index: 995;
     .door-click {
       position: absolute;
       width: 70px;
@@ -1267,7 +1294,6 @@ const clickHouse = (houseName, fingerClick) => {
       left: 0%;
       // background-color: #3f3a3a60;
       cursor: pointer;
-      z-index: 999;
     }
     .windows-click {
       position: absolute;
@@ -1277,7 +1303,6 @@ const clickHouse = (houseName, fingerClick) => {
       right: 0%;
       // background-color: #3f3a3a60;
       cursor: pointer;
-      z-index: 999;
     }
   }
   #atmosphere-house {
@@ -1286,7 +1311,7 @@ const clickHouse = (houseName, fingerClick) => {
     top: 64%;
     left: 41%;
     transform: translate(-50%, -50%);
-    z-index: 998;
+    z-index: 995;
     opacity: 0.7;
     #atmosphere {
       position: absolute;
@@ -1357,7 +1382,7 @@ const clickHouse = (houseName, fingerClick) => {
     left: 50% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    z-index: 995;
     .finger {
       position: absolute;
       width: 25%;
@@ -1416,7 +1441,6 @@ const clickHouse = (houseName, fingerClick) => {
       top: 50%;
       left: 16%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
     .windows-click {
       position: absolute;
@@ -1425,14 +1449,13 @@ const clickHouse = (houseName, fingerClick) => {
       top: 30%;
       right: 0%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
   }
   #people-flow-house {
     position: relative !important;
     width: 550px;
     height: 550px;
-    z-index: 998;
+    z-index: 995;
     #people-flow {
       position: absolute;
     }
@@ -1456,7 +1479,7 @@ const clickHouse = (houseName, fingerClick) => {
     left: 50% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    z-index: 995;
     .door-click {
       position: absolute;
       width: 100px;
@@ -1464,7 +1487,6 @@ const clickHouse = (houseName, fingerClick) => {
       top: 50%;
       left: 12%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
     .windows-click {
       position: absolute;
@@ -1473,14 +1495,13 @@ const clickHouse = (houseName, fingerClick) => {
       top: 45%;
       right: 13%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
   }
   #norm-house {
     position: relative !important;
     width: 550px;
     height: 550px;
-    z-index: 998;
+    z-index: 995;
     #norm {
       position: absolute;
     }
@@ -1504,7 +1525,7 @@ const clickHouse = (houseName, fingerClick) => {
     left: 50% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    z-index: 995;
     .door-click {
       position: absolute;
       width: 100px;
@@ -1512,7 +1533,6 @@ const clickHouse = (houseName, fingerClick) => {
       top: 50%;
       right: 5%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
     .windows-click {
       position: absolute;
@@ -1521,14 +1541,13 @@ const clickHouse = (houseName, fingerClick) => {
       top: 45%;
       left: 25%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
   }
   #twin-house {
     position: relative !important;
     width: 600px;
     height: 600px;
-    z-index: 998;
+    z-index: 995;
     #twin {
       position: absolute;
     }
@@ -1552,7 +1571,7 @@ const clickHouse = (houseName, fingerClick) => {
     left: 50% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    z-index: 995;
     .door-click {
       position: absolute;
       width: 100px;
@@ -1560,7 +1579,6 @@ const clickHouse = (houseName, fingerClick) => {
       top: 50%;
       left: 20%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
     .windows-click {
       position: absolute;
@@ -1569,14 +1587,13 @@ const clickHouse = (houseName, fingerClick) => {
       top: 50%;
       right: 0%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
   }
   #strategy-house {
     position: relative !important;
     width: 550px;
     height: 550px;
-    z-index: 998;
+    z-index: 995;
     #strategy {
       position: absolute;
     }
@@ -1600,7 +1617,7 @@ const clickHouse = (houseName, fingerClick) => {
     left: 50% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    z-index: 995;
     .door-click {
       position: absolute;
       width: 100px;
@@ -1608,7 +1625,6 @@ const clickHouse = (houseName, fingerClick) => {
       top: 55%;
       left: 10%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
     .windows-click {
       position: absolute;
@@ -1617,7 +1633,6 @@ const clickHouse = (houseName, fingerClick) => {
       top: 30%;
       right: 10%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
   }
   #potential-house {
@@ -1625,7 +1640,7 @@ const clickHouse = (houseName, fingerClick) => {
     width: 550px;
     height: 550px;
     cursor: pointer;
-    z-index: 998;
+    z-index: 995;
     #potential {
       position: absolute;
     }
@@ -1649,7 +1664,7 @@ const clickHouse = (houseName, fingerClick) => {
     left: 50% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    z-index: 995;
     .door-click {
       position: absolute;
       width: 100px;
@@ -1657,7 +1672,6 @@ const clickHouse = (houseName, fingerClick) => {
       top: 40%;
       left: 0%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
     .windows-click {
       position: absolute;
@@ -1666,14 +1680,13 @@ const clickHouse = (houseName, fingerClick) => {
       top: 30%;
       right: 10%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
   }
   #atmosphere-house {
     position: relative !important;
     width: 550px;
     height: 550px;
-    z-index: 998;
+    z-index: 995;
     #atmosphere {
       position: absolute;
     }
@@ -1721,7 +1734,7 @@ const clickHouse = (houseName, fingerClick) => {
     left: 50% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    z-index: 995;
     .finger {
       position: absolute;
       width: 25%;
@@ -1780,7 +1793,6 @@ const clickHouse = (houseName, fingerClick) => {
       top: 55%;
       left: 16%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
     .windows-click {
       position: absolute;
@@ -1789,14 +1801,13 @@ const clickHouse = (houseName, fingerClick) => {
       top: 35%;
       right: 0%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
   }
   #people-flow-house {
     position: relative !important;
     width: 350px;
     height: 316.005px;
-    z-index: 998;
+    z-index: 995;
     #people-flow {
       position: absolute;
     }
@@ -1820,7 +1831,7 @@ const clickHouse = (houseName, fingerClick) => {
     left: 50% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    z-index: 995;
     .door-click {
       position: absolute;
       width: 70px;
@@ -1828,7 +1839,6 @@ const clickHouse = (houseName, fingerClick) => {
       top: 50%;
       left: 12%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
     .windows-click {
       position: absolute;
@@ -1837,14 +1847,13 @@ const clickHouse = (houseName, fingerClick) => {
       top: 45%;
       right: 13%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
   }
   #norm-house {
     position: relative !important;
     width: 320px;
     height: 316.005px;
-    z-index: 998;
+    z-index: 995;
     #norm {
       position: absolute;
     }
@@ -1868,7 +1877,7 @@ const clickHouse = (houseName, fingerClick) => {
     left: 50% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    z-index: 995;
     .door-click {
       position: absolute;
       width: 70px;
@@ -1876,7 +1885,6 @@ const clickHouse = (houseName, fingerClick) => {
       top: 50%;
       right: 0%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
     .windows-click {
       position: absolute;
@@ -1885,14 +1893,13 @@ const clickHouse = (houseName, fingerClick) => {
       top: 50%;
       left: 19%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
   }
   #twin-house {
     position: relative !important;
     width: 320px;
     height: 316.005px;
-    z-index: 998;
+    z-index: 995;
     #twin {
       position: absolute;
     }
@@ -1916,7 +1923,7 @@ const clickHouse = (houseName, fingerClick) => {
     left: 50% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    z-index: 995;
     .door-click {
       position: absolute;
       width: 70px;
@@ -1924,7 +1931,6 @@ const clickHouse = (houseName, fingerClick) => {
       top: 50%;
       left: 19%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
     .windows-click {
       position: absolute;
@@ -1933,14 +1939,13 @@ const clickHouse = (houseName, fingerClick) => {
       top: 50%;
       right: 0%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
   }
   #strategy-house {
     position: relative !important;
     width: 320px;
     height: 316.005px;
-    z-index: 998;
+    z-index: 995;
     #strategy {
       position: absolute;
     }
@@ -1964,7 +1969,7 @@ const clickHouse = (houseName, fingerClick) => {
     left: 50% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    z-index: 995;
     .door-click {
       position: absolute;
       width: 70px;
@@ -1972,7 +1977,6 @@ const clickHouse = (houseName, fingerClick) => {
       top: 55%;
       left: 10%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
     .windows-click {
       position: absolute;
@@ -1981,14 +1985,13 @@ const clickHouse = (houseName, fingerClick) => {
       top: 30%;
       right: 5%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
   }
   #potential-house {
     position: relative !important;
     width: 320px;
     height: 316.005px;
-    z-index: 998;
+    z-index: 995;
     #potential {
       position: absolute;
     }
@@ -2012,7 +2015,7 @@ const clickHouse = (houseName, fingerClick) => {
     left: 50% !important;
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
-    z-index: 999;
+    z-index: 995;
     .door-click {
       position: absolute;
       width: 70px;
@@ -2020,7 +2023,6 @@ const clickHouse = (houseName, fingerClick) => {
       top: 40%;
       left: 0%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
     .windows-click {
       position: absolute;
@@ -2029,14 +2031,13 @@ const clickHouse = (houseName, fingerClick) => {
       top: 30%;
       right: 5%;
       // background-color: #3f3a3a60;
-      z-index: 999;
     }
   }
   #atmosphere-house {
     position: relative !important;
     width: 320px;
     height: 316.005px;
-    z-index: 998;
+    z-index: 995;
     #atmosphere {
       position: absolute;
     }
