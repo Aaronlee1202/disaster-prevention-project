@@ -5,8 +5,8 @@ import lottie from 'lottie-web';
 import { useWindowSize } from '@vueuse/core';
 import ShareComponent2 from '@/components/ShareComponent2.vue';
 import Triangle_Icon from '@/components/svg/triangle_icon.vue';
-import Link_Icon from '@/components/svg/link_icon.vue';
-import Arrow_Right from '@/components/svg/arrow_right.vue';
+// import Link_Icon from '@/components/svg/link_icon.vue';
+// import Arrow_Right from '@/components/svg/arrow_right.vue';
 // import Arrow_share from '@/components/svg/arrow_share_white.vue';
 import Other_Month from '@/components/OtherMonth.vue';
 import QAjson from '@/assets/lottie/QA.json';
@@ -128,7 +128,7 @@ watch(
         </div>
       </div>
       <!-- 相關連結 -->
-      <div class="container">
+      <!-- <div class="container">
         <div class="row">
           <div class="col-3">
             <div class="d-flex flex-row-reverse">
@@ -157,9 +157,8 @@ watch(
               </div>
             </div>
           </div>
-          <!-- <div class="dashed-line"></div> -->
         </div>
-      </div>
+      </div> -->
       <!-- 分享 回大廳 -->
       <ShareComponent2 :screen-switch="screenSwitch"/>
       <!-- 其他月份 -->
@@ -252,7 +251,7 @@ watch(
       </div>
 
       <!-- 相關連結 -->
-      <div class="container">
+      <!-- <div class="container">
         <div class="row">
           <div class="col-12">
             <div class="d-flex">
@@ -264,9 +263,7 @@ watch(
           <div class="col-12">
             <div class="link-container d-flex align-items-center justify-content-between">
               <h3>相關連結</h3>
-              <!-- <div class="d-flex align-items-end"> -->
               <div id="qa-doll"></div>
-              <!-- </div> -->
             </div>
             <div class="related-links d-flex align-items-center justify-content-start mb-4">
               <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
@@ -284,10 +281,9 @@ watch(
                 </div>
               </div>
             </div>
-            <!-- <div class="dashed-line"></div> -->
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- 分享 回大廳 -->
       <ShareComponent2 :screen-switch="screenSwitch"/>

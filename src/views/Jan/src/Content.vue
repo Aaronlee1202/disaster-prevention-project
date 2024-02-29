@@ -5,8 +5,8 @@ import lottie from 'lottie-web';
 import { useRouter } from 'vue-router';
 import ShareComponent from '@/components/ShareComponent.vue';
 import Triangle_Icon from '@/components/svg/triangle_icon.vue';
-import Link_Icon from '@/components/svg/link_icon.vue';
-import Arrow_Right from '@/components/svg/arrow_right.vue';
+// import Link_Icon from '@/components/svg/link_icon.vue';
+// import Arrow_Right from '@/components/svg/arrow_right.vue';
 // import Arrow_share from '@/components/svg/arrow_share_white.vue';
 import Month_Icon from '@/components/svg/month_icon.vue';
 import QAjson from '@/assets/lottie/QA.json';
@@ -174,7 +174,7 @@ const lottieAnimation = () => {
         </div>
       </div>
       <!-- 相關連結 -->
-      <div class="row d-flex justify-content-end mt-5">
+      <!-- <div class="row d-flex justify-content-end mt-5">
         <div class="col-1 p-0">
           <div class="d-flex flex-row-reverse">
             <div class="chapter d-flex align-items-center justify-content-center">
@@ -202,10 +202,9 @@ const lottieAnimation = () => {
             </div>
           </div>
         </div>
-        <!-- <div class="dashed-line"></div> -->
-      </div>
+      </div> -->
       <!-- 分享 回大廳 -->
-   <ShareComponent/>
+      <ShareComponent />
       <!-- 其他月份 -->
       <div class="other-month-row">
         <!-- <div class="background-color"></div> -->
