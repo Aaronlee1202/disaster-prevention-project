@@ -476,18 +476,18 @@ const clickHouse = (houseName) => {
     // border: #3f3a3a 1px solid;
     .door-click {
       position: absolute;
-      width: 100px !important;
-      height: 100px !important;
+      width: 120px !important;
+      height: 120px !important;
       top: 55%;
-      left: 0%;
+      left: 0% !important;
       // background-color: #3f3a3a60;
     }
     .windows-click {
       position: absolute;
-      width: 100px !important;
-      height: 100px !important;
+      width: 120px !important;
+      height: 120px !important;
       top: 33%;
-      right: 2%;
+      right: 0% !important;
       // background-color: #3f3a3a60;
     }
   }

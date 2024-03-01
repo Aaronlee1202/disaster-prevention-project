@@ -70,7 +70,7 @@ function lottieAnimation() {
 <style lang="scss" scoped>
 @media screen and (min-width: 992px) {
   #dog-animation {
-    width: 20%;
+    width: 30%;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -78,7 +78,7 @@ function lottieAnimation() {
     z-index: 999;
   }
   #radish-animation {
-    width: 20%;
+    width: 30%;
     position: fixed;
     top: 50%;
     left: 50%;
