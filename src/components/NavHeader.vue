@@ -74,7 +74,7 @@ const toHomePage = () => {
                     <ul class="nav nav-pills" id="mainNav">
                       <li>
                         <a
-                          href="https://www.ncdr.nat.gov.tw/NCDR-Topic/2024/index.html#index_page_1"
+                          href="https://www.ncdr.nat.gov.tw/NCDR-Topic/2024/index.html#index_page_3"
                           target="_blank"
                           class="nav-link anchor"
                           title="當期主題"
