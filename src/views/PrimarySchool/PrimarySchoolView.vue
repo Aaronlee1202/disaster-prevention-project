@@ -38,18 +38,14 @@ const clicked = ref(fingerImg[0]);
 const rightClicked = ref(fingerRightImg[0]);
 const clickFinger = () => {
   clicked.value = fingerImg[1];
-  openAnimationBg.value = true;
   setTimeout(() => {
     clicked.value = fingerImg[0];
-    openAnimationBg.value = false;
   }, 1000);
 };
 const clickRightFinger = () => {
   rightClicked.value = fingerRightImg[1];
-  openAnimationBg.value = true;
   setTimeout(() => {
     rightClicked.value = fingerRightImg[0];
-    openAnimationBg.value = false;
   }, 1000);
 };
 
@@ -120,29 +116,35 @@ const atmosphereOpen = reactive({
 const router = useRouter();
 // 點擊房子
 const clickHouse = (houseName) => {
+  openAnimationBg.value = true;
   switch (houseName) {
     case 'people-flow-open-door':
-      openAnimation.openDoor = true;
       flowOpen.openDoor = true;
+      openAnimation.openDoor = true;
       clickRightFinger();
       setTimeout(() => {
         router.push('january');
         openAnimation.openDoor = false;
+        openAnimationBg.value = false;
       }, 1000);
       break;
     case 'people-flow-open-windows':
-      openAnimation.openWindows = true;
       flowOpen.openWindows = true;
+      openAnimation.openWindows = true;
       clickFinger();
       setTimeout(() => {
         router.push('february');
         openAnimation.openWindows = false;
+        openAnimationBg.value = false;
       }, 1000);
       break;
     case 'norm-house-open-door':
       normOpen.openDoor = true;
+      openAnimation.openDoor = true;
       setTimeout(() => {
-        alert('未開放');
+        router.push('march');
+        openAnimation.openDoor = false;
+        openAnimationBg.value = false;
       }, 1000);
       break;
     case 'norm-house-open-windows':

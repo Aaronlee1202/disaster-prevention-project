@@ -63,7 +63,7 @@ const items = [
 ];
 const router = useRouter();
 const openLink = (link) => {
-  if (link == 'january' || link == 'february') {
+  if (link == 'january' || link == 'february' || link == 'march') {
     router.push(link);
   } else {
     alert('尚未開放');
@@ -100,7 +100,7 @@ defineProps({
             <a
               type="button"
               class="month-icon m-0 d-flex align-items-center justify-content-center"
-              :class="[index >= 2 ? 'disable' : '']"
+              :class="[index >= 3 ? 'disable' : '']"
               @click="openLink(item.link)"
             >
               <img :src="item.img" />
@@ -133,7 +133,7 @@ defineProps({
           >
             <div
               class="month-icon m-0 d-flex align-items-center justify-content-center"
-              :class="[index >= 2 ? 'disable' : '']"
+              :class="[index >= 3 ? 'disable' : '']"
               @click="openLink(item.link)"
             >
               <img :src="item.img" />

@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import PrimarySchoolView from '../views/PrimarySchool/PrimarySchoolView.vue';
 import DisasterPreventionView from '../views/Jan/DisasterPreventionView.vue';
 import FebruaryView from '@/views/Feb/FebruaryView.vue';
+import MarchView from '@/views/Mar/MarchView.vue';
 
 const base_url = import.meta.env.BASE_URL;
 
@@ -22,6 +23,11 @@ const router = createRouter({
       path: '/february',
       name: 'FebruaryView',
       component: FebruaryView
+    },
+    {
+      path: '/march',
+      name: 'MarchView',
+      component: MarchView
     }
   ]
 });

@@ -5,8 +5,8 @@ import lottie from 'lottie-web';
 import { useRouter } from 'vue-router';
 import ShareComponent from '@/components/ShareComponent.vue';
 import Triangle_Icon from '@/components/svg/triangle_icon.vue';
-// import Link_Icon from '@/components/svg/link_icon.vue';
-// import Arrow_Right from '@/components/svg/arrow_right.vue';
+import Link_Icon from '@/components/svg/link_icon.vue';
+import Arrow_Right from '@/components/svg/arrow_right.vue';
 // import Arrow_share from '@/components/svg/arrow_share_white.vue';
 import Month_Icon from '@/components/svg/month_icon.vue';
 import QAjson from '@/assets/lottie/QA.json';
@@ -22,7 +22,6 @@ import month_9 from '@/assets/flow_of_people/month/9.svg';
 import month_10 from '@/assets/flow_of_people/month/10.svg';
 import month_11 from '@/assets/flow_of_people/month/11.svg';
 import month_12 from '@/assets/flow_of_people/month/12.svg';
-
 const items = [
   { img: month_1, link: 'january' },
   {
@@ -105,14 +104,18 @@ const lottieAnimation = () => {
           </div>
         </div>
         <div class="col">
-          <h3>什麼是人流?什麼是人潮輪廓?</h3>
+          <h3>甚麼是氣候變遷指標?</h3>
           <p>
-            「人流」是指人群在不同時間與地點的動態分布數量；「人潮輪廓」是指透過人流的分析，可以掌握特定時間的人潮分布。以商業區人流分布為例，白天與夜間會因工作時段而有不同的分布狀況。
+            依據世界氣象組織(World Meteorological Organization,
+            WMO)建議的「氣候變遷偵測與指標」(Climate Change Detection and Indices,
+            CCDI)，是聚焦在極端高溫及低溫、暴雨以及乾旱等議題的指標。
           </p>
-          <img src="@/assets/flow_of_people/crowd_silhouette.png" alt="人潮輪廓" />
+          <div class="img-box">
+            <img src="@/assets/march/01.png" alt="臺灣氣候變遷的指標" />
+          </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>人流分布的統計</a>
+            <a>22項評估臺灣氣候變遷的指標</a>
           </div>
         </div>
       </div>
@@ -124,14 +127,16 @@ const lottieAnimation = () => {
           </div>
         </div>
         <div class="col">
-          <h3>如何由無個人隱私手機大數據解密人流分布?</h3>
+          <h3>科學家如何從巨量的氣候資料中提取出關鍵的資訊?</h3>
           <p>
-            各電信公司透過基地台與智慧型手機的相連，可以瞭解用戶所在位置，去除了個資及固定網格進行統計後，可以分析商圈活動、交通人潮，以及觀光據點遊客的分布狀況。
+            科學家透過歷史觀測數據，以及模擬不同溫室氣體的排放路徑，可以推估未來可能的衝擊，並計算出氣候變遷指標，提供不同情境下的氣候變遷資訊。
           </p>
-          <img src="@/assets/flow_of_people/distribution_of_people_flow.png" alt="人流分布" />
+          <div class="img-box">
+            <img src="@/assets/march/02.png" alt="氣候變遷指標" />
+          </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>手機大數據可以分析人群動態作息模式</a>
+            <a>氣候變遷指標結合歷史觀測與未來推估的數據進行計算</a>
           </div>
         </div>
       </div>
@@ -143,14 +148,18 @@ const lottieAnimation = () => {
           </div>
         </div>
         <div class="col">
-          <h3>人流分布技術在防災上之應用</h3>
+          <h3>氣候變遷指標怎麼用?</h3>
           <p>
-            緊急事件或災害發生後，利用手機大數據透過AI技術進行分析，可以找出人潮聚集處與事件(災害)熱點之交集，提供應變作業參考，相關資訊平時亦可作為減災、防災的規劃工作用。
+            主要是提供氣候未來可能變化的資訊，例如想知道當全球升溫超過2℃時可能造成的影響，可以查詢全球暖化程度
+            (Global Warming Levels, GWLs)
+            2℃時期「日高溫最大值」以及「暖晝天數」，了解白天高溫升高多少，以及高溫的日子增加多少。
           </p>
-          <img src="@/assets/flow_of_people/technology_application.png" alt="技術應用" />
+          <div class="img-box">
+            <img src="@/assets/march/03.png" alt="氣候變遷指標" />
+          </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>人流分布的統計</a>
+            <a>氣候變遷指標能呈現全球不同暖化程度下，可能的未來氣候</a>
           </div>
         </div>
       </div>
@@ -158,23 +167,25 @@ const lottieAnimation = () => {
       <div class="row d-flex justify-content-end">
         <div class="col-1 p-0">
           <div class="d-flex flex-row-reverse">
-            <div class="chapter d-flex align-items-center justify-content-center">04</div>
+            <div class="chapter d-flex align-items-center justify-content-center">03</div>
           </div>
         </div>
         <div class="col">
-          <h3>全面性人流分析技術</h3>
+          <h3>氣候變遷風險評估的最佳幫手</h3>
           <p>
-            與通訊業者合作，目前每10分鐘更新全國人流分布。人流分析主要是使用手機與基地台的連結資料，不用撥打或通話，就可精準的掌握人流狀態。
+            在國科會及學界的支持下，國家災害防救科技中心已出版三本《臺灣氣候變遷關鍵指標圖集》，是幫助大家解密未來氣候及進行風險評估的最佳幫手。
           </p>
-          <img src="@/assets/flow_of_people/analytical_skills.png" alt="技術應用" />
+          <div class="img-box">
+            <img src="@/assets/march/04.png" alt="氣候圖集" />
+          </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>以手機基地台的涵蓋範圍為基礎計算人流分布</a>
+            <a>國家災害防救科技中心已出版三本氣候圖集，可以提供查詢與下載。</a>
           </div>
         </div>
       </div>
       <!-- 相關連結 -->
-      <!-- <div class="row d-flex justify-content-end mt-5">
+      <div class="row d-flex justify-content-end mt-5">
         <div class="col-1 p-0">
           <div class="d-flex flex-row-reverse">
             <div class="chapter d-flex align-items-center justify-content-center">
@@ -185,26 +196,61 @@ const lottieAnimation = () => {
         <div class="link-container col">
           <h3>相關連結</h3>
           <div id="qa-doll"></div>
-          <div class="related-links d-flex align-items-center justify-content-start mb-4 mt-5">
+          <a
+            class="related-links d-flex align-items-center justify-content-start mb-4 mt-5"
+            href="https://tccip.ncdr.nat.gov.tw/km_publish_one.aspx?bid=20190410092206"
+            target="_blank"
+          >
             <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
             <div class="link-text d-flex align-items-center justify-content-between">
-              <div>內政部住宅統計資訊主題查詢</div>
+              <div>臺灣氣候變遷關鍵指標圖集</div>
               <Arrow_Right />
             </div>
-          </div>
-          <div class="related-links d-flex align-items-center justify-content-start">
+          </a>
+          <a
+            class="related-links d-flex align-items-center justify-content-start mb-4"
+            href="https://tccip.ncdr.nat.gov.tw/km_publish_one.aspx?bid=20210208202625"
+            target="_blank"
+          >
             <div class="link-chapter d-flex align-items-center justify-content-center">02</div>
             <div class="link-text d-flex align-items-center justify-content-between">
-              <div>內政部營建署-都市危險及老舊建築物重建專區</div>
+              <div>臺灣氣候變遷關鍵指標圖集-水文應用指標篇</div>
               <div>
                 <Arrow_Right />
               </div>
             </div>
-          </div>
+          </a>
+          <a
+            class="related-links d-flex align-items-center justify-content-start mb-4"
+            href="https://tccip.ncdr.nat.gov.tw/ds_02_01_ar6.aspx"
+            target="_blank"
+          >
+            <div class="link-chapter d-flex align-items-center justify-content-center">03</div>
+            <div class="link-text d-flex align-items-center justify-content-between">
+              <div>臺灣氣候變遷整合服務平台-AR6未來推估互動圖表</div>
+              <div>
+                <Arrow_Right />
+              </div>
+            </div>
+          </a>
+          <a
+            class="related-links d-flex align-items-center justify-content-start mb-4"
+            href="https://youtu.be/jdhKUKFcCN4"
+            target="_blank"
+          >
+            <div class="link-chapter d-flex align-items-center justify-content-center">04</div>
+            <div class="link-text d-flex align-items-center justify-content-between">
+              <div>臺灣氣候變遷整合服務平台-AR6未來推估互動圖表操作教學</div>
+              <div>
+                <Arrow_Right />
+              </div>
+            </div>
+          </a>
         </div>
-      </div> -->
+      </div>
       <!-- 分享 回大廳 -->
       <ShareComponent />
+
       <!-- 其他月份 -->
       <div class="other-month-row">
         <!-- <div class="background-color"></div> -->
@@ -230,7 +276,7 @@ const lottieAnimation = () => {
                 <a
                   type="button"
                   class="month-icon m-0 d-flex align-items-center justify-content-center"
-                  :class="[index >= 2 ? 'disable' : '']"
+                  :class="[index >= 3 ? 'disable' : '']"
                   @click="openLink(item.link)"
                 >
                   <img :src="item.img" />
@@ -259,6 +305,81 @@ h3 {
 }
 p {
   color: #333;
+}
+.modal-content-custom {
+  width: 100%;
+  .modal-header {
+    background-color: #24b2ae !important;
+    padding: 12px 40px !important;
+    .modal-title {
+      color: #fff !important;
+    }
+    .btn-close {
+      width: 26px;
+      height: 26px;
+      padding: 0;
+      background-image: url(@/assets/modal/close.svg);
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  }
+  .modal-body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 80px !important;
+    .share_btn {
+      width: 50%;
+      color: #24b2ae;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      margin: 0 25px;
+      cursor: pointer;
+      .btn_text {
+        width: 90px;
+      }
+      img {
+        width: 100%;
+        margin-bottom: 10%;
+      }
+      &:hover {
+        color: #1c8582;
+        transition: color 0.5s;
+      }
+    }
+  }
+  .modal-footer {
+    padding-top: 0;
+    border: none !important;
+    display: flex;
+    justify-content: center;
+    .btn {
+      font-size: 20px;
+      font-weight: 700;
+      color: #24b2ae;
+      padding: 14px 40px;
+      background-color: #fff;
+      border: #24b2ae 1px solid;
+      border-radius: 20px;
+
+      &:hover {
+        background-color: #24b2ae;
+        color: #fff;
+      }
+    }
+  }
+}
+.img-box {
+  max-width: 790px;
+  width: 100%;
+  img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+  }
 }
 .chapter {
   width: 55px;
@@ -290,6 +411,8 @@ p {
   font-weight: 700;
 }
 .caption {
+  max-width: 790px;
+  width: 100%;
   font-size: 0.875em;
   font-weight: 400;
   letter-spacing: 0.56px;
@@ -300,7 +423,7 @@ p {
   #qa-doll {
     position: absolute;
     width: 55%;
-    bottom: 50%;
+    top: -10%;
     right: 0%;
     z-index: -1;
   }

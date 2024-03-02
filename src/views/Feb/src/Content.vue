@@ -71,7 +71,7 @@ const items = [
 ];
 const router = useRouter();
 const openLink = (link) => {
-  if (link == 'january' || link == 'february') {
+  if (link == 'january' || link == 'february' || link == 'march') {
     router.push(link);
   } else {
     alert('尚未開放');
