@@ -1,11 +1,9 @@
 <script setup>
 import { ref, onMounted, defineComponent } from 'vue';
 import ContentPage from './Content.vue';
-import Lottie_Start from './lottie/LottieStart.vue';
 
 defineComponent({
   components: {
-    Lottie_Start,
     ContentPage
   }
 });
@@ -26,10 +24,9 @@ onMounted(() => {
         <div class="col-4">
           <div class="img-container">
             <div class="start-box d-flex justify-content-center">
-              <Lottie_Start />
-            </div>
-            <div class="loop-box d-flex justify-content-center" v-if="lottieLoop">
-              <img src="@/assets/lottie/march/loop.gif" />
+              <video width="100%" autoplay muted>
+                <source src="@/assets/lottie/march/loop.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>

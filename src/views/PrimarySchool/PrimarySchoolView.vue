@@ -180,6 +180,7 @@ const clickHouse = (houseName) => {
     <div :class="[openAnimationBg ? 'loadingBg' : '']"></div>
     <SmallAnimation :open="openAnimation" />
   </div>
+  <!-- pc -->
   <div class="container-fluid p-0" v-if="screenSwitch == false">
     <div class="primary-school element-height">
       <div class="title-container">
@@ -365,11 +366,11 @@ const clickHouse = (houseName) => {
 .fullscreen-animation {
   position: fixed;
   width: 100%;
-  height: 100svh;
+  height: 200svh;
 }
 .loadingBg {
   width: 100%;
-  height: 100svh;
+  height: 200svh;
   background-color: #a06c57;
   opacity: 0.3;
   z-index: 998;

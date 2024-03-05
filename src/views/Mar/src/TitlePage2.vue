@@ -1,13 +1,6 @@
 <script setup>
-import { ref, watch, onMounted, defineComponent } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { useWindowSize } from '@vueuse/core';
-import Lottie_Start from './lottie/LottieStart.vue';
-
-defineComponent({
-  components: {
-    Lottie_Start,
-  }
-});
 
 const { width } = useWindowSize();
 
@@ -39,10 +32,9 @@ watch(
         <div class="col-6">
           <div class="img-container d-flex align-items-center">
             <div class="start-box d-flex justify-content-end">
-              <Lottie_Start />
-            </div>
-            <div class="loop-box d-flex justify-content-center" v-if="lottieLoop">
-              <img src="@/assets/lottie/march/loop.gif" />
+              <video width="100%" autoplay muted>
+                <source src="@/assets/lottie/march/loop.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
@@ -61,9 +53,10 @@ watch(
     </div>
     <div class="container-fluid custom-container" v-if="screenSwitch == true">
       <div class="img-container">
-        <Lottie_Start />
-        <div class="loop-box d-flex justify-content-center" v-if="lottieLoop">
-          <img src="@/assets/lottie/march/loop.gif" />
+        <div class="loop-box d-flex justify-content-center">
+          <video width="100%" autoplay muted>
+            <source src="@/assets/lottie/march/loop.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
       <div class="content-box">
@@ -119,6 +112,7 @@ h2 {
   }
   .loop-box {
     width: 100%;
+    height: 80vh;
     position: absolute;
     z-index: 15;
   }
