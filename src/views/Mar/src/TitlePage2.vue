@@ -2,32 +2,23 @@
 import { ref, watch, onMounted, defineComponent } from 'vue';
 import { useWindowSize } from '@vueuse/core';
 import Lottie_Start from './lottie/LottieStart.vue';
-import Lottie_Start2 from './lottie/LottieStart2.vue';
-import Lottie_Loop from './lottie/LottieLoop.vue';
 
 defineComponent({
   components: {
     Lottie_Start,
-    Lottie_Start2,
-    Lottie_Loop
   }
 });
 
 const { width } = useWindowSize();
 
-const fadeOut = ref(false);
-
-const lottieLoop = ref(false);
+const lottieLoop = ref(true);
 
 const screenSwitch = ref(false);
 
 onMounted(() => {
   setTimeout(() => {
-    fadeOut.value = true;
-  }, 1500);
-  setTimeout(() => {
-    lottieLoop.value = true;
-  }, 3000);
+    lottieLoop.value = false;
+  }, 7000);
 });
 
 watch(
@@ -50,11 +41,8 @@ watch(
             <div class="start-box d-flex justify-content-end">
               <Lottie_Start />
             </div>
-            <div class="begin-box d-flex justify-content-end">
-              <Lottie_Start2 :play-lottie="fadeOut" />
-            </div>
-            <div class="loop-box d-flex justify-content-end" v-if="lottieLoop">
-              <Lottie_Loop :play-lottie="lottieLoop" />
+            <div class="loop-box d-flex justify-content-center" v-if="lottieLoop">
+              <img src="@/assets/lottie/march/loop.gif" />
             </div>
           </div>
         </div>
@@ -74,9 +62,9 @@ watch(
     <div class="container-fluid custom-container" v-if="screenSwitch == true">
       <div class="img-container">
         <Lottie_Start />
-        <Lottie_Start2 :play-lottie="fadeOut" />
-        <Lottie_Loop :play-lottie="lottieLoop" v-if="lottieLoop == true" />
-        <!-- <img class="gif-bg" src="@/assets/lottie/march/loop.gif" v-if="lottieLoop == true" /> -->
+        <div class="loop-box d-flex justify-content-center" v-if="lottieLoop">
+          <img src="@/assets/lottie/march/loop.gif" />
+        </div>
       </div>
       <div class="content-box">
         <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />

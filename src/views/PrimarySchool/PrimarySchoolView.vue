@@ -167,6 +167,10 @@ const clickHouse = (houseName) => {
       break;
     case 'strategy-house-open-door':
       strategyOpen.openDoor = true;
+      setTimeout(() => {
+        alert('未開放');
+      }, 1000);
+      break;
   }
 };
 </script>
@@ -1073,7 +1077,6 @@ const clickHouse = (houseName) => {
     left: 79%;
     transform: translate(-50%, -50%);
     z-index: 994;
-    opacity: 0.7;
     #norm {
       position: absolute;
     }

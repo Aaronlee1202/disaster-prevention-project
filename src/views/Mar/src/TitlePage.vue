@@ -2,30 +2,20 @@
 import { ref, onMounted, defineComponent } from 'vue';
 import ContentPage from './Content.vue';
 import Lottie_Start from './lottie/LottieStart.vue';
-import Lottie_Start2 from './lottie/LottieStart2.vue';
-import Lottie_Loop from './lottie/LottieLoop.vue';
 
 defineComponent({
   components: {
     Lottie_Start,
-    Lottie_Start2,
-    Lottie_Loop,
     ContentPage
   }
 });
 
-const fadeOut = ref(false);
-
-const lottieLoop = ref(false);
+const lottieLoop = ref(true);
 
 onMounted(() => {
-  // console.log('title page');
   setTimeout(() => {
-    fadeOut.value = true;
-  }, 1500);
-  setTimeout(() => {
-    lottieLoop.value = true;
-  }, 3000);
+    lottieLoop.value = false;
+  }, 7000);
 });
 </script>
 
@@ -38,11 +28,8 @@ onMounted(() => {
             <div class="start-box d-flex justify-content-center">
               <Lottie_Start />
             </div>
-            <div class="begin-box d-flex justify-content-center">
-              <Lottie_Start2 :play-lottie="fadeOut" />
-            </div>
             <div class="loop-box d-flex justify-content-center" v-if="lottieLoop">
-              <Lottie_Loop :play-lottie="lottieLoop" />
+              <img src="@/assets/lottie/march/loop.gif" />
             </div>
           </div>
         </div>
