@@ -216,6 +216,8 @@ const clickHouse = (houseName) => {
           <Norm :norm-open="normOpen" />
         </div>
         <div class="norm-house-click">
+          <img class="finger-right" :src="rightClicked" />
+          <div class="mar-card">三月</div>
           <div class="door-click" @click="clickHouse('norm-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('norm-house-open-windows')"></div>
         </div>
@@ -309,6 +311,8 @@ const clickHouse = (houseName) => {
             <Norm :norm-open="normOpen" />
           </div>
           <div class="norm-house-click">
+            <img class="finger-right" :src="rightClicked" />
+            <div class="mar-card">三月</div>
             <div class="door-click" @click="clickHouse('norm-house-open-door')"></div>
             <div class="windows-click" @click="clickHouse('norm-house-open-windows')"></div>
           </div>
@@ -1088,6 +1092,28 @@ const clickHouse = (houseName) => {
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 995;
+    .finger-right {
+      position: absolute;
+      width: 25%;
+      top: 67%;
+      right: 75%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3.5s 0s infinite;
+    }
+    .mar-card {
+      position: absolute;
+      width: 30%;
+      top: 75%;
+      left: -35%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
     .door-click {
       position: absolute;
       width: 70px;
@@ -1493,6 +1519,28 @@ const clickHouse = (houseName) => {
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 995;
+    .finger-right {
+      position: absolute;
+      width: 25%;
+      top: 65%;
+      right: 70%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3.5s 0s infinite;
+    }
+    .mar-card {
+      position: absolute;
+      width: 30%;
+      top: 75%;
+      left: -30%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
     .door-click {
       position: absolute;
       width: 100px;
