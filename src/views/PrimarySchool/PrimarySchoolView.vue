@@ -148,28 +148,32 @@ const clickHouse = (houseName) => {
       }, 1000);
       break;
     case 'norm-house-open-windows':
-      normOpen.openWindows = true;
-      setTimeout(() => {
-        alert('未開放');
-      }, 1000);
+      // normOpen.openWindows = true;
+      // setTimeout(() => {
+      alert('未開放');
+      openAnimationBg.value = false;
+      // }, 1000);
       break;
     case 'twin-house-open-door':
-      twinOpen.openDoor = true;
-      setTimeout(() => {
-        alert('未開放');
-      }, 1000);
+      // twinOpen.openDoor = true;
+      // setTimeout(() => {
+      alert('未開放');
+      openAnimationBg.value = false;
+      // }, 1000);
       break;
     case 'twin-house-open-windows':
-      twinOpen.openWindows = true;
-      setTimeout(() => {
-        alert('未開放');
-      }, 1000);
+      // twinOpen.openWindows = true;
+      // setTimeout(() => {
+      alert('未開放');
+      openAnimationBg.value = false;
+      // }, 1000);
       break;
     case 'strategy-house-open-door':
-      strategyOpen.openDoor = true;
-      setTimeout(() => {
-        alert('未開放');
-      }, 1000);
+      // strategyOpen.openDoor = true;
+      // setTimeout(() => {
+      alert('未開放');
+      openAnimationBg.value = false;
+      // }, 1000);
       break;
   }
 };
@@ -202,7 +206,9 @@ const clickHouse = (houseName) => {
         </div>
         <div class="people-flow-click">
           <img class="finger" :src="clicked" />
+          <div class="jan-card">一月</div>
           <img class="finger-right" :src="rightClicked" />
+          <div class="feb-card">二月</div>
           <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
           <div class="windows-click" @click="clickHouse('people-flow-open-windows')"></div>
         </div>
@@ -291,7 +297,9 @@ const clickHouse = (houseName) => {
           </div>
           <div class="people-flow-click">
             <img class="finger" :src="clicked" />
-            <img class="finger-right" src="@/assets/primary_school/finger_right_default.png" />
+            <div class="jan-card">一月</div>
+            <img class="finger-right" :src="rightClicked" />
+            <div class="feb-card">二月</div>
             <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
             <div class="windows-click" @click="clickHouse('people-flow-open-windows')"></div>
           </div>
@@ -963,11 +971,39 @@ const clickHouse = (houseName) => {
       animation: move 3s 0s infinite;
       -webkit-animation: move 3s 0s infinite;
     }
+    .jan-card {
+      position: absolute;
+      width: 30%;
+      top: 70%;
+      left: -45%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
+    .feb-card {
+      position: absolute;
+      width: 30%;
+      top: 56%;
+      right: -37%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
     .finger-right {
       position: absolute;
       width: 25%;
-      top: 65%;
-      right: 75%;
+      top: 67%;
+      right: 85%;
       animation: move 3s 0s infinite;
       -webkit-animation: move 3.5s 0s infinite;
     }
@@ -1340,6 +1376,34 @@ const clickHouse = (houseName) => {
       animation: move 3s 0s infinite;
       -webkit-animation: move 3s 0s infinite;
     }
+    .jan-card {
+      position: absolute;
+      width: 30%;
+      top: 80%;
+      left: -25%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
+    .feb-card {
+      position: absolute;
+      width: 30%;
+      top: 56%;
+      right: -47%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
     .finger-right {
       position: absolute;
       width: 25%;
@@ -1684,6 +1748,16 @@ const clickHouse = (houseName) => {
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 995;
+    .jan-card {
+      width: 30%;
+      top: 68%;
+      left: -23%;
+    }
+    .feb-card {
+      width: 30%;
+      top: 56%;
+      right: -45%;
+    }
     .finger {
       position: absolute;
       width: 25%;
