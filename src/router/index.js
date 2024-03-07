@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+// import VueGtag from 'vue-gtag';
 import PrimarySchoolView from '../views/PrimarySchool/PrimarySchoolView.vue';
 import DisasterPreventionView from '../views/Jan/DisasterPreventionView.vue';
 import FebruaryView from '@/views/Feb/FebruaryView.vue';

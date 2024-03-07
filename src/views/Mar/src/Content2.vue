@@ -287,7 +287,7 @@ watch(
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>國家災害防救科技中心已出版三本氣候圖集，可以提供查詢與下載。</a>
+            <a style="line-height: 13px;">國家災害防救科技中心已出版三本氣候圖集，<br />可以提供查詢與下載。</a>
           </div>
         </div>
       </div>
