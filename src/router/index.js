@@ -13,22 +13,26 @@ const router = createRouter({
     {
       path: '/',
       name: 'PrimarySchoolView',
-      component: PrimarySchoolView
+      component: PrimarySchoolView,
+      meta: { title: '行政法人國災害防救科技中心-2024防災特輯防災小學堂' }
     },
     {
       path: '/january',
       name: 'DisasterPrevention',
-      component: DisasterPreventionView
+      component: DisasterPreventionView,
+      meta: { title: '行政法人國災害防救科技中心-2024防災特輯1月' }
     },
     {
       path: '/february',
       name: 'FebruaryView',
-      component: FebruaryView
+      component: FebruaryView,
+      meta: { title: '行政法人國災害防救科技中心-2024防災特輯2月' }
     },
     {
       path: '/march',
       name: 'MarchView',
-      component: MarchView
+      component: MarchView,
+      meta: { title: '行政法人國災害防救科技中心-2024防災特輯3月' }
     }
   ]
 });
@@ -44,4 +48,14 @@ const router = createRouter({
 //   }
 // });
 
+// 在路由導航守衛中動態設置網頁標題
+router.beforeEach((to, from, next) => {
+  // 從路由的 meta 屬性中獲取標題
+  const title = to.meta.title;
+  // 如果標題存在，則設置網頁標題
+  if (title) {
+    document.title = title;
+  }
+  next();
+});
 export default router;
