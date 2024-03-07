@@ -160,7 +160,7 @@ watch(
         </div>
       </div> -->
       <!-- 分享 回大廳 -->
-      <ShareComponent2 :screen-switch="screenSwitch"/>
+      <ShareComponent2 :screen-switch="screenSwitch" />
       <!-- 其他月份 -->
       <Other_Month :screen-switch="screenSwitch" />
     </div>
@@ -180,9 +180,9 @@ watch(
             </p>
             <img src="@/assets/flow_of_people/crowd_silhouette.png" alt="人潮輪廓" />
           </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
+          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>人流分布的統計</a>
+            <a class="small-caption">人流分布的統計</a>
           </div>
         </div>
       </div>
@@ -201,9 +201,9 @@ watch(
             </p>
             <img src="@/assets/flow_of_people/distribution_of_people_flow.png" alt="人流分布" />
           </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
+          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>手機大數據可以分析人群動態作息模式</a>
+            <a class="small-caption">手機大數據可以分析人群動態作息模式</a>
           </div>
         </div>
       </div>
@@ -222,9 +222,9 @@ watch(
             </p>
             <img src="@/assets/flow_of_people/technology_application.png" alt="技術應用" />
           </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
+          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>人流分布的統計</a>
+            <a class="small-caption">人流分布的統計</a>
           </div>
         </div>
       </div>
@@ -243,9 +243,9 @@ watch(
             </p>
             <img src="@/assets/flow_of_people/analytical_skills.png" alt="技術應用" />
           </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
+          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>以手機基地台的涵蓋範圍為基礎計算人流分布</a>
+            <a class="small-caption">以手機基地台的涵蓋範圍為基礎計算人流分布</a>
           </div>
         </div>
       </div>
@@ -286,7 +286,7 @@ watch(
       </div> -->
 
       <!-- 分享 回大廳 -->
-      <ShareComponent2 :screen-switch="screenSwitch"/>
+      <ShareComponent2 :screen-switch="screenSwitch" />
 
       <!-- 其他月份 -->
       <Other_Month :screen-switch="screenSwitch" />
@@ -545,6 +545,11 @@ p {
   }
   .chapter {
     margin-bottom: 5%;
+  }
+  .small-caption {
+    padding-top: 1px;
+    margin-left: 5px;
+    line-height: 21px;
   }
   .month-icon {
     margin: 0px 1rem 1rem 0px;

@@ -115,7 +115,7 @@ watch(
         <div class="row">
           <div class="col-3">
             <div class="d-flex flex-row-reverse">
-              <div class="chapter d-flex align-items-center justify-content-center">03</div>
+              <div class="chapter d-flex align-items-center justify-content-center">04</div>
             </div>
           </div>
           <div class="col-6">
@@ -220,9 +220,9 @@ watch(
             </p>
             <img src="@/assets/march/01.png" alt="臺灣氣候變遷的指標" />
           </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
+          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>22項評估臺灣氣候變遷的指標</a>
+            <a class="small-caption">22項評估臺灣氣候變遷的指標</a>
           </div>
         </div>
       </div>
@@ -241,9 +241,9 @@ watch(
             </p>
             <img src="@/assets/march/02.png" alt="氣候變遷指標" />
           </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
+          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>氣候變遷指標結合歷史觀測與未來推估的數據進行計算</a>
+            <a class="small-caption">氣候變遷指標結合歷史觀測與未來推估的數據進行計算</a>
           </div>
         </div>
       </div>
@@ -264,9 +264,9 @@ watch(
             </p>
             <img src="@/assets/march/03.png" alt="氣候變遷指標" />
           </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
+          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>氣候變遷指標能呈現全球不同暖化程度下，可能的未來氣候</a>
+            <a class="small-caption">氣候變遷指標能呈現全球不同暖化程度下，可能的未來氣候</a>
           </div>
         </div>
       </div>
@@ -275,7 +275,7 @@ watch(
         <div class="row">
           <div class="col-12">
             <div class="d-flex">
-              <div class="chapter d-flex align-items-center justify-content-center">03</div>
+              <div class="chapter d-flex align-items-center justify-content-center">04</div>
             </div>
           </div>
           <div class="col-12">
@@ -285,9 +285,11 @@ watch(
             </p>
             <img src="@/assets/march/04.png" alt="氣候圖集" />
           </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
+          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a style="line-height: 13px;">國家災害防救科技中心已出版三本氣候圖集，<br />可以提供查詢與下載。</a>
+            <a class="small-caption"
+              >國家災害防救科技中心已出版三本氣候圖集，<br />可以提供查詢與下載。</a
+            >
           </div>
         </div>
       </div>
@@ -631,6 +633,11 @@ p {
   }
   .chapter {
     margin-bottom: 5%;
+  }
+  .small-caption {
+    padding-top: 1px;
+    margin-left: 5px;
+    line-height: 21px;
   }
   .month-icon {
     margin: 0px 1rem 1rem 0px;

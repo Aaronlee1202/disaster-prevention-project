@@ -137,7 +137,7 @@ watch(
         </div>
       </div> -->
       <!-- 分享 回大廳 -->
-      <ShareComponent2 :screen-switch="screenSwitch"/>
+      <ShareComponent2 :screen-switch="screenSwitch" />
       <!-- 其他月份 -->
       <Other_Month :screen-switch="screenSwitch" />
     </div>
@@ -157,9 +157,9 @@ watch(
             </p>
             <img src="@/assets/february/01.png" alt="人潮輪廓" />
           </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
+          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>利用AI技術自動標記人流集中熱區</a>
+            <a class="small-caption">利用AI技術自動標記人流集中熱區</a>
           </div>
         </div>
       </div>
@@ -176,9 +176,9 @@ watch(
             <p>智慧人流分析的技術，可以預測正常狀況下人流的時空分布，找出人流集中熱區。</p>
             <img src="@/assets/february/02.png" alt="人流分布" />
           </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
+          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>偵測或判定未來人流集中熱區</a>
+            <a class="small-caption">偵測或判定未來人流集中熱區</a>
           </div>
         </div>
       </div>
@@ -197,9 +197,9 @@ watch(
             </p>
             <img src="@/assets/february/03.png" alt="技術應用" />
           </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
+          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>AI智慧研判人流聚集熱點</a>
+            <a class="small-caption">AI智慧研判人流聚集熱點</a>
           </div>
         </div>
       </div>
@@ -240,7 +240,7 @@ watch(
       </div> -->
 
       <!-- 分享 回大廳 -->
-      <ShareComponent2 :screen-switch="screenSwitch"/>
+      <ShareComponent2 :screen-switch="screenSwitch" />
 
       <!-- 其他月份 -->
       <Other_Month :screen-switch="screenSwitch" />
@@ -499,6 +499,11 @@ p {
   }
   .chapter {
     margin-bottom: 5%;
+  }
+  .small-caption {
+    padding-top: 1px;
+    margin-left: 5px;
+    line-height: 21px;
   }
   .month-icon {
     margin: 0px 1rem 1rem 0px;

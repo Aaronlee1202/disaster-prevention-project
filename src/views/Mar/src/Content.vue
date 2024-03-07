@@ -167,7 +167,7 @@ const lottieAnimation = () => {
       <div class="row d-flex justify-content-end">
         <div class="col-1 p-0">
           <div class="d-flex flex-row-reverse">
-            <div class="chapter d-flex align-items-center justify-content-center">03</div>
+            <div class="chapter d-flex align-items-center justify-content-center">04</div>
           </div>
         </div>
         <div class="col">
