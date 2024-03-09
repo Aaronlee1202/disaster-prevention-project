@@ -1,9 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 // import VueGtag from 'vue-gtag';
 import PrimarySchoolView from '../views/PrimarySchool/PrimarySchoolView.vue';
-import DisasterPreventionView from '../views/Jan/DisasterPreventionView.vue';
-import FebruaryView from '@/views/Feb/FebruaryView.vue';
-import MarchView from '@/views/Mar/MarchView.vue';
 
 const base_url = import.meta.env.BASE_URL;
 
@@ -13,26 +10,32 @@ const router = createRouter({
     {
       path: '/',
       name: 'PrimarySchoolView',
-      component: PrimarySchoolView,
+      component: () => PrimarySchoolView,
       meta: { title: '行政法人國災害防救科技中心-2024防災特輯防災小學堂' }
     },
     {
       path: '/january',
       name: 'DisasterPrevention',
-      component: DisasterPreventionView,
+      component: () => import('@/views/Jan/DisasterPreventionView.vue'),
       meta: { title: '行政法人國災害防救科技中心-2024防災特輯1月' }
     },
     {
       path: '/february',
       name: 'FebruaryView',
-      component: FebruaryView,
+      component: () => import('@/views/Feb/FebruaryView.vue'),
       meta: { title: '行政法人國災害防救科技中心-2024防災特輯2月' }
     },
     {
       path: '/march',
       name: 'MarchView',
-      component: MarchView,
+      component: () => import('@/views/Mar/MarchView.vue'),
       meta: { title: '行政法人國災害防救科技中心-2024防災特輯3月' }
+    },
+    {
+      path: '/april',
+      name: 'AprilView',
+      component: () => import('@/views/Apr/AprilView.vue'),
+      meta: { title: '行政法人國災害防救科技中心-2024防災特輯4月' }
     }
   ]
 });
