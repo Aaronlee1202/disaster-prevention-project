@@ -194,7 +194,7 @@ h2 {
   }
   .img-container {
     position: relative;
-    height: 90svh;
+    height: 100svh;
     // margin-bottom: 30px;
     width: 100% !important;
     #new-talisman-start {
