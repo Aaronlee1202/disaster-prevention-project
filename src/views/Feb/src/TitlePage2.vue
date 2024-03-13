@@ -208,8 +208,8 @@ h2 {
   }
   .img-container {
     position: relative;
-    height: 80svh;
-    margin-bottom: 30px;
+    height: 90svh;
+    // margin-bottom: 30px;
     width: 100% !important;
     #new-talisman-start {
       // 使用CSS的transform綁定來讓子div與父div保持一一樣大小
