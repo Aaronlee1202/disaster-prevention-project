@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import lottie from 'lottie-web';
-import newTalismanStart from '@/assets/lottie/february/start.json';
+import newTalismanStart from '@/assets/lottie/april/start.json';
 
 const newTalismanStartJson = ref(null);
 
@@ -16,7 +16,7 @@ function lottieAnimation() {
   newTalismanStartJson.value = lottie.loadAnimation({
     container: document.getElementById('new-talisman-start'),
     renderer: 'svg',
-    loop: true,
+    loop: false,
     autoplay: true,
     animationData: newTalismanStart
   });

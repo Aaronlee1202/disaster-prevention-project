@@ -2,20 +2,16 @@
 import { ref, watch, onMounted, defineComponent } from 'vue';
 import { useWindowSize } from '@vueuse/core';
 import Lottie_Start from './lottie/LottieStart.vue';
-import Lottie_Start2 from './lottie/LottieStart2.vue';
 import Lottie_Loop from './lottie/LottieLoop.vue';
 
 defineComponent({
   components: {
     Lottie_Start,
-    Lottie_Start2,
     Lottie_Loop
   }
 });
 
 const { width } = useWindowSize();
-
-const fadeOut = ref(false);
 
 const lottieLoop = ref(false);
 
@@ -23,11 +19,8 @@ const screenSwitch = ref(false);
 
 onMounted(() => {
   setTimeout(() => {
-    fadeOut.value = true;
-  }, 1500);
-  setTimeout(() => {
     lottieLoop.value = true;
-  }, 3600);
+  }, 4250);
 });
 
 watch(
@@ -47,11 +40,8 @@ watch(
       <div class="row d-flex align-items-center">
         <div class="col-6">
           <div class="img-container d-flex align-items-center">
-            <div class="start-box d-flex justify-content-end">
+            <div class="start-box d-flex justify-content-end" v-if="!lottieLoop">
               <Lottie_Start />
-            </div>
-            <div class="begin-box d-flex justify-content-end">
-              <Lottie_Start2 :play-lottie="fadeOut" />
             </div>
             <div class="loop-box d-flex justify-content-end">
               <Lottie_Loop :play-lottie="lottieLoop" v-if="lottieLoop" />
@@ -73,8 +63,7 @@ watch(
     </div>
     <div class="container-fluid custom-container" v-if="screenSwitch == true">
       <div class="img-container">
-        <Lottie_Start />
-        <Lottie_Start2 :play-lottie="fadeOut" />
+        <Lottie_Start v-if="!lottieLoop"/>
         <Lottie_Loop :play-lottie="lottieLoop" v-if="lottieLoop == true" />
       </div>
       <div class="content-box">
@@ -249,10 +238,10 @@ h2 {
   }
   .content-box {
     position: relative;
-    padding-top: 10%;
-    padding-left: 10%;
+    margin-bottom: 10%;
+    padding: 0 6%;
     img {
-      width: 60%;
+      width: 100%;
     }
   }
 }

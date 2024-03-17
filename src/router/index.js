@@ -4,7 +4,7 @@ import PrimarySchoolView from '../views/PrimarySchool/PrimarySchoolView.vue';
 import DisasterPreventionView from '../views/Jan/DisasterPreventionView.vue';
 import FebruaryView from '../views/Feb/FebruaryView.vue';
 import MarchView from '../views/Mar/MarchView.vue';
-// import AprilView from '../views/Apr/AprilView.vue';
+import AprilView from '../views/Apr/AprilView.vue';
 
 const base_url = import.meta.env.BASE_URL;
 
@@ -34,13 +34,13 @@ const router = createRouter({
       name: 'MarchView',
       component: MarchView,
       meta: { title: '行政法人國災害防救科技中心-2024防災特輯3月' }
+    },
+    {
+      path: '/april',
+      name: 'AprilView',
+      component: AprilView,
+      meta: { title: '行政法人國災害防救科技中心-2024防災特輯4月' }
     }
-    // {
-    //   path: '/april',
-    //   name: 'AprilView',
-    //   component: AprilView,
-    //   meta: { title: '行政法人國災害防救科技中心-2024防災特輯4月' }
-    // }
   ]
 });
 

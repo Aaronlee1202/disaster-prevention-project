@@ -34,20 +34,10 @@ const fingerImg = [finger_default, finger_pressed];
 const fingerRightImg = [finger_right_default, finger_right];
 const openAnimationBg = ref(false);
 // 按下手指
-const clicked = ref(fingerImg[0]);
-const rightClicked = ref(fingerRightImg[0]);
-const clickFinger = () => {
-  clicked.value = fingerImg[1];
-  setTimeout(() => {
-    clicked.value = fingerImg[0];
-  }, 1000);
-};
-const clickRightFinger = () => {
-  rightClicked.value = fingerRightImg[1];
-  setTimeout(() => {
-    rightClicked.value = fingerRightImg[0];
-  }, 1000);
-};
+const janFinger = ref(fingerImg[0]);
+const febFinger = ref(fingerRightImg[0]);
+const aprFinger = ref(fingerImg[0]);
+const marFinger = ref(fingerRightImg[0]);
 
 const lineShare = () => {
   window.open(`https://social-plugins.line.me/lineit/share?url=${window.location.href}`, '_blank');
@@ -114,65 +104,82 @@ const atmosphereOpen = reactive({
 });
 
 const router = useRouter();
+
+const doorOrWindows = (houseName) => {
+  openAnimationBg.value = true;
+  if (houseName.includes('open-door')) {
+    openAnimation.openDoor = true;
+    setTimeout(() => {
+      openAnimation.openDoor = false;
+      openAnimationBg.value = false;
+    }, 1000);
+  } else if (houseName.includes('open-windows')) {
+    openAnimation.openWindows = true;
+    setTimeout(() => {
+      openAnimation.openWindows = false;
+      openAnimationBg.value = false;
+    }, 1000);
+  }
+};
+
 // 點擊房子
 const clickHouse = (houseName) => {
-  openAnimationBg.value = true;
+  // doorOrWindows(houseName); //12個月全開後 在這邊判斷即可
   switch (houseName) {
     case 'people-flow-open-door':
+      doorOrWindows(houseName);
       flowOpen.openDoor = true;
-      openAnimation.openDoor = true;
-      clickRightFinger();
+      febFinger.value = fingerRightImg[1];
       setTimeout(() => {
+        febFinger.value = fingerRightImg[0];
+
         router.push('january');
-        openAnimation.openDoor = false;
-        openAnimationBg.value = false;
       }, 1000);
       break;
     case 'people-flow-open-windows':
+    doorOrWindows(houseName);
       flowOpen.openWindows = true;
-      openAnimation.openWindows = true;
-      clickFinger();
+      janFinger.value = fingerImg[1];
       setTimeout(() => {
+        janFinger.value = fingerImg[0];
+
         router.push('february');
-        openAnimation.openWindows = false;
-        openAnimationBg.value = false;
       }, 1000);
       break;
     case 'norm-house-open-door':
+    doorOrWindows(houseName);
       normOpen.openDoor = true;
-      openAnimation.openDoor = true;
+      marFinger.value = fingerRightImg[1];
       setTimeout(() => {
+        marFinger.value = fingerRightImg[0];
         router.push('march');
-        openAnimation.openDoor = false;
-        openAnimationBg.value = false;
       }, 1000);
       break;
     case 'norm-house-open-windows':
-      // normOpen.openWindows = true;
-      // setTimeout(() => {
-      alert('未開放');
-      openAnimationBg.value = false;
-      // }, 1000);
+    doorOrWindows(houseName);
+      normOpen.openWindows = true;
+      aprFinger.value = fingerImg[1];
+      setTimeout(() => {
+        aprFinger.value = fingerImg[0];
+        router.push('april');
+      }, 1000);
       break;
     case 'twin-house-open-door':
       // twinOpen.openDoor = true;
       // setTimeout(() => {
       alert('未開放');
-      openAnimationBg.value = false;
       // }, 1000);
       break;
     case 'twin-house-open-windows':
       // twinOpen.openWindows = true;
       // setTimeout(() => {
       alert('未開放');
-      openAnimationBg.value = false;
       // }, 1000);
       break;
     case 'strategy-house-open-door':
       // strategyOpen.openDoor = true;
       // setTimeout(() => {
       alert('未開放');
-      openAnimationBg.value = false;
       // }, 1000);
       break;
   }
@@ -205,9 +212,9 @@ const clickHouse = (houseName) => {
           <PeopleFlow :flow-open="flowOpen" />
         </div>
         <div class="people-flow-click">
-          <img class="finger" :src="clicked" />
+          <img class="finger" :src="janFinger" />
           <div class="jan-card">一月</div>
-          <img class="finger-right" :src="rightClicked" />
+          <img class="finger-right" :src="febFinger" />
           <div class="feb-card">二月</div>
           <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
           <div class="windows-click" @click="clickHouse('people-flow-open-windows')"></div>
@@ -216,7 +223,9 @@ const clickHouse = (houseName) => {
           <Norm :norm-open="normOpen" />
         </div>
         <div class="norm-house-click">
-          <img class="finger-right" :src="rightClicked" />
+          <img class="finger" :src="aprFinger" />
+          <div class="apr-card">四月</div>
+          <img class="finger-right" :src="marFinger" />
           <div class="mar-card">三月</div>
           <div class="door-click" @click="clickHouse('norm-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('norm-house-open-windows')"></div>
@@ -298,9 +307,9 @@ const clickHouse = (houseName) => {
             <PeopleFlow :flow-open="flowOpen" />
           </div>
           <div class="people-flow-click">
-            <img class="finger" :src="clicked" />
+            <img class="finger" :src="janFinger" />
             <div class="jan-card">一月</div>
-            <img class="finger-right" :src="rightClicked" />
+            <img class="finger-right" :src="febFinger" />
             <div class="feb-card">二月</div>
             <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
             <div class="windows-click" @click="clickHouse('people-flow-open-windows')"></div>
@@ -311,8 +320,10 @@ const clickHouse = (houseName) => {
             <Norm :norm-open="normOpen" />
           </div>
           <div class="norm-house-click">
-            <img class="finger-right" :src="rightClicked" />
+            <img class="finger-right" :src="marFinger" />
             <div class="mar-card">三月</div>
+            <img class="finger" :src="aprFinger" />
+            <div class="apr-card">四月</div>
             <div class="door-click" @click="clickHouse('norm-house-open-door')"></div>
             <div class="windows-click" @click="clickHouse('norm-house-open-windows')"></div>
           </div>
@@ -1092,10 +1103,32 @@ const clickHouse = (houseName) => {
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 995;
+    .finger {
+      position: absolute;
+      width: 25%;
+      top: 70%;
+      left: 70%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3s 0s infinite;
+    }
+    .apr-card {
+      position: absolute;
+      width: 30%;
+      top: 73%;
+      right: -30%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
     .finger-right {
       position: absolute;
       width: 25%;
-      top: 67%;
+      top: 70%;
       right: 75%;
       animation: move 3s 0s infinite;
       -webkit-animation: move 3.5s 0s infinite;
@@ -1541,6 +1574,28 @@ const clickHouse = (houseName) => {
       border-radius: 4px;
       background-color: #fdfaec;
     }
+    .finger {
+      position: absolute;
+      width: 25%;
+      top: 65%;
+      left: 70%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3s 0s infinite;
+    }
+    .apr-card {
+      position: absolute;
+      width: 30%;
+      top: 70%;
+      right: -30%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
     .door-click {
       position: absolute;
       width: 100px;
@@ -1796,6 +1851,7 @@ const clickHouse = (houseName) => {
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 995;
+
     .jan-card {
       width: 30%;
       top: 68%;
@@ -1918,6 +1974,32 @@ const clickHouse = (houseName) => {
       top: 45%;
       right: 13%;
       // background-color: #3f3a3a60;
+    }
+    .mar-card {
+      width: 30%;
+      top: 75%;
+      left: -23%;
+    }
+    .apr-card {
+      width: 30%;
+      top: 68%;
+      right: -30%;
+    }
+    .finger {
+      position: absolute;
+      width: 25%;
+      top: 65%;
+      left: 70%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3s 0s infinite;
+    }
+    .finger-right {
+      position: absolute;
+      width: 25%;
+      top: 70%;
+      right: 65%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3.5s 0s infinite;
     }
   }
   #norm-house {
