@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, defineComponent } from 'vue';
-import ContentPage from './Content.vue';
+import RightContent from './RightContent.vue';
 import Lottie_Start from './lottie/LottieStart.vue';
 import Lottie_Start2 from './lottie/LottieStart2.vue';
 import Lottie_Loop from './lottie/LottieLoop.vue';
@@ -10,7 +10,7 @@ defineComponent({
     Lottie_Start,
     Lottie_Start2,
     Lottie_Loop,
-    ContentPage
+    RightContent
   }
 });
 
@@ -59,7 +59,7 @@ onMounted(() => {
                 </p>
               </div>
             </div>
-            <ContentPage></ContentPage>
+            <RightContent></RightContent>
           </div>
         </div>
       </div>

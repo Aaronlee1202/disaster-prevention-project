@@ -1,10 +1,10 @@
 <script setup>
 import { ref, onMounted, defineComponent } from 'vue';
-import ContentPage from './Content.vue';
+import RightContent from './RightContent.vue';
 
 defineComponent({
   components: {
-    ContentPage
+    RightContent
   }
 });
 
@@ -43,7 +43,7 @@ onMounted(() => {
                 </p>
               </div>
             </div>
-            <ContentPage></ContentPage>
+            <RightContent></RightContent>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, defineComponent } from 'vue';
-import ContentPage from './Content.vue';
+import RightContent from './RightContent.vue';
 import Lottie_Start from './lottie/LottieStart.vue';
 import Lottie_Loop from './lottie/LottieLoop.vue';
 
@@ -8,16 +8,16 @@ defineComponent({
   components: {
     Lottie_Start,
     Lottie_Loop,
-    ContentPage
+    RightContent
   }
 });
 
-const lottieLoop = ref(false);
+const fadeOut = ref(false);
 
 onMounted(() => {
   setTimeout(() => {
-    lottieLoop.value = true;
-  }, 4250);
+    fadeOut.value = true;
+  }, 1500);
 });
 </script>
 
@@ -27,11 +27,11 @@ onMounted(() => {
       <div class="row d-flex align-items-start">
         <div class="col-4">
           <div class="img-container">
-            <div class="start-box d-flex justify-content-center" v-if="!lottieLoop">
-              <Lottie_Start />
+            <div class="start-box d-flex justify-content-center">
+              <Lottie_Start :fade-out="fadeOut" />
             </div>
-            <div class="loop-box d-flex justify-content-center" v-if="lottieLoop">
-              <Lottie_Loop :play-lottie="lottieLoop" />
+            <div class="loop-box d-flex justify-content-center">
+              <Lottie_Loop :play-lottie="fadeOut" />
             </div>
           </div>
         </div>
@@ -40,15 +40,16 @@ onMounted(() => {
             <div class="title-box">
               <div>
                 <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
-                <h2 class="mt-5 mb-4">臺灣氣候變遷指標圖集</h2>
+                <!-- <h4 class="small-title">人流樓</h4> -->
+                <h2 class="mt-5 mb-4">人手一機的防災新法寶</h2>
                 <p>
-                  發行日期 | 2024.04.01 <br />
-                  作者 | 氣變組 黃嬿蓁、王俊寓、陳又瑄 <br />
-                  審稿人 | 陳永明
+                  發行日期 | 2024.01.01 <br />
+                  作者 | 地人組 黃明偉 <br />
+                  審稿人 | 柯孝勳
                 </p>
               </div>
             </div>
-            <ContentPage></ContentPage>
+            <RightContent></RightContent>
           </div>
         </div>
       </div>
@@ -79,15 +80,10 @@ h2 {
     opacity: 1;
     transition: opacity 1s ease;
   }
-  .begin-box {
-    width: 100%;
-    position: absolute;
-    z-index: 15;
-  }
   .loop-box {
     width: 100%;
     position: absolute;
-    z-index: 20;
+    z-index: 5;
   }
   .fade-out {
     opacity: 0;
@@ -100,7 +96,7 @@ h2 {
   overflow-x: hidden;
 }
 .content-page::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 @media (max-height: 790px) {
   .img-container {
