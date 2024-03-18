@@ -1,76 +1,89 @@
 <script setup>
-import { ref, onMounted, defineComponent } from 'vue';
-import ContentPage from './Content.vue';
+import { ref, watch, onMounted, defineComponent } from 'vue';
+import { useWindowSize } from '@vueuse/core';
 import Lottie_Start from './lottie/LottieStart.vue';
-import Lottie_Start2 from './lottie/LottieStart2.vue';
 import Lottie_Loop from './lottie/LottieLoop.vue';
 
 defineComponent({
   components: {
     Lottie_Start,
-    Lottie_Start2,
-    Lottie_Loop,
-    ContentPage
+    Lottie_Loop
   }
 });
 
-const fadeOut = ref(false);
+const { width } = useWindowSize();
 
 const lottieLoop = ref(false);
 
+const screenSwitch = ref(false);
+
 onMounted(() => {
-  // console.log('title page');
-  setTimeout(() => {
-    fadeOut.value = true;
-  }, 1500);
   setTimeout(() => {
     lottieLoop.value = true;
-  }, 3600);
+  }, 4250);
 });
+
+watch(
+  width,
+  (newVal) => {
+    if (newVal <= 768) screenSwitch.value = true;
+    else screenSwitch.value = false;
+  },
+  // 立即執行
+  { immediate: true }
+);
 </script>
 
 <template>
   <div id="new-talisman">
-    <div class="container custom-container">
-      <div class="row d-flex align-items-start">
-        <div class="col-4">
-          <div class="img-container">
-            <div class="start-box d-flex justify-content-center">
+    <div class="container custom-container" v-if="screenSwitch == false">
+      <div class="row d-flex align-items-center">
+        <div class="col-6">
+          <div class="img-container d-flex align-items-center">
+            <div class="start-box d-flex justify-content-end" v-if="!lottieLoop">
               <Lottie_Start />
             </div>
-            <div class="begin-box d-flex justify-content-center">
-              <Lottie_Start2 :play-lottie="fadeOut" />
-            </div>
-            <div class="loop-box d-flex justify-content-center" v-if="lottieLoop">
-              <Lottie_Loop :play-lottie="lottieLoop" />
+            <div class="loop-box d-flex justify-content-end">
+              <Lottie_Loop :play-lottie="lottieLoop" v-if="lottieLoop" />
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="content-box content-page">
-            <div class="title-box">
-              <div>
-                <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
-                <h2 class="mt-5 mb-4">臺灣氣候變遷指標圖集</h2>
-                <p>
-                  發行日期 | 2024.04.01 <br />
-                  作者 | 氣變組 黃嬿蓁、王俊寓、陳又瑄 <br />
-                  審稿人 | 陳永明
-                </p>
-              </div>
-            </div>
-            <ContentPage></ContentPage>
+        <div class="col-6">
+          <div class="content-box">
+            <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
+            <h2 class="mt-5 mb-4">臺灣氣候變遷指標圖集</h2>
+            <p>
+              發行日期 | 2024.04.01 <br />
+              作者 | 氣變組 黃嬿蓁、王俊寓、陳又瑄 <br />
+              審稿人 | 陳永明
+            </p>
           </div>
         </div>
       </div>
+    </div>
+    <div class="container-fluid custom-container" v-if="screenSwitch == true">
+      <div class="img-container">
+        <Lottie_Start v-if="!lottieLoop"/>
+        <Lottie_Loop :play-lottie="lottieLoop" v-if="lottieLoop == true" />
+      </div>
+      <div class="content-box">
+        <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
+        <h2>臺灣氣候變遷指標圖集</h2>
+        <p>
+          發行日期 | 2024.04.01 <br />
+          作者 | 氣變組 黃嬿蓁、王俊寓、陳又瑄 <br />
+          審稿人 | 陳永明
+        </p>
+      </div>
+      <div class="dashed-line"></div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-#new-talisman {
-  position: relative;
-  width: 100%;
+.custom-container {
+  // height: 100%;
+  border-bottom: 5px dashed #b8806f;
 }
 .small-title {
   margin: 1rem 0;
@@ -86,44 +99,28 @@ h2 {
   .start-box {
     width: 100%;
     position: absolute;
-    z-index: 10;
+    z-index: 5;
     opacity: 1;
     transition: opacity 1s ease;
   }
   .begin-box {
     width: 100%;
     position: absolute;
-    z-index: 15;
+    z-index: 10;
   }
   .loop-box {
     width: 100%;
     position: absolute;
-    z-index: 20;
+    z-index: 15;
   }
   .fade-out {
     opacity: 0;
   }
 }
-.content-page {
-  width: 100%;
-  height: 90vh;
-  overflow: scroll;
-  overflow-x: hidden;
-}
-.content-page::-webkit-scrollbar {
-  display: none;
-}
-@media (max-height: 790px) {
+@media (max-height: 900px) and (min-width: 1200px) {
   .img-container {
     div {
-      width: 90% !important;
-    }
-  }
-}
-@media (min-width: 1920px) {
-  .img-container {
-    div {
-      width: 100%;
+      width: 70% !important;
     }
   }
 }
@@ -134,19 +131,16 @@ h2 {
   }
   .img-container {
     position: relative;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
     div {
-      width: 100%;
+      width: 65%;
     }
   }
   .content-box {
-    .title-box {
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      padding-left: 9%;
-      img {
-        width: 50%;
-      }
+    img {
+      width: 70%;
     }
   }
 }
@@ -157,19 +151,97 @@ h2 {
   }
   .img-container {
     position: relative;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    div {
+      width: 70%;
+    }
+  }
+  .content-box {
+    img {
+      width: 70%;
+    }
+  }
+}
+@media (max-width: 992px) {
+  .custom-container {
+    padding-top: 20%;
+  }
+  .img-container {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
     div {
       width: 100%;
     }
   }
   .content-box {
-    .title-box {
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      padding-left: 9%;
-      img {
-        width: 50%;
-      }
+    img {
+      width: 80%;
+    }
+  }
+}
+// 手機板
+@media (max-width: 768px) {
+  .custom-container {
+    padding-top: 15%;
+    border-bottom: 0px;
+  }
+  .dashed-line {
+    border-bottom: 5px dashed #b8806f;
+  }
+  .col {
+    padding: 0;
+  }
+  .img-container {
+    position: relative;
+    height: 80svh;
+    width: 100% !important;
+    #new-talisman-start {
+      // 使用CSS的transform綁定來讓子div與父div保持一一樣大小
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      transform: scale(1);
+      width: 100% !important;
+      z-index: 5;
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+    #new-talisman-begin {
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      transform: scale(1);
+      width: 100% !important;
+      z-index: 10;
+    }
+    #new-talisman-loop {
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      transform: scale(1);
+      width: 100% !important;
+      z-index: 15;
+    }
+    .fade-out {
+      opacity: 0;
+    }
+  }
+  .content-box {
+    position: relative;
+    margin-bottom: 10%;
+    padding: 0 6%;
+    img {
+      width: 100%;
     }
   }
 }

@@ -1,8 +1,8 @@
 <script setup>
 import { watch, ref, onMounted } from 'vue';
-import Title_Page from './src/TitlePage.vue';
-import Title_Page_2 from './src/TitlePage2.vue';
-import Content_2 from './src/Content2.vue';
+import LeftTitlePage from './src/LeftTitlePage.vue';
+import TitlePage from './src/TitlePage.vue';
+import Content from './src/Content.vue';
 import { useWindowSize, useWindowScroll } from '@vueuse/core';
 
 const { width } = useWindowSize();
@@ -27,9 +27,9 @@ watch(
 </script>
 
 <template>
-  <Title_Page v-if="!screenSwitch" />
-  <Title_Page_2 v-if="screenSwitch" />
-  <Content_2 v-if="screenSwitch" />
+  <LeftTitlePage v-if="!screenSwitch" />
+  <TitlePage v-if="screenSwitch" />
+  <Content v-if="screenSwitch" />
 </template>
 
 <style lang="scss" scoped></style>

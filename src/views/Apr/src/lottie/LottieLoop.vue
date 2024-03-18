@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, watch, onBeforeUnmount } from 'vue';
 import lottie from 'lottie-web';
-import newTalisman from '@/assets/lottie/february/loop.json';
+import newTalisman from '@/assets/lottie/april/loop.json';
 
 const newTalismanJson = ref(null);
 
@@ -19,7 +19,6 @@ const props = defineProps({
 watch(
   () => props.playLottie,
   (newVal) => {
-    console.log('playLottie 3', newVal);
     if (newVal) {
       newTalismanJson.value.goToAndPlay(1, true);
     }
