@@ -414,7 +414,7 @@ const clickHouse = (houseName) => {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-image: url('@/assets/primary_school/background/2560x1440.png') !important;
+    background-image: url('@/assets/primary_school/background/2560x1440_compressed.png') !important;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -662,19 +662,19 @@ const clickHouse = (houseName) => {
   }
 }
 @media screen and (min-width: 1600px) and (max-width: 2559px) {
-  .house-bg {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-image: url('@/assets/primary_school/background/1920x1440.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    z-index: -999;
-    top: 59%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  // .house-bg {
+  //   width: 100%;
+  //   height: 100%;
+  //   position: absolute;
+  //   // background-image: url('@/assets/primary_school/background/1920x1440.png');
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   background-position: center;
+  //   z-index: -999;
+  //   top: 59%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  // }
   .share-container {
     position: absolute;
     max-width: 600px !important;
@@ -968,7 +968,7 @@ const clickHouse = (houseName) => {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-image: url('@/assets/primary_school/background/1920x1440.png');
+    background-image: url('@/assets/primary_school/background/1920x1440_compressed.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -1387,7 +1387,7 @@ const clickHouse = (houseName) => {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-image: url('@/assets/primary_school/background/768x1024.png');
+    background-image: url('@/assets/primary_school/background/768x1024_compressed.png');
     // background-image: url('@/assets/primary_school/background/375.svg');
     background-repeat: no-repeat;
     background-size: cover;
