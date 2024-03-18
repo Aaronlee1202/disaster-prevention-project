@@ -11,7 +11,7 @@ const atmosphereOpenDoorJson = ref(null);
 const atmosphereOpenWindowsJson = ref(null);
 
 onMounted(() => {
-  lottieAnimation();
+    lottieAnimation();
 });
 
 onBeforeUnmount(() => {

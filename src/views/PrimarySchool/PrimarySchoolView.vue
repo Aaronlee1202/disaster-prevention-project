@@ -1,14 +1,14 @@
 <script setup>
-import { ref, reactive, watch, defineComponent } from 'vue';
+import { ref, reactive, watch, defineComponent, defineAsyncComponent } from 'vue';
 import { useWindowSize } from '@vueuse/core';
 import { useRouter } from 'vue-router';
 import SmallAnimation from './src/SmallAnimation.vue';
-import PeopleFlow from './src/PeopleFlow.vue';
-import Norm from './src/norm.vue';
-import twin from './src/twin.vue';
-import strategy from './src/strategy.vue';
-import potential from './src/potential.vue';
-import atmosphere from './src/atmosphere.vue';
+// import PeopleFlow from './src/PeopleFlow.vue';
+// import Norm from './src/norm.vue';
+// import twin from './src/twin.vue';
+// import strategy from './src/strategy.vue';
+// import potential from './src/potential.vue';
+// import atmosphere from './src/atmosphere.vue';
 import finger_default from '@/assets/primary_school/Default.png';
 import finger_pressed from '@/assets/primary_school/Pressed.png';
 import finger_right_default from '@/assets/primary_school/finger_right_default.png';
@@ -17,6 +17,13 @@ import arrow_share from '@/components/svg/arrow_share.vue';
 import facebook_icon from '@/components/svg/facebook_icon.vue';
 import line_icon from '@/components/svg/line_icon.vue';
 import Home_Icon from '@/components/svg/home_icon.vue';
+
+const PeopleFlow = defineAsyncComponent(() => import('./src/PeopleFlow.vue'));
+const Norm = defineAsyncComponent(() => import('./src/norm.vue'));
+const twin = defineAsyncComponent(() => import('./src/twin.vue'));
+const strategy = defineAsyncComponent(() => import('./src/strategy.vue'));
+const potential = defineAsyncComponent(() => import('./src/potential.vue'));
+const atmosphere = defineAsyncComponent(() => import('./src/atmosphere.vue'));
 
 defineComponent({
   components: {
@@ -33,7 +40,7 @@ defineComponent({
 const fingerImg = [finger_default, finger_pressed];
 const fingerRightImg = [finger_right_default, finger_right];
 const openAnimationBg = ref(false);
-// 按下手指
+// 按下的手指
 const janFinger = ref(fingerImg[0]);
 const febFinger = ref(fingerRightImg[0]);
 const aprFinger = ref(fingerImg[0]);
@@ -105,6 +112,7 @@ const atmosphereOpen = reactive({
 
 const router = useRouter();
 
+// 判斷點擊門或窗 並執行滿版轉場動畫
 const doorOrWindows = (houseName) => {
   openAnimationBg.value = true;
   if (houseName.includes('open-door')) {
@@ -122,7 +130,7 @@ const doorOrWindows = (houseName) => {
   }
 };
 
-// 點擊房子
+// 點擊房子 判斷開門或開窗
 const clickHouse = (houseName) => {
   // doorOrWindows(houseName); //12個月全開後 在這邊判斷即可
   switch (houseName) {
@@ -137,7 +145,7 @@ const clickHouse = (houseName) => {
       }, 1000);
       break;
     case 'people-flow-open-windows':
-    doorOrWindows(houseName);
+      doorOrWindows(houseName);
       flowOpen.openWindows = true;
       janFinger.value = fingerImg[1];
       setTimeout(() => {
@@ -147,7 +155,7 @@ const clickHouse = (houseName) => {
       }, 1000);
       break;
     case 'norm-house-open-door':
-    doorOrWindows(houseName);
+      doorOrWindows(houseName);
       normOpen.openDoor = true;
       marFinger.value = fingerRightImg[1];
       setTimeout(() => {
@@ -156,7 +164,7 @@ const clickHouse = (houseName) => {
       }, 1000);
       break;
     case 'norm-house-open-windows':
-    doorOrWindows(houseName);
+      doorOrWindows(houseName);
       normOpen.openWindows = true;
       aprFinger.value = fingerImg[1];
       setTimeout(() => {

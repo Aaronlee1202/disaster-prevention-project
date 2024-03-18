@@ -78,7 +78,7 @@ defineProps({
 const thisMonth = ref();
 onMounted(() => {
   const getMonth = new Date().getUTCMonth();
-  thisMonth.value = getMonth + 1;
+  thisMonth.value = getMonth;
 });
 </script>
 
@@ -107,7 +107,7 @@ onMounted(() => {
             <a
               type="button"
               class="month-icon m-0 d-flex align-items-center justify-content-center"
-              :class="[index >= thisMonth ? 'disable' : '']"
+              :class="[index > thisMonth ? 'disable' : '']"
               @click="openLink(item.link)"
             >
               <img :src="item.img" />
@@ -140,7 +140,7 @@ onMounted(() => {
           >
             <div
               class="month-icon m-0 d-flex align-items-center justify-content-center"
-              :class="[index >= thisMonth ? 'disable' : '']"
+              :class="[index > thisMonth ? 'disable' : '']"
               @click="openLink(item.link)"
             >
               <img :src="item.img" />
