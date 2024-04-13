@@ -173,10 +173,13 @@ const clickHouse = (houseName) => {
       }, 1000);
       break;
     case 'twin-house-open-door':
-      // twinOpen.openDoor = true;
-      // setTimeout(() => {
-      alert('未開放');
-      // }, 1000);
+      doorOrWindows(houseName);
+      normOpen.openDoor = true;
+      marFinger.value = fingerRightImg[1];
+      setTimeout(() => {
+        marFinger.value = fingerRightImg[0];
+        router.push('may');
+      }, 1000);
       break;
     case 'twin-house-open-windows':
       // twinOpen.openWindows = true;

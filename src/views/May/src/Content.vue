@@ -52,15 +52,15 @@ watch(
             </div>
           </div>
           <div class="col-6">
-            <h3>氣候變遷指標圖集的內容有什麼?</h3>
+            <h3>數位孿生—數位化的現實世界</h3>
             <p>
-              提供11項溫度指標和11項降雨指標，透過指標呈現的空間分布、時間序列變化和統計圖表資訊，幫助理解當全球平均溫度上升到不同程度下，臺灣氣候變遷的狀況。
+              數位孿生是複製一個現實世界的數位動態，透過物聯網（IoT）技術，重置現實中的建物與建設，在虛擬環境中模擬各種動態的時空變化。
             </p>
-            <img src="@/assets/april/01.png" />
+            <img src="@/assets/may/01.png" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>在多模式模擬下，使用圖表來解讀與比較全球不同暖化程度和排放情境的推估數據。</a>
+            <a>結合物聯網技術，可及時重現現實世界中的人事時地物。</a>
           </div>
         </div>
       </div>
@@ -73,26 +73,16 @@ watch(
             </div>
           </div>
           <div class="col-6">
-            <h3>如何快速查詢氣候變遷指標資訊?</h3>
+            <h3>虛實整合—拓展科技應用性</h3>
             <p>
-              利用線上版互動式的圖集，可以從網頁圖台選取有興趣的氣候變遷指標、暖化情境及區域等，快速查詢其他相關的指標。
+              情境整合結合虛擬現實(Virtual Reality，VR)、擴增現實(Augmented
+              Reality，AR)和現實世界，創造出多樣化的互動，可應用於各種領域。
             </p>
-            <img src="@/assets/april/02.png" />
+            <img src="@/assets/may/02.png" />
           </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-1 mt-1">
+          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>多情境、多模式的完整評估</a>
-          </div>
-
-          <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6">
-              <img src="@/assets/april/02-1.png" />
-            </div>
-            <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
-              <Triangle_Icon />
-              <a>高解析度的空間分布</a>
-            </div>
+            <a>在設計和工程中可以使用情境整合來進行原型設計和模擬</a>
           </div>
         </div>
       </div>
@@ -105,15 +95,39 @@ watch(
             </div>
           </div>
           <div class="col-6">
-            <h3>這系列圖集幫你解讀氣候變遷重點指標</h3>
+            <h3>數位孿生技術於防災應用</h3>
             <p>
-              想知道全球成功減碳之下，可能面臨的情況嗎?氣候變遷指標圖集會依據議題，由圖表來呈現可能的氣候變遷趨勢，這個服務平台可以隨時查詢你關心的指標。
+              數位分身是真實世界的縮影，將實際的地理數據和環境資訊與虛擬世界結合，進行多視角的時空模擬。例如展示颱風、地震、洪水等災害衝擊，強化災害防救工作。
             </p>
-            <img src="@/assets/april/03.png" />
+            <img src="@/assets/may/03.png" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>透過視覺化圖表了解你所關注的氣候變遷議題</a>
+            <a>將實際的地理數據和氣象資訊與虛擬地圖結合，可監測實際的災害風險</a>
+          </div>
+        </div>
+      </div>
+      <!-- chapter 4 -->
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <div class="d-flex flex-row-reverse">
+              <div class="chapter d-flex align-items-center justify-content-center">04</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <h3>數位孿生技術的應用趨勢</h3>
+            <p>
+              數位孿生技術成為推動城市轉型的重要引擎，不僅可模擬災害情境，協助應變人員快速的理解災害事件，進而優化災害應對的效率。
+            </p>
+            <img src="@/assets/may/04.png" />
+          </div>
+          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
+            <Triangle_Icon />
+            <p class="small-caption">
+              新加坡政府開發「虛擬新加坡」(Virtual Singapore)，讓民眾以 3D
+              的方式檢視整個城市的人口成長、新建設，和其他主要活動的發展與成長。
+            </p>
           </div>
         </div>
       </div>
@@ -132,26 +146,13 @@ watch(
             <div id="qa-doll"></div>
             <a
               class="related-links d-flex align-items-center justify-content-start mb-4 mt-5"
-              href="https://tccip.ncdr.nat.gov.tw/ds_05_03.aspx"
+              href="https://www.3ds.com/"
               target="_blank"
             >
               <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
               <div class="link-text d-flex align-items-center justify-content-between">
-                <div>網頁版互動式圖集</div>
+                <div>3D 虛擬城市</div>
                 <Arrow_Right />
-              </div>
-            </a>
-            <a
-              class="related-links d-flex align-items-center justify-content-start"
-              href="https://tccip.ncdr.nat.gov.tw/km_publish_ar6.aspx"
-              target="_blank"
-            >
-              <div class="link-chapter d-flex align-items-center justify-content-center">02</div>
-              <div class="link-text d-flex align-items-center justify-content-between">
-                <div>臺灣氣候變遷關鍵指標圖集：AR6統計降尺度版</div>
-                <div>
-                  <Arrow_Right />
-                </div>
               </div>
             </a>
           </div>
@@ -172,17 +173,15 @@ watch(
             </div>
           </div>
           <div class="col-12">
-            <h3>氣候變遷指標圖集的內容有什麼?</h3>
+            <h3>數位孿生—數位化的現實世界</h3>
             <p>
-              提供11項溫度指標和11項降雨指標，透過指標呈現的空間分布、時間序列變化和統計圖表資訊，幫助理解當全球平均溫度上升到不同程度下，臺灣氣候變遷的狀況。
+              數位孿生是複製一個現實世界的數位動態，透過物聯網（IoT）技術，重置現實中的建物與建設，在虛擬環境中模擬各種動態的時空變化。
             </p>
-            <img src="@/assets/april/01.png" />
+            <img src="@/assets/may/01.png" />
           </div>
           <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a class="small-caption"
-              >多模式模擬下，使用圖表來解讀與比較全球不同暖化程度和排放情境的推估數據。</a
-            >
+            <p class="small-caption">結合物聯網技術，可及時重現現實世界中的人事時地物。</p>
           </div>
         </div>
       </div>
@@ -195,22 +194,16 @@ watch(
             </div>
           </div>
           <div class="col-12">
-            <h3>如何快速查詢氣候變遷指標資訊?</h3>
+            <h3>虛實整合—拓展科技應用性</h3>
             <p>
-              利用線上版互動式的圖集，可以從網頁圖台選取有興趣的氣候變遷指標、暖化情境及區域等，快速查詢其他相關的指標。
+              情境整合結合虛擬現實(Virtual Reality，VR)、擴增現實(Augmented
+              Reality，AR)和現實世界，創造出多樣化的互動，可應用於各種領域。
             </p>
-            <img src="@/assets/april/02.png" />
-          </div>
-          <div class="caption d-flex align-items-start justify-content-center mb-1 mt-1">
-            <Triangle_Icon />
-            <a class="small-caption">多情境、多模式的完整評估</a>
-          </div>
-          <div class="col-12">
-            <img src="@/assets/april/02-1.png" />
+            <img src="@/assets/may/02.png" />
           </div>
           <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a class="small-caption">高解析度的空間分布</a>
+            <p class="small-caption">在設計和工程中可以使用情境整合來進行原型設計和模擬</p>
           </div>
         </div>
       </div>
@@ -223,15 +216,41 @@ watch(
             </div>
           </div>
           <div class="col-12">
-            <h3>這系列圖集幫你解讀氣候變遷重點指標</h3>
+            <h3>數位孿生技術於防災應用</h3>
             <p>
-              想知道全球成功減碳之下，可能面臨的情況嗎?氣候變遷指標圖集會依據議題，由圖表來呈現可能的氣候變遷趨勢，這個服務平台可以隨時查詢你關心的指標。
+              數位分身是真實世界的縮影，將實際的地理數據和環境資訊與虛擬世界結合，進行多視角的時空模擬。例如展示颱風、地震、洪水等災害衝擊，強化災害防救工作。
             </p>
-            <img src="@/assets/april/03.png" />
+            <img src="@/assets/may/03.png" />
           </div>
           <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a class="small-caption">透過視覺化圖表了解你所關注的氣候變遷議題</a>
+            <a class="small-caption"
+              >將實際的地理數據和氣象資訊與虛擬地圖結合，可監測實際的災害風險</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- chapter 4 -->
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="d-flex">
+              <div class="chapter d-flex align-items-center justify-content-center">04</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <h3>數位孿生技術的應用趨勢</h3>
+            <p>
+              數位孿生技術成為推動城市轉型的重要引擎，不僅可模擬災害情境，協助應變人員快速的理解災害事件，進而優化災害應對的效率。
+            </p>
+            <img src="@/assets/may/04.png" />
+          </div>
+          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
+            <Triangle_Icon />
+            <a class="small-caption"
+              >新加坡政府開發「虛擬新加坡」(Virtual Singapore)，讓民眾以 3D
+              的方式檢視整個城市的人口成長、新建設，和其他主要活動的發展與成長。</a
+            >
           </div>
         </div>
       </div>
@@ -253,26 +272,13 @@ watch(
             </div>
             <a
               class="related-links d-flex align-items-center justify-content-start mb-4"
-              href="https://tccip.ncdr.nat.gov.tw/ds_05_03.aspx"
+              href="https://www.3ds.com/"
               target="_blank"
             >
               <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
               <div class="link-text d-flex align-items-center justify-content-between">
-                <div>網頁版互動式圖集</div>
+                <div>3D 虛擬城市</div>
                 <Arrow_Right />
-              </div>
-            </a>
-            <a
-              class="related-links d-flex align-items-center justify-content-start"
-              href="https://tccip.ncdr.nat.gov.tw/km_publish_ar6.aspx"
-              target="_blank"
-            >
-              <div class="link-chapter d-flex align-items-center justify-content-center">02</div>
-              <div class="link-text d-flex align-items-center justify-content-between">
-                <div>臺灣氣候變遷關鍵指標圖集：AR6統計降尺度版</div>
-                <div>
-                  <Arrow_Right />
-                </div>
               </div>
             </a>
           </div>
@@ -304,6 +310,12 @@ h3 {
 p {
   color: #333;
 }
+.small-caption {
+  width: 47%;
+  padding-top: 1px;
+  margin-left: 5px;
+  line-height: 21px;
+}
 .chapter {
   width: 60px;
   height: 60px;
@@ -313,6 +325,7 @@ p {
   color: #333;
   font-weight: 400;
 }
+
 .dashed-line {
   width: 100%;
   border-bottom: 5px dashed #b8806f;
@@ -344,7 +357,7 @@ p {
   #qa-doll {
     position: absolute;
     width: 55%;
-    top: -35px;
+    bottom: 20%;
     right: 0%;
     z-index: -1;
   }
@@ -463,7 +476,7 @@ p {
     #qa-doll {
       position: absolute;
       width: 55%;
-      bottom: 40%;
+      top: -20px;
       right: 0%;
       z-index: -1;
     }
@@ -540,11 +553,11 @@ p {
   .chapter {
     margin-bottom: 5%;
   }
-  .small-caption {
-    padding-top: 1px;
-    margin-left: 5px;
-    line-height: 21px;
-  }
+  // .small-caption {
+  //   padding-top: 1px;
+  //   margin-left: 5px;
+  //   line-height: 21px;
+  // }
   .month-icon {
     margin: 0px 1rem 1rem 0px;
   }
@@ -584,9 +597,12 @@ p {
   #qa-doll {
     position: absolute;
     width: 55%;
-    bottom: -50% !important;
+    bottom: -30% !important;
     right: 0%;
     z-index: -1;
+  }
+  .small-caption {
+    width: 100%;
   }
 }
 </style>
