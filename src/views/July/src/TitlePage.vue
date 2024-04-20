@@ -5,15 +5,13 @@ import Lottie_Start from './lottie/LottieStart.vue';
 import Lottie_Loop from './lottie/LottieLoop.vue';
 import Lottie_Start2 from './lottie/LottieStart-2.vue';
 import Lottie_Loop2 from './lottie/LottieLoop-2.vue';
-import Lottie_Start3 from './lottie/LottieStart-3.vue';
 
 defineComponent({
   components: {
     Lottie_Start,
     Lottie_Loop,
     Lottie_Start2,
-    Lottie_Loop2,
-    Lottie_Start3
+    Lottie_Loop2
   }
 });
 
@@ -23,17 +21,13 @@ const screenSwitch = ref(false);
 
 const lottieLoop = ref(false);
 const lottieShow = ref(false);
-const lottieShow2 = ref(false);
 
 onMounted(() => {
   setTimeout(() => {
     lottieLoop.value = true;
     setTimeout(() => {
       lottieShow.value = true;
-    }, 1950);
-    setTimeout(() => {
-      lottieShow2.value = true;
-    }, 2100);
+    }, 1250);
   }, 1500);
 });
 
@@ -60,14 +54,11 @@ watch(
             <div class="loop-box d-flex justify-content-end" v-if="lottieLoop">
               <Lottie_Loop :play-lottie="lottieLoop" />
             </div>
-            <div class="start-box-2 d-flex justify-content-end" v-show="lottieLoop">
-              <Lottie_Start2 :play-lottie="lottieLoop" />
+            <div class="start-box-2 d-flex justify-content-end" v-if="lottieLoop">
+              <Lottie_Start2 :play-lottie="lottieShow" />
             </div>
             <div class="loop-box-2 d-flex justify-content-end" v-if="lottieShow">
               <Lottie_Loop2 />
-            </div>
-            <div class="start-box-3 d-flex justify-content-end" v-if="lottieShow2">
-              <Lottie_Start3 />
             </div>
           </div>
         </div>
@@ -130,11 +121,6 @@ h2 {
     width: 100%;
     position: absolute;
     z-index: 25;
-  }
-  .start-box-3 {
-    width: 100%;
-    position: absolute;
-    z-index: 30;
   }
   .loop-box {
     width: 100%;
