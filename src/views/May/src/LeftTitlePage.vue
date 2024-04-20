@@ -3,21 +3,29 @@ import { ref, onMounted, defineComponent } from 'vue';
 import RightContent from './RightContent.vue';
 import Lottie_Start from './lottie/LottieStart.vue';
 import Lottie_Loop from './lottie/LottieLoop.vue';
+import Lottie_Start2 from './lottie/LottieStart-2.vue';
+import Lottie_Loop2 from './lottie/LottieLoop-2.vue';
 
 defineComponent({
   components: {
     Lottie_Start,
     Lottie_Loop,
+    Lottie_Start2,
+    Lottie_Loop2,
     RightContent
   }
 });
 
 const lottieLoop = ref(false);
+const lottieShow = ref(false);
 
 onMounted(() => {
   setTimeout(() => {
     lottieLoop.value = true;
-  }, 4250);
+    setTimeout(() => {
+      lottieShow.value = true;
+    }, 1000);
+  }, 500);
 });
 </script>
 
@@ -27,11 +35,20 @@ onMounted(() => {
       <div class="row d-flex align-items-start">
         <div class="col-4">
           <div class="img-container">
-            <div class="start-box d-flex justify-content-center" v-if="!lottieLoop">
+            <div class="start-box d-flex justify-content-center">
               <Lottie_Start />
             </div>
-            <div class="loop-box d-flex justify-content-center" v-if="lottieLoop">
+            <div
+              class="loop-box d-flex justify-content-center"
+              :class="[lottieLoop ? 'fade-in' : '']"
+            >
               <Lottie_Loop :play-lottie="lottieLoop" />
+            </div>
+            <div class="start-box-2 d-flex justify-content-center">
+              <Lottie_Start2 :play-lottie="lottieLoop" />
+            </div>
+            <div class="loop-box-2 d-flex justify-content-center" v-if="lottieShow">
+              <Lottie_Loop2 />
             </div>
           </div>
         </div>
@@ -79,6 +96,11 @@ h2 {
     opacity: 1;
     transition: opacity 1s ease;
   }
+  .start-box-2 {
+    width: 100%;
+    position: absolute;
+    z-index: 25;
+  }
   .begin-box {
     width: 100%;
     position: absolute;
@@ -88,9 +110,19 @@ h2 {
     width: 100%;
     position: absolute;
     z-index: 20;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  .loop-box-2 {
+    width: 100%;
+    position: absolute;
+    z-index: 30;
   }
   .fade-out {
     opacity: 0;
+  }
+  .fade-in {
+    opacity: 1;
   }
 }
 .content-page {

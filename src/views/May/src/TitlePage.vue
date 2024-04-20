@@ -3,24 +3,32 @@ import { ref, watch, onMounted, defineComponent } from 'vue';
 import { useWindowSize } from '@vueuse/core';
 import Lottie_Start from './lottie/LottieStart.vue';
 import Lottie_Loop from './lottie/LottieLoop.vue';
+import Lottie_Start2 from './lottie/LottieStart-2.vue';
+import Lottie_Loop2 from './lottie/LottieLoop-2.vue';
 
 defineComponent({
   components: {
     Lottie_Start,
-    Lottie_Loop
+    Lottie_Loop,
+    Lottie_Start2,
+    Lottie_Loop2
   }
 });
 
 const { width } = useWindowSize();
 
-const lottieLoop = ref(false);
-
 const screenSwitch = ref(false);
+
+const lottieLoop = ref(false);
+const lottieShow = ref(false);
 
 onMounted(() => {
   setTimeout(() => {
     lottieLoop.value = true;
-  }, 4250);
+    setTimeout(() => {
+      lottieShow.value = true;
+    }, 1000);
+  }, 500);
 });
 
 watch(
@@ -40,11 +48,17 @@ watch(
       <div class="row d-flex align-items-center">
         <div class="col-6">
           <div class="img-container d-flex align-items-center">
-            <div class="start-box d-flex justify-content-end" v-if="!lottieLoop">
+            <div class="start-box d-flex justify-content-end">
               <Lottie_Start />
             </div>
-            <div class="loop-box d-flex justify-content-end">
-              <Lottie_Loop :play-lottie="lottieLoop" v-if="lottieLoop" />
+            <div class="loop-box d-flex justify-content-end" :class="[lottieLoop ? 'fade-in' : '']">
+              <Lottie_Loop :play-lottie="lottieLoop" />
+            </div>
+            <div class="start-box-2 d-flex justify-content-end">
+              <Lottie_Start2 :play-lottie="lottieLoop" />
+            </div>
+            <div class="loop-box-2 d-flex justify-content-end" v-if="lottieShow">
+              <Lottie_Loop2 />
             </div>
           </div>
         </div>
@@ -63,7 +77,7 @@ watch(
     </div>
     <div class="container-fluid custom-container" v-if="screenSwitch == true">
       <div class="img-container">
-        <Lottie_Start v-if="!lottieLoop"/>
+        <Lottie_Start v-if="!lottieLoop" />
         <Lottie_Loop :play-lottie="lottieLoop" v-if="lottieLoop == true" />
       </div>
       <div class="content-box">
@@ -103,18 +117,26 @@ h2 {
     opacity: 1;
     transition: opacity 1s ease;
   }
-  .begin-box {
+  .start-box-2 {
     width: 100%;
     position: absolute;
-    z-index: 10;
+    z-index: 25;
   }
   .loop-box {
     width: 100%;
     position: absolute;
     z-index: 15;
   }
+  .loop-box-2 {
+    width: 100%;
+    position: absolute;
+    z-index: 30;
+  }
   .fade-out {
     opacity: 0;
+  }
+  .fade-in {
+    opacity: 1;
   }
 }
 @media (max-height: 900px) and (min-width: 1200px) {
