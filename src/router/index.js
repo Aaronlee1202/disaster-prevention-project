@@ -6,6 +6,7 @@ import FebruaryView from '../views/Feb/FebruaryView.vue';
 import MarchView from '../views/Mar/MarchView.vue';
 import AprilView from '../views/Apr/AprilView.vue';
 import MayView from '../views/May/MayView.vue';
+import JuneView from '@/views/June/JuneView.vue';
 
 const base_url = import.meta.env.BASE_URL;
 
@@ -47,6 +48,12 @@ const router = createRouter({
       name: 'MayView',
       component: MayView,
       meta: { title: '行政法人國災害防救科技中心-2024防災特輯5月' }
+    },
+    {
+      path: '/june',
+      name: 'JuneView',
+      component: JuneView,
+      meta: { title: '行政法人國災害防救科技中心-2024防災特輯6月' }
     }
   ]
 });
