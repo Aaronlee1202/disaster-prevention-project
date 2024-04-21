@@ -19,11 +19,11 @@ const lottieShow = ref(false);
 
 onMounted(() => {
   setTimeout(() => {
-    lottieLoop.value = true;
+    lottieShow.value = true;
     setTimeout(() => {
-      lottieShow.value = true;
-    }, 2550);
-  }, 1500);
+      lottieLoop.value = true;
+    }, 2360);
+  }, 1120);
 });
 </script>
 
@@ -36,11 +36,11 @@ onMounted(() => {
             <div class="start-box d-flex justify-content-center">
               <Lottie_Start />
             </div>
-            <div class="loop-box d-flex justify-content-center" v-if="lottieShow">
-              <Lottie_Loop :play-lottie="lottieShow" />
+            <div class="start-box-2 d-flex justify-content-center" v-if="lottieShow">
+              <Lottie_Start2 />
             </div>
-            <div class="start-box-2 d-flex justify-content-center" v-if="lottieLoop">
-              <Lottie_Start2 :play-lottie="lottieLoop" />
+            <div class="loop-box d-flex justify-content-center" v-if="lottieLoop">
+              <Lottie_Loop :play-lottie="lottieLoop" />
             </div>
           </div>
         </div>

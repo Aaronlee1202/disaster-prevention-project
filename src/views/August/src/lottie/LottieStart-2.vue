@@ -1,34 +1,19 @@
 <script setup>
-import { ref, onMounted, watch, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import lottie from 'lottie-web';
-import newTalisman from '@/assets/lottie/august/8-2-start.json';
+import newTalisman from '@/assets/lottie/august/8-2-start-2.json';
 
 const newTalismanJson = ref(null);
 
 onMounted(() => {
   lottieAnimation();
+  setTimeout(() => {
+    newTalismanJson.value.destroy();
+  }, 2360);
 });
 onBeforeUnmount(() => {
   newTalismanJson.value.destroy();
 });
-
-const props = defineProps({
-  playLottie: Boolean
-});
-
-watch(
-  () => props.playLottie,
-  (newVal) => {
-    if (newVal) {
-      setTimeout(() => {
-        newTalismanJson.value.destroy();
-      }, 3000);
-    }
-  },
-  {
-    deep: true
-  }
-);
 
 function lottieAnimation() {
   newTalismanJson.value = lottie.loadAnimation({

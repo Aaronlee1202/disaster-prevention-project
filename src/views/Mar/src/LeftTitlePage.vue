@@ -24,8 +24,8 @@ onMounted(() => {
         <div class="col-4">
           <div class="img-container">
             <div class="start-box d-flex justify-content-center">
-              <video width="100%" autoplay muted playsinline>
-                <source src="@/assets/lottie/march/march.mp4" type="video/mp4" />
+              <video width="100%" autoplay loop muted playsinline>
+                <source src="@/assets/lottie/march/march-2.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
