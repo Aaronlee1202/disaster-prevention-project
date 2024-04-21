@@ -182,16 +182,47 @@ const clickHouse = (houseName) => {
       }, 1000);
       break;
     case 'twin-house-open-windows':
-      // twinOpen.openWindows = true;
-      // setTimeout(() => {
-      alert('未開放');
-      // }, 1000);
+      twinOpen.openWindows = true;
+      setTimeout(() => {
+        router.push('june');
+      }, 1000);
+      // alert('未開放');
       break;
     case 'strategy-house-open-door':
-      // strategyOpen.openDoor = true;
-      // setTimeout(() => {
-      alert('未開放');
-      // }, 1000);
+      strategyOpen.openDoor = true;
+      setTimeout(() => {
+        router.push('july');
+      }, 1000);
+      break;
+    case 'strategy-house-open-windows':
+      strategyOpen.openWindows = true;
+      setTimeout(() => {
+        router.push('august');
+      }, 1000);
+      break;
+    case 'potential-house-open-door':
+      potentialOpen.openDoor = true;
+      setTimeout(() => {
+        router.push('september');
+      }, 1000);
+      break;
+    case 'potential-house-open-windows':
+      potentialOpen.openWindows = true;
+      setTimeout(() => {
+        router.push('october');
+      }, 1000);
+      break;
+    case 'atmosphere-house-open-door':
+      atmosphereOpen.openDoor = true;
+      setTimeout(() => {
+        router.push('november');
+      }, 1000);
+      break;
+    case 'atmosphere-house-open-windows':
+      atmosphereOpen.openWindows = true;
+      setTimeout(() => {
+        router.push('december');
+      }, 1000);
       break;
   }
 };
