@@ -15,31 +15,31 @@ const router = createRouter({
       path: '/',
       name: 'PrimarySchoolView',
       component: PrimarySchoolView,
-      meta: { title: '行政法人國災害防救科技中心-2024防災特輯防災小學堂' }
+      meta: { title: '行政法人國家災害防救科技中心-2024防災特輯防災小學堂' }
     },
     {
       path: '/january',
       name: 'DisasterPrevention',
       component: DisasterPreventionView,
-      meta: { title: '行政法人國災害防救科技中心-2024防災特輯1月' }
+      meta: { title: '行政法人國家災害防救科技中心-2024防災特輯1月' }
     },
     {
       path: '/february',
       name: 'FebruaryView',
       component: FebruaryView,
-      meta: { title: '行政法人國災害防救科技中心-2024防災特輯2月' }
+      meta: { title: '行政法人國家災害防救科技中心-2024防災特輯2月' }
     },
     {
       path: '/march',
       name: 'MarchView',
       component: MarchView,
-      meta: { title: '行政法人國災害防救科技中心-2024防災特輯3月' }
+      meta: { title: '行政法人國家災害防救科技中心-2024防災特輯3月' }
     },
     {
       path: '/april',
       name: 'AprilView',
       component: AprilView,
-      meta: { title: '行政法人國災害防救科技中心-2024防災特輯4月' }
+      meta: { title: '行政法人國家災害防救科技中心-2024防災特輯4月' }
     }
   ]
 });

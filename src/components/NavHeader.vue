@@ -54,7 +54,7 @@ const toHomePage = () => {
               <div class="header-logo">
                 <h1>
                   <!-- <Logo_Ncdr_Icon class="svg-img" @click="toHomePage" target="_blank" /> -->
-                  <a @click="toNcdrPage" target="_blank" title="行政法人國災害防救科技中心">
+                  <a @click="toNcdrPage" target="_blank" title="行政法人國家災害防救科技中心">
                     <Logo_Ncdr_Icon class="svg-img" :index-page="indexPage" />
                   </a>
                   <a @click="toHomePage" title="防災特輯"
