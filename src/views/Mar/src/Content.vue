@@ -675,13 +675,22 @@ p {
   }
   .link-container {
     position: relative;
-    #qa-doll {
-      position: absolute;
-      width: 55%;
-      top: -35%;
-      right: 0%;
-      z-index: -1;
-    }
+    // #qa-doll {
+    //   position: absolute;
+    //   width: 55%;
+    //   top: -35%;
+    //   right: 0%;
+    //   z-index: -1;
+    // }
+  }
+}
+@media (max-width: 576px) {
+  #qa-doll {
+    position: absolute;
+    width: 55%;
+    top: -35% !important;
+    right: 0%;
+    z-index: -1;
   }
 }
 </style>

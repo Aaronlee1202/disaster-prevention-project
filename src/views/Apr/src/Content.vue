@@ -463,7 +463,7 @@ p {
     #qa-doll {
       position: absolute;
       width: 55%;
-      top: -20px;
+      bottom: 40%;
       right: 0%;
       z-index: -1;
     }
@@ -578,6 +578,15 @@ p {
     width: 80%;
     border-bottom: 5px dashed #b8806f;
     margin: 1.5rem 0;
+  }
+}
+@media (max-width: 576px) {
+  #qa-doll {
+    position: absolute;
+    width: 55%;
+    bottom: -50% !important;
+    right: 0%;
+    z-index: -1;
   }
 }
 </style>

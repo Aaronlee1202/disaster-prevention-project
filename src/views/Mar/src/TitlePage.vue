@@ -32,8 +32,8 @@ watch(
         <div class="col-6">
           <div class="img-container d-flex align-items-center">
             <div class="start-box d-flex justify-content-end">
-              <video width="100%" autoplay muted>
-                <source src="@/assets/lottie/march/loop.mp4" type="video/mp4" />
+              <video width="100%" autoplay loop muted>
+                <source src="@/assets/lottie/march/march-2.mp4" type="video/mp4" />
               </video>
             </div>
           </div>

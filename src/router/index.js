@@ -5,6 +5,14 @@ import DisasterPreventionView from '../views/Jan/DisasterPreventionView.vue';
 import FebruaryView from '../views/Feb/FebruaryView.vue';
 import MarchView from '../views/Mar/MarchView.vue';
 import AprilView from '../views/Apr/AprilView.vue';
+import MayView from '../views/May/MayView.vue';
+import JuneView from '@/views/June/JuneView.vue';
+import JulyView from '@/views/July/JulyView.vue';
+import AugustView from '@/views/August/AugustView.vue';
+import SeptemberView from '@/views/September/SeptemberView.vue';
+import OctoberView from '@/views/October/OctoberView.vue';
+import NovemberView from '@/views/November/NovemberView.vue';
+import DecemberView from '@/views/December/DecemberView.vue';
 
 const base_url = import.meta.env.BASE_URL;
 
@@ -40,6 +48,54 @@ const router = createRouter({
       name: 'AprilView',
       component: AprilView,
       meta: { title: '行政法人國家災害防救科技中心-2024防災特輯4月' }
+    },
+    {
+      path: '/may',
+      name: 'MayView',
+      component: MayView,
+      meta: { title: '行政法人國家災害防救科技中心-2024防災特輯5月' }
+    },
+    {
+      path: '/june',
+      name: 'JuneView',
+      component: JuneView,
+      meta: { title: '行政法人國家災害防救科技中心-2024防災特輯6月' }
+    },
+    {
+      path: '/july',
+      name: 'JulyView',
+      component: JulyView,
+      meta: { title: '行政法人國家災害防救科技中心-2024防災特輯7月' }
+    },
+    {
+      path: '/august',
+      name: 'AugustView',
+      component: AugustView,
+      meta: { title: '行政法人國家災害防救科技中心-2024防災特輯8月' }
+    },
+    {
+      path: '/september',
+      name: 'SeptemberView',
+      component: SeptemberView,
+      meta: { title: '行政法人國家災害防救科技中心-2024防災特輯9月' }
+    },
+    {
+      path: '/october',
+      name: 'OctoberView',
+      component: OctoberView,
+      meta: { title: '行政法人國家災害防救科技中心-2024防災特輯10月' }
+    },
+    {
+      path: '/november',
+      name: 'NovemberView',
+      component: NovemberView,
+      meta: { title: '行政法人國家災害防救科技中心-2024防災特輯11月' }
+    },
+    {
+      path: '/december',
+      name: 'DecemberView',
+      component: DecemberView,
+      meta: { title: '行政法人國家災害防救科技中心-2024防災特輯12月' }
     }
   ]
 });

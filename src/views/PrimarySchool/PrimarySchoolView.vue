@@ -45,6 +45,7 @@ const janFinger = ref(fingerImg[0]);
 const febFinger = ref(fingerRightImg[0]);
 const aprFinger = ref(fingerImg[0]);
 const marFinger = ref(fingerRightImg[0]);
+const mayFinger = ref(fingerImg[0]);
 
 const lineShare = () => {
   window.open(`https://social-plugins.line.me/lineit/share?url=${window.location.href}`, '_blank');
@@ -173,22 +174,62 @@ const clickHouse = (houseName) => {
       }, 1000);
       break;
     case 'twin-house-open-door':
-      // twinOpen.openDoor = true;
-      // setTimeout(() => {
-      alert('未開放');
-      // }, 1000);
+      doorOrWindows(houseName);
+      normOpen.openDoor = true;
+      mayFinger.value = fingerRightImg[1];
+      setTimeout(() => {
+        mayFinger.value = fingerRightImg[0];
+        router.push('may');
+      }, 1000);
       break;
     case 'twin-house-open-windows':
       // twinOpen.openWindows = true;
       // setTimeout(() => {
-      alert('未開放');
+      //   router.push('june');
       // }, 1000);
+      alert('未開放');
       break;
     case 'strategy-house-open-door':
       // strategyOpen.openDoor = true;
       // setTimeout(() => {
-      alert('未開放');
+      //   router.push('july');
       // }, 1000);
+      alert('未開放');
+      break;
+    case 'strategy-house-open-windows':
+      // strategyOpen.openWindows = true;
+      // setTimeout(() => {
+      //   router.push('august');
+      // }, 1000);
+      alert('未開放');
+      break;
+    case 'potential-house-open-door':
+      // potentialOpen.openDoor = true;
+      // setTimeout(() => {
+      //   router.push('september');
+      // }, 1000);
+      alert('未開放');
+      break;
+    case 'potential-house-open-windows':
+      // potentialOpen.openWindows = true;
+      // setTimeout(() => {
+      //   router.push('october');
+      // }, 1000);
+      alert('未開放');
+      break;
+    case 'atmosphere-house-open-door':
+      // atmosphereOpen.openDoor = true;
+      // setTimeout(() => {
+      //   router.push('november');
+      // }, 1000);
+      alert('未開放');
+      break;
+    case 'atmosphere-house-open-windows':
+      // atmosphereOpen.openWindows = true;
+      // setTimeout(() => {
+      //   router.push('december');
+      // }, 1000);
+      alert('未開放');
       break;
   }
 };
@@ -242,6 +283,8 @@ const clickHouse = (houseName) => {
           <twin :twin-open="twinOpen" />
         </div>
         <div class="twin-house-click">
+          <img class="finger" :src="mayFinger" />
+          <div class="may-card">五月</div>
           <div class="door-click" @click="clickHouse('twin-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('twin-house-open-windows')"></div>
         </div>
@@ -341,6 +384,8 @@ const clickHouse = (houseName) => {
             <twin :twin-open="twinOpen" />
           </div>
           <div class="twin-house-click">
+            <img class="finger" :src="mayFinger" />
+            <div class="may-card">五月</div>
             <div class="door-click" @click="clickHouse('twin-house-open-door')"></div>
             <div class="windows-click" @click="clickHouse('twin-house-open-windows')"></div>
           </div>
@@ -1200,6 +1245,28 @@ const clickHouse = (houseName) => {
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 995;
+    .finger {
+      position: absolute;
+      width: 25%;
+      top: 60%;
+      left: 75%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3s 0s infinite;
+    }
+    .may-card {
+      position: absolute;
+      width: 30%;
+      top: 63%;
+      right: -35%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
     .door-click {
       position: absolute;
       width: 70px;
@@ -1650,6 +1717,28 @@ const clickHouse = (houseName) => {
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 995;
+    .finger {
+      position: absolute;
+      width: 25%;
+      top: 65%;
+      left: 75%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3s 0s infinite;
+    }
+    .may-card {
+      position: absolute;
+      width: 30%;
+      top: 70%;
+      right: -35%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
     .door-click {
       position: absolute;
       width: 100px;
