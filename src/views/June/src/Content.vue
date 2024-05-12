@@ -52,15 +52,15 @@ watch(
             </div>
           </div>
           <div class="col-6">
-            <h3>數位孿生—數位化的現實世界</h3>
+            <h3>智慧化展示災防預警資訊</h3>
             <p>
-              數位孿生是複製一個現實世界的數位動態，透過物聯網（IoT）技術，重置現實中的建物與建設，在虛擬環境中模擬各種動態的時空變化。
+              數位科技可以將空拍地形及地貌結合成數值模擬，建置3D山區洪水溢淹模式系統，應用於災害風險管理工作。
             </p>
-            <img src="@/assets/may/01.png" />
+            <img src="@/assets/june/01.png" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>結合物聯網技術，可及時重現現實世界中的人事時地物。</a>
+            <a>山區閃洪三維預警展示系統架構</a>
           </div>
         </div>
       </div>
@@ -73,16 +73,15 @@ watch(
             </div>
           </div>
           <div class="col-6">
-            <h3>虛實整合—拓展科技應用性</h3>
+            <h3>全時段山區洪災預警與衝擊分析</h3>
             <p>
-              情境整合結合虛擬現實(Virtual Reality，VR)、擴增現實(Augmented
-              Reality，AR)和現實世界，創造出多樣化的互動，可應用於各種領域。
+              智慧防災可以整合天氣預報模式、河川剖面模組及流速模組，進行監測、預警，以提供未來72小時山區洪水的溢淹資訊，使數位化災害管理更加靈活。
             </p>
-            <img src="@/assets/may/02.png" />
+            <img src="@/assets/june/02.png" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>在設計和工程中可以使用情境整合來進行原型設計和模擬</a>
+            <a>透過視覺化技術模擬聚落洪災時之情境，分析山區聚落受災衝擊程度，創造防災應用情境。</a>
           </div>
         </div>
       </div>
@@ -95,39 +94,14 @@ watch(
             </div>
           </div>
           <div class="col-6">
-            <h3>數位孿生技術於防災應用</h3>
-            <p>
-              數位分身是真實世界的縮影，將實際的地理數據和環境資訊與虛擬世界結合，進行多視角的時空模擬。例如展示颱風、地震、洪水等災害衝擊，強化災害防救工作。
-            </p>
-            <img src="@/assets/may/03.png" />
+            <h3>360度全視角虛實整合之災害預警</h3>
+            <p>透過三維空間圖台，提供360度全方位視角，監看易致災聚落，有助於災害的情資研判。</p>
+            <img src="@/assets/june/03.png" />
+            <img src="@/assets/june/03-1.png" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>將實際的地理數據和氣象資訊與虛擬地圖結合，可監測實際的災害風險</a>
-          </div>
-        </div>
-      </div>
-      <!-- chapter 4 -->
-      <div class="container">
-        <div class="row">
-          <div class="col-3">
-            <div class="d-flex flex-row-reverse">
-              <div class="chapter d-flex align-items-center justify-content-center">04</div>
-            </div>
-          </div>
-          <div class="col-6">
-            <h3>數位孿生技術的應用趨勢</h3>
-            <p>
-              數位孿生技術成為推動城市轉型的重要引擎，不僅可模擬災害情境，協助應變人員快速的理解災害事件，進而優化災害應對的效率。
-            </p>
-            <img src="@/assets/may/04.png" />
-          </div>
-          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
-            <Triangle_Icon />
-            <p class="small-caption">
-              新加坡政府開發「虛擬新加坡」(Virtual Singapore)，讓民眾以 3D
-              的方式檢視整個城市的人口成長、新建設，和其他主要活動的發展與成長。
-            </p>
+            <a>以三維空間圖台整合多維度防災資訊，提供防、救災工作情資分析與研判之精進</a>
           </div>
         </div>
       </div>
@@ -146,12 +120,23 @@ watch(
             <div id="qa-doll"></div>
             <a
               class="related-links d-flex align-items-center justify-content-start mb-4 mt-5"
-              href="https://www.3ds.com/"
+              href="https://fhy.wra.gov.tw/fhyv2/monitor/cctv"
               target="_blank"
             >
               <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
               <div class="link-text d-flex align-items-center justify-content-between">
-                <div>3D 虛擬城市</div>
+                <div>經濟部水利署-防災資訊服務網</div>
+                <Arrow_Right />
+              </div>
+            </a>
+            <a
+              class="related-links d-flex align-items-center justify-content-start mb-4"
+              href="https://www.cwa.gov.tw/V8/C/"
+              target="_blank"
+            >
+              <div class="link-chapter d-flex align-items-center justify-content-center">02</div>
+              <div class="link-text d-flex align-items-center justify-content-between">
+                <div>交通部中央氣象局</div>
                 <Arrow_Right />
               </div>
             </a>
@@ -173,15 +158,15 @@ watch(
             </div>
           </div>
           <div class="col-12">
-            <h3>數位孿生—數位化的現實世界</h3>
+            <h3>智慧化展示災防預警資訊</h3>
             <p>
-              數位孿生是複製一個現實世界的數位動態，透過物聯網（IoT）技術，重置現實中的建物與建設，在虛擬環境中模擬各種動態的時空變化。
+              數位科技可以將空拍地形及地貌結合成數值模擬，建置3D山區洪水溢淹模式系統，應用於災害風險管理工作。
             </p>
-            <img src="@/assets/may/01.png" />
+            <img src="@/assets/june/01.png" />
           </div>
           <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <p class="small-caption">結合物聯網技術，可及時重現現實世界中的人事時地物。</p>
+            <p class="small-caption">山區閃洪三維預警展示系統架構</p>
           </div>
         </div>
       </div>
@@ -194,16 +179,17 @@ watch(
             </div>
           </div>
           <div class="col-12">
-            <h3>虛實整合—拓展科技應用性</h3>
+            <h3>全時段山區洪災預警與衝擊分析</h3>
             <p>
-              情境整合結合虛擬現實(Virtual Reality，VR)、擴增現實(Augmented
-              Reality，AR)和現實世界，創造出多樣化的互動，可應用於各種領域。
+              智慧防災可以整合天氣預報模式、河川剖面模組及流速模組，進行監測、預警，以提供未來72小時山區洪水的溢淹資訊，使數位化災害管理更加靈活。
             </p>
-            <img src="@/assets/may/02.png" />
+            <img src="@/assets/june/02.png" />
           </div>
           <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <p class="small-caption">在設計和工程中可以使用情境整合來進行原型設計和模擬</p>
+            <p class="small-caption">
+              透過視覺化技術模擬聚落洪災時之情境，分析山區聚落受災衝擊程度，創造防災應用情境。
+            </p>
           </div>
         </div>
       </div>
@@ -216,41 +202,15 @@ watch(
             </div>
           </div>
           <div class="col-12">
-            <h3>數位孿生技術於防災應用</h3>
-            <p>
-              數位分身是真實世界的縮影，將實際的地理數據和環境資訊與虛擬世界結合，進行多視角的時空模擬。例如展示颱風、地震、洪水等災害衝擊，強化災害防救工作。
-            </p>
+            <h3>60度全視角虛實整合之災害預警</h3>
+            <p>透過三維空間圖台，提供360度全方位視角，監看易致災聚落，有助於災害的情資研判。</p>
             <img src="@/assets/may/03.png" />
           </div>
           <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a class="small-caption"
-              >將實際的地理數據和氣象資訊與虛擬地圖結合，可監測實際的災害風險</a
-            >
-          </div>
-        </div>
-      </div>
-      <!-- chapter 4 -->
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="d-flex">
-              <div class="chapter d-flex align-items-center justify-content-center">04</div>
-            </div>
-          </div>
-          <div class="col-12">
-            <h3>數位孿生技術的應用趨勢</h3>
-            <p>
-              數位孿生技術成為推動城市轉型的重要引擎，不僅可模擬災害情境，協助應變人員快速的理解災害事件，進而優化災害應對的效率。
-            </p>
-            <img src="@/assets/may/04.png" />
-          </div>
-          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
-            <Triangle_Icon />
-            <a class="small-caption"
-              >新加坡政府開發「虛擬新加坡」(Virtual Singapore)，讓民眾以 3D
-              的方式檢視整個城市的人口成長、新建設，和其他主要活動的發展與成長。</a
-            >
+            <a class="small-caption">
+              以三維空間圖台整合多維度防災資訊，提供防、救災工作情資分析與研判之精進
+            </a>
           </div>
         </div>
       </div>
@@ -272,12 +232,23 @@ watch(
             </div>
             <a
               class="related-links d-flex align-items-center justify-content-start mb-4"
-              href="https://www.3ds.com/"
+              href="https://fhy.wra.gov.tw/fhyv2/monitor/cctv"
               target="_blank"
             >
               <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
               <div class="link-text d-flex align-items-center justify-content-between">
-                <div>3D 虛擬城市</div>
+                <div>經濟部水利署-防災資訊服務網</div>
+                <Arrow_Right />
+              </div>
+            </a>
+            <a
+              class="related-links d-flex align-items-center justify-content-start mb-4"
+              href="https://www.cwa.gov.tw/V8/C/"
+              target="_blank"
+            >
+              <div class="link-chapter d-flex align-items-center justify-content-center">02</div>
+              <div class="link-text d-flex align-items-center justify-content-between">
+                <div>交通部中央氣象局</div>
                 <Arrow_Right />
               </div>
             </a>
@@ -476,7 +447,7 @@ p {
     #qa-doll {
       position: absolute;
       width: 55%;
-      top: -20px;
+      top: -110px;
       right: 0%;
       z-index: -1;
     }
@@ -597,7 +568,7 @@ p {
   #qa-doll {
     position: absolute;
     width: 55%;
-    bottom: -30% !important;
+    bottom: -110px !important;
     right: 0%;
     z-index: -1;
   }
