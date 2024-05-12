@@ -52,15 +52,13 @@ watch(
             </div>
           </div>
           <div class="col-6">
-            <h3>數位孿生—數位化的現實世界</h3>
-            <p>
-              數位孿生是複製一個現實世界的數位動態，透過物聯網（IoT）技術，重置現實中的建物與建設，在虛擬環境中模擬各種動態的時空變化。
-            </p>
-            <img src="@/assets/may/01.png" />
+            <h3>運用實境技術增加防災資訊的說服力</h3>
+            <p>運用實境化及視覺化的展示技術，可以呈現即時擬真的天氣災害預警資訊。</p>
+            <img src="@/assets/december/01.png" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>結合物聯網技術，可及時重現現實世界中的人事時地物。</a>
+            <a>實境技術能提高民眾的感受能力</a>
           </div>
         </div>
       </div>
@@ -73,16 +71,15 @@ watch(
             </div>
           </div>
           <div class="col-6">
-            <h3>虛實整合—拓展科技應用性</h3>
+            <h3>應用實境新科技展現動態氣象資訊</h3>
             <p>
-              情境整合結合虛擬現實(Virtual Reality，VR)、擴增現實(Augmented
-              Reality，AR)和現實世界，創造出多樣化的互動，可應用於各種領域。
+              經由「智慧化天氣判識技術」與「網頁式實境技術」，能提供即時、準確，並且實境化的天氣分類與示警。
             </p>
-            <img src="@/assets/may/02.png" />
+            <img src="@/assets/december/02.png" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>在設計和工程中可以使用情境整合來進行原型設計和模擬</a>
+            <a>馬祖北竿機場的濃霧虛擬實境</a>
           </div>
         </div>
       </div>
@@ -94,39 +91,10 @@ watch(
               <div class="chapter d-flex align-items-center justify-content-center">03</div>
             </div>
           </div>
-          <div class="col-6">
-            <h3>數位孿生技術於防災應用</h3>
+          <div class="col-6 mb-5">
+            <h3>加入你的視角，看見氣象預警新體驗</h3>
             <p>
-              數位分身是真實世界的縮影，將實際的地理數據和環境資訊與虛擬世界結合，進行多視角的時空模擬。例如展示颱風、地震、洪水等災害衝擊，強化災害防救工作。
-            </p>
-            <img src="@/assets/may/03.png" />
-          </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
-            <Triangle_Icon />
-            <a>將實際的地理數據和氣象資訊與虛擬地圖結合，可監測實際的災害風險</a>
-          </div>
-        </div>
-      </div>
-      <!-- chapter 4 -->
-      <div class="container">
-        <div class="row">
-          <div class="col-3">
-            <div class="d-flex flex-row-reverse">
-              <div class="chapter d-flex align-items-center justify-content-center">04</div>
-            </div>
-          </div>
-          <div class="col-6">
-            <h3>數位孿生技術的應用趨勢</h3>
-            <p>
-              數位孿生技術成為推動城市轉型的重要引擎，不僅可模擬災害情境，協助應變人員快速的理解災害事件，進而優化災害應對的效率。
-            </p>
-            <img src="@/assets/may/04.png" />
-          </div>
-          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
-            <Triangle_Icon />
-            <p class="small-caption">
-              新加坡政府開發「虛擬新加坡」(Virtual Singapore)，讓民眾以 3D
-              的方式檢視整個城市的人口成長、新建設，和其他主要活動的發展與成長。
+              透過沉浸式的展示方式與情境式的體驗，可以更快掌握天氣變化與災害預警訊息，提高人們對災害氣象事件的警覺性。
             </p>
           </div>
         </div>
@@ -146,12 +114,12 @@ watch(
             <div id="qa-doll"></div>
             <a
               class="related-links d-flex align-items-center justify-content-start mb-4 mt-5"
-              href="https://www.3ds.com/"
+              href="https://watch.ncdr.nat.gov.tw/watch_page_islandvis"
               target="_blank"
             >
               <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
               <div class="link-text d-flex align-items-center justify-content-between">
-                <div>3D 虛擬城市</div>
+                <div>金馬澎能見度</div>
                 <Arrow_Right />
               </div>
             </a>
@@ -173,15 +141,13 @@ watch(
             </div>
           </div>
           <div class="col-12">
-            <h3>數位孿生—數位化的現實世界</h3>
-            <p>
-              數位孿生是複製一個現實世界的數位動態，透過物聯網（IoT）技術，重置現實中的建物與建設，在虛擬環境中模擬各種動態的時空變化。
-            </p>
-            <img src="@/assets/may/01.png" />
+            <h3>運用實境技術增加防災資訊的說服力</h3>
+            <p>運用實境化及視覺化的展示技術，可以呈現即時擬真的天氣災害預警資訊。</p>
+            <img src="@/assets/december/01.png" />
           </div>
           <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <p class="small-caption">結合物聯網技術，可及時重現現實世界中的人事時地物。</p>
+            <p class="small-caption">實境技術能提高民眾的感受能力</p>
           </div>
         </div>
       </div>
@@ -194,63 +160,31 @@ watch(
             </div>
           </div>
           <div class="col-12">
-            <h3>虛實整合—拓展科技應用性</h3>
+            <h3>應用實境新科技展現動態氣象資訊</h3>
             <p>
-              情境整合結合虛擬現實(Virtual Reality，VR)、擴增現實(Augmented
-              Reality，AR)和現實世界，創造出多樣化的互動，可應用於各種領域。
+              經由「智慧化天氣判識技術」與「網頁式實境技術」，能提供即時、準確，並且實境化的天氣分類與示警。
             </p>
-            <img src="@/assets/may/02.png" />
+            <img src="@/assets/december/02.png" />
           </div>
           <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <p class="small-caption">在設計和工程中可以使用情境整合來進行原型設計和模擬</p>
+            <p class="small-caption">馬祖北竿機場的濃霧虛擬實境</p>
           </div>
         </div>
       </div>
       <!-- chapter 3 -->
       <div class="container">
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 mb-5">
             <div class="d-flex">
               <div class="chapter d-flex align-items-center justify-content-center">03</div>
             </div>
           </div>
-          <div class="col-12">
-            <h3>數位孿生技術於防災應用</h3>
+          <div class="col-12 mb-5">
+            <h3>加入你的視角，看見氣象預警新體驗</h3>
             <p>
-              數位分身是真實世界的縮影，將實際的地理數據和環境資訊與虛擬世界結合，進行多視角的時空模擬。例如展示颱風、地震、洪水等災害衝擊，強化災害防救工作。
+              透過沉浸式的展示方式與情境式的體驗，可以更快掌握天氣變化與災害預警訊息，提高人們對災害氣象事件的警覺性。
             </p>
-            <img src="@/assets/may/03.png" />
-          </div>
-          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
-            <Triangle_Icon />
-            <a class="small-caption"
-              >將實際的地理數據和氣象資訊與虛擬地圖結合，可監測實際的災害風險</a
-            >
-          </div>
-        </div>
-      </div>
-      <!-- chapter 4 -->
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="d-flex">
-              <div class="chapter d-flex align-items-center justify-content-center">04</div>
-            </div>
-          </div>
-          <div class="col-12">
-            <h3>數位孿生技術的應用趨勢</h3>
-            <p>
-              數位孿生技術成為推動城市轉型的重要引擎，不僅可模擬災害情境，協助應變人員快速的理解災害事件，進而優化災害應對的效率。
-            </p>
-            <img src="@/assets/may/04.png" />
-          </div>
-          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
-            <Triangle_Icon />
-            <a class="small-caption"
-              >新加坡政府開發「虛擬新加坡」(Virtual Singapore)，讓民眾以 3D
-              的方式檢視整個城市的人口成長、新建設，和其他主要活動的發展與成長。</a
-            >
           </div>
         </div>
       </div>
@@ -272,12 +206,12 @@ watch(
             </div>
             <a
               class="related-links d-flex align-items-center justify-content-start mb-4"
-              href="https://www.3ds.com/"
+              href="https://watch.ncdr.nat.gov.tw/watch_page_islandvis"
               target="_blank"
             >
               <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
               <div class="link-text d-flex align-items-center justify-content-between">
-                <div>3D 虛擬城市</div>
+                <div>金馬澎能見度</div>
                 <Arrow_Right />
               </div>
             </a>

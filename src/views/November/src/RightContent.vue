@@ -35,16 +35,17 @@ const lottieAnimation = () => {
           </div>
         </div>
         <div class="col">
-          <h3>數位孿生—數位化的現實世界</h3>
+          <h3>人工智慧也會報天氣喔</h3>
           <p>
-            數位孿生是複製一個現實世界的數位動態，透過物聯網（IoT）技術，重置現實中的建物與建設，在虛擬環境中模擬各種動態的時空變化。
+            人工智慧（Artificial Intelligence,
+            AI）可以更快速、更準確地對大量的氣象數據進行自動化分析，並研判天氣的型態。
           </p>
           <div class="img-box">
-            <img src="@/assets/may/01.png" />
+            <img src="@/assets/november/01.png" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>結合物聯網技術，可及時重現現實世界中的人事時地物。</a>
+            <a>人工智慧近年被廣泛應用在氣象相關產業</a>
           </div>
         </div>
       </div>
@@ -56,17 +57,16 @@ const lottieAnimation = () => {
           </div>
         </div>
         <div class="col">
-          <h3>虛實整合—拓展科技應用性</h3>
+          <h3>持續優化天氣判識的「人工智慧大腦」</h3>
           <p>
-            情境整合結合虛擬現實(Virtual Reality，VR)、擴增現實(Augmented
-            Reality，AR)和現實世界，創造出多樣化的互動，可應用於各種領域。
+            智慧化天氣判識的主要步驟為大數據收集、特徵提取、模型訓練、預測與評估。其優點在於快速計算與分析，並且可以不斷的重複優化這些步驟，提高預測的準確性。
           </p>
           <div class="img-box">
-            <img src="@/assets/may/02.png" />
+            <img src="@/assets/november/02.png" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>在設計和工程中可以使用情境整合來進行原型設計和模擬</a>
+            <a>智慧化天氣判識的4個主要步驟</a>
           </div>
         </div>
       </div>
@@ -77,18 +77,11 @@ const lottieAnimation = () => {
             <div class="chapter d-flex align-items-center justify-content-center">03</div>
           </div>
         </div>
-        <div class="col">
-          <h3>數位孿生技術於防災應用</h3>
+        <div class="col mb-5">
+          <h3>即時示警的新科技</h3>
           <p>
-            數位分身是真實世界的縮影，將實際的地理數據和環境資訊與虛擬世界結合，進行多視角的時空模擬。例如展示颱風、地震、洪水等災害衝擊，強化災害防救工作。
+            智慧化天氣判識技術具有自動化、高準確、減少人為錯誤等優點，配合即時整合的龐大資料，以及迅速計算的工作，可以提升天災的即時示警能力。
           </p>
-          <div class="img-box">
-            <img src="@/assets/may/03.png" alt="" />
-          </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
-            <Triangle_Icon />
-            <a>將實際的地理數據和氣象資訊與虛擬地圖結合，可監測實際的災害風險</a>
-          </div>
         </div>
       </div>
       <!-- chapter 4 -->
@@ -99,19 +92,16 @@ const lottieAnimation = () => {
           </div>
         </div>
         <div class="col">
-          <h3>數位孿生技術的應用趨勢</h3>
+          <h3>智慧化天氣判識的應用</h3>
           <p>
-            數位孿生技術成為推動城市轉型的重要引擎，不僅可模擬災害情境，協助應變人員快速的理解災害事件，進而優化災害應對的效率。
+            利用智慧化天氣判識的研究，引進各種演算法、季節變化監測、天氣分類與災害示警等相關技術，可以落實於氣象預警及濃霧預警等產品。
           </p>
           <div class="img-box">
-            <img src="@/assets/may/04.png" alt="" />
+            <img src="@/assets/november/04.png" alt="" />
           </div>
           <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <p class="small-caption">
-              新加坡政府開發「虛擬新加坡」(Virtual Singapore)，讓民眾以 3D
-              的方式檢視整個城市的人口成長、新建設，和其他主要活動的發展與成長。
-            </p>
+            <p class="small-caption">人工智慧氣象災害預警技術研發路徑圖</p>
           </div>
         </div>
       </div>
@@ -129,12 +119,12 @@ const lottieAnimation = () => {
           <div id="qa-doll"></div>
           <a
             class="related-links d-flex align-items-center justify-content-start mb-4 mt-5"
-            href="https://www.3ds.com/"
+            href="https://watch.ncdr.nat.gov.tw/watch_page_islandvis"
             target="_blank"
           >
             <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
             <div class="link-text d-flex align-items-center justify-content-between">
-              <div>3D 虛擬城市</div>
+              <div>金馬澎能見度</div>
               <Arrow_Right />
             </div>
           </a>
@@ -166,10 +156,10 @@ p {
   color: #333;
 }
 .small-caption {
-    padding-top: 1px;
-    margin-left: 5px;
-    line-height: 21px;
-  }
+  padding-top: 1px;
+  margin-left: 5px;
+  line-height: 21px;
+}
 .modal-content-custom {
   width: 100%;
   .modal-header {

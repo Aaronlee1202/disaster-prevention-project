@@ -35,16 +35,16 @@ const lottieAnimation = () => {
           </div>
         </div>
         <div class="col">
-          <h3>數位孿生—數位化的現實世界</h3>
+          <h3>輕鬆建構自我防災力</h3>
           <p>
-            數位孿生是複製一個現實世界的數位動態，透過物聯網（IoT）技術，重置現實中的建物與建設，在虛擬環境中模擬各種動態的時空變化。
+            彙集不同媒體素材，包括影劇、動畫、短片、書籍、遊戲及國內主題體驗場館，讓一般大眾或家人，可以用輕鬆有趣的方式建構自我防災力。
           </p>
           <div class="img-box">
-            <img src="@/assets/may/01.png" />
+            <img src="@/assets/august/01.png" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>結合物聯網技術，可及時重現現實世界中的人事時地物。</a>
+            <a>網頁分享超過30款防災學習媒材，自學交流皆適宜。</a>
           </div>
         </div>
       </div>
@@ -56,17 +56,16 @@ const lottieAnimation = () => {
           </div>
         </div>
         <div class="col">
-          <h3>虛實整合—拓展科技應用性</h3>
+          <h3>互動遊戲挑戰學習防災趣</h3>
           <p>
-            情境整合結合虛擬現實(Virtual Reality，VR)、擴增現實(Augmented
-            Reality，AR)和現實世界，創造出多樣化的互動，可應用於各種領域。
+            你能夠透過政府發布防災地圖上的符號，來解讀防災秘笈嗎？圖上的資訊包括，防救災相關資源、生活環境、災害風險及避難收容處所等。我們一起前往【防災地圖猜猜樂】，看看你能看懂幾個？
           </p>
           <div class="img-box">
-            <img src="@/assets/may/02.png" />
+            <img src="@/assets/august/02.png" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>在設計和工程中可以使用情境整合來進行原型設計和模擬</a>
+            <a>防災地圖猜猜樂，互動遊戲學知識。</a>
           </div>
         </div>
       </div>
@@ -78,40 +77,16 @@ const lottieAnimation = () => {
           </div>
         </div>
         <div class="col">
-          <h3>數位孿生技術於防災應用</h3>
+          <h3>地區防災資訊一手掌握</h3>
           <p>
-            數位分身是真實世界的縮影，將實際的地理數據和環境資訊與虛擬世界結合，進行多視角的時空模擬。例如展示颱風、地震、洪水等災害衝擊，強化災害防救工作。
+            防災專區中有22個地方政府製作的「市民防災手冊」及「疏散避難地圖」，會不定期公告模擬災時的夜宿體驗等相關資訊，有時間常來看看！
           </p>
           <div class="img-box">
-            <img src="@/assets/may/03.png" alt="" />
+            <img src="@/assets/august/03.png" alt="" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>將實際的地理數據和氣象資訊與虛擬地圖結合，可監測實際的災害風險</a>
-          </div>
-        </div>
-      </div>
-      <!-- chapter 4 -->
-      <div class="row d-flex justify-content-end">
-        <div class="col-1 p-0">
-          <div class="d-flex flex-row-reverse">
-            <div class="chapter d-flex align-items-center justify-content-center">04</div>
-          </div>
-        </div>
-        <div class="col">
-          <h3>數位孿生技術的應用趨勢</h3>
-          <p>
-            數位孿生技術成為推動城市轉型的重要引擎，不僅可模擬災害情境，協助應變人員快速的理解災害事件，進而優化災害應對的效率。
-          </p>
-          <div class="img-box">
-            <img src="@/assets/may/04.png" alt="" />
-          </div>
-          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
-            <Triangle_Icon />
-            <p class="small-caption">
-              新加坡政府開發「虛擬新加坡」(Virtual Singapore)，讓民眾以 3D
-              的方式檢視整個城市的人口成長、新建設，和其他主要活動的發展與成長。
-            </p>
+            <a>羅列全國地方政府防災專區，快速掌握各縣市防災資訊。</a>
           </div>
         </div>
       </div>
@@ -129,12 +104,34 @@ const lottieAnimation = () => {
           <div id="qa-doll"></div>
           <a
             class="related-links d-flex align-items-center justify-content-start mb-4 mt-5"
-            href="https://www.3ds.com/"
+            href="https://easy2do.ncdr.nat.gov.tw/together/Exposition"
             target="_blank"
           >
             <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
             <div class="link-text d-flex align-items-center justify-content-between">
-              <div>3D 虛擬城市</div>
+              <div>一起來防災-防災博覽會專區</div>
+              <Arrow_Right />
+            </div>
+          </a>
+          <a
+            class="related-links d-flex align-items-center justify-content-start mb-4"
+            href="https://easy2do.ncdr.nat.gov.tw/together/Game"
+            target="_blank"
+          >
+            <div class="link-chapter d-flex align-items-center justify-content-center">02</div>
+            <div class="link-text d-flex align-items-center justify-content-between">
+              <div>防災地圖猜猜樂遊戲</div>
+              <Arrow_Right />
+            </div>
+          </a>
+          <a
+            class="related-links d-flex align-items-center justify-content-start mb-4"
+            href="https://drrstat.ncdr.nat.gov.tw/flood/foodlingindex"
+            target="_blank"
+          >
+            <div class="link-chapter d-flex align-items-center justify-content-center">03</div>
+            <div class="link-text d-flex align-items-center justify-content-between">
+              <div>淹水保衛戰遊戲</div>
               <Arrow_Right />
             </div>
           </a>
@@ -166,10 +163,10 @@ p {
   color: #333;
 }
 .small-caption {
-    padding-top: 1px;
-    margin-left: 5px;
-    line-height: 21px;
-  }
+  padding-top: 1px;
+  margin-left: 5px;
+  line-height: 21px;
+}
 .modal-content-custom {
   width: 100%;
   .modal-header {
@@ -282,7 +279,7 @@ p {
   #qa-doll {
     position: absolute;
     width: 55%;
-    bottom: 35%;
+    bottom: 65%;
     right: 0%;
     z-index: -1;
   }

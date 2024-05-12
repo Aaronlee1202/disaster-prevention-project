@@ -52,15 +52,15 @@ watch(
             </div>
           </div>
           <div class="col-6">
-            <h3>數位孿生—數位化的現實世界</h3>
+            <h3>「一起來防災」</h3>
             <p>
-              數位孿生是複製一個現實世界的數位動態，透過物聯網（IoT）技術，重置現實中的建物與建設，在虛擬環境中模擬各種動態的時空變化。
+              透過有趣的設計，提供大眾多元的防災知識與資訊，以直覺式的互動方式，來了解防減災的重要步驟。
             </p>
-            <img src="@/assets/may/01.png" />
+            <img src="@/assets/july/01.png" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>結合物聯網技術，可及時重現現實世界中的人事時地物。</a>
+            <a>「一起來防災」首頁</a>
           </div>
         </div>
       </div>
@@ -73,16 +73,15 @@ watch(
             </div>
           </div>
           <div class="col-6">
-            <h3>虛實整合—拓展科技應用性</h3>
+            <h3>視覺化防災資訊</h3>
             <p>
-              情境整合結合虛擬現實(Virtual Reality，VR)、擴增現實(Augmented
-              Reality，AR)和現實世界，創造出多樣化的互動，可應用於各種領域。
+              主要在強調防災資訊的呈現與傳遞，透過視覺化的圖像設計與動態效果，幫助大眾消化防災知識。
             </p>
-            <img src="@/assets/may/02.png" />
+            <img src="@/assets/july/02.png" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>在設計和工程中可以使用情境整合來進行原型設計和模擬</a>
+            <a>視覺化的圖像設計，讓民眾可以輕鬆的學習防災知識。</a>
           </div>
         </div>
       </div>
@@ -95,15 +94,15 @@ watch(
             </div>
           </div>
           <div class="col-6">
-            <h3>數位孿生技術於防災應用</h3>
+            <h3>貼近日常生活的防災知識</h3>
             <p>
-              數位分身是真實世界的縮影，將實際的地理數據和環境資訊與虛擬世界結合，進行多視角的時空模擬。例如展示颱風、地震、洪水等災害衝擊，強化災害防救工作。
+              內文針對臺灣最常見的地震與颱洪災害，提供判斷災害發生的因子，以及如何保護自己的相關常識。
             </p>
-            <img src="@/assets/may/03.png" />
+            <img src="@/assets/july/03.png" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>將實際的地理數據和氣象資訊與虛擬地圖結合，可監測實際的災害風險</a>
+            <a>「每天一點防災知識」單元，可以培養日常防災好習慣。</a>
           </div>
         </div>
       </div>
@@ -116,18 +115,17 @@ watch(
             </div>
           </div>
           <div class="col-6">
-            <h3>數位孿生技術的應用趨勢</h3>
+            <h3>其他防減災的學習資源</h3>
             <p>
-              數位孿生技術成為推動城市轉型的重要引擎，不僅可模擬災害情境，協助應變人員快速的理解災害事件，進而優化災害應對的效率。
+              聯合國減災辦公室（United Nations Office for Disaster Risk
+              Reduction），在官網中提供災害風險評估報告、培訓課程、線上論壇等活動資訊。日本「國土交通省防災資訊網」，也蒐整了防災知識與災害對策，便於民眾查詢與接收防減災資訊。
             </p>
-            <img src="@/assets/may/04.png" />
+            <img src="@/assets/july/04.png" alt="" />
+            <img src="@/assets/july/04-1.png" />
           </div>
           <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <p class="small-caption">
-              新加坡政府開發「虛擬新加坡」(Virtual Singapore)，讓民眾以 3D
-              的方式檢視整個城市的人口成長、新建設，和其他主要活動的發展與成長。
-            </p>
+            <p class="small-caption">國外防減災策略資源網站c</p>
           </div>
         </div>
       </div>
@@ -146,12 +144,34 @@ watch(
             <div id="qa-doll"></div>
             <a
               class="related-links d-flex align-items-center justify-content-start mb-4 mt-5"
-              href="https://www.3ds.com/"
+              href="https://easy2do.ncdr.nat.gov.tw/together/"
               target="_blank"
             >
               <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
               <div class="link-text d-flex align-items-center justify-content-between">
-                <div>3D 虛擬城市</div>
+                <div>一起來防災</div>
+                <Arrow_Right />
+              </div>
+            </a>
+            <a
+              class="related-links d-flex align-items-center justify-content-start mb-4"
+              href="https://www.undrr.org/"
+              target="_blank"
+            >
+              <div class="link-chapter d-flex align-items-center justify-content-center">02</div>
+              <div class="link-text d-flex align-items-center justify-content-between">
+                <div>聯合國減災辦公室官網</div>
+                <Arrow_Right />
+              </div>
+            </a>
+            <a
+              class="related-links d-flex align-items-center justify-content-start mb-4"
+              href="https://www.mlit.go.jp/river/bousai/olympic/tw/index.html"
+              target="_blank"
+            >
+              <div class="link-chapter d-flex align-items-center justify-content-center">03</div>
+              <div class="link-text d-flex align-items-center justify-content-between">
+                <div>日本國土交通省防災資訊網</div>
                 <Arrow_Right />
               </div>
             </a>
@@ -173,15 +193,15 @@ watch(
             </div>
           </div>
           <div class="col-12">
-            <h3>數位孿生—數位化的現實世界</h3>
+            <h3>「一起來防災」</h3>
             <p>
-              數位孿生是複製一個現實世界的數位動態，透過物聯網（IoT）技術，重置現實中的建物與建設，在虛擬環境中模擬各種動態的時空變化。
+              透過有趣的設計，提供大眾多元的防災知識與資訊，以直覺式的互動方式，來了解防減災的重要步驟。
             </p>
-            <img src="@/assets/may/01.png" />
+            <img src="@/assets/july/01.png" />
           </div>
           <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <p class="small-caption">結合物聯網技術，可及時重現現實世界中的人事時地物。</p>
+            <p class="small-caption">「一起來防災」首頁</p>
           </div>
         </div>
       </div>
@@ -194,16 +214,15 @@ watch(
             </div>
           </div>
           <div class="col-12">
-            <h3>虛實整合—拓展科技應用性</h3>
+            <h3>視覺化防災資訊</h3>
             <p>
-              情境整合結合虛擬現實(Virtual Reality，VR)、擴增現實(Augmented
-              Reality，AR)和現實世界，創造出多樣化的互動，可應用於各種領域。
+              主要在強調防災資訊的呈現與傳遞，透過視覺化的圖像設計與動態效果，幫助大眾消化防災知識。
             </p>
-            <img src="@/assets/may/02.png" />
+            <img src="@/assets/july/02.png" />
           </div>
           <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <p class="small-caption">在設計和工程中可以使用情境整合來進行原型設計和模擬</p>
+            <p class="small-caption">視覺化的圖像設計，讓民眾可以輕鬆的學習防災知識。</p>
           </div>
         </div>
       </div>
@@ -216,17 +235,15 @@ watch(
             </div>
           </div>
           <div class="col-12">
-            <h3>數位孿生技術於防災應用</h3>
+            <h3>貼近日常生活的防災知識</h3>
             <p>
-              數位分身是真實世界的縮影，將實際的地理數據和環境資訊與虛擬世界結合，進行多視角的時空模擬。例如展示颱風、地震、洪水等災害衝擊，強化災害防救工作。
+              內文針對臺灣最常見的地震與颱洪災害，提供判斷災害發生的因子，以及如何保護自己的相關常識。
             </p>
-            <img src="@/assets/may/03.png" />
+            <img src="@/assets/july/03.png" />
           </div>
           <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a class="small-caption"
-              >將實際的地理數據和氣象資訊與虛擬地圖結合，可監測實際的災害風險</a
-            >
+            <a class="small-caption">「每天一點防災知識」單元，可以培養日常防災好習慣。 </a>
           </div>
         </div>
       </div>
@@ -239,18 +256,17 @@ watch(
             </div>
           </div>
           <div class="col-12">
-            <h3>數位孿生技術的應用趨勢</h3>
+            <h3>其他防減災的學習資源</h3>
             <p>
-              數位孿生技術成為推動城市轉型的重要引擎，不僅可模擬災害情境，協助應變人員快速的理解災害事件，進而優化災害應對的效率。
+              聯合國減災辦公室（United Nations Office for Disaster Risk
+              Reduction），在官網中提供災害風險評估報告、培訓課程、線上論壇等活動資訊。日本「國土交通省防災資訊網」，也蒐整了防災知識與災害對策，便於民眾查詢與接收防減災資訊。
             </p>
-            <img src="@/assets/may/04.png" />
+            <img src="@/assets/july/04.png" />
+            <img src="@/assets/july/04-1.png" alt="" />
           </div>
           <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a class="small-caption"
-              >新加坡政府開發「虛擬新加坡」(Virtual Singapore)，讓民眾以 3D
-              的方式檢視整個城市的人口成長、新建設，和其他主要活動的發展與成長。</a
-            >
+            <a class="small-caption">國外防減災策略資源網站</a>
           </div>
         </div>
       </div>
@@ -272,12 +288,34 @@ watch(
             </div>
             <a
               class="related-links d-flex align-items-center justify-content-start mb-4"
-              href="https://www.3ds.com/"
+              href="https://easy2do.ncdr.nat.gov.tw/together/"
               target="_blank"
             >
               <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
               <div class="link-text d-flex align-items-center justify-content-between">
-                <div>3D 虛擬城市</div>
+                <div>一起來防災</div>
+                <Arrow_Right />
+              </div>
+            </a>
+            <a
+              class="related-links d-flex align-items-center justify-content-start mb-4"
+              href="https://www.undrr.org/"
+              target="_blank"
+            >
+              <div class="link-chapter d-flex align-items-center justify-content-center">02</div>
+              <div class="link-text d-flex align-items-center justify-content-between">
+                <div>聯合國減災辦公室官網</div>
+                <Arrow_Right />
+              </div>
+            </a>
+            <a
+              class="related-links d-flex align-items-center justify-content-start mb-4"
+              href="https://www.mlit.go.jp/river/bousai/olympic/tw/index.html"
+              target="_blank"
+            >
+              <div class="link-chapter d-flex align-items-center justify-content-center">03</div>
+              <div class="link-text d-flex align-items-center justify-content-between">
+                <div>日本國土交通省防災資訊網</div>
                 <Arrow_Right />
               </div>
             </a>
@@ -476,7 +514,7 @@ p {
     #qa-doll {
       position: absolute;
       width: 55%;
-      top: -20px;
+      bottom: 270px;
       right: 0%;
       z-index: -1;
     }
