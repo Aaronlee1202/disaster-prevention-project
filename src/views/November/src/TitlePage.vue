@@ -51,11 +51,11 @@ watch(
         <div class="col-6">
           <div class="content-box">
             <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
-            <h2 class="mt-5 mb-4">運用數位孿生技術，瞭解災害的衝擊</h2>
+            <h2 class="mt-5 mb-4">智慧化天氣判識</h2>
             <p>
-              發行日期 | 2024.05.01 <br />
-              作者 | 災防資訊組 楊鈞宏 <br />
-              審稿人 | 張子瑩
+              發行日期 | 2024.11.01 <br />
+              作者 | 氣象組 朱容練、江宙君、吳佳純 <br />
+              審稿人 | 于宜強
             </p>
           </div>
         </div>
@@ -68,11 +68,11 @@ watch(
       </div>
       <div class="content-box">
         <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
-        <h2>運用數位孿生技術，瞭解災害的衝擊</h2>
+        <h2>智慧化天氣判識</h2>
         <p>
-          發行日期 | 2024.05.01 <br />
-          作者 | 災防資訊組 楊鈞宏 <br />
-          審稿人 | 張子瑩
+          發行日期 | 2024.11.01 <br />
+          作者 | 氣象組 朱容練、江宙君、吳佳純 <br />
+          審稿人 | 于宜強
         </p>
       </div>
       <div class="dashed-line"></div>

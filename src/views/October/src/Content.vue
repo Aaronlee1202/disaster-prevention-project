@@ -52,15 +52,15 @@ watch(
             </div>
           </div>
           <div class="col-6">
-            <h3>數位孿生—數位化的現實世界</h3>
+            <h3>掌握臺灣天然災害的特性</h3>
             <p>
-              數位孿生是複製一個現實世界的數位動態，透過物聯網（IoT）技術，重置現實中的建物與建設，在虛擬環境中模擬各種動態的時空變化。
+              這個網站的資訊包含了台灣的災害類型，如坡地崩塌、土石流、淹水、斷層、土壤液化、火山、海嘯、波浪等，讓民眾能快速掌握各災害的特性。
             </p>
-            <img src="@/assets/may/01.png" />
+            <img src="@/assets/october/01.png" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>結合物聯網技術，可及時重現現實世界中的人事時地物。</a>
+            <a>什麼是350mm、500mm、650mm淹水潛勢?</a>
           </div>
         </div>
       </div>
@@ -73,16 +73,16 @@ watch(
             </div>
           </div>
           <div class="col-6">
-            <h3>虛實整合—拓展科技應用性</h3>
+            <h3>一目了然—災害潛勢三維展現</h3>
             <p>
-              情境整合結合虛擬現實(Virtual Reality，VR)、擴增現實(Augmented
-              Reality，AR)和現實世界，創造出多樣化的互動，可應用於各種領域。
+              透過新技術的導入，結合數值地形模型、Google
+              街景，以及國土測繪中心3D建物，使防災地圖與實景更加貼近。
             </p>
-            <img src="@/assets/may/02.png" />
+            <img src="@/assets/october/02.png" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>在設計和工程中可以使用情境整合來進行原型設計和模擬</a>
+            <a>查詢結果</a>
           </div>
         </div>
       </div>
@@ -95,39 +95,15 @@ watch(
             </div>
           </div>
           <div class="col-6">
-            <h3>數位孿生技術於防災應用</h3>
+            <h3>防災的風水寶地怎麼選</h3>
             <p>
-              數位分身是真實世界的縮影，將實際的地理數據和環境資訊與虛擬世界結合，進行多視角的時空模擬。例如展示颱風、地震、洪水等災害衝擊，強化災害防救工作。
+              政府部門會利用潛勢地圖來做防減災規劃，民眾買房時也可利用這個地圖網站，來事先瞭解房屋的災害體檢。
             </p>
-            <img src="@/assets/may/03.png" />
+            <img src="@/assets/october/03.png" />
           </div>
           <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a>將實際的地理數據和氣象資訊與虛擬地圖結合，可監測實際的災害風險</a>
-          </div>
-        </div>
-      </div>
-      <!-- chapter 4 -->
-      <div class="container">
-        <div class="row">
-          <div class="col-3">
-            <div class="d-flex flex-row-reverse">
-              <div class="chapter d-flex align-items-center justify-content-center">04</div>
-            </div>
-          </div>
-          <div class="col-6">
-            <h3>數位孿生技術的應用趨勢</h3>
-            <p>
-              數位孿生技術成為推動城市轉型的重要引擎，不僅可模擬災害情境，協助應變人員快速的理解災害事件，進而優化災害應對的效率。
-            </p>
-            <img src="@/assets/may/04.png" />
-          </div>
-          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
-            <Triangle_Icon />
-            <p class="small-caption">
-              新加坡政府開發「虛擬新加坡」(Virtual Singapore)，讓民眾以 3D
-              的方式檢視整個城市的人口成長、新建設，和其他主要活動的發展與成長。
-            </p>
+            <a>潛勢地圖可以提供民眾買房時的資訊參考</a>
           </div>
         </div>
       </div>
@@ -146,12 +122,23 @@ watch(
             <div id="qa-doll"></div>
             <a
               class="related-links d-flex align-items-center justify-content-start mb-4 mt-5"
-              href="https://www.3ds.com/"
+              href="https://maps.nlsc.gov.tw/T09/mobilemap.action"
               target="_blank"
             >
               <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
               <div class="link-text d-flex align-items-center justify-content-between">
-                <div>3D 虛擬城市</div>
+                <div>國土測繪圖資服務雲 - 內政部國土測繪中心</div>
+                <Arrow_Right />
+              </div>
+            </a>
+            <a
+              class="related-links d-flex align-items-center justify-content-start mb-4 mt-5"
+              href="https://wra.bse.ntu.edu.tw/flood-riskmap/flood"
+              target="_blank"
+            >
+              <div class="link-chapter d-flex align-items-center justify-content-center">02</div>
+              <div class="link-text d-flex align-items-center justify-content-between">
+                <div>經濟部水利署臺灣水災潛勢風險圖資應用服務平台</div>
                 <Arrow_Right />
               </div>
             </a>
@@ -173,15 +160,15 @@ watch(
             </div>
           </div>
           <div class="col-12">
-            <h3>數位孿生—數位化的現實世界</h3>
+            <h3>掌握臺灣天然災害的特性</h3>
             <p>
-              數位孿生是複製一個現實世界的數位動態，透過物聯網（IoT）技術，重置現實中的建物與建設，在虛擬環境中模擬各種動態的時空變化。
+              這個網站的資訊包含了台灣的災害類型，如坡地崩塌、土石流、淹水、斷層、土壤液化、火山、海嘯、波浪等，讓民眾能快速掌握各災害的特性。
             </p>
-            <img src="@/assets/may/01.png" />
+            <img src="@/assets/october/01.png" />
           </div>
           <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <p class="small-caption">結合物聯網技術，可及時重現現實世界中的人事時地物。</p>
+            <p class="small-caption">什麼是350mm、500mm、650mm淹水潛勢?</p>
           </div>
         </div>
       </div>
@@ -194,16 +181,16 @@ watch(
             </div>
           </div>
           <div class="col-12">
-            <h3>虛實整合—拓展科技應用性</h3>
+            <h3>一目了然—災害潛勢三維展現</h3>
             <p>
-              情境整合結合虛擬現實(Virtual Reality，VR)、擴增現實(Augmented
-              Reality，AR)和現實世界，創造出多樣化的互動，可應用於各種領域。
+              透過新技術的導入，結合數值地形模型、Google
+              街景，以及國土測繪中心3D建物，使防災地圖與實景更加貼近。
             </p>
-            <img src="@/assets/may/02.png" />
+            <img src="@/assets/october/02.png" />
           </div>
           <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <p class="small-caption">在設計和工程中可以使用情境整合來進行原型設計和模擬</p>
+            <p class="small-caption">查詢結果</p>
           </div>
         </div>
       </div>
@@ -216,41 +203,15 @@ watch(
             </div>
           </div>
           <div class="col-12">
-            <h3>數位孿生技術於防災應用</h3>
+            <h3>防災的風水寶地怎麼選</h3>
             <p>
-              數位分身是真實世界的縮影，將實際的地理數據和環境資訊與虛擬世界結合，進行多視角的時空模擬。例如展示颱風、地震、洪水等災害衝擊，強化災害防救工作。
+              政府部門會利用潛勢地圖來做防減災規劃，民眾買房時也可利用這個地圖網站，來事先瞭解房屋的災害體檢。
             </p>
-            <img src="@/assets/may/03.png" />
+            <img src="@/assets/october/03.png" />
           </div>
           <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
-            <a class="small-caption"
-              >將實際的地理數據和氣象資訊與虛擬地圖結合，可監測實際的災害風險</a
-            >
-          </div>
-        </div>
-      </div>
-      <!-- chapter 4 -->
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="d-flex">
-              <div class="chapter d-flex align-items-center justify-content-center">04</div>
-            </div>
-          </div>
-          <div class="col-12">
-            <h3>數位孿生技術的應用趨勢</h3>
-            <p>
-              數位孿生技術成為推動城市轉型的重要引擎，不僅可模擬災害情境，協助應變人員快速的理解災害事件，進而優化災害應對的效率。
-            </p>
-            <img src="@/assets/may/04.png" />
-          </div>
-          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
-            <Triangle_Icon />
-            <a class="small-caption"
-              >新加坡政府開發「虛擬新加坡」(Virtual Singapore)，讓民眾以 3D
-              的方式檢視整個城市的人口成長、新建設，和其他主要活動的發展與成長。</a
-            >
+            <a class="small-caption">潛勢地圖可以提供民眾買房時的資訊參考</a>
           </div>
         </div>
       </div>
@@ -272,12 +233,23 @@ watch(
             </div>
             <a
               class="related-links d-flex align-items-center justify-content-start mb-4"
-              href="https://www.3ds.com/"
+              href="https://maps.nlsc.gov.tw/T09/mobilemap.action"
               target="_blank"
             >
               <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
               <div class="link-text d-flex align-items-center justify-content-between">
-                <div>3D 虛擬城市</div>
+                <div>國土測繪圖資服務雲 - 內政部國土測繪中心</div>
+                <Arrow_Right />
+              </div>
+            </a>
+            <a
+              class="related-links d-flex align-items-center justify-content-start mb-4"
+              href="https://wra.bse.ntu.edu.tw/flood-riskmap/flood"
+              target="_blank"
+            >
+              <div class="link-chapter d-flex align-items-center justify-content-center">02</div>
+              <div class="link-text d-flex align-items-center justify-content-between">
+                <div>經濟部水利署臺灣水災潛勢風險圖資應用服務平台</div>
                 <Arrow_Right />
               </div>
             </a>
@@ -476,7 +448,7 @@ p {
     #qa-doll {
       position: absolute;
       width: 55%;
-      top: -20px;
+      top: -140px;
       right: 0%;
       z-index: -1;
     }
@@ -597,7 +569,7 @@ p {
   #qa-doll {
     position: absolute;
     width: 55%;
-    bottom: -30% !important;
+    bottom: -130px !important;
     right: 0%;
     z-index: -1;
   }

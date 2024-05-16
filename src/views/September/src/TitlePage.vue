@@ -60,11 +60,11 @@ watch(
         <div class="col-6">
           <div class="content-box">
             <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
-            <h2 class="mt-5 mb-4">運用數位孿生技術，瞭解災害的衝擊</h2>
+            <h2 class="mt-5 mb-4">數位防災地圖再進化</h2>
             <p>
-              發行日期 | 2024.05.01 <br />
-              作者 | 災防資訊組 楊鈞宏 <br />
-              審稿人 | 張子瑩
+              發行日期 | 2024.09.01 <br />
+              作者 | 坡洪組 王俞婷 <br />
+              審稿人 | 張志新
             </p>
           </div>
         </div>
@@ -77,11 +77,11 @@ watch(
       </div>
       <div class="content-box">
         <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
-        <h2>運用數位孿生技術，瞭解災害的衝擊</h2>
+        <h2>數位防災地圖再進化</h2>
         <p>
-          發行日期 | 2024.05.01 <br />
-          作者 | 災防資訊組 楊鈞宏 <br />
-          審稿人 | 張子瑩
+          發行日期 | 2024.09.01 <br />
+          作者 | 坡洪組 王俞婷 <br />
+          審稿人 | 張志新
         </p>
       </div>
       <div class="dashed-line"></div>
