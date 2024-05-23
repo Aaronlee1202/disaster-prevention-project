@@ -78,7 +78,7 @@ defineProps({
 const thisMonth = ref();
 onMounted(() => {
   const getMonth = new Date().getUTCMonth();
-  thisMonth.value = getMonth;
+  thisMonth.value = getMonth + 1;
 });
 </script>
 

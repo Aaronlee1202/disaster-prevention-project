@@ -86,8 +86,21 @@ watch(
     </div>
     <div class="container-fluid custom-container" v-if="screenSwitch == true">
       <div class="img-container">
-        <Lottie_Start v-if="!lottieLoop" />
-        <Lottie_Loop :play-lottie="lottieLoop" v-if="lottieLoop == true" />
+        <div class="start-box">
+          <Lottie_Start />
+        </div>
+        <div class="loop-box" v-if="lottieLoop">
+          <Lottie_Loop :play-lottie="lottieLoop" />
+        </div>
+        <div class="start-box-2 d-flex justify-content-end" v-show="lottieLoop">
+          <Lottie_Start2 :play-lottie="lottieLoop" />
+        </div>
+        <div class="loop-box-2" v-if="lottieShow">
+          <Lottie_Loop2 />
+        </div>
+        <div class="start-box-3" v-if="lottieShow2">
+          <Lottie_Start3 />
+        </div>
       </div>
       <div class="content-box">
         <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
@@ -119,6 +132,8 @@ h2 {
   margin: 1rem 0;
 }
 .img-container {
+  position: relative;
+  padding-top: 4%;
   .start-box {
     width: 100%;
     position: absolute;
@@ -129,22 +144,22 @@ h2 {
   .start-box-2 {
     width: 100%;
     position: absolute;
-    z-index: 25;
+    z-index: 20;
   }
   .start-box-3 {
     width: 100%;
     position: absolute;
-    z-index: 30;
+    z-index: 20;
   }
   .loop-box {
     width: 100%;
     position: absolute;
-    z-index: 15;
+    z-index: 5;
   }
   .loop-box-2 {
     width: 100%;
     position: absolute;
-    z-index: 30;
+    z-index: 5;
   }
   .fade-out {
     opacity: 0;
@@ -235,39 +250,39 @@ h2 {
     position: relative;
     height: 80svh;
     width: 100% !important;
-    #new-talisman-start {
-      // 使用CSS的transform綁定來讓子div與父div保持一一樣大小
-      position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      transform: scale(1);
-      width: 100% !important;
-      z-index: 5;
-      opacity: 1;
-      transition: opacity 1s ease;
-    }
-    #new-talisman-begin {
-      position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      transform: scale(1);
-      width: 100% !important;
-      z-index: 10;
-    }
-    #new-talisman-loop {
-      position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      transform: scale(1);
-      width: 100% !important;
-      z-index: 15;
-    }
+    // #new-talisman-start {
+    //   // 使用CSS的transform綁定來讓子div與父div保持一一樣大小
+    //   position: absolute;
+    //   // right: 0;
+    //   // left: 0;
+    //   // top: 0;
+    //   // bottom: 0;
+    //   // transform: scale(1);
+    //   width: 100% !important;
+    //   z-index: 5;
+    //   opacity: 1;
+    //   transition: opacity 1s ease;
+    // }
+    // #new-talisman-begin {
+    //   position: absolute;
+    //   // right: 0;
+    //   // left: 0;
+    //   // top: 0;
+    //   // bottom: 0;
+    //   // transform: scale(1);
+    //   width: 100% !important;
+    //   z-index: 10;
+    // }
+    // #new-talisman-loop {
+    //   position: absolute;
+    //   // right: 0;
+    //   // left: 0;
+    //   // top: 0;
+    //   // bottom: 0;
+    //   // transform: scale(1);
+    //   width: 100% !important;
+    //   z-index: 15;
+    // }
     .fade-out {
       opacity: 0;
     }
