@@ -55,7 +55,7 @@ watch(
       <div class="img-container">
         <div class="loop-box d-flex justify-content-center">
           <video width="100%" autoplay muted playsinline>
-            <source src="@/assets/lottie/march/loop.mp4" type="video/mp4" />
+            <source src="@/assets/lottie/march/march-2.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
