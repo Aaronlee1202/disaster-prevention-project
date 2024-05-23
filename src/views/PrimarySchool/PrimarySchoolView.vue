@@ -46,6 +46,7 @@ const febFinger = ref(fingerRightImg[0]);
 const aprFinger = ref(fingerImg[0]);
 const marFinger = ref(fingerRightImg[0]);
 const mayFinger = ref(fingerImg[0]);
+const juneFinger = ref(fingerRightImg[0]);
 
 const lineShare = () => {
   window.open(`https://social-plugins.line.me/lineit/share?url=${window.location.href}`, '_blank');
@@ -175,19 +176,22 @@ const clickHouse = (houseName) => {
       break;
     case 'twin-house-open-door':
       doorOrWindows(houseName);
-      normOpen.openDoor = true;
-      mayFinger.value = fingerRightImg[1];
+      twinOpen.openDoor = true;
+      mayFinger.value = fingerImg[1];
       setTimeout(() => {
-        mayFinger.value = fingerRightImg[0];
+        mayFinger.value = fingerImg[0];
         router.push('may');
       }, 1000);
       break;
     case 'twin-house-open-windows':
-      // twinOpen.openWindows = true;
-      // setTimeout(() => {
-      //   router.push('june');
-      // }, 1000);
-      alert('未開放');
+      doorOrWindows(houseName);
+      twinOpen.openWindows = true;
+      juneFinger.value = fingerRightImg[1];
+      setTimeout(() => {
+        juneFinger.value = fingerRightImg[0];
+
+        router.push('june');
+      }, 1000);
       break;
     case 'strategy-house-open-door':
       // strategyOpen.openDoor = true;
@@ -285,6 +289,8 @@ const clickHouse = (houseName) => {
         <div class="twin-house-click">
           <img class="finger" :src="mayFinger" />
           <div class="may-card">五月</div>
+          <img class="finger-right" :src="juneFinger" />
+          <div class="june-card">六月</div>
           <div class="door-click" @click="clickHouse('twin-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('twin-house-open-windows')"></div>
         </div>
@@ -386,6 +392,8 @@ const clickHouse = (houseName) => {
           <div class="twin-house-click">
             <img class="finger" :src="mayFinger" />
             <div class="may-card">五月</div>
+            <img class="finger-right" :src="juneFinger" />
+            <div class="june-card">六月</div>
             <div class="door-click" @click="clickHouse('twin-house-open-door')"></div>
             <div class="windows-click" @click="clickHouse('twin-house-open-windows')"></div>
           </div>
@@ -1267,6 +1275,28 @@ const clickHouse = (houseName) => {
       border-radius: 4px;
       background-color: #fdfaec;
     }
+    .finger-right {
+      position: absolute;
+      width: 25%;
+      top: 70%;
+      right: 65%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3.5s 0s infinite;
+    }
+    .june-card {
+      position: absolute;
+      width: 30%;
+      top: 70%;
+      left: -25%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
     .door-click {
       position: absolute;
       width: 70px;
@@ -1730,6 +1760,28 @@ const clickHouse = (houseName) => {
       width: 30%;
       top: 70%;
       right: -35%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
+    .finger-right {
+      position: absolute;
+      width: 25%;
+      top: 65%;
+      right: 60%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3.5s 0s infinite;
+    }
+    .june-card {
+      position: absolute;
+      width: 30%;
+      top: 75%;
+      left: -20%;
       font-size: 1.2rem;
       font-weight: 700;
       padding: 1.5% 0;

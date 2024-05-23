@@ -204,7 +204,8 @@ watch(
           <div class="col-12">
             <h3>60度全視角虛實整合之災害預警</h3>
             <p>透過三維空間圖台，提供360度全方位視角，監看易致災聚落，有助於災害的情資研判。</p>
-            <img src="@/assets/may/03.png" />
+            <img class="mb-1" src="@/assets/june/03.png" alt="" />
+            <img src="@/assets/june/03-1.png" alt="" />
           </div>
           <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
             <Triangle_Icon />
