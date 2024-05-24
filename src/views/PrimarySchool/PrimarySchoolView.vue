@@ -45,8 +45,17 @@ const janFinger = ref(fingerImg[0]);
 const febFinger = ref(fingerRightImg[0]);
 const aprFinger = ref(fingerImg[0]);
 const marFinger = ref(fingerRightImg[0]);
-const mayFinger = ref(fingerImg[0]);
-const juneFinger = ref(fingerRightImg[0]);
+const mayFinger = ref(fingerRightImg[0]);
+const juneFinger = ref(fingerImg[0]);
+
+const julyFinger = ref(fingerRightImg[0]);
+const augustFinger = ref(fingerImg[0]);
+
+const septemberFinger = ref(fingerRightImg[0]);
+const octoberFinger = ref(fingerImg[0]);
+
+const novemberFinger = ref(fingerRightImg[0]);
+const decemberFinger = ref(fingerImg[0]);
 
 const lineShare = () => {
   window.open(`https://social-plugins.line.me/lineit/share?url=${window.location.href}`, '_blank');
@@ -177,35 +186,36 @@ const clickHouse = (houseName) => {
     case 'twin-house-open-door':
       doorOrWindows(houseName);
       twinOpen.openDoor = true;
-      mayFinger.value = fingerImg[1];
+      juneFinger.value = fingerImg[1];
       setTimeout(() => {
-        mayFinger.value = fingerImg[0];
-        router.push('may');
+        juneFinger.value = fingerImg[0];
+        router.push('june');
       }, 1000);
       break;
     case 'twin-house-open-windows':
       doorOrWindows(houseName);
       twinOpen.openWindows = true;
-      juneFinger.value = fingerRightImg[1];
+      mayFinger.value = fingerRightImg[1];
       setTimeout(() => {
-        juneFinger.value = fingerRightImg[0];
-
-        router.push('june');
+        mayFinger.value = fingerRightImg[0];
+        router.push('may');
       }, 1000);
       break;
     case 'strategy-house-open-door':
-      // strategyOpen.openDoor = true;
-      // setTimeout(() => {
-      //   router.push('july');
-      // }, 1000);
-      alert('未開放');
+      strategyOpen.openDoor = true;
+      julyFinger.value = fingerRightImg[1];
+      setTimeout(() => {
+        julyFinger.value = fingerRightImg[0];
+        router.push('july');
+      }, 1000);
       break;
     case 'strategy-house-open-windows':
-      // strategyOpen.openWindows = true;
-      // setTimeout(() => {
-      //   router.push('august');
-      // }, 1000);
-      alert('未開放');
+      strategyOpen.openWindows = true;
+      augustFinger.value = fingerImg[1];
+      setTimeout(() => {
+        augustFinger.value = fingerImg[0];
+        router.push('august');
+      }, 1000);
       break;
     case 'potential-house-open-door':
       // potentialOpen.openDoor = true;
@@ -264,6 +274,7 @@ const clickHouse = (houseName) => {
         <div id="people-flow-house">
           <PeopleFlow :flow-open="flowOpen" />
         </div>
+        <!-- 1 2 -->
         <div class="people-flow-click">
           <img class="finger" :src="janFinger" />
           <div class="jan-card">一月</div>
@@ -275,6 +286,7 @@ const clickHouse = (houseName) => {
         <div id="norm-house">
           <Norm :norm-open="normOpen" />
         </div>
+        <!-- 3 4 -->
         <div class="norm-house-click">
           <img class="finger" :src="aprFinger" />
           <div class="apr-card">四月</div>
@@ -286,32 +298,48 @@ const clickHouse = (houseName) => {
         <div id="twin-house">
           <twin :twin-open="twinOpen" />
         </div>
+        <!-- 5 6 -->
         <div class="twin-house-click">
           <img class="finger" :src="mayFinger" />
-          <div class="may-card">五月</div>
+          <div class="june-card">五月</div>
           <img class="finger-right" :src="juneFinger" />
-          <div class="june-card">六月</div>
+          <div class="may-card">六月</div>
           <div class="door-click" @click="clickHouse('twin-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('twin-house-open-windows')"></div>
         </div>
         <div id="strategy-house">
           <strategy :strategy-open="strategyOpen" />
         </div>
+        <!-- 7 8 -->
         <div class="strategy-house-click">
+          <img class="finger" :src="julyFinger" />
+          <div class="july-card">七月</div>
+          <img class="finger-right" :src="augustFinger" />
+          <div class="august-card">八月</div>
           <div class="door-click" @click="clickHouse('strategy-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('strategy-house-open-windows')"></div>
         </div>
         <div id="potential-house">
           <potential :potential-open="potentialOpen" />
         </div>
+        <!-- 9 10 -->
         <div class="potential-house-click">
+          <img class="finger" :src="septemberFinger" />
+          <div class="september-card">九月</div>
+          <img class="finger-right" :src="octoberFinger" />
+          <div class="october-card">十月</div>
           <div class="door-click" @click="clickHouse('potential-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('potential-house-open-windows')"></div>
         </div>
         <div id="atmosphere-house">
           <atmosphere :atmosphere-open="atmosphereOpen" />
         </div>
+        <!-- 11 12 -->
         <div class="atmosphere-house-click">
+          <img class="finger" :src="novemberFinger" />
+          <div class="november-card">十一月</div>
+          <img class="finger-right" :src="decemberFinger" />
+          <div class="december-card">十二月</div>
           <div class="door-click" @click="clickHouse('atmosphere-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('atmosphere-house-open-windows')"></div>
         </div>
@@ -357,6 +385,7 @@ const clickHouse = (houseName) => {
         </div>
       </div>
       <div class="row">
+        <!-- 1 2 -->
         <div
           class="people-flow-container col-12 mb-2 d-flex align-items-center justify-content-center"
         >
@@ -372,6 +401,7 @@ const clickHouse = (houseName) => {
             <div class="windows-click" @click="clickHouse('people-flow-open-windows')"></div>
           </div>
         </div>
+        <!-- 3 4-->
         <div class="norm-container col-12 mb-5 d-flex align-items-center justify-content-center">
           <div id="norm-house">
             <Norm :norm-open="normOpen" />
@@ -385,19 +415,21 @@ const clickHouse = (houseName) => {
             <div class="windows-click" @click="clickHouse('norm-house-open-windows')"></div>
           </div>
         </div>
+        <!-- 5 6 -->
         <div class="twin-container col-12 mb-2 d-flex align-items-center justify-content-center">
           <div id="twin-house">
             <twin :twin-open="twinOpen" />
           </div>
           <div class="twin-house-click">
             <img class="finger" :src="mayFinger" />
-            <div class="may-card">五月</div>
+            <div class="june-card">五月</div>
             <img class="finger-right" :src="juneFinger" />
-            <div class="june-card">六月</div>
+            <div class="may-card">六月</div>
             <div class="door-click" @click="clickHouse('twin-house-open-door')"></div>
             <div class="windows-click" @click="clickHouse('twin-house-open-windows')"></div>
           </div>
         </div>
+        <!-- 7 8 -->
         <div
           class="strategy-container col-12 mb-2 d-flex align-items-center justify-content-center"
         >
@@ -405,10 +437,15 @@ const clickHouse = (houseName) => {
             <strategy :strategy-open="strategyOpen" />
           </div>
           <div class="strategy-house-click">
+            <img class="finger" :src="julyFinger" />
+            <div class="july-card">七月</div>
+            <img class="finger-right" :src="augustFinger" />
+            <div class="august-card">八月</div>
             <div class="door-click" @click="clickHouse('strategy-house-open-door')"></div>
             <div class="windows-click" @click="clickHouse('strategy-house-open-windows')"></div>
           </div>
         </div>
+        <!-- 9 10 -->
         <div
           class="potential-container col-12 mb-2 d-flex align-items-center justify-content-center"
         >
@@ -416,10 +453,15 @@ const clickHouse = (houseName) => {
             <potential :potential-open="potentialOpen" />
           </div>
           <div class="potential-house-click">
+            <img class="finger" :src="septemberFinger" />
+            <div class="september-card">九月</div>
+            <img class="finger-right" :src="octoberFinger" />
+            <div class="october-card">十月</div>
             <div class="door-click" @click="clickHouse('potential-house-open-door')"></div>
             <div class="windows-click" @click="clickHouse('potential-house-open-windows')"></div>
           </div>
         </div>
+        <!-- 11 12 -->
         <div
           class="atmosphere-container col-12 mb-5 d-flex align-items-center justify-content-center"
         >
@@ -427,6 +469,10 @@ const clickHouse = (houseName) => {
             <atmosphere :atmosphere-open="atmosphereOpen" />
           </div>
           <div class="atmosphere-house-click">
+            <img class="finger" :src="novemberFinger" />
+            <div class="november-card">十一月</div>
+            <img class="finger-right" :src="decemberFinger" />
+            <div class="december-card">十二月</div>
             <div class="door-click" @click="clickHouse('atmosphere-house-open-door')"></div>
             <div class="windows-click" @click="clickHouse('atmosphere-house-open-windows')"></div>
           </div>
@@ -1253,7 +1299,7 @@ const clickHouse = (houseName) => {
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 995;
-    .finger {
+    .finger-right {
       position: absolute;
       width: 25%;
       top: 60%;
@@ -1275,7 +1321,7 @@ const clickHouse = (houseName) => {
       border-radius: 4px;
       background-color: #fdfaec;
     }
-    .finger-right {
+    .finger {
       position: absolute;
       width: 25%;
       top: 70%;
@@ -1343,6 +1389,50 @@ const clickHouse = (houseName) => {
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 995;
+    .finger-right {
+      position: absolute;
+      width: 25%;
+      top: 60%;
+      left: 85%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3s 0s infinite;
+    }
+    .august-card {
+      position: absolute;
+      width: 30%;
+      top: 63%;
+      right: -45%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
+    .finger {
+      position: absolute;
+      width: 25%;
+      top: 65%;
+      right: 75%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3.5s 0s infinite;
+    }
+    .july-card {
+      position: absolute;
+      width: 30%;
+      top: 70%;
+      left: -35%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
     .door-click {
       position: absolute;
       width: 70px;
@@ -1751,9 +1841,9 @@ const clickHouse = (houseName) => {
       position: absolute;
       width: 25%;
       top: 65%;
-      left: 75%;
+      right: 60%;
       animation: move 3s 0s infinite;
-      -webkit-animation: move 3s 0s infinite;
+      -webkit-animation: move 3.5s 0s infinite;
     }
     .may-card {
       position: absolute;
@@ -1773,9 +1863,9 @@ const clickHouse = (houseName) => {
       position: absolute;
       width: 25%;
       top: 65%;
-      right: 60%;
+      left: 75%;
       animation: move 3s 0s infinite;
-      -webkit-animation: move 3.5s 0s infinite;
+      -webkit-animation: move 3s 0s infinite;
     }
     .june-card {
       position: absolute;
@@ -1837,6 +1927,50 @@ const clickHouse = (houseName) => {
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 995;
+    .finger {
+      position: absolute;
+      width: 25%;
+      top: 65%;
+      right: 60%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3.5s 0s infinite;
+    }
+    .august-card {
+      position: absolute;
+      width: 30%;
+      top: 70%;
+      right: -45%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
+    .finger-right {
+      position: absolute;
+      width: 25%;
+      top: 65%;
+      left: 85%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3s 0s infinite;
+    }
+    .july-card {
+      position: absolute;
+      width: 30%;
+      top: 70%;
+      left: -20%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
     .door-click {
       position: absolute;
       width: 100px;
