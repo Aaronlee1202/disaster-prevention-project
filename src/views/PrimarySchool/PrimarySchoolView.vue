@@ -47,13 +47,10 @@ const aprFinger = ref(fingerImg[0]);
 const marFinger = ref(fingerRightImg[0]);
 const mayFinger = ref(fingerRightImg[0]);
 const juneFinger = ref(fingerImg[0]);
-
 const julyFinger = ref(fingerRightImg[0]);
 const augustFinger = ref(fingerImg[0]);
-
 const septemberFinger = ref(fingerRightImg[0]);
 const octoberFinger = ref(fingerImg[0]);
-
 const novemberFinger = ref(fingerRightImg[0]);
 const decemberFinger = ref(fingerImg[0]);
 
@@ -143,10 +140,9 @@ const doorOrWindows = (houseName) => {
 
 // 點擊房子 判斷開門或開窗
 const clickHouse = (houseName) => {
-  // doorOrWindows(houseName); //12個月全開後 在這邊判斷即可
+  doorOrWindows(houseName);
   switch (houseName) {
     case 'people-flow-open-door':
-      doorOrWindows(houseName);
       flowOpen.openDoor = true;
       febFinger.value = fingerRightImg[1];
       setTimeout(() => {
@@ -156,7 +152,6 @@ const clickHouse = (houseName) => {
       }, 1000);
       break;
     case 'people-flow-open-windows':
-      doorOrWindows(houseName);
       flowOpen.openWindows = true;
       janFinger.value = fingerImg[1];
       setTimeout(() => {
@@ -166,7 +161,6 @@ const clickHouse = (houseName) => {
       }, 1000);
       break;
     case 'norm-house-open-door':
-      doorOrWindows(houseName);
       normOpen.openDoor = true;
       marFinger.value = fingerRightImg[1];
       setTimeout(() => {
@@ -175,7 +169,6 @@ const clickHouse = (houseName) => {
       }, 1000);
       break;
     case 'norm-house-open-windows':
-      doorOrWindows(houseName);
       normOpen.openWindows = true;
       aprFinger.value = fingerImg[1];
       setTimeout(() => {
@@ -184,7 +177,6 @@ const clickHouse = (houseName) => {
       }, 1000);
       break;
     case 'twin-house-open-door':
-      doorOrWindows(houseName);
       twinOpen.openDoor = true;
       juneFinger.value = fingerImg[1];
       setTimeout(() => {
@@ -193,7 +185,6 @@ const clickHouse = (houseName) => {
       }, 1000);
       break;
     case 'twin-house-open-windows':
-      doorOrWindows(houseName);
       twinOpen.openWindows = true;
       mayFinger.value = fingerRightImg[1];
       setTimeout(() => {
@@ -218,32 +209,36 @@ const clickHouse = (houseName) => {
       }, 1000);
       break;
     case 'potential-house-open-door':
-      // potentialOpen.openDoor = true;
-      // setTimeout(() => {
-      //   router.push('september');
-      // }, 1000);
-      alert('未開放');
+      potentialOpen.openDoor = true;
+      septemberFinger.value = fingerRightImg[1];
+      setTimeout(() => {
+        septemberFinger.value = fingerRightImg[0];
+        router.push('september');
+      }, 1000);
       break;
     case 'potential-house-open-windows':
-      // potentialOpen.openWindows = true;
-      // setTimeout(() => {
-      //   router.push('october');
-      // }, 1000);
-      alert('未開放');
+      potentialOpen.openWindows = true;
+      octoberFinger.value = fingerImg[1];
+      setTimeout(() => {
+        octoberFinger.value = fingerImg[0];
+        router.push('october');
+      }, 1000);
       break;
     case 'atmosphere-house-open-door':
-      // atmosphereOpen.openDoor = true;
-      // setTimeout(() => {
-      //   router.push('november');
-      // }, 1000);
-      alert('未開放');
+      atmosphereOpen.openDoor = true;
+      novemberFinger.value = fingerRightImg[1];
+      setTimeout(() => {
+        novemberFinger.value = fingerRightImg[0];
+        router.push('november');
+      }, 1000);
       break;
     case 'atmosphere-house-open-windows':
-      // atmosphereOpen.openWindows = true;
-      // setTimeout(() => {
-      //   router.push('december');
-      // }, 1000);
-      alert('未開放');
+      atmosphereOpen.openWindows = true;
+      decemberFinger.value = fingerImg[1];
+      setTimeout(() => {
+        decemberFinger.value = fingerImg[0];
+        router.push('december');
+      }, 1000);
       break;
   }
 };
@@ -311,38 +306,38 @@ const clickHouse = (houseName) => {
           <strategy :strategy-open="strategyOpen" />
         </div>
         <!-- 7 8 -->
-        <div class="strategy-house-click">
+        <!-- <div class="strategy-house-click">
           <img class="finger" :src="julyFinger" />
           <div class="july-card">七月</div>
           <img class="finger-right" :src="augustFinger" />
           <div class="august-card">八月</div>
           <div class="door-click" @click="clickHouse('strategy-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('strategy-house-open-windows')"></div>
-        </div>
+        </div> -->
         <div id="potential-house">
           <potential :potential-open="potentialOpen" />
         </div>
         <!-- 9 10 -->
-        <div class="potential-house-click">
+        <!-- <div class="potential-house-click">
           <img class="finger" :src="septemberFinger" />
           <div class="september-card">九月</div>
           <img class="finger-right" :src="octoberFinger" />
           <div class="october-card">十月</div>
           <div class="door-click" @click="clickHouse('potential-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('potential-house-open-windows')"></div>
-        </div>
+        </div> -->
         <div id="atmosphere-house">
           <atmosphere :atmosphere-open="atmosphereOpen" />
         </div>
         <!-- 11 12 -->
-        <div class="atmosphere-house-click">
+        <!-- <div class="atmosphere-house-click">
           <img class="finger" :src="novemberFinger" />
           <div class="november-card">十一月</div>
           <img class="finger-right" :src="decemberFinger" />
           <div class="december-card">十二月</div>
           <div class="door-click" @click="clickHouse('atmosphere-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('atmosphere-house-open-windows')"></div>
-        </div>
+        </div> -->
 
         <div class="share-container">
           <div class="row align-items-center">
@@ -436,14 +431,14 @@ const clickHouse = (houseName) => {
           <div id="strategy-house">
             <strategy :strategy-open="strategyOpen" />
           </div>
-          <div class="strategy-house-click">
+          <!-- <div class="strategy-house-click">
             <img class="finger" :src="julyFinger" />
             <div class="july-card">七月</div>
             <img class="finger-right" :src="augustFinger" />
             <div class="august-card">八月</div>
             <div class="door-click" @click="clickHouse('strategy-house-open-door')"></div>
             <div class="windows-click" @click="clickHouse('strategy-house-open-windows')"></div>
-          </div>
+          </div> -->
         </div>
         <!-- 9 10 -->
         <div
@@ -452,14 +447,14 @@ const clickHouse = (houseName) => {
           <div id="potential-house">
             <potential :potential-open="potentialOpen" />
           </div>
-          <div class="potential-house-click">
+          <!-- <div class="potential-house-click">
             <img class="finger" :src="septemberFinger" />
             <div class="september-card">九月</div>
             <img class="finger-right" :src="octoberFinger" />
             <div class="october-card">十月</div>
             <div class="door-click" @click="clickHouse('potential-house-open-door')"></div>
             <div class="windows-click" @click="clickHouse('potential-house-open-windows')"></div>
-          </div>
+          </div> -->
         </div>
         <!-- 11 12 -->
         <div
@@ -468,14 +463,14 @@ const clickHouse = (houseName) => {
           <div id="atmosphere-house">
             <atmosphere :atmosphere-open="atmosphereOpen" />
           </div>
-          <div class="atmosphere-house-click">
+          <!-- <div class="atmosphere-house-click">
             <img class="finger" :src="novemberFinger" />
             <div class="november-card">十一月</div>
             <img class="finger-right" :src="decemberFinger" />
             <div class="december-card">十二月</div>
             <div class="door-click" @click="clickHouse('atmosphere-house-open-door')"></div>
             <div class="windows-click" @click="clickHouse('atmosphere-house-open-windows')"></div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -1479,6 +1474,50 @@ const clickHouse = (houseName) => {
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 995;
+    .finger-right {
+      position: absolute;
+      width: 25%;
+      top: 50%;
+      left: 75%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3s 0s infinite;
+    }
+    .september-card {
+      position: absolute;
+      width: 30%;
+      top: 70%;
+      left: -35%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
+    .finger {
+      position: absolute;
+      width: 25%;
+      top: 65%;
+      right: 75%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3.5s 0s infinite;
+    }
+    .october-card {
+      position: absolute;
+      width: 30%;
+      top: 50%;
+      right: -35%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
     .door-click {
       position: absolute;
       width: 70px;
@@ -1525,6 +1564,50 @@ const clickHouse = (houseName) => {
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 995;
+    .finger-right {
+      position: absolute;
+      width: 20%;
+      top: 50%;
+      left: 90%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3s 0s infinite;
+    }
+    .november-card {
+      position: absolute;
+      width: 30%;
+      top: 70%;
+      left: -35%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
+    .finger {
+      position: absolute;
+      width: 20%;
+      top: 65%;
+      right: 80%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3.5s 0s infinite;
+    }
+    .december-card {
+      position: absolute;
+      width: 30%;
+      top: 50%;
+      right: -45%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
     .door-click {
       position: absolute;
       width: 70px;
@@ -1913,6 +1996,7 @@ const clickHouse = (houseName) => {
       position: absolute;
     }
   }
+  // 7 8月
   .strategy-container {
     position: relative;
     width: 100%;
@@ -2003,6 +2087,7 @@ const clickHouse = (houseName) => {
       position: absolute;
     }
   }
+  // 9 10月
   .potential-container {
     position: relative;
     width: 100%;
@@ -2017,6 +2102,50 @@ const clickHouse = (houseName) => {
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 995;
+    .finger {
+      position: absolute;
+      width: 25%;
+      top: 65%;
+      right: 70%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3.5s 0s infinite;
+    }
+    .september-card {
+      position: absolute;
+      width: 30%;
+      top: 70%;
+      left: -30%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
+    .finger-right {
+      position: absolute;
+      width: 25%;
+      top: 50%;
+      left: 75%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3s 0s infinite;
+    }
+    .october-card {
+      position: absolute;
+      width: 30%;
+      top: 55%;
+      right: -35%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
     .door-click {
       position: absolute;
       width: 100px;
@@ -2050,6 +2179,7 @@ const clickHouse = (houseName) => {
       position: absolute;
     }
   }
+  // 11 12月
   .atmosphere-container {
     position: relative;
     width: 100%;
@@ -2064,6 +2194,50 @@ const clickHouse = (houseName) => {
     transform: translate(-50%, -50%);
     // border: #3f3a3a 1px solid;
     z-index: 995;
+    .finger {
+      position: absolute;
+      width: 20%;
+      top: 60%;
+      right: 85%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3.5s 0s infinite;
+    }
+    .november-card {
+      position: absolute;
+      width: 30%;
+      top: 70%;
+      left: -35%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
+    .finger-right {
+      position: absolute;
+      width: 20%;
+      top: 50%;
+      left: 80%;
+      animation: move 3s 0s infinite;
+      -webkit-animation: move 3s 0s infinite;
+    }
+    .december-card {
+      position: absolute;
+      width: 30%;
+      top: 55%;
+      right: -35%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.5% 0;
+      text-align: center;
+      color: #a06c57;
+      border: #a06c57 2px solid;
+      border-radius: 4px;
+      background-color: #fdfaec;
+    }
     .door-click {
       position: absolute;
       width: 100px;

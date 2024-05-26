@@ -72,8 +72,15 @@ watch(
     </div>
     <div class="container-fluid custom-container" v-if="screenSwitch == true">
       <div class="img-container">
-        <Lottie_Start v-if="!lottieLoop" />
-        <Lottie_Loop :play-lottie="lottieLoop" v-if="lottieLoop == true" />
+        <div class="start-box ">
+              <Lottie_Start />
+            </div>
+            <div class="start-box-2" v-if="lottieLoop">
+              <Lottie_Start2 />
+            </div>
+            <div class="loop-box" v-if="lottieShow">
+              <Lottie_Loop />
+            </div>
       </div>
       <div class="content-box">
         <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
@@ -219,11 +226,6 @@ h2 {
     #new-talisman-start {
       // 使用CSS的transform綁定來讓子div與父div保持一一樣大小
       position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      transform: scale(1);
       width: 100% !important;
       z-index: 5;
       opacity: 1;
@@ -231,21 +233,11 @@ h2 {
     }
     #new-talisman-begin {
       position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      transform: scale(1);
       width: 100% !important;
       z-index: 10;
     }
     #new-talisman-loop {
       position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      transform: scale(1);
       width: 100% !important;
       z-index: 15;
     }
