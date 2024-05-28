@@ -197,14 +197,15 @@ h2 {
     height: 90svh;
     // margin-bottom: 30px;
     width: 100% !important;
+    padding-top: 4%;
     #new-talisman-start {
       // 使用CSS的transform綁定來讓子div與父div保持一一樣大小
       position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      transform: scale(1);
+      // right: 0;
+      // left: 0;
+      // top: 0;
+      // bottom: 0;
+      // transform: scale(1);
       width: 100% !important;
       z-index: 10;
       opacity: 1;
@@ -212,11 +213,11 @@ h2 {
     }
     #new-talisman-loop {
       position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      transform: scale(1);
+      // right: 0;
+      // left: 0;
+      // top: 0;
+      // bottom: 0;
+      // transform: scale(1);
       width: 100% !important;
       z-index: 5;
     }
