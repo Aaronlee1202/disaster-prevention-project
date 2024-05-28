@@ -208,17 +208,17 @@ h2 {
   }
   .img-container {
     position: relative;
-    height: 90svh;
-    // margin-bottom: 30px;
+    height: 100svh;
+    padding-top: 4%;
     width: 100% !important;
     #new-talisman-start {
       // 使用CSS的transform綁定來讓子div與父div保持一一樣大小
       position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      transform: scale(1);
+      // right: 0;
+      // left: 0;
+      // top: 0;
+      // bottom: 0;
+      // transform: scale(1);
       width: 100% !important;
       z-index: 5;
       opacity: 1;
@@ -226,21 +226,21 @@ h2 {
     }
     #new-talisman-begin {
       position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      transform: scale(1);
+      // right: 0;
+      // left: 0;
+      // top: 0;
+      // bottom: 0;
+      // transform: scale(1);
       width: 100% !important;
       z-index: 10;
     }
     #new-talisman-loop {
       position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      transform: scale(1);
+      // right: 0;
+      // left: 0;
+      // top: 0;
+      // bottom: 0;
+      // transform: scale(1);
       width: 100% !important;
       z-index: 15;
     }

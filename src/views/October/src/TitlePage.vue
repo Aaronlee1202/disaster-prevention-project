@@ -233,7 +233,8 @@ h2 {
   }
   .img-container {
     position: relative;
-    height: 80svh;
+    height: 100svh;
+    padding-top: 4%;
     width: 100% !important;
     .fade-out {
       opacity: 0;

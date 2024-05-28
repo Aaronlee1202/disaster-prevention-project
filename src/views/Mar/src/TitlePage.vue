@@ -200,8 +200,8 @@ h2 {
   }
   .img-container {
     position: relative;
-    height: 90svh;
-    // margin-bottom: 30px;
+    height: 100svh;
+    padding-top: 4%;
     width: 100% !important;
   }
   .content-box {
