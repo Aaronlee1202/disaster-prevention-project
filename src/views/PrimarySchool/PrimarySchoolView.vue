@@ -306,38 +306,38 @@ const clickHouse = (houseName) => {
           <strategy :strategy-open="strategyOpen" />
         </div>
         <!-- 7 8 -->
-        <!-- <div class="strategy-house-click">
+        <div class="strategy-house-click">
           <img class="finger" :src="julyFinger" />
           <div class="july-card">七月</div>
           <img class="finger-right" :src="augustFinger" />
           <div class="august-card">八月</div>
           <div class="door-click" @click="clickHouse('strategy-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('strategy-house-open-windows')"></div>
-        </div> -->
+        </div>
         <div id="potential-house">
           <potential :potential-open="potentialOpen" />
         </div>
         <!-- 9 10 -->
-        <!-- <div class="potential-house-click">
+        <div class="potential-house-click">
           <img class="finger" :src="septemberFinger" />
           <div class="september-card">九月</div>
           <img class="finger-right" :src="octoberFinger" />
           <div class="october-card">十月</div>
           <div class="door-click" @click="clickHouse('potential-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('potential-house-open-windows')"></div>
-        </div> -->
+        </div>
         <div id="atmosphere-house">
           <atmosphere :atmosphere-open="atmosphereOpen" />
         </div>
         <!-- 11 12 -->
-        <!-- <div class="atmosphere-house-click">
+        <div class="atmosphere-house-click">
           <img class="finger" :src="novemberFinger" />
           <div class="november-card">十一月</div>
           <img class="finger-right" :src="decemberFinger" />
           <div class="december-card">十二月</div>
           <div class="door-click" @click="clickHouse('atmosphere-house-open-door')"></div>
           <div class="windows-click" @click="clickHouse('atmosphere-house-open-windows')"></div>
-        </div> -->
+        </div>
 
         <div class="share-container">
           <div class="row align-items-center">
@@ -431,14 +431,14 @@ const clickHouse = (houseName) => {
           <div id="strategy-house">
             <strategy :strategy-open="strategyOpen" />
           </div>
-          <!-- <div class="strategy-house-click">
+          <div class="strategy-house-click">
             <img class="finger" :src="julyFinger" />
             <div class="july-card">七月</div>
             <img class="finger-right" :src="augustFinger" />
             <div class="august-card">八月</div>
             <div class="door-click" @click="clickHouse('strategy-house-open-door')"></div>
             <div class="windows-click" @click="clickHouse('strategy-house-open-windows')"></div>
-          </div> -->
+          </div>
         </div>
         <!-- 9 10 -->
         <div
@@ -447,14 +447,14 @@ const clickHouse = (houseName) => {
           <div id="potential-house">
             <potential :potential-open="potentialOpen" />
           </div>
-          <!-- <div class="potential-house-click">
+          <div class="potential-house-click">
             <img class="finger" :src="septemberFinger" />
             <div class="september-card">九月</div>
             <img class="finger-right" :src="octoberFinger" />
             <div class="october-card">十月</div>
             <div class="door-click" @click="clickHouse('potential-house-open-door')"></div>
             <div class="windows-click" @click="clickHouse('potential-house-open-windows')"></div>
-          </div> -->
+          </div>
         </div>
         <!-- 11 12 -->
         <div
@@ -463,14 +463,14 @@ const clickHouse = (houseName) => {
           <div id="atmosphere-house">
             <atmosphere :atmosphere-open="atmosphereOpen" />
           </div>
-          <!-- <div class="atmosphere-house-click">
+          <div class="atmosphere-house-click">
             <img class="finger" :src="novemberFinger" />
             <div class="november-card">十一月</div>
             <img class="finger-right" :src="decemberFinger" />
             <div class="december-card">十二月</div>
             <div class="door-click" @click="clickHouse('atmosphere-house-open-door')"></div>
             <div class="windows-click" @click="clickHouse('atmosphere-house-open-windows')"></div>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>

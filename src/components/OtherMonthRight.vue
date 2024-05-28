@@ -64,23 +64,23 @@ const items = [
 ];
 const router = useRouter();
 const openLink = (link, index) => {
-  if (index <= thisMonth.value) {
+  // if (index <= thisMonth.value) {
     router.push(link);
-  } else {
-    alert('尚未開放');
-  }
+  // } else {
+  //   alert('尚未開放');
+  // }
 };
 
-const thisMonth = ref();
-onMounted(() => {
-  const getMonth = new Date().getUTCMonth();
-  const getDate = new Date().getUTCDate();
-  if (getDate >= 20) {
-    thisMonth.value = getMonth + 1;
-  } else {
-    thisMonth.value = getMonth;
-  }
-});
+// const thisMonth = ref();
+// onMounted(() => {
+//   const getMonth = new Date().getUTCMonth();
+//   const getDate = new Date().getUTCDate();
+//   if (getDate >= 20) {
+//     thisMonth.value = getMonth + 1;
+//   } else {
+//     thisMonth.value = getMonth;
+//   }
+// });
 </script>
 
 <template>
@@ -107,7 +107,6 @@ onMounted(() => {
             <a
               type="button"
               class="month-icon m-0 d-flex align-items-center justify-content-center"
-              :class="[index > thisMonth ? 'disable' : '']"
               @click="openLink(item.link, index)"
             >
               <img :src="item.img" />
