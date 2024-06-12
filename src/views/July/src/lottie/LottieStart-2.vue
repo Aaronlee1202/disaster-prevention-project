@@ -22,7 +22,7 @@ watch(
     if (newVal) {
       setTimeout(() => {
         newTalismanJson.value.destroy();
-      }, 1950);
+      }, 100);
     }
   },
   {

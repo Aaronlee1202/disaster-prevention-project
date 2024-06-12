@@ -32,7 +32,7 @@ watch(
         <div class="col-6">
           <div class="img-container d-flex align-items-center">
             <div class="start-box d-flex justify-content-end">
-              <video width="100%" autoplay loop muted>
+              <video width="100%" autoplay muted>
                 <source src="@/assets/lottie/march/march-2.mp4" type="video/mp4" />
               </video>
             </div>
@@ -181,6 +181,8 @@ h2 {
     }
   }
   .content-box {
+    position: relative;
+    margin-top: 40%;
     img {
       width: 80%;
     }

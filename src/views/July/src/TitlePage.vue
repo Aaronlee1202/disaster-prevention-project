@@ -206,10 +206,12 @@ h2 {
     display: flex;
     justify-content: center;
     div {
-      width: 100%;
+      width: 100% !important;
     }
   }
   .content-box {
+    position: relative;
+    margin-top: 40%;
     img {
       width: 80%;
     }

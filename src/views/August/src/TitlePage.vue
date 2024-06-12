@@ -202,6 +202,8 @@ h2 {
     }
   }
   .content-box {
+    position: relative;
+    margin-top: 40%;
     img {
       width: 80%;
     }

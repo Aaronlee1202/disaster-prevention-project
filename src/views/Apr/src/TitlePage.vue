@@ -63,7 +63,7 @@ watch(
     </div>
     <div class="container-fluid custom-container" v-if="screenSwitch == true">
       <div class="img-container">
-        <Lottie_Start v-if="!lottieLoop"/>
+        <Lottie_Start v-if="!lottieLoop" />
         <Lottie_Loop :play-lottie="lottieLoop" v-if="lottieLoop == true" />
       </div>
       <div class="content-box">
@@ -178,6 +178,8 @@ h2 {
     }
   }
   .content-box {
+    position: relative;
+    margin-top: 40%;
     img {
       width: 80%;
     }
