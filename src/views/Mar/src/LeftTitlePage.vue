@@ -8,12 +8,12 @@ defineComponent({
   }
 });
 
-const lottieLoop = ref(true);
+const lottieLoop = ref(false);
 
 onMounted(() => {
   setTimeout(() => {
-    lottieLoop.value = false;
-  }, 7000);
+    lottieLoop.value = true;
+  }, 1000 * 11);
 });
 </script>
 
@@ -24,9 +24,12 @@ onMounted(() => {
         <div class="col-4">
           <div class="img-container">
             <div class="start-box d-flex justify-content-center">
-              <video width="100%" autoplay loop muted playsinline>
-                <source src="@/assets/lottie/march/march-2.mp4" type="video/mp4" />
+              <video width="100%" autoplay muted playsinline>
+                <source src="@/assets/lottie/march/march-1.mp4" type="video/mp4" />
               </video>
+            </div>
+            <div class="loop-box d-flex justify-content-center" v-if="lottieLoop">
+              <img src="@/assets/lottie/march/march-2.gif" />
             </div>
           </div>
         </div>
@@ -83,6 +86,10 @@ h2 {
     width: 100%;
     position: absolute;
     z-index: 20;
+    img {
+      width: 100%;
+      opacity: 0.8;
+    }
   }
   .fade-out {
     opacity: 0;
