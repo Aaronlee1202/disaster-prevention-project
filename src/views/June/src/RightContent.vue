@@ -119,7 +119,7 @@ const lottieAnimation = () => {
           >
             <div class="link-chapter d-flex align-items-center justify-content-center">02</div>
             <div class="link-text d-flex align-items-center justify-content-between">
-              <div>交通部中央氣象局</div>
+              <div>交通部中央氣象署</div>
               <Arrow_Right />
             </div>
           </a>
