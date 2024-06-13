@@ -4,14 +4,14 @@ import { useWindowSize } from '@vueuse/core';
 
 const { width } = useWindowSize();
 
-const lottieLoop = ref(true);
+const lottieLoop = ref(false);
 
 const screenSwitch = ref(false);
 
 onMounted(() => {
   setTimeout(() => {
-    lottieLoop.value = false;
-  }, 7000);
+    lottieLoop.value = true;
+  }, 1000 * 9);
 });
 
 watch(
@@ -33,8 +33,11 @@ watch(
           <div class="img-container d-flex align-items-center">
             <div class="start-box d-flex justify-content-end">
               <video width="100%" autoplay muted>
-                <source src="@/assets/lottie/march/march-2.mp4" type="video/mp4" />
+                <source src="@/assets/lottie/march/march-1.mp4" type="video/mp4" />
               </video>
+            </div>
+            <div class="loop-box d-flex justify-content-end" v-if="lottieLoop">
+              <img src="@/assets/lottie/march/march-2.gif" />
             </div>
           </div>
         </div>
@@ -53,10 +56,13 @@ watch(
     </div>
     <div class="container-fluid custom-container" v-if="screenSwitch == true">
       <div class="img-container">
-        <div class="loop-box d-flex justify-content-center">
+        <div class="start-box d-flex justify-content-center">
           <video width="100%" autoplay muted playsinline>
-            <source src="@/assets/lottie/march/march-2.mp4" type="video/mp4" />
+            <source src="@/assets/lottie/march/march-1.mp4" type="video/mp4" />
           </video>
+        </div>
+        <div class="loop-box d-flex justify-content-center" v-if="lottieLoop">
+          <img src="@/assets/lottie/march/march-2.gif" />
         </div>
       </div>
       <div class="content-box">
@@ -112,9 +118,12 @@ h2 {
   }
   .loop-box {
     width: 100%;
-    height: 80vh;
     position: absolute;
     z-index: 15;
+    img {
+      width: 100%;
+      opacity: 0.8;
+    }
   }
   .fade-out {
     opacity: 0;
