@@ -1,18 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router';
 // import VueGtag from 'vue-gtag';
 import PrimarySchoolView from '../views/PrimarySchool/PrimarySchoolView.vue';
-import DisasterPreventionView from '../views/Jan/DisasterPreventionView.vue';
-import FebruaryView from '../views/Feb/FebruaryView.vue';
-import MarchView from '../views/Mar/MarchView.vue';
-import AprilView from '../views/Apr/AprilView.vue';
-import MayView from '../views/May/MayView.vue';
-import JuneView from '@/views/June/JuneView.vue';
-import JulyView from '@/views/July/JulyView.vue';
-import AugustView from '@/views/August/AugustView.vue';
-import SeptemberView from '@/views/September/SeptemberView.vue';
-import OctoberView from '@/views/October/OctoberView.vue';
-import NovemberView from '@/views/November/NovemberView.vue';
-import DecemberView from '@/views/December/DecemberView.vue';
+const DisasterPreventionView = () => import('../views/Jan/DisasterPreventionView.vue');
+const FebruaryView = () => import('../views/Feb/FebruaryView.vue');
+const MarchView = () => import('../views/Mar/MarchView.vue');
+const AprilView = () => import('../views/Apr/AprilView.vue');
+const MayView = () => import('../views/May/MayView.vue');
+const JuneView = () => import('@/views/June/JuneView.vue');
+const JulyView = () => import('@/views/July/JulyView.vue');
+const AugustView = () => import('@/views/August/AugustView.vue');
+const SeptemberView = () => import('@/views/September/SeptemberView.vue');
+const OctoberView = () => import('@/views/October/OctoberView.vue');
+const NovemberView = () => import('@/views/November/NovemberView.vue');
+const DecemberView = () => import('@/views/December/DecemberView.vue');
 
 const base_url = import.meta.env.BASE_URL;
 
