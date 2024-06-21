@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
-import { ref, onMounted, watch, onBeforeUnmount } from 'vue';
+import { ref, onMounted, watch, onUnmounted } from 'vue';
 import lottie from 'lottie-web';
 import dog_animation from '@/assets/lottie/index/dog_animation.json';
 import radish_animation from '@/assets/lottie/index/radish_animation.json';
@@ -12,7 +12,7 @@ onMounted(() => {
   lottieAnimation();
 });
 
-onBeforeUnmount(() => {
+onUnmounted(() => {
   dogAnimationJson.value.destroy();
   radishAnimationJson.value.destroy();
 });

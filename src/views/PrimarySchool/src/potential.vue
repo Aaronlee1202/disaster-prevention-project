@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
-import { ref, onMounted, watch, onBeforeUnmount } from 'vue';
+import { ref, onMounted, watch, onUnmounted } from 'vue';
 import lottie from 'lottie-web';
 import potential from '@/assets/lottie/potential.json';
 import potential_open_door from '@/assets/lottie/potential_open_door.json';
@@ -14,7 +14,7 @@ onMounted(() => {
   lottieAnimation();
 });
 
-onBeforeUnmount(() => {
+onUnmounted(() => {
   potentialJson.value.destroy();
   potentialOpenDoorJson.value.destroy();
   potentialOpenWindowsJson.value.destroy();

@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
-import { ref, onMounted, watch, onBeforeUnmount } from 'vue';
+import { ref, onMounted, watch, onUnmounted } from 'vue';
 import lottie from 'lottie-web';
 import norm from '@/assets/lottie/norm.json';
 import norm_open_door from '@/assets/lottie/norm_open_door.json';
@@ -14,7 +14,7 @@ onMounted(() => {
   lottieAnimation();
 });
 
-onBeforeUnmount(() => {
+onUnmounted(() => {
   normJson.value.destroy();
   normOpenDoorJson.value.destroy();
   normOpenWindowsJson.value.destroy();
