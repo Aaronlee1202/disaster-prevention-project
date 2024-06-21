@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, watch, onBeforeUnmount } from 'vue';
+import { ref, onMounted, watch, onUnmounted } from 'vue';
 import lottie from 'lottie-web';
 import people_flow from '@/assets/lottie/people_flow.json';
 import people_flow_open_door from '@/assets/lottie/people_flow_open_door.json';
@@ -13,7 +13,7 @@ onMounted(() => {
   lottieAnimation();
 });
 
-onBeforeUnmount(() => {
+onUnmounted(() => {
   people_flowJson.value.destroy();
   people_flowOpenDoorJson.value.destroy();
   people_flowOpenWindowsJson.value.destroy();

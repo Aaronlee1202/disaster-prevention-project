@@ -3,12 +3,6 @@ import { ref, reactive, watch, defineComponent, defineAsyncComponent } from 'vue
 import { useWindowSize } from '@vueuse/core';
 import { useRouter } from 'vue-router';
 import SmallAnimation from './src/SmallAnimation.vue';
-// import PeopleFlow from './src/PeopleFlow.vue';
-// import Norm from './src/norm.vue';
-// import twin from './src/twin.vue';
-// import strategy from './src/strategy.vue';
-// import potential from './src/potential.vue';
-// import atmosphere from './src/atmosphere.vue';
 import finger_default from '@/assets/primary_school/Default.png';
 import finger_pressed from '@/assets/primary_school/Pressed.png';
 import finger_right_default from '@/assets/primary_school/finger_right_default.png';

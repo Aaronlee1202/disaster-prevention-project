@@ -100,17 +100,6 @@ const router = createRouter({
   ]
 });
 
-// router.beforeEach((to, from, next) => {
-//   if (isLineApp || isFbApp) {
-//     next({ path: '/?openExternalBrowser=1' });
-//     return false;
-//   } else {
-//     console.log('to', to, 'from', from);
-//     next();
-//     return false;
-//   }
-// });
-
 // 在路由導航守衛中動態設置網頁標題
 router.beforeEach((to, from, next) => {
   // 從路由的 meta 屬性中獲取標題

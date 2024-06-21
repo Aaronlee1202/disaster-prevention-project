@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import lottie from 'lottie-web';
 import newTalisman from '@/assets/lottie/october/10-2-start.json';
 
@@ -11,7 +11,7 @@ onMounted(() => {
     newTalismanJson.value.destroy();
   }, 2000);
 });
-onBeforeUnmount(() => {
+onUnmounted(() => {
   newTalismanJson.value.destroy();
 });
 
