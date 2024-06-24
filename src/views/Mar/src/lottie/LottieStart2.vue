@@ -1,46 +1,30 @@
 <script setup>
-import { ref, onMounted, watch, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import lottie from 'lottie-web';
-import newTalisman from '@/assets/lottie/march/start2.json';
+import newTalisman from '@/assets/lottie/march/3-2-start.json';
 
 const newTalismanJson = ref(null);
 
 onMounted(() => {
   lottieAnimation();
+  destroyLottie();
 });
 onUnmounted(() => {
   newTalismanJson.value.destroy();
 });
 
-const props = defineProps({
-  playLottie: Boolean
-});
-
-watch(
-  () => props.playLottie,
-  (newVal) => {
-    if (newVal) {
-      newTalismanJson.value.goToAndPlay(1, true);
-      // destroyLottie();
-    }
-  },
-  {
-    deep: true
-  }
-);
-
-// const destroyLottie = () => {
-//   setTimeout(() => {
-//     newTalismanJson.value.destroy();
-//   }, 2270);
-// };
+const destroyLottie = () => {
+  setTimeout(() => {
+    newTalismanJson.value.destroy();
+  }, 1000 * 1.04);
+};
 
 function lottieAnimation() {
   newTalismanJson.value = lottie.loadAnimation({
     container: document.getElementById('new-talisman-begin'),
     renderer: 'svg',
     loop: false,
-    autoplay: false,
+    autoplay: true,
     animationData: newTalisman
   });
 }

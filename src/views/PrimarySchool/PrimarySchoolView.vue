@@ -1,5 +1,11 @@
 <script setup>
-import { ref, reactive, watch, defineComponent, defineAsyncComponent } from 'vue';
+import {
+  ref,
+  reactive,
+  watch,
+  defineComponent,
+  defineAsyncComponent
+} from 'vue';
 import { useWindowSize } from '@vueuse/core';
 import { useRouter } from 'vue-router';
 import SmallAnimation from './src/SmallAnimation.vue';
@@ -49,11 +55,17 @@ const novemberFinger = ref(fingerRightImg[0]);
 const decemberFinger = ref(fingerImg[0]);
 
 const lineShare = () => {
-  window.open(`https://social-plugins.line.me/lineit/share?url=${window.location.href}`, '_blank');
+  window.open(
+    `https://social-plugins.line.me/lineit/share?url=${window.location.href}`,
+    '_blank'
+  );
 };
 
 const facebookShare = () => {
-  window.open(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`, '_blank');
+  window.open(
+    `https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`,
+    '_blank'
+  );
 };
 
 const toHomePage = () => {
@@ -247,7 +259,11 @@ const clickHouse = (houseName) => {
   <div class="container-fluid p-0" v-if="screenSwitch == false">
     <div class="primary-school element-height">
       <div class="title-container">
-        <img class="title-img" src="@/assets/disaster_prevention/title_img.svg" alt="" />
+        <img
+          class="title-img"
+          src="@/assets/disaster_prevention/title_img.svg"
+          alt=""
+        />
       </div>
 
       <div class="doll-1-container">
@@ -269,8 +285,14 @@ const clickHouse = (houseName) => {
           <div class="jan-card">一月</div>
           <img class="finger-right" :src="febFinger" />
           <div class="feb-card">二月</div>
-          <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
-          <div class="windows-click" @click="clickHouse('people-flow-open-windows')"></div>
+          <div
+            class="door-click"
+            @click="clickHouse('people-flow-open-door')"
+          ></div>
+          <div
+            class="windows-click"
+            @click="clickHouse('people-flow-open-windows')"
+          ></div>
         </div>
         <div id="norm-house">
           <Norm :norm-open="normOpen" />
@@ -281,8 +303,14 @@ const clickHouse = (houseName) => {
           <div class="apr-card">四月</div>
           <img class="finger-right" :src="marFinger" />
           <div class="mar-card">三月</div>
-          <div class="door-click" @click="clickHouse('norm-house-open-door')"></div>
-          <div class="windows-click" @click="clickHouse('norm-house-open-windows')"></div>
+          <div
+            class="door-click"
+            @click="clickHouse('norm-house-open-door')"
+          ></div>
+          <div
+            class="windows-click"
+            @click="clickHouse('norm-house-open-windows')"
+          ></div>
         </div>
         <div id="twin-house">
           <twin :twin-open="twinOpen" />
@@ -293,8 +321,14 @@ const clickHouse = (houseName) => {
           <div class="june-card">五月</div>
           <img class="finger-right" :src="juneFinger" />
           <div class="may-card">六月</div>
-          <div class="door-click" @click="clickHouse('twin-house-open-door')"></div>
-          <div class="windows-click" @click="clickHouse('twin-house-open-windows')"></div>
+          <div
+            class="door-click"
+            @click="clickHouse('twin-house-open-door')"
+          ></div>
+          <div
+            class="windows-click"
+            @click="clickHouse('twin-house-open-windows')"
+          ></div>
         </div>
         <div id="strategy-house">
           <strategy :strategy-open="strategyOpen" />
@@ -352,7 +386,9 @@ const clickHouse = (houseName) => {
               </div>
             </div>
             <div class="col px-4 pb-4">
-              <div class="home-btn" @click="toHomePage"><Home_Icon />回首頁</div>
+              <div class="home-btn" @click="toHomePage">
+                <Home_Icon />回首頁
+              </div>
             </div>
           </div>
         </div>
@@ -365,7 +401,10 @@ const clickHouse = (houseName) => {
     <div class="primary-school">
       <div class="row">
         <div class="col d-flex align-items-center justify-content-center">
-          <img class="title-img" src="@/assets/disaster_prevention/title_img.svg" />
+          <img
+            class="title-img"
+            src="@/assets/disaster_prevention/title_img.svg"
+          />
         </div>
       </div>
       <div class="row">
@@ -386,12 +425,20 @@ const clickHouse = (houseName) => {
             <div class="jan-card">一月</div>
             <img class="finger-right" :src="febFinger" />
             <div class="feb-card">二月</div>
-            <div class="door-click" @click="clickHouse('people-flow-open-door')"></div>
-            <div class="windows-click" @click="clickHouse('people-flow-open-windows')"></div>
+            <div
+              class="door-click"
+              @click="clickHouse('people-flow-open-door')"
+            ></div>
+            <div
+              class="windows-click"
+              @click="clickHouse('people-flow-open-windows')"
+            ></div>
           </div>
         </div>
         <!-- 3 4-->
-        <div class="norm-container col-12 mb-5 d-flex align-items-center justify-content-center">
+        <div
+          class="norm-container col-12 mb-5 d-flex align-items-center justify-content-center"
+        >
           <div id="norm-house">
             <Norm :norm-open="normOpen" />
           </div>
@@ -400,12 +447,20 @@ const clickHouse = (houseName) => {
             <div class="mar-card">三月</div>
             <img class="finger" :src="aprFinger" />
             <div class="apr-card">四月</div>
-            <div class="door-click" @click="clickHouse('norm-house-open-door')"></div>
-            <div class="windows-click" @click="clickHouse('norm-house-open-windows')"></div>
+            <div
+              class="door-click"
+              @click="clickHouse('norm-house-open-door')"
+            ></div>
+            <div
+              class="windows-click"
+              @click="clickHouse('norm-house-open-windows')"
+            ></div>
           </div>
         </div>
         <!-- 5 6 -->
-        <div class="twin-container col-12 mb-2 d-flex align-items-center justify-content-center">
+        <div
+          class="twin-container col-12 mb-2 d-flex align-items-center justify-content-center"
+        >
           <div id="twin-house">
             <twin :twin-open="twinOpen" />
           </div>
@@ -414,8 +469,14 @@ const clickHouse = (houseName) => {
             <div class="june-card">五月</div>
             <img class="finger-right" :src="juneFinger" />
             <div class="may-card">六月</div>
-            <div class="door-click" @click="clickHouse('twin-house-open-door')"></div>
-            <div class="windows-click" @click="clickHouse('twin-house-open-windows')"></div>
+            <div
+              class="door-click"
+              @click="clickHouse('twin-house-open-door')"
+            ></div>
+            <div
+              class="windows-click"
+              @click="clickHouse('twin-house-open-windows')"
+            ></div>
           </div>
         </div>
         <!-- 7 8 -->

@@ -48,15 +48,23 @@ watch(
         <div class="row">
           <div class="col-3">
             <div class="d-flex flex-row-reverse">
-              <div class="chapter d-flex align-items-center justify-content-center">01</div>
+              <div
+                class="chapter d-flex align-items-center justify-content-center"
+              >
+                01
+              </div>
             </div>
           </div>
           <div class="col-6">
             <h3>運用實境技術增加防災資訊的說服力</h3>
-            <p>運用實境化及視覺化的展示技術，可以呈現即時擬真的天氣災害預警資訊。</p>
+            <p>
+              運用實境化及視覺化的展示技術，可以呈現即時擬真的天氣災害預警資訊。
+            </p>
             <img src="@/assets/december/01.png" />
           </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
+          <div
+            class="caption d-flex align-items-center justify-content-center mb-5 mt-1"
+          >
             <Triangle_Icon />
             <a>實境技術能提高民眾的感受能力</a>
           </div>
@@ -67,7 +75,11 @@ watch(
         <div class="row">
           <div class="col-3">
             <div class="d-flex flex-row-reverse">
-              <div class="chapter d-flex align-items-center justify-content-center">02</div>
+              <div
+                class="chapter d-flex align-items-center justify-content-center"
+              >
+                02
+              </div>
             </div>
           </div>
           <div class="col-6">
@@ -77,7 +89,9 @@ watch(
             </p>
             <img src="@/assets/december/02.png" />
           </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
+          <div
+            class="caption d-flex align-items-center justify-content-center mb-5 mt-1"
+          >
             <Triangle_Icon />
             <a>馬祖北竿機場的濃霧虛擬實境</a>
           </div>
@@ -88,7 +102,11 @@ watch(
         <div class="row">
           <div class="col-3">
             <div class="d-flex flex-row-reverse">
-              <div class="chapter d-flex align-items-center justify-content-center">03</div>
+              <div
+                class="chapter d-flex align-items-center justify-content-center"
+              >
+                03
+              </div>
             </div>
           </div>
           <div class="col-6 mb-5">
@@ -104,7 +122,9 @@ watch(
         <div class="row">
           <div class="col-3">
             <div class="d-flex flex-row-reverse">
-              <div class="chapter d-flex align-items-center justify-content-center">
+              <div
+                class="chapter d-flex align-items-center justify-content-center"
+              >
                 <Link_Icon />
               </div>
             </div>
@@ -117,8 +137,14 @@ watch(
               href="https://watch.ncdr.nat.gov.tw/watch_page_islandvis"
               target="_blank"
             >
-              <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
-              <div class="link-text d-flex align-items-center justify-content-between">
+              <div
+                class="link-chapter d-flex align-items-center justify-content-center"
+              >
+                01
+              </div>
+              <div
+                class="link-text d-flex align-items-center justify-content-between"
+              >
                 <div>金馬澎能見度</div>
                 <Arrow_Right />
               </div>
@@ -137,15 +163,23 @@ watch(
         <div class="row">
           <div class="col-12">
             <div class="d-flex">
-              <div class="chapter d-flex align-items-center justify-content-center">01</div>
+              <div
+                class="chapter d-flex align-items-center justify-content-center"
+              >
+                01
+              </div>
             </div>
           </div>
           <div class="col-12">
             <h3>運用實境技術增加防災資訊的說服力</h3>
-            <p>運用實境化及視覺化的展示技術，可以呈現即時擬真的天氣災害預警資訊。</p>
+            <p>
+              運用實境化及視覺化的展示技術，可以呈現即時擬真的天氣災害預警資訊。
+            </p>
             <img src="@/assets/december/01.png" />
           </div>
-          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
+          <div
+            class="caption d-flex align-items-start justify-content-center mb-5 mt-1"
+          >
             <Triangle_Icon />
             <p class="small-caption">實境技術能提高民眾的感受能力</p>
           </div>
@@ -156,7 +190,11 @@ watch(
         <div class="row">
           <div class="col-12">
             <div class="d-flex">
-              <div class="chapter d-flex align-items-center justify-content-center">02</div>
+              <div
+                class="chapter d-flex align-items-center justify-content-center"
+              >
+                02
+              </div>
             </div>
           </div>
           <div class="col-12">
@@ -166,7 +204,9 @@ watch(
             </p>
             <img src="@/assets/december/02.png" />
           </div>
-          <div class="caption d-flex align-items-start justify-content-center mb-5 mt-1">
+          <div
+            class="caption d-flex align-items-start justify-content-center mb-5 mt-1"
+          >
             <Triangle_Icon />
             <p class="small-caption">馬祖北竿機場的濃霧虛擬實境</p>
           </div>
@@ -177,7 +217,11 @@ watch(
         <div class="row">
           <div class="col-12 mb-5">
             <div class="d-flex">
-              <div class="chapter d-flex align-items-center justify-content-center">03</div>
+              <div
+                class="chapter d-flex align-items-center justify-content-center"
+              >
+                03
+              </div>
             </div>
           </div>
           <div class="col-12 mb-5">
@@ -194,13 +238,17 @@ watch(
         <div class="row">
           <div class="col-12">
             <div class="d-flex">
-              <div class="chapter d-flex align-items-center justify-content-center">
+              <div
+                class="chapter d-flex align-items-center justify-content-center"
+              >
                 <Link_Icon />
               </div>
             </div>
           </div>
           <div class="col-12">
-            <div class="link-container d-flex align-items-center justify-content-between">
+            <div
+              class="link-container d-flex align-items-center justify-content-between"
+            >
               <h3>相關連結</h3>
               <div id="qa-doll"></div>
             </div>
@@ -209,8 +257,14 @@ watch(
               href="https://watch.ncdr.nat.gov.tw/watch_page_islandvis"
               target="_blank"
             >
-              <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
-              <div class="link-text d-flex align-items-center justify-content-between">
+              <div
+                class="link-chapter d-flex align-items-center justify-content-center"
+              >
+                01
+              </div>
+              <div
+                class="link-text d-flex align-items-center justify-content-between"
+              >
                 <div>金馬澎能見度</div>
                 <Arrow_Right />
               </div>

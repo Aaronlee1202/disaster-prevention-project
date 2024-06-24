@@ -1,6 +1,10 @@
 <script setup>
 import { ref, onMounted, defineComponent } from 'vue';
 import RightContent from './RightContent.vue';
+import Lottie_Start from './lottie/LottieStart.vue';
+import Lottie_Start2 from './lottie/LottieStart2.vue';
+import Lottie_Start3 from './lottie/LottieStart3.vue';
+import Lottie_Loop from './lottie/LottieLoop.vue';
 
 defineComponent({
   components: {
@@ -8,12 +12,16 @@ defineComponent({
   }
 });
 
+const lottieStart2 = ref(false);
 const lottieLoop = ref(false);
 
 onMounted(() => {
   setTimeout(() => {
-    lottieLoop.value = true;
-  }, 1000 * 11);
+    lottieStart2.value = true;
+    setTimeout(() => {
+      lottieLoop.value = true;
+    }, 1000 * 1.04);
+  }, 1000 * 3.96);
 });
 </script>
 
@@ -24,12 +32,25 @@ onMounted(() => {
         <div class="col-4">
           <div class="img-container">
             <div class="start-box d-flex justify-content-center">
-              <video width="100%" autoplay muted playsinline>
-                <source src="@/assets/lottie/march/march-1.mp4" type="video/mp4" />
-              </video>
+              <Lottie_Start />
             </div>
-            <div class="loop-box d-flex justify-content-center" v-if="lottieLoop">
-              <img src="@/assets/lottie/march/march-2.gif" />
+            <div
+              class="begin-box d-flex justify-content-end"
+              v-if="lottieStart2"
+            >
+              <Lottie_Start2 />
+            </div>
+            <div
+              class="begin-box-2 d-flex justify-content-end"
+              v-if="lottieStart2"
+            >
+              <Lottie_Start3 />
+            </div>
+            <div
+              class="loop-box d-flex justify-content-center"
+              v-if="lottieLoop"
+            >
+              <Lottie_Loop />
             </div>
           </div>
         </div>
@@ -37,7 +58,10 @@ onMounted(() => {
           <div class="content-box content-page">
             <div class="title-box">
               <div>
-                <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
+                <img
+                  src="@/assets/disaster_prevention/title_img.png"
+                  alt="防災小學堂"
+                />
                 <h2 class="mt-5 mb-4">氣候變遷資料大解密</h2>
                 <p>
                   發行日期 | 2024.03.01 <br />
@@ -73,11 +97,16 @@ h2 {
   .start-box {
     width: 100%;
     position: absolute;
-    z-index: 10;
+    z-index: 5;
     opacity: 1;
     transition: opacity 1s ease;
   }
   .begin-box {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+  }
+  .begin-box-2 {
     width: 100%;
     position: absolute;
     z-index: 15;
@@ -86,10 +115,6 @@ h2 {
     width: 100%;
     position: absolute;
     z-index: 20;
-    img {
-      width: 100%;
-      opacity: 0.8;
-    }
   }
   .fade-out {
     opacity: 0;
