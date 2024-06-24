@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 // import VueGtag from 'vue-gtag';
 import PrimarySchoolView from '../views/PrimarySchool/PrimarySchoolView.vue';
-const DisasterPreventionView = () => import('../views/Jan/DisasterPreventionView.vue');
+const DisasterPreventionView = () =>
+  import('../views/Jan/DisasterPreventionView.vue');
 const FebruaryView = () => import('../views/Feb/FebruaryView.vue');
 const MarchView = () => import('../views/Mar/MarchView.vue');
 const AprilView = () => import('../views/Apr/AprilView.vue');

@@ -47,7 +47,10 @@ onMounted(() => {
             <div class="start-box-2 d-flex justify-content-center">
               <Lottie_Start2 :play-lottie="lottieLoop" />
             </div>
-            <div class="loop-box-2 d-flex justify-content-center" v-if="lottieShow">
+            <div
+              class="loop-box-2 d-flex justify-content-center"
+              v-if="lottieShow"
+            >
               <Lottie_Loop2 />
             </div>
           </div>
@@ -56,7 +59,10 @@ onMounted(() => {
           <div class="content-box content-page">
             <div class="title-box">
               <div>
-                <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
+                <img
+                  src="@/assets/disaster_prevention/title_img.png"
+                  alt="防災小學堂"
+                />
                 <h2 class="mt-5 mb-4">運用數位孿生技術，瞭解災害的衝擊</h2>
                 <p>
                   發行日期 | 2024.05.01 <br />
