@@ -2,28 +2,22 @@
 import { ref, onMounted, defineComponent } from 'vue';
 import RightContent from './RightContent.vue';
 import Lottie_Start from './lottie/LottieStart.vue';
-import Lottie_Loop from './lottie/LottieLoop.vue';
-import Lottie_Start2 from './lottie/LottieStart-2.vue';
+import Lottie_Start2 from './lottie/LottieStart2.vue';
+import Lottie_Loop1 from './lottie/LottieLoop1.vue';
+import Lottie_Loop2 from './lottie/LottieLoop2.vue';
 
 defineComponent({
   components: {
-    Lottie_Start,
-    Lottie_Loop,
-    Lottie_Start2,
     RightContent
   }
 });
 
 const lottieLoop = ref(false);
-const lottieShow = ref(false);
 
 onMounted(() => {
   setTimeout(() => {
     lottieLoop.value = true;
-    setTimeout(() => {
-      lottieShow.value = true;
-    }, 700);
-  }, 1600);
+  }, 1840);
 });
 </script>
 
@@ -36,11 +30,20 @@ onMounted(() => {
             <div class="start-box d-flex justify-content-center">
               <Lottie_Start />
             </div>
-            <div class="start-box-2 d-flex justify-content-center" v-if="lottieLoop">
-              <Lottie_Start2 />
+            <div class="start-box-2 d-flex justify-content-center">
+              <Lottie_Start2 :play-lottie="lottieLoop" />
             </div>
-            <div class="loop-box d-flex justify-content-center" v-if="lottieShow">
-              <Lottie_Loop />
+            <div
+              class="loop-box d-flex justify-content-center"
+              v-if="lottieLoop"
+            >
+              <Lottie_Loop1 />
+            </div>
+            <div
+              class="loop-box-2 d-flex justify-content-center"
+              v-if="lottieLoop"
+            >
+              <Lottie_Loop2 />
             </div>
           </div>
         </div>
@@ -48,7 +51,10 @@ onMounted(() => {
           <div class="content-box content-page">
             <div class="title-box">
               <div>
-                <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
+                <img
+                  src="@/assets/disaster_prevention/title_img.png"
+                  alt="防災小學堂"
+                />
                 <h2 class="mt-5 mb-4">數位防災地圖再進化</h2>
                 <p>
                   發行日期 | 2024.09.01 <br />
@@ -91,16 +97,6 @@ h2 {
   .start-box-2 {
     width: 100%;
     position: absolute;
-    z-index: 25;
-  }
-  .start-box-3 {
-    width: 100%;
-    position: absolute;
-    z-index: 30;
-  }
-  .begin-box {
-    width: 100%;
-    position: absolute;
     z-index: 15;
   }
   .loop-box {
@@ -113,7 +109,7 @@ h2 {
   .loop-box-2 {
     width: 100%;
     position: absolute;
-    z-index: 30;
+    z-index: 35;
   }
   .fade-out {
     opacity: 0;

@@ -1,32 +1,21 @@
 <script setup>
-import { ref, watch, onMounted, defineComponent } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { useWindowSize } from '@vueuse/core';
 import Lottie_Start from './lottie/LottieStart.vue';
-import Lottie_Loop from './lottie/LottieLoop.vue';
-import Lottie_Start2 from './lottie/LottieStart-2.vue';
-
-defineComponent({
-  components: {
-    Lottie_Start,
-    Lottie_Loop,
-    Lottie_Start2
-  }
-});
+import Lottie_Start2 from './lottie/LottieStart2.vue';
+import Lottie_Loop1 from './lottie/LottieLoop1.vue';
+import Lottie_Loop2 from './lottie/LottieLoop2.vue';
 
 const { width } = useWindowSize();
 
 const screenSwitch = ref(false);
 
 const lottieLoop = ref(false);
-const lottieShow = ref(false);
 
 onMounted(() => {
   setTimeout(() => {
     lottieLoop.value = true;
-    setTimeout(() => {
-      lottieShow.value = true;
-    }, 700);
-  }, 1600);
+  }, 1840);
 });
 
 watch(
@@ -49,17 +38,26 @@ watch(
             <div class="start-box d-flex justify-content-end">
               <Lottie_Start />
             </div>
-            <div class="start-box-2 d-flex justify-content-end" v-if="lottieLoop">
-              <Lottie_Start2 />
+            <div class="start-box-2 d-flex justify-content-end">
+              <Lottie_Start2 :play-lottie="lottieLoop" />
             </div>
-            <div class="loop-box d-flex justify-content-end" v-if="lottieShow">
-              <Lottie_Loop />
+            <div class="loop-box d-flex justify-content-end" v-if="lottieLoop">
+              <Lottie_Loop1 />
+            </div>
+            <div
+              class="loop-box-2 d-flex justify-content-end"
+              v-if="lottieLoop"
+            >
+              <Lottie_Loop2 />
             </div>
           </div>
         </div>
         <div class="col-6">
           <div class="content-box">
-            <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
+            <img
+              src="@/assets/disaster_prevention/title_img.png"
+              alt="防災小學堂"
+            />
             <h2 class="mt-5 mb-4">數位防災地圖再進化</h2>
             <p>
               發行日期 | 2024.09.01 <br />
@@ -72,18 +70,24 @@ watch(
     </div>
     <div class="container-fluid custom-container" v-if="screenSwitch == true">
       <div class="img-container">
-        <div class="start-box ">
-              <Lottie_Start />
-            </div>
-            <div class="start-box-2" v-if="lottieLoop">
-              <Lottie_Start2 />
-            </div>
-            <div class="loop-box" v-if="lottieShow">
-              <Lottie_Loop />
-            </div>
+        <div class="start-box">
+          <Lottie_Start />
+        </div>
+        <div class="start-box-2">
+          <Lottie_Start2 :play-lottie="lottieLoop" />
+        </div>
+        <div class="loop-box" v-if="lottieLoop">
+          <Lottie_Loop1 />
+        </div>
+        <div class="loop-box-2" v-if="lottieLoop">
+          <Lottie_Loop2 />
+        </div>
       </div>
       <div class="content-box">
-        <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
+        <img
+          src="@/assets/disaster_prevention/title_img.png"
+          alt="防災小學堂"
+        />
         <h2>數位防災地圖再進化</h2>
         <p>
           發行日期 | 2024.09.01 <br />
@@ -122,17 +126,17 @@ h2 {
   .start-box-2 {
     width: 100%;
     position: absolute;
-    z-index: 25;
+    z-index: 15;
   }
   .loop-box {
     width: 100%;
     position: absolute;
-    z-index: 35;
+    z-index: 30;
   }
   .loop-box-2 {
     width: 100%;
     position: absolute;
-    z-index: 30;
+    z-index: 35;
   }
   .fade-out {
     opacity: 0;

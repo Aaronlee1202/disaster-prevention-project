@@ -14,7 +14,7 @@ onUnmounted(() => {
 
 function lottieAnimation() {
   newTalismanJson.value = lottie.loadAnimation({
-    container: document.getElementById('new-talisman-start-2'),
+    container: document.getElementById('new-talisman-loop'),
     renderer: 'svg',
     loop: true,
     autoplay: true,
@@ -24,11 +24,11 @@ function lottieAnimation() {
 </script>
 
 <template>
-  <div id="new-talisman-start-2" />
+  <div id="new-talisman-loop" />
 </template>
 
 <style lang="scss" scoped>
-#new-talisman-start-2 {
+#new-talisman-loop {
   opacity: 1;
   transition: opacity 1s ease;
 }
