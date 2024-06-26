@@ -334,14 +334,20 @@ const clickHouse = (houseName) => {
           <strategy :strategy-open="strategyOpen" />
         </div>
         <!-- 7 8 -->
-        <!-- <div class="strategy-house-click">
+        <div class="strategy-house-click">
           <img class="finger" :src="julyFinger" />
           <div class="july-card">七月</div>
-          <img class="finger-right" :src="augustFinger" />
-          <div class="august-card">八月</div>
-          <div class="door-click" @click="clickHouse('strategy-house-open-door')"></div>
-          <div class="windows-click" @click="clickHouse('strategy-house-open-windows')"></div>
-        </div> -->
+          <!-- <img class="finger-right" :src="augustFinger" />
+          <div class="august-card">八月</div> -->
+          <div
+            class="door-click"
+            @click="clickHouse('strategy-house-open-door')"
+          ></div>
+          <!-- <div
+            class="windows-click"
+            @click="clickHouse('strategy-house-open-windows')"
+          ></div> -->
+        </div>
         <div id="potential-house">
           <potential :potential-open="potentialOpen" />
         </div>
@@ -486,14 +492,20 @@ const clickHouse = (houseName) => {
           <div id="strategy-house">
             <strategy :strategy-open="strategyOpen" />
           </div>
-          <!-- <div class="strategy-house-click">
+          <div class="strategy-house-click">
             <img class="finger" :src="julyFinger" />
             <div class="july-card">七月</div>
-            <img class="finger-right" :src="augustFinger" />
-            <div class="august-card">八月</div>
-            <div class="door-click" @click="clickHouse('strategy-house-open-door')"></div>
-            <div class="windows-click" @click="clickHouse('strategy-house-open-windows')"></div>
-          </div> -->
+            <!-- <img class="finger-right" :src="augustFinger" />
+            <div class="august-card">八月</div> -->
+            <div
+              class="door-click"
+              @click="clickHouse('strategy-house-open-door')"
+            ></div>
+            <!-- <div
+              class="windows-click"
+              @click="clickHouse('strategy-house-open-windows')"
+            ></div> -->
+          </div>
         </div>
         <!-- 9 10 -->
         <div
