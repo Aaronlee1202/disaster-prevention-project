@@ -1431,7 +1431,7 @@ const clickHouse = (houseName) => {
     left: 42%;
     transform: translate(-50%, -50%);
     z-index: 994;
-    opacity: 0.7;
+    // opacity: 0.7;
     #twin {
       position: absolute;
     }
@@ -1521,7 +1521,7 @@ const clickHouse = (houseName) => {
     left: 59%;
     transform: translate(-50%, -50%);
     z-index: 994;
-    opacity: 0.7;
+    // opacity: 0.7;
     #strategy {
       position: absolute;
     }
@@ -2669,6 +2669,7 @@ const clickHouse = (houseName) => {
     width: 320px;
     height: 316.005px;
     z-index: 994;
+    opacity: 0.7;
     #potential {
       position: absolute;
     }
@@ -2715,6 +2716,7 @@ const clickHouse = (houseName) => {
     width: 320px;
     height: 316.005px;
     z-index: 994;
+    opacity: 0.7;
     #atmosphere {
       position: absolute;
     }
