@@ -352,14 +352,17 @@ const clickHouse = (houseName) => {
           <potential :potential-open="potentialOpen" />
         </div>
         <!-- 9 10 -->
-        <!-- <div class="potential-house-click">
+        <div class="potential-house-click">
           <img class="finger" :src="septemberFinger" />
           <div class="september-card">九月</div>
-          <img class="finger-right" :src="octoberFinger" />
-          <div class="october-card">十月</div>
-          <div class="door-click" @click="clickHouse('potential-house-open-door')"></div>
-          <div class="windows-click" @click="clickHouse('potential-house-open-windows')"></div>
-        </div> -->
+          <!-- <img class="finger-right" :src="octoberFinger" />
+          <div class="october-card">十月</div> -->
+          <div
+            class="door-click"
+            @click="clickHouse('potential-house-open-door')"
+          ></div>
+          <!-- <div class="windows-click" @click="clickHouse('potential-house-open-windows')"></div> -->
+        </div>
         <div id="atmosphere-house">
           <atmosphere :atmosphere-open="atmosphereOpen" />
         </div>
@@ -514,14 +517,14 @@ const clickHouse = (houseName) => {
           <div id="potential-house">
             <potential :potential-open="potentialOpen" />
           </div>
-          <!-- <div class="potential-house-click">
+          <div class="potential-house-click">
             <img class="finger" :src="septemberFinger" />
             <div class="september-card">九月</div>
-            <img class="finger-right" :src="octoberFinger" />
-            <div class="october-card">十月</div>
+            <!-- <img class="finger-right" :src="octoberFinger" />
+            <div class="october-card">十月</div> -->
             <div class="door-click" @click="clickHouse('potential-house-open-door')"></div>
-            <div class="windows-click" @click="clickHouse('potential-house-open-windows')"></div>
-          </div> -->
+            <!-- <div class="windows-click" @click="clickHouse('potential-house-open-windows')"></div> -->
+          </div>
         </div>
         <!-- 11 12 -->
         <div
