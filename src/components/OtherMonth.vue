@@ -79,7 +79,7 @@ const thisMonth = ref();
 onMounted(() => {
   const getMonth = new Date().getUTCMonth();
   const getDate = new Date().getUTCDate();
-  if (getDate >= 20) {
+  if (getDate > 15) {
     thisMonth.value = getMonth + 1;
   } else {
     thisMonth.value = getMonth;
@@ -92,7 +92,9 @@ onMounted(() => {
     <div class="other-month-background"></div>
     <div class="container">
       <div class="row">
-        <div class="col-12 mt-5 d-flex align-items-center justify-content-center">
+        <div
+          class="col-12 mt-5 d-flex align-items-center justify-content-center"
+        >
           <div class="chapter d-flex align-items-center justify-content-center">
             <Month_Icon />
           </div>
@@ -126,8 +128,12 @@ onMounted(() => {
     <div class="other-month-background"></div>
     <div class="container">
       <div class="row">
-        <div class="col-12 mt-5 d-flex align-items-center justify-content-center">
-          <div class="chapter mb-0 d-flex align-items-center justify-content-center">
+        <div
+          class="col-12 mt-5 d-flex align-items-center justify-content-center"
+        >
+          <div
+            class="chapter mb-0 d-flex align-items-center justify-content-center"
+          >
             <Month_Icon />
           </div>
           <div class="other-month-title">其他月份</div>

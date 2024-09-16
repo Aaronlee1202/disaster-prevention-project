@@ -75,7 +75,7 @@ const thisMonth = ref();
 onMounted(() => {
   const getMonth = new Date().getUTCMonth();
   const getDate = new Date().getUTCDate();
-  if (getDate >= 20) {
+  if (getDate > 15) {
     thisMonth.value = getMonth + 1;
   } else {
     thisMonth.value = getMonth;
