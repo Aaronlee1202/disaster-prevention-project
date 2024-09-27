@@ -69,7 +69,7 @@ watch(
         <div class="col-6">
           <div class="content-box">
             <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
-            <h2 class="mt-5 mb-4">生中周遭的災害潛勢</h2>
+            <h2 class="mt-5 mb-4">生活中周遭的災害潛勢</h2>
             <p>
               發行日期 | 2024.10.01 <br />
               作者 | 坡洪組 王俞婷 <br />
@@ -96,7 +96,7 @@ watch(
       </div>
       <div class="content-box">
         <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
-        <h2>生中周遭的災害潛勢</h2>
+        <h2>生活中周遭的災害潛勢</h2>
         <p>
           發行日期 | 2024.10.01 <br />
           作者 | 坡洪組 王俞婷 <br />
