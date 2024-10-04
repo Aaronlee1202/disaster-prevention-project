@@ -58,17 +58,26 @@ watch(
             <div class="loop-box d-flex justify-content-end" v-if="lottieLoop">
               <Lottie_Loop />
             </div>
-            <div class="start-box-2 d-flex justify-content-end" v-if="lottieShow">
+            <div
+              class="start-box-2 d-flex justify-content-end"
+              v-if="lottieShow"
+            >
               <Lottie_Start2 />
             </div>
-            <div class="loop-box-2 d-flex justify-content-end" v-if="lottieShow2">
+            <div
+              class="loop-box-2 d-flex justify-content-end"
+              v-if="lottieShow2"
+            >
               <Lottie_Loop2 />
             </div>
           </div>
         </div>
         <div class="col-6">
           <div class="content-box">
-            <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
+            <img
+              src="@/assets/disaster_prevention/title_img.png"
+              alt="防災小學堂"
+            />
             <h2 class="mt-5 mb-4">生活中周遭的災害潛勢</h2>
             <p>
               發行日期 | 2024.10.01 <br />
@@ -95,7 +104,10 @@ watch(
         </div>
       </div>
       <div class="content-box">
-        <img src="@/assets/disaster_prevention/title_img.png" alt="防災小學堂" />
+        <img
+          src="@/assets/disaster_prevention/title_img.png"
+          alt="防災小學堂"
+        />
         <h2>生活中周遭的災害潛勢</h2>
         <p>
           發行日期 | 2024.10.01 <br />

@@ -31,7 +31,11 @@ const lottieAnimation = () => {
       <div class="row d-flex justify-content-end">
         <div class="col-1 p-0">
           <div class="d-flex flex-row-reverse">
-            <div class="chapter d-flex align-items-center justify-content-center">01</div>
+            <div
+              class="chapter d-flex align-items-center justify-content-center"
+            >
+              01
+            </div>
           </div>
         </div>
         <div class="col">
@@ -42,7 +46,9 @@ const lottieAnimation = () => {
           <div class="img-box">
             <img src="@/assets/october/01.png" />
           </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
+          <div
+            class="caption d-flex align-items-center justify-content-center mb-5 mt-1"
+          >
             <Triangle_Icon />
             <a>什麼是350mm、500mm、650mm淹水潛勢?</a>
           </div>
@@ -52,7 +58,11 @@ const lottieAnimation = () => {
       <div class="row d-flex justify-content-end">
         <div class="col-1 p-0">
           <div class="d-flex flex-row-reverse">
-            <div class="chapter d-flex align-items-center justify-content-center">02</div>
+            <div
+              class="chapter d-flex align-items-center justify-content-center"
+            >
+              02
+            </div>
           </div>
         </div>
         <div class="col">
@@ -64,7 +74,9 @@ const lottieAnimation = () => {
           <div class="img-box">
             <img src="@/assets/october/02.png" />
           </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
+          <div
+            class="caption d-flex align-items-center justify-content-center mb-5 mt-1"
+          >
             <Triangle_Icon />
             <a>查詢結果</a>
           </div>
@@ -74,7 +86,11 @@ const lottieAnimation = () => {
       <div class="row d-flex justify-content-end">
         <div class="col-1 p-0">
           <div class="d-flex flex-row-reverse">
-            <div class="chapter d-flex align-items-center justify-content-center">03</div>
+            <div
+              class="chapter d-flex align-items-center justify-content-center"
+            >
+              03
+            </div>
           </div>
         </div>
         <div class="col">
@@ -83,9 +99,11 @@ const lottieAnimation = () => {
             政府部門會利用潛勢地圖來做防減災規劃，民眾買房時也可利用這個地圖網站，來事先瞭解房屋的災害體檢。
           </p>
           <div class="img-box">
-            <img src="@/assets/october/03.png" alt="" />
+            <img src="@/assets/october/03-1.jpg" alt="" />
           </div>
-          <div class="caption d-flex align-items-center justify-content-center mb-5 mt-1">
+          <div
+            class="caption d-flex align-items-center justify-content-center mb-5 mt-1"
+          >
             <Triangle_Icon />
             <a>潛勢地圖可以提供民眾買房時的資訊參考</a>
           </div>
@@ -95,7 +113,9 @@ const lottieAnimation = () => {
       <div class="row d-flex justify-content-end mt-5">
         <div class="col-1 p-0">
           <div class="d-flex flex-row-reverse">
-            <div class="chapter d-flex align-items-center justify-content-center">
+            <div
+              class="chapter d-flex align-items-center justify-content-center"
+            >
               <Link_Icon />
             </div>
           </div>
@@ -108,19 +128,31 @@ const lottieAnimation = () => {
             href="https://maps.nlsc.gov.tw/T09/mobilemap.action"
             target="_blank"
           >
-            <div class="link-chapter d-flex align-items-center justify-content-center">01</div>
-            <div class="link-text d-flex align-items-center justify-content-between">
+            <div
+              class="link-chapter d-flex align-items-center justify-content-center"
+            >
+              01
+            </div>
+            <div
+              class="link-text d-flex align-items-center justify-content-between"
+            >
               <div>國土測繪圖資服務雲 - 內政部國土測繪中心</div>
               <Arrow_Right />
             </div>
           </a>
           <a
             class="related-links d-flex align-items-center justify-content-start mb-4 mt-5"
-            href="https://wra.bse.ntu.edu.tw/flood-riskmap/flood"
+            href="https://fhy.wra.gov.tw/fhyv2/disaster/downloads"
             target="_blank"
           >
-            <div class="link-chapter d-flex align-items-center justify-content-center">02</div>
-            <div class="link-text d-flex align-items-center justify-content-between">
+            <div
+              class="link-chapter d-flex align-items-center justify-content-center"
+            >
+              02
+            </div>
+            <div
+              class="link-text d-flex align-items-center justify-content-between"
+            >
               <div>經濟部水利署臺灣水災潛勢風險圖資應用服務平台</div>
               <Arrow_Right />
             </div>
