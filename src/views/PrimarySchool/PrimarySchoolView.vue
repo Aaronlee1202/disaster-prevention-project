@@ -370,14 +370,17 @@ const clickHouse = (houseName) => {
           <atmosphere :atmosphere-open="atmosphereOpen" />
         </div>
         <!-- 11 12 -->
-        <!-- <div class="atmosphere-house-click">
+        <div class="atmosphere-house-click">
           <img class="finger" :src="novemberFinger" />
           <div class="november-card">十一月</div>
-          <img class="finger-right" :src="decemberFinger" />
-          <div class="december-card">十二月</div>
-          <div class="door-click" @click="clickHouse('atmosphere-house-open-door')"></div>
-          <div class="windows-click" @click="clickHouse('atmosphere-house-open-windows')"></div>
-        </div> -->
+          <!-- <img class="finger-right" :src="decemberFinger" /> -->
+          <!-- <div class="december-card">十二月</div> -->
+          <div
+            class="door-click"
+            @click="clickHouse('atmosphere-house-open-door')"
+          ></div>
+          <!-- <div class="windows-click" @click="clickHouse('atmosphere-house-open-windows')"></div> -->
+        </div>
 
         <div class="share-container">
           <div class="row align-items-center">
@@ -542,14 +545,17 @@ const clickHouse = (houseName) => {
           <div id="atmosphere-house">
             <atmosphere :atmosphere-open="atmosphereOpen" />
           </div>
-          <!-- <div class="atmosphere-house-click">
+          <div class="atmosphere-house-click">
             <img class="finger" :src="novemberFinger" />
             <div class="november-card">十一月</div>
-            <img class="finger-right" :src="decemberFinger" />
-            <div class="december-card">十二月</div>
-            <div class="door-click" @click="clickHouse('atmosphere-house-open-door')"></div>
-            <div class="windows-click" @click="clickHouse('atmosphere-house-open-windows')"></div>
-          </div> -->
+            <!-- <img class="finger-right" :src="decemberFinger" /> -->
+            <!-- <div class="december-card">十二月</div> -->
+            <div
+              class="door-click"
+              @click="clickHouse('atmosphere-house-open-door')"
+            ></div>
+            <!-- <div class="windows-click" @click="clickHouse('atmosphere-house-open-windows')"></div> -->
+          </div>
         </div>
       </div>
     </div>
