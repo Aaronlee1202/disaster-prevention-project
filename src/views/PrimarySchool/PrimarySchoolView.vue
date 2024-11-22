@@ -373,13 +373,16 @@ const clickHouse = (houseName) => {
         <div class="atmosphere-house-click">
           <img class="finger" :src="novemberFinger" />
           <div class="november-card">十一月</div>
-          <!-- <img class="finger-right" :src="decemberFinger" /> -->
-          <!-- <div class="december-card">十二月</div> -->
+          <img class="finger-right" :src="decemberFinger" />
+          <div class="december-card">十二月</div>
           <div
             class="door-click"
             @click="clickHouse('atmosphere-house-open-door')"
           ></div>
-          <!-- <div class="windows-click" @click="clickHouse('atmosphere-house-open-windows')"></div> -->
+          <div
+            class="windows-click"
+            @click="clickHouse('atmosphere-house-open-windows')"
+          ></div>
         </div>
 
         <div class="share-container">
@@ -548,13 +551,16 @@ const clickHouse = (houseName) => {
           <div class="atmosphere-house-click">
             <img class="finger" :src="novemberFinger" />
             <div class="november-card">十一月</div>
-            <!-- <img class="finger-right" :src="decemberFinger" /> -->
-            <!-- <div class="december-card">十二月</div> -->
+            <img class="finger-right" :src="decemberFinger" />
+            <div class="december-card">十二月</div>
             <div
               class="door-click"
               @click="clickHouse('atmosphere-house-open-door')"
             ></div>
-            <!-- <div class="windows-click" @click="clickHouse('atmosphere-house-open-windows')"></div> -->
+            <div
+              class="windows-click"
+              @click="clickHouse('atmosphere-house-open-windows')"
+            ></div>
           </div>
         </div>
       </div>

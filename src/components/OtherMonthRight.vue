@@ -1,5 +1,4 @@
 <script setup>
-import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import Month_Icon from '@/components/svg/month_icon.vue';
 import month_1 from '@/assets/flow_of_people/month/1.svg';
@@ -63,24 +62,24 @@ const items = [
   }
 ];
 const router = useRouter();
-const openLink = (link, index) => {
-  if (index <= thisMonth.value) {
-    router.push(link);
-  } else {
-    alert('尚未開放');
-  }
+const openLink = (link) => {
+  // if (index <= thisMonth.value) {
+  router.push(link);
+  // } else {
+  //   alert('尚未開放');
+  // }
 };
 
-const thisMonth = ref();
-onMounted(() => {
-  const getMonth = new Date().getUTCMonth();
-  const getDate = new Date().getUTCDate();
-  if (getDate > 15) {
-    thisMonth.value = getMonth + 1;
-  } else {
-    thisMonth.value = getMonth;
-  }
-});
+// const thisMonth = ref();
+// onMounted(() => {
+//   const getMonth = new Date().getUTCMonth();
+//   const getDate = new Date().getUTCDate();
+//   if (getDate > 15) {
+//     thisMonth.value = getMonth + 1;
+//   } else {
+//     thisMonth.value = getMonth;
+//   }
+// });
 </script>
 
 <template>
@@ -107,7 +106,6 @@ onMounted(() => {
             <a
               type="button"
               class="month-icon m-0 d-flex align-items-center justify-content-center"
-              :class="[index > thisMonth ? 'disable' : '']"
               @click="openLink(item.link, index)"
             >
               <img :src="item.img" />
